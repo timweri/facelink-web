@@ -2,11 +2,21 @@
   text-decoration: none !important;
   white-space: normal;
   cursor: pointer;
+  color: $white;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 33px;
   &.focus,
   &:focus {
     box-shadow: none;
   }
 }
+
+.btn-form {
+  color: $black;
+  background-color: $white;
+}
+
 
 @include media-breakpoint-up(sm) {
   //min-width: 481px
