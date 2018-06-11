@@ -1,0 +1,210 @@
+#wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.touch {
+  * {
+    cursor: pointer;
+  }
+}
+
+%icomoon {
+  font-family: $icomoon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.overlay-after,
+%overlay-after {
+  position: relative;
+  z-index: 1;
+  &::after {
+    @include position(absolute, 0, 0, 0, 0, -1);
+    content: "";
+    background-color: #000;
+    opacity: .3;
+  }
+}
+
+.bg,
+%bg {
+  @include background-size(cover);
+}
+
+.bg-bottom-center {
+  background-position: bottom center !important;
+}
+
+.bg-bottom-right {
+  background-position: bottom right !important;
+}
+
+.bg-bottom-left {
+  background-position: bottom left !important;
+}
+
+.bg-center {
+  background-position: center center !important;
+}
+
+.bg-top-left {
+  background-position: top left !important;
+}
+
+.bg-top-right {
+  background-position: top right !important;
+}
+
+.bg-fixed {
+  @include background-size(cover);
+  background-attachment: fixed;
+}
+
+.bg-inhert {
+  background-color: inherit;
+}
+
+.bg-primary,
+%bg-primary {
+  a {
+    color: $white;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.color-white,
+%color-white {
+  color: $white;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: inherit;
+  }
+}
+
+.ps-as,
+%ps-as {
+  @include position(absolute, 0, 0, 0, 0, 1);
+}
+
+.ps-rv,
+%ps-rv {
+  position: relative;
+}
+
+.ps-stt,
+%ps-stt {
+  position: static;
+}
+
+.clear {
+  display: block;
+  height: 0 !important;
+  padding: 0 !important;
+  clear: both;
+}
+
+.d-table,
+.d-sm-table,
+.d-md-table,
+.d-lg-table {
+  table-layout: fixed;
+}
+
+.maxwidth {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.maxwidth-v1 {
+  max-width: 1000px;
+  &.text-center {
+    max-width: 1100px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+.maxwidth-v2 {
+  max-width: 900px;
+  &.text-center {
+    max-width: 1000px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-radius {
+  border-radius: 0 !important;
+}
+
+.no-bg {
+  background: none !important;
+}
+
+.text-center,
+%text-center {
+  ul,
+  ol {
+    padding-left: 0;
+    li {
+      list-style-position: inside;
+    }
+  }
+  ul {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .touch {
+    * {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  #header {
+    position: absolute;
+  }
+}

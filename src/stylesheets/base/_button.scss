@@ -1,0 +1,13 @@
+.btn {
+  text-decoration: none !important;
+  white-space: normal;
+  cursor: pointer;
+  &.focus,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  //min-width: 481px
+}

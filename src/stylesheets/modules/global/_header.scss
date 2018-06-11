@@ -1,0 +1,41 @@
+#header {
+  @include position(fixed, 0, 0, null, 0, 9999);
+  @extend %add-tr;
+  background-color: $gray-200;
+  &.pin-header {
+    box-shadow: 2px 9px 18px -6px rgba(0, 0, 0, .22);
+  }
+}
+
+#header-logo {
+  @extend .navbar-brand;
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  #header {
+    .navbar {
+      padding: 0 15px;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  html.is-open-menu,
+  html.is-open-menu body {
+    overflow: hidden;
+    height: 100%;
+  }
+  html.is-open-menu {
+    body {
+      @include position(absolute, 0, 0, null, 0, null);
+    }
+    #header {
+      bottom: 0;
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+}

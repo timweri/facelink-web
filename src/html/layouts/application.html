@@ -1,0 +1,174 @@
+<!-- begin header -->
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, viewport-fit=cover" />
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/custom-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Facebook Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/page.html">
+  <meta property="og:title" content="Content Title">
+  <meta property="og:image" content="https://example.com/image.jpg">
+  <meta property="og:description" content="Description Here">
+  <meta property="og:site_name" content="Site Name">
+  <meta property="og:locale" content="en_US">
+  <!-- Next tags are optional but recommended -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@site_account">
+  <meta name="twitter:creator" content="@individual_account">
+  <meta name="twitter:url" content="https://example.com/page.html">
+  <meta name="twitter:title" content="Content Title">
+  <meta name="twitter:description" content="Content description less than 200 characters">
+  <meta name="twitter:image" content="https://example.com/image.jpg">
+  <link href='//fonts.googleapis.com' rel='dns-prefetch' crossorigin/>
+  <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' crossorigin/>
+  <link href='//fonts.googleapis.com' rel='preconnect' crossorigin/>
+  <link href='//cdnjs.cloudflare.com' rel='preconnect' crossorigin/>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800|Ubuntu:400,700|Montserrat:300,400,400i,500,600,700,900"
+    rel="stylesheet">
+  <!-- <link rel="stylesheet" href="stylesheets/app.css"> -->
+  <link rel="preload" media="screen" href="stylesheets/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="stylesheets/app.css">
+  </noscript>
+  <script>
+    /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    /* This file is meant as a standalone workflow for
+    - testing support for link[rel=preload]
+    - enabling async CSS loading in browsers that do not support rel=preload
+    - applying rel preload css once loaded, whether supported or not.
+    */
+    (function (w) {
+      "use strict";
+      // rel=preload support test
+      if (!w.loadCSS) {
+        w.loadCSS = function () {};
+      }
+      // define on the loadCSS obj
+      var rp = loadCSS.relpreload = {};
+      // rel=preload feature support test
+      // runs once and returns a function for compat purposes
+      rp.support = (function () {
+        var ret;
+        try {
+          ret = w.document.createElement("link").relList.supports("preload");
+        } catch (e) {
+          ret = false;
+        }
+        return function () {
+          return ret;
+        };
+      })();
+
+      // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+      // then change that media back to its intended value on load
+      rp.bindMediaToggle = function (link) {
+        // remember existing media attr for ultimate state, or default to 'all'
+        var finalMedia = link.media || "all";
+
+        function enableStylesheet() {
+          link.media = finalMedia;
+        }
+
+        // bind load handlers to enable media
+        if (link.addEventListener) {
+          link.addEventListener("load", enableStylesheet);
+        } else if (link.attachEvent) {
+          link.attachEvent("onload", enableStylesheet);
+        }
+
+        // Set rel and non-applicable media type to start an async request
+        // note: timeout allows this to happen async to let rendering continue in IE
+        setTimeout(function () {
+          link.rel = "stylesheet";
+          link.media = "only x";
+        });
+        // also enable media after 3 seconds,
+        // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+        setTimeout(enableStylesheet, 3000);
+      };
+
+      // loop through link elements in DOM
+      rp.poly = function () {
+        // double check this to prevent external calls from running
+        if (rp.support()) {
+          return;
+        }
+        var links = w.document.getElementsByTagName("link");
+        for (var i = 0; i < links.length; i++) {
+          var link = links[i];
+          // qualify links to those with rel=preload and as=style attrs
+          if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
+            // prevent rerunning on link
+            link.setAttribute("data-loadcss", true);
+            // bind listeners to toggle media back
+            rp.bindMediaToggle(link);
+          }
+        }
+      };
+
+      // if unsupported, run the polyfill
+      if (!rp.support()) {
+        // run once at least
+        rp.poly();
+
+        // rerun poly on an interval until onload
+        var run = w.setInterval(rp.poly, 500);
+        if (w.addEventListener) {
+          w.addEventListener("load", function () {
+            rp.poly();
+            w.clearInterval(run);
+          });
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", function () {
+            rp.poly();
+            w.clearInterval(run);
+          });
+        }
+      }
+
+
+      // commonjs
+      if (typeof exports !== "undefined") {
+        exports.loadCSS = loadCSS;
+      } else {
+        w.loadCSS = loadCSS;
+      }
+    }(typeof global !== "undefined" ? global : this));
+
+  </script>
+  <link rel="stylesheet" media="print" href="stylesheets/print.css">
+  {% block head %}{% endblock %}
+</head>
+
+<body {% block bodyClass %}{% endblock %}>
+  <div id="wrapper">
+    {% block header %}
+    {% include "modules/global/header.html" %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block
+    footer %}
+    {% include "modules/global/footer.html" %}
+    {% include "modules/global/no-script.html" %}
+     {% endblock %} {%
+    block javascript %}
+    {% include "modules/global/javascript.html" %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>
+<!-- end footer -->

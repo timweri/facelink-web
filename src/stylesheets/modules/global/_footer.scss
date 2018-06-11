@@ -1,0 +1,28 @@
+#footer {
+  padding-top: 80px;
+  background-color: $gray-300;
+}
+
+.footer-item-col {
+  //css
+}
+
+.footer-menu {
+  margin-bottom: 50px;
+  li {
+    margin-bottom: 10px;
+    line-height: (20/14)+em;
+  }
+}
+
+.footer-copyright {
+  font-size: rem(10);
+  margin-bottom: 0;
+  padding: 15px 0;
+  a {
+    color: inherit;
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
