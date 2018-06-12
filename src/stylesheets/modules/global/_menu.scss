@@ -19,6 +19,10 @@
   }
 }
 
+#header-logo {
+  @include sizeEx(110px, auto);
+}
+
 .cart-badge {
   @include position(absolute, $top: -20px, $right: 15px);
   display: flex;
@@ -68,7 +72,7 @@
 
 .menu-wrap-inner {
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding-bottom: 64px;
 }
 
@@ -76,6 +80,10 @@
   @extend .navbar-nav;
   padding: 0;
   width: 295px;
+
+  .active {
+    color: $orange;
+  }
 
   > li {
     font-size: rem(26px);
@@ -215,6 +223,10 @@
     @include position(initial, $top: unset, $right: unset);
     background-color: transparent;
     justify-content: flex-end;
+  }
+
+  #header-logo {
+    @include sizeEx(120px, auto);
   }
 
   .menu-wrap-outer {
