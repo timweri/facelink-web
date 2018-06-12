@@ -47,20 +47,16 @@ $red:     #f15e2d !default;
 $orange:  #f9a13e !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
-$sickly-yellow: #c6da4e !default;
-$azure:   #00a8e2 !default;
-$robin-s-egg-blue: #9ddbf5 !default;
-$apricot: #ffc66e !default;
+$color-c6: #c6da4e !default;
+$color-00:   #00a8e2 !default;
+$color-9d: #9ddbf5 !default;
+$color-ff: #ffc66e !default;
 
 $colors: (
   red: $red,
   orange: $orange,
   yellow: $yellow,
   green: $green,
-  sickly-yellow: $sickly-yellow,
-  azure: $azure,
-  robin-s-egg-blue: $robin-s-egg-blue,
-  apricot: $apricot,
   white: $white,
   gray: $gray-600,
   gray-dark: $gray-800
@@ -70,7 +66,6 @@ $theme-colors: (
   primary: $orange,
   secondary: $gray-600,
   success: $green,
-  sickly-yellow: $sickly-yellow,
   danger: $red,
   light: $gray-100,
   dark: $gray-800
