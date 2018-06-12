@@ -68,7 +68,7 @@
 
 .menu-wrap-inner {
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding-bottom: 64px;
 }
 
@@ -76,6 +76,10 @@
   @extend .navbar-nav;
   padding: 0;
   width: 295px;
+
+  .active {
+    color: $orange;
+  }
 
   > li {
     font-size: rem(26px);
