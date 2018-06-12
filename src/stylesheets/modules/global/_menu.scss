@@ -5,11 +5,33 @@
     list-style: none;
   }
 
-  @include position($type: fixed, $right: 0, $top :0);
+  @include position($type: fixed, $right: 0, $top: 0);
   background-color: $menu-gray;
 
   li {
     color: $black;
+  }
+
+}
+
+.cart-btn {
+  display: flex !important;
+  align-items: center;
+
+  i {
+    padding: 0 28px;
+  }
+}
+
+.navbar-social {
+  padding: 53px 0;
+
+  > li {
+    float: left;
+    padding: 0 15px;
+    a {
+      color: $black;
+    }
   }
 }
 
@@ -27,22 +49,18 @@
   ul {
     padding-left: 0;
   }
-  .row>ul,
+  .row > ul,
   .menu-child {
     padding-left: 15px;
   }
-  >li {
+  > li {
     font-size: rem(26px);
     font-weight: bold;
     text-transform: uppercase;
     border-top: solid 1px $border-gray;
-    >a {
+    > a {
       padding: 34px 15px 34px 20px;
       color: $black;
-
-      &:hover {
-        color: lighten($black, 50);
-      }
     }
   }
   li {
@@ -65,7 +83,7 @@
   .main-menu-dropdown {
     display: block;
   }
-  >.nav-item-arrows {
+  > .nav-item-arrows {
     transform: rotate(180deg);
     transform-origin: center;
   }
@@ -102,10 +120,12 @@
     display: none;
   }
   .is-open-menu-child {
+
     .menu-child {
       display: block;
     }
     .nav-item-arrows {
+
       transform: rotate(180deg);
       transform-origin: center;
     }
@@ -117,31 +137,36 @@
   padding: 0;
   cursor: pointer;
   z-index: 9999;
+
   .icon-bar {
     display: block;
-    width: 34px;
-    height: 3px;
+    @include sizeEx(34px, 3px);
     background: $white;
     position: relative;
     margin-left: auto;
-    +.icon-bar {
+    + .icon-bar {
       margin-top: 7px;
     }
   }
+
   &.is-open-menu {
+    position: fixed;
+    @include position($top: 20px, $right: 10px);
+
     .icon-bar {
       background: $black;
-      border-width: 2px ;
+      border-width: 2px;
+
       &:first-child {
         transform: rotate(45deg);
         transform-origin: top left;
-        top: -3px;
-        left: 3px;
-
+        @include position($top: -3px, $left: 3px);
       }
+
       &:nth-child(2) {
         opacity: 0;
       }
+
       &:nth-child(3) {
         transform: rotate(-46deg);
         transform-origin: left top;
@@ -152,7 +177,7 @@
 }
 
 .nav-item-arrows {
-  @include position( absolute, 0, -8px, null, null, 1);
+  @include position(absolute, 0, -8px, null, null, 1);
   color: inherit;
   font-size: 1em;
   padding: 16px;
@@ -162,19 +187,33 @@
 // min-width 768px
 @include media-breakpoint-up(lg) {
   #main-menu {
-    position: initial;
-    top: unset;
-    right: unset;
+    @include position(initial, $top: unset, $right: unset);
+    background-color: transparent;
+
+    .icomoon {
+      font-size: rem(25);
+      line-height: 0;
+    }
+  }
+
+  .menu-wrap {
+    padding: 0;
   }
 
   .main-menu-ul {
     padding: 0;
-    >li {
-      text-transform: uppercase;
+    @include sizeEx(auto, auto);
+
+    > li {
       font-size: 1em;
-      >a {
+      border-top: none;
+      > a {
         padding: 18px 15px;
         color: $white;
+
+        &:hover {
+          color: $orange;
+        }
       }
       &:hover {
         .main-menu-dropdown {
@@ -201,11 +240,15 @@
   .navbar {
     position: static;
   }
+
+  .navbar-social {
+    display: none;
+  }
 }
 
 @include media-breakpoint-up(xl) {
-  .main-menu-ul>li {
-    >a {
+  .main-menu-ul > li {
+    > a {
       padding: 22px 25px;
     }
   }
