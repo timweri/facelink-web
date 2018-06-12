@@ -1,10 +1,7 @@
-module.exports = [
-  {
+module.exports = {
     title: 'Banner 1',
-    intro: 'Short banner 1 dest'
-  },
-  {
-    title: 'Banner 2',
-    intro: 'Short banner 2 dest'
+    background_image: 'images/banner.jpg',
+    position_background_image: 'top center',
+    icon_green: true,
+    production_image: 'images/'
   }
-]
