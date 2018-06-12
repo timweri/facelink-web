@@ -1,27 +1,49 @@
 #footer {
-  padding-top: 80px;
+  padding-top: 20px;
   background-color: $black;
+  .container {
+    padding: 0;
+  }
 }
-
+#logo-footer {
+  width: 86px;
+  margin: 0 auto 40px;
+}
+.footer-top {
+  padding: 0 15px;
+}
 .footer-item-col {
+  color: $white;
   h5 {
     @include font($industry, 14px, $white, 700);
     @extend .text-uppercase;
-    line-height: 1.2;
-    margin-bottom: 28px;
+    line-height: 1.8;
+    margin-bottom: 18px;
   }
   a {
     letter-spacing: 1.1px;
-    line-height: 1.2;
+    line-height: 1.8;
     vertical-align: top;
+  }
+  .social {
+    @extend .text-md-right;
+    position: relative;
+    top: -2px;
+    margin: 0;
+    padding: 0;
+    li {
+      &:last-child {
+        padding-right: 0;
+      }
+    }
   }
 }
 
 .footer-menu {
   margin-bottom: 50px;
   li {
-    margin-bottom: 28px;
-    line-height: 1.2;
+    margin-bottom: 18px;
+    line-height: 1.8;
   }
   a {
     @include font(null, 14px, $border-gray);
@@ -32,11 +54,70 @@
 .footer-copyright {
   font-size: rem(10);
   margin-bottom: 0;
-  padding: 15px 0;
+  .text-center {
+    border-top: 1px solid $border-gray;
+    padding: 31px 15px 25px;
+  }
+  p {
+    @include font(null, 13px, $border-gray);
+    margin: 0;
+    line-height: 1.54;
+    letter-spacing: 1px;
+  }
   a {
     color: inherit;
     &:hover {
       color: $link-color;
+    }
+  }
+}
+.cont-footer {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  .col-logo,
+  .col-menu {
+    padding: 0 15px;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+@include media-breakpoint-up(md) {
+  #footer {
+    .container {
+      padding: 0 15px;
+    }
+  }
+  .footer-top {
+    padding: 0;
+  }
+}
+@include media-breakpoint-up(lg) {
+  #footer {
+    padding-top: 65px;
+  }
+  .footer-copyright {
+    padding: 0 15px;
+    .text-center {
+      padding: 35px 0 46px;
+    }
+  }
+  #logo-footer {
+    margin: 0;
+  }
+  .cont-footer {
+    .col-logo {
+      max-width: 20%;
+      flex: 0 0 20%;
+    }
+    .col-menu {
+      max-width: 80%;
+      flex: 0 0 80%;
+    }
+  }
+  .footer-item-col {
+    .social {
+      text-align: right;
     }
   }
 }
