@@ -19,6 +19,7 @@
   >li {
     font-size: 1.3em;
     text-transform: uppercase;
+    color: $white;
     >a {
       padding: 15px 0;
     }
@@ -99,7 +100,7 @@
     display: block;
     width: 34px;
     height: 3px;
-    background: #1d2330;
+    background: $white;
     position: relative;
     margin-left: auto;
     +.icon-bar {
@@ -108,6 +109,7 @@
   }
   &.is-open-menu {
     .icon-bar {
+      background: $black;
       &:first-child {
         transform: rotate(45deg);
         transform-origin: top left;
@@ -175,6 +177,19 @@
   .main-menu-ul>li {
     >a {
       padding: 22px 25px;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #main-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 50px;
+
+    li {
+      color: $black;
     }
   }
 }

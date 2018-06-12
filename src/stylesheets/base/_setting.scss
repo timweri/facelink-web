@@ -28,6 +28,8 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:  #171717 !default;
+$border-gray: #909090 !default;
+$menu-gray: #f0f0f0 !default;
 
 $grays: (
   100: $gray-100,
@@ -107,7 +109,7 @@ $enable-print-styles:       true !default;
 // Components
 
 $border-width: 1px !default;
-$border-color: $gray-200 !default;
+$border-color: $border-gray !default;
 $border-radius:          0 !default;
 $caret-width:            .3em !default;
 $transition-base:        all .2s ease-in-out !default;

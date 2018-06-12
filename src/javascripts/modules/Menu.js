@@ -22,17 +22,7 @@ const Menu = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this.header = $('#header, #main-menu-mobile')
-      this.menuBar = '.hamburger-menu'
-      this.li = $('.main-menu-ul >li')
-      this.liLeve2 = $('.main-menu-ul .main-menu-dropdown li')
-      this.liAll = $('.main-menu-ul li')
-      this.dropDowmArrow = $('.main-menu-ul .nav-item-arrows')
-      this.dropDowmMenu = $('.dropdown-menu')
       this.openMainMenu()
-      this.clickArowOpenDropdownMenuLeve1()
-      this.clickLiOpenDropdownMenuLeve1()
-      this.clickArowOpenDropdownMenuLeve2()
-      this.clickLiOpenDropdownMenuLeve2()
     }
     // public api
     static get Default () {
@@ -46,62 +36,6 @@ const Menu = (($) => {
           $(this._config.elementItem).removeClass('is-open-menu')
         } else {
           $(this._config.elementItem).addClass('is-open-menu')
-        }
-      })
-    }
-
-    clickArowOpenDropdownMenuLeve1 () {
-      this.li.on('click', '> .nav-item-arrows', (e) => {
-        const ele = e.currentTarget
-        const eleParent = $(ele).parent()
-        if (eleParent.find('ul').length && !eleParent.hasClass('is-open-child')) {
-          this.liAll.removeClass('is-open-child')
-          eleParent.addClass('is-open-child')
-        } else {
-          eleParent.removeClass('is-open-child')
-        }
-      })
-    }
-
-    clickLiOpenDropdownMenuLeve1 () {
-      this.li.on('click', '>a', (e) => {
-        const ele = e.currentTarget
-        const eleParent = $(ele).parent()
-        if ($(window).width() < 992) {
-          if (eleParent.find('ul').length && !eleParent.hasClass('is-open-child')) {
-            this.li.removeClass('is-open-child')
-            eleParent.addClass('is-open-child')
-            return false
-          }
-        }
-      })
-    }
-
-    clickArowOpenDropdownMenuLeve2 () {
-      this._element.find('.main-menu-ul').on('click', '.nav-item-arrows', (e) => {
-        const ele = e.currentTarget
-        const eleParent = $(ele).parent()
-        if ($(window).width() < 992) {
-          if (eleParent.find('.menu-child').length && !eleParent.hasClass('is-open-menu-child')) {
-            eleParent.addClass('is-open-menu-child')
-          } else {
-            eleParent.addClass('is-open-menu-child')
-            eleParent.removeClass('is-open-menu-child')
-          }
-        }
-      })
-    }
-
-    clickLiOpenDropdownMenuLeve2 () {
-      this.liLeve2.on('click', '>a', (e) => {
-        const ele = e.currentTarget
-        const eleParent = $(ele).parent()
-        if ($(window).width() < 992) {
-          if (eleParent.find('ul').length && !eleParent.hasClass('is-open-menu-child')) {
-            this.li.removeClass('is-open-menu-child')
-            eleParent.addClass('is-open-menu-child')
-            return false
-          }
         }
       })
     }

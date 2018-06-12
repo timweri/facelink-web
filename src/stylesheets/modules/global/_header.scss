@@ -1,7 +1,7 @@
 #header {
   @include position(fixed, 0, 0, null, 0, 9999);
   @extend %add-tr;
-  background-color: $gray-200;
+  background-color: $black;
   &.pin-header {
     box-shadow: 2px 9px 18px -6px rgba(0, 0, 0, .22);
   }
@@ -31,11 +31,6 @@
   html.is-open-menu {
     body {
       @include position(absolute, 0, 0, null, 0, null);
-    }
-    #header {
-      bottom: 0;
-      height: 100%;
-      overflow-y: auto;
     }
   }
 }
