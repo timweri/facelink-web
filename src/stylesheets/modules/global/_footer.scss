@@ -1,17 +1,31 @@
 #footer {
   padding-top: 80px;
-  background-color: $gray-300;
+  background-color: $black;
 }
 
 .footer-item-col {
-  //css
+  h5 {
+    @include font($industry, 14px, $white, 700);
+    @extend .text-uppercase;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  a {
+    letter-spacing: 1.1px;
+    line-height: 1.2;
+    vertical-align: top;
+  }
 }
 
 .footer-menu {
   margin-bottom: 50px;
   li {
-    margin-bottom: 10px;
-    line-height: (20/14)+em;
+    margin-bottom: 28px;
+    line-height: 1.2;
+  }
+  a {
+    @include font(null, 14px, $border-gray);
+    text-decoration: none;
   }
 }
 
