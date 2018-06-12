@@ -20,6 +20,10 @@
       padding: 0 15px;
     }
   }
+
+  #header-logo {
+    padding: 27px 0;
+  }
 }
 
 @include media-breakpoint-down(lg) {
