@@ -1,3 +1,4 @@
 module.exports = {
-  'title': 'Home'
+  'title': 'Home',
+  frame1: require('./modules/frame1')
 }
