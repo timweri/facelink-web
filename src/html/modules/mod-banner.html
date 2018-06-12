@@ -1,4 +1,34 @@
-<section class="module mod-banner">
-  
-</section>
+{# set banner_data to the data object before including #}
+{# e.g. {% set banner_data = banner_shop %} #}
 
+<section class="module mod-banner">
+  <div class="banner-background" style="background-image: url({{ banner_data.background_image }});
+                                        background-position: {{ banner_data.position_background_image }};">
+    <div class="d-table">
+      <div class="d-table-cell align-middle">
+        <div class="container">
+          <div class="banner-content">
+            <h1>
+              {{ banner_data.title }}
+            </h1>
+            {% if banner_data.button_text %}
+              <a class="btn btn-primary" href="{{ banner_data.button_link }}">
+                {{ banner_data.button_text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if banner_data.icon_green %}
+      <div class="green-kite {% if banner_data.product_image %}d-none d-lg-inline-block{% endif %}"></div>
+    {% endif %}
+    {% if banner_data.product_image %}
+      <div class="product-box-outer container">
+        <div class="product-box-inner">
+          <img src="{{ banner_data.product_image }}">
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
