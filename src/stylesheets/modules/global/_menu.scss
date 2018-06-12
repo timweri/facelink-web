@@ -5,21 +5,24 @@
     list-style: none;
   }
 
-  position: fixed;
-  right: 0;
-  top: 0;
+  @include position($type: fixed, $right: 0, $top :0);
+  background-color: $menu-gray;
 
   li {
     color: $black;
   }
 }
 
+.menu-wrap {
+  padding-top: 64px;
+}
+
 .main-menu-ul {
   @extend .navbar-nav;
 
-  background-color: $menu-gray;
-  padding: 64px 0 0 0;
-  width: 295px;
+  overflow-y: auto;
+  padding-bottom: 64px;
+  @include sizeEx(295px, 100vh);
 
   ul {
     padding-left: 0;
@@ -128,11 +131,13 @@
   &.is-open-menu {
     .icon-bar {
       background: $black;
+      border-width: 2px ;
       &:first-child {
         transform: rotate(45deg);
         transform-origin: top left;
-        top: 5px;
-        left: 2px;
+        top: -3px;
+        left: 3px;
+
       }
       &:nth-child(2) {
         opacity: 0;
@@ -140,7 +145,7 @@
       &:nth-child(3) {
         transform: rotate(-46deg);
         transform-origin: left top;
-        top: 9px;
+        top: 1px;
       }
     }
   }
