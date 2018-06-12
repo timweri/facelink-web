@@ -4,11 +4,23 @@
     margin: 0;
     list-style: none;
   }
+
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  li {
+    color: $black;
+  }
 }
 
 .main-menu-ul {
   @extend .navbar-nav;
-  padding: 1.5em 0;
+
+  background-color: $menu-gray;
+  padding: 64px 0 0 0;
+  width: 295px;
+
   ul {
     padding-left: 0;
   }
@@ -17,11 +29,17 @@
     padding-left: 15px;
   }
   >li {
-    font-size: 1.3em;
+    font-size: rem(26px);
+    font-weight: bold;
     text-transform: uppercase;
-    color: $white;
+    border-top: solid 1px $border-gray;
     >a {
-      padding: 15px 0;
+      padding: 34px 15px 34px 20px;
+      color: $black;
+
+      &:hover {
+        color: lighten($black, 50);
+      }
     }
   }
   li {
@@ -31,7 +49,6 @@
     line-height: 1.2em;
     a {
       display: block;
-      color: inherit;
       text-decoration: none;
     }
     &:hover,
@@ -96,6 +113,7 @@
   @extend .navbar-toggler;
   padding: 0;
   cursor: pointer;
+  z-index: 9999;
   .icon-bar {
     display: block;
     width: 34px;
@@ -138,6 +156,12 @@
 
 // min-width 768px
 @include media-breakpoint-up(lg) {
+  #main-menu {
+    position: initial;
+    top: unset;
+    right: unset;
+  }
+
   .main-menu-ul {
     padding: 0;
     >li {
@@ -145,6 +169,7 @@
       font-size: 1em;
       >a {
         padding: 18px 15px;
+        color: $white;
       }
       &:hover {
         .main-menu-dropdown {
@@ -177,19 +202,6 @@
   .main-menu-ul>li {
     >a {
       padding: 22px 25px;
-    }
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  #main-menu {
-    position: fixed;
-    right: 0;
-    top: 0;
-    margin-top: 50px;
-
-    li {
-      color: $black;
     }
   }
 }
