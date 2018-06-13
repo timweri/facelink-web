@@ -1,50 +1,24 @@
----
-author: Frontend Team
-ourTeam: My Team
----
+--- author: Frontend Team ourTeam: My Team ---
 
-{% extends 'layouts/application.html' %}{% block bodyClass %}class="page-internal"{% endblock %}{% block content %}
-<main id="main-content" role="main">
-  <div class="space-80"></div>
+{% extends 'layouts/application.html' %}
+{% block bodyClass %}class="page-internal"{% endblock %}
+{% block content %}
+  <main id="main-content" role="main">
+    <div class="space-80"></div>
 
-  {% set banner_data = banner_shop %}
-  {% include "modules/mod-banner.html"%}
-
-  <div class="container">
+    {% set banner_data = banner_shop %}
+    {% include "modules/mod-banner.html"%}
     {% include "modules/mod-form-contact.html" %}
-    <h1>{{ author }} {{ ourTeam }}</h1>
-		<h2>Headline style h2 </h2>
-		<h3>Headline <a href="#">style H3</a></h3>
-		<h4>Headline style H4</h4>
-		<h5>Headline style H5</h5>
-    <h6>Headline style H6</h6>
-    <ul>
-      <li>provide specific training and certifications to tower
-        <a href="#">climbers and managers in the field</a>
-      </li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-    </ul>
-    <ol>
-      <li>provide specific training and certifications to tower
-        <a href="#">climbers and managers in the field</a>
-      </li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-      <li>provide specific training and certifications to tower climbers and managers in the field</li>
-    </ol>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries
-    </p>
-    <div class="bg-primary color-white card-body">
-      <h1>{{ author }} {{ ourTeam }}</h1>
-      <h2>Headline style h2 </h2>
-      <h3>Headline <a href="#">style H3</a></h3>
+    {% include "modules/mod-infor-contact.html" %}
+
+    <div class="container">
+      <h1>{{ author }}
+        {{ ourTeam }}</h1>
+      <h2>Headline style h2
+      </h2>
+      <h3>Headline
+        <a href="#">style H3</a>
+      </h3>
       <h4>Headline style H4</h4>
       <h5>Headline style H5</h5>
       <h6>Headline style H6</h6>
@@ -67,26 +41,56 @@ ourTeam: My Team
         <li>provide specific training and certifications to tower climbers and managers in the field</li>
       </ol>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-        book. It has survived not only five centuries
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
       </p>
+      <div class="bg-primary color-white card-body">
+        <h1>{{ author }}
+          {{ ourTeam }}</h1>
+        <h2>Headline style h2
+        </h2>
+        <h3>Headline
+          <a href="#">style H3</a>
+        </h3>
+        <h4>Headline style H4</h4>
+        <h5>Headline style H5</h5>
+        <h6>Headline style H6</h6>
+        <ul>
+          <li>provide specific training and certifications to tower
+            <a href="#">climbers and managers in the field</a>
+          </li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        </ul>
+        <ol>
+          <li>provide specific training and certifications to tower
+            <a href="#">climbers and managers in the field</a>
+          </li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+          <li>provide specific training and certifications to tower climbers and managers in the field</li>
+        </ol>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+        </p>
+      </div>
+      <div class="space-50"></div>
+      <p>
+        <a href="#" class="btn btn-primary">Default Large CTA</a>
+      </p>
+      <p>
+        <a href="#" class="btn btn-danger ">Default Large CTA</a>
+      </p>
+      <p>
+        <a href="#" class="btn btn-info">Default btn</a>
+      </p>
+      <div class="lazyload-image">
+        <img src="images/ajax-loader.svg" data-src="images/img.jpg" alt="Image description"/>
+      </div>
+      <div class="space-50"></div>
     </div>
-    <div class="space-50"></div>
-    <p>
-      <a href="#" class="btn btn-primary">Default Large CTA</a>
-    </p>
-    <p>
-      <a href="#" class="btn btn-danger ">Default Large CTA</a>
-    </p>
-    <p>
-      <a href="#" class="btn btn-info">Default btn</a>
-    </p>
-    <div class="lazyload-image">
-      <img src="images/ajax-loader.svg" data-src="images/img.jpg" alt="Image description" />
-    </div>
-    <div class="space-50"></div>
-  </div>
-  {% include "modules/mod-cta.html" %}
-</main>
+    {% include "modules/mod-cta.html" %}
+  </main>
 {% endblock %}

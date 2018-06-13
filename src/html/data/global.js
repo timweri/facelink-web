@@ -6,5 +6,6 @@ module.exports = {
   banner_faq: require('./modules/faq'),
   banner_media: require('./modules/banner-media'),
   banner_story: require('./modules/banner-story'),
-  cta: require('./modules/cta')
+  cta: require('./modules/cta'),
+  infor_contact: require('./modules/infor-contact')
 }
