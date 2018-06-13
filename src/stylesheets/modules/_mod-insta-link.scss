@@ -7,8 +7,10 @@
     position: relative;
     
     a {
+        @include position(absolute,0,0,0,0);
         text-decoration: none;
         color: $white;
+        z-index: 1;
     }
 
     .hover-overlay {
