@@ -9,17 +9,24 @@
       </div>
     </div>
   </div>
+  <div class="rotate-image"></div>
+  <div class="bg-blue"></div>
   <div class="cont-frame2">
-    <div class="rotate-image"></div>
-    <div class="list-item-frame2">
-      {% for item in frame2.list_icon %}
-        <div class="item">
-          <div class="icon">
-            <img src="{{item.icon}}" alt="{{item.icon}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-list-frame2">
+          <div class="list-item-frame2">
+            {% for item in frame2.list_icon %}
+              <div class="item">
+                <div class="icon">
+                  <img src="{{item.icon}}" alt="{{item.icon}}">
+                </div>
+                <span>{{ item.icon_title }}</span>
+              </div>
+            {% endfor %}
           </div>
-          <span>{{ item.icon_title }}</span>
         </div>
-      {% endfor %}
+      </div>
     </div>
   </div>
 </section>

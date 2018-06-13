@@ -42,7 +42,7 @@ const FullPage = (($) => {
         navigation: false,
         css3: true,
         scrollingSpeed: 800,
-        responsiveHeight: 330,
+        responsiveHeight: 100,
         dragAndMove: true,
         lockAnchors: true
       })
