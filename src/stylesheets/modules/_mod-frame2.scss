@@ -1,0 +1,8 @@
+.section-frame2 {
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.subhead-frame2 {
+  @include position(absolute, 20%, null, null, 0);
+}

@@ -4,5 +4,6 @@ module.exports = {
   button_text: 'SHOP NOW',
   button_link: '#',
   image: 'images/girl-image.png',
-  image_product: ''
+  image_product: 'images/product.png',
+  product: 'images/product.png'
 }
