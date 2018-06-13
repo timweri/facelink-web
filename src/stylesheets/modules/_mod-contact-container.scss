@@ -1,0 +1,17 @@
+// module 'Mod Contact Container'
+.mod-contact-container {
+  // scss
+  .info-contact {
+    margin-bottom: 42px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-contact-container {
+    margin-top: 100px;
+
+    .form-contact {
+      @include position(relative, $top:-200px);
+    }
+  }
+}
