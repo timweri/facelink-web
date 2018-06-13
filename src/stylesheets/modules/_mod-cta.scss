@@ -1,0 +1,38 @@
+.mod-cta {
+    position: relative;
+    background-image: url('/images/cta-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    height: 300px;
+
+    .container {
+        padding-top: 70px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    .form-control {
+        background-color: $white;
+        height: 54px;
+        color: $black;
+        padding-right: 120px;
+    }
+
+    .btn {
+        position: absolute;
+        padding: 0 20px;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+#ctaForm {
+    position: relative;
+    display: inline-block;
+    max-width: 380px;
+    width: 100%;
+}
