@@ -28,7 +28,7 @@
           display: block;
           font-weight: bold;
           font-size: 18px;
-          transform: translateY(5px);
+          transform: translateY(-2px);
           cursor: text;
           transition: 0.25s all;
           
@@ -51,6 +51,7 @@
         border: none;
         border-bottom: solid 2px $white;
         z-index: 0;
+        padding-bottom: 30px;
       
         &:focus {
           border-bottom: solid 4px $white;
