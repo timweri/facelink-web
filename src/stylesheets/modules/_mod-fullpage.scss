@@ -1,12 +1,42 @@
-.mod-fullpage {
-  padding-top: 93px;
+#fullpage {
   h1,
   h2 {
     @extend .text-uppercase;
     font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+  h2,
+  .h2 {
+    @include font(null, 30px, $white);
   }
   h3 {
-    letter-spacing: 1.4px;
+    @include font($font-family-base, null, $white, 400);
+    letter-spacing: 1.2px;
     font-size: 16px;
+  }
+  .section-frame1 {
+    h3 {
+      color: $black;
+    }
+  }
+  .btn {
+    padding: 0 21px;
+  }
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  padding-top: 63px;
+}
+@include media-breakpoint-up(lg) {
+  section {
+    padding-top: 93px;
+  }
+  #fullpage {
+    h3 {
+      letter-spacing: 1.4px;
+    }
   }
 }

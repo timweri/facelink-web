@@ -1,0 +1,79 @@
+.section-frame2 {
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.subhead-frame2 {
+  width: 100%;
+  padding-top: 70px;
+  h2 {
+    @extend .text-center;
+    @extend .text-lg-left;
+    padding: 16px 0;
+    display: inline-block;
+    position: relative;
+    &::before {
+      @include position(absolute, 0, 0, null, null);
+      @include sizeEx(100%, 100%);
+      content: "";
+      display: block;
+      background: $black;
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+.title-frame2 {
+  margin: 0 -15px;
+}
+.cont-frame2 {
+  max-width: 280px;
+  margin: 0 auto;
+}
+.list-item-frame2 {
+  @extend .text-uppercase;
+  .item {
+    @extend .d-flex;
+  }
+  .icon {
+    width: 36px;
+    margin: 0 13px;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  span {
+    padding-left: 20px;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .section-frame2 {
+    background: $blue !important;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .subhead-frame2 {
+    @include position(absolute, 20%, null, null, 0);
+    width: 100%;
+    padding-top: 0;
+    h2 {
+      padding: 16px 34px 16px 0;
+      &::before {
+        @include position(absolute, 0, 0, null, null);
+        @include sizeEx(2000%, 100%);
+        content: "";
+        display: block;
+        background: $black;
+      }
+    }
+  }
+  .subhead-frame2-title {
+    padding-left: 67px;
+  }
+  .title-frame2 {
+    margin: 0;
+  }
+}

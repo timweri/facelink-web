@@ -5,9 +5,76 @@
 }
 .cont-frame1 {
   max-width: 395px;
-  padding: 0 15px;
+  margin-left: auto;
+  h1 {
+    span {
+      white-space: nowrap;
+    }
+  }
+  h3 {
+    @extend .text-right;
+    @extend .text-lg-left;
+    margin-bottom: 25px;
+  }
+  .btn {
+    margin-top: 30px;
+  }
 }
 .cont-frame1-primary {
   max-width: 230px;
   margin-left: auto;
 }
+.col-frame1 {
+  @extend .col-md-6;
+  padding: 0;
+}
+.image-frame1 {
+  @include position(absolute, 21%, null, null, -65%);
+  width: 172%;
+  opacity: .8;
+}
+.frame1-container {
+  @include position(relative, 0, null, null, 0);
+  padding-top: 62px;
+  .row {
+    @extend .justify-content-md-end;
+    margin: 0;
+  }
+}
+.img-production-frame1 {
+  max-width: 272px;
+  margin: 130px 0 0 auto;
+}
+@include media-breakpoint-up(sm) {
+  .image-frame1 {
+    width: 100%;
+    max-width: 908px;
+    left: -30%;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .cont-frame1-primary {
+    max-width: none;
+    margin: 0;
+  }
+  .cont-frame1 {
+    margin: 0;
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+  .img-production-frame1 {
+    max-width: 374px;
+    margin: 20px 0 0 auto;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .img-production-frame1 {
+    margin-top: -20px;
+  }
+  .image-frame1 {
+    left: -100px;
+    top: 15%;
+  }
+}
+

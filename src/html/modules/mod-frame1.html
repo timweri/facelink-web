@@ -2,11 +2,22 @@
   <div class="image-frame1">
     <img src="{{ frame1.image }}" alt="">
   </div>
-  <div class="cont-frame1">
-    <h3>{{ frame1.subhead }}</h3>
-    <div class="cont-frame1-primary">
-      <h1>{{ frame1.title }}</h1>
-      <a href="{{ frame1.button_link }}" class="btn btn-primary" title="{{ frame1.button_text }}">{{ frame1.button_text }}</a>
+  <div class="frame1-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-frame1">
+          <div class="cont-frame1">
+            <h3>{{ frame1.subhead }}</h3>
+            <div class="cont-frame1-primary">
+              <h1>{{ frame1.title }}</h1>
+              <a href="{{ frame1.button_link }}" class="btn btn-primary" title="{{ frame1.button_text }}">{{ frame1.button_text }}</a>
+            </div>
+          </div>
+          <div class="img-production-frame1">
+            <img src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
