@@ -25,22 +25,16 @@
 
 .cart-badge {
   @include position(absolute, $top: -20px, $right: 15px);
+  @include sizeEx(18px, 18px);
   display: flex;
   justify-content: center;
   background-color: $color-c6;
-  @include sizeEx(18px, 18px);
   transform: rotate(45deg);
   z-index: -1;
-
   b {
-    color: $black;
+    @include font($os, rem(12), $black, 700);
     align-self: center;
-    font-family: $oswald;
-
     transform: rotate(-45deg);
-
-    font-size: rem(12);
-    font-weight: bold;
   }
 }
 

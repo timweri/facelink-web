@@ -13,7 +13,9 @@
     <div class="list-item-frame2">
       {% for item in frame2.list_icon %}
         <div class="item">
-          <img src="{{item.icon}}" alt="{{item.icon}}">
+          <div class="icon">
+            <img src="{{item.icon}}" alt="{{item.icon}}">
+          </div>
           <span>{{ item.icon_title }}</span>
         </div>
       {% endfor %}
