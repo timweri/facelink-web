@@ -1,18 +1,13 @@
 .form-control {
+  position: relative;
   height: 40px;
   appearance: none;
   font-weight: bold;
   font-size: 18px;
   border: none;
-  border-bottom: solid 2px $white;
-
-  &:focus {
-    border-bottom: solid 4px $white;
-  }
 }
 
 textarea.form-control {
-  height: 50px;
   resize: none;
 }
 
@@ -49,7 +44,9 @@ input:-webkit-autofill {
   color: $white;
 
   label {
+    position: relative;
     padding: 0 1.25rem;
+  
   }
 
   &.error {
