@@ -1,13 +1,14 @@
 {% from 'macros/form.html' import formBlock %}
-
 <section class="module mod-cta">
-    <div class="container">
-        <div class="cta-content">
-            {{ cta.body }}
-        </div>
-        <form id="ctaForm" name="ctaForm" method="POST" action="/api/cta">
-            {{ formBlock('', 'email', '', id='fullname', message='') }}
-            <button type="button" class="btn btn-primary">Sign up</button>
-        </form>
+  <div class="container">
+    <div class="middle-cta">
+      <div class="cta-content">
+        {{ cta.body }}
+      </div>
+      <form id="ctaForm" name="ctaForm" method="POST" action="/api/cta">
+        {{ formBlock('', 'email', '', id='fullname', message='') }}
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </form>
     </div>
+  </div>
 </section>
