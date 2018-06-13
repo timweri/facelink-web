@@ -88,4 +88,13 @@
   .title-frame2 {
     margin: 0;
   }
+  .cont-frame2 {
+   
+  }
+  .rotate-image {
+    @include position(absolute, 0, 0, null, null);
+    @include sizeEx(100%);
+    background: $blue;
+    transform: rotate(-45deg) translateX(50%) translateY(50%);
+  }
 }
