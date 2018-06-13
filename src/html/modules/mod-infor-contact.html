@@ -1,4 +1,32 @@
 <section class="module mod-infor-contact">
-  
+    <div class="container">
+        <div class="wrapper">
+            <div class="social">
+                <p>Social</p>
+                <ul>
+                    {% for site in infor_contact.social %}
+                        <li>
+                            <a rel="noopener" target="_blank" href="{{ site.link }}">
+                                {{ site.type }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if infor_contact.email %}
+                <div class="email">
+                    <p>Email</p>
+                    <a class="email-text">{{ infor_contact.email }}</a>
+                </div>
+            {% endif %}
+            {% if infor_contact.title %}
+                <div class="extra">
+                    {{ infor_contact.title }}
+                    {% if infor_contact.button.text %}
+                        <a class="btn btn-primary" href="{{ infor_contact.button.link }}">{{ infor_contact.button.text }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
 </section>
-
