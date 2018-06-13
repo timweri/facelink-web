@@ -1,69 +1,61 @@
 // module 'Mod Insta Link'
 .mod-insta-link {
-    @include font($os, rem(30), $white, 700);
-    line-height: 40px;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    position: relative;
-    
-    a {
-        @include position(absolute,0,0,0,0);
-        text-decoration: none;
-        color: $white;
-        z-index: 1;
-    }
-
-    .hover-overlay {
-        @include position(absolute, $top: 0, $left: 0);
-        @include sizeEx(100%);
-        background-color: rgba($black, .7);
-        opacity: 1;
-    }
-
-    .d-table {
-        @include sizeEx(100%);
-    }
-
-    .d-table-cell {
-        text-align: center;
-    }
-
-    .icomoon {
-        font-size: rem(35);
-    }
+  @include font($os, rem(30), $white, 700);
+  line-height: 40px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  position: relative;
+  a {
+    @include position(absolute, 0, 0, 0, 0);
+    text-decoration: none;
+    color: $white;
+    z-index: 1;
+  }
+  .hover-overlay {
+    @include position(absolute, $top: 0, $left: 0);
+    @include sizeEx(100%);
+    background-color: rgba($black, .7);
+    opacity: 1;
+  }
+  .d-table {
+    @include sizeEx(100%);
+  }
+  .d-table-cell {
+    text-align: center;
+  }
+  .icomoon {
+    font-size: rem(35);
+  }
 }
 
 .insta-link-wrap {
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 @include media-breakpoint-up(lg) {
-    .mod-insta-link {
-        line-height: 75px;
-
-        p {
-            font-size: rem(36);
-        }
-
-        .icomoon {
-            font-size: rem(62);
-        }
+  .mod-insta-link {
+    line-height: 75px;
+    p {
+      font-size: rem(36);
     }
+    .icomoon {
+      font-size: rem(62);
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
-    .mod-insta-link {
-        .hover-overlay {
-            transition: 0.25s;
-            opacity: 0;
-        }
-
-        &:hover {    
-            .hover-overlay {
-                opacity: 1;
-            }
-        }
+  .mod-insta-link {
+    .hover-overlay {
+      transition: .25s;
+      opacity: 0;
     }
+    &:hover {
+      .hover-overlay {
+        opacity: 1;
+      }
+    }
+  }
 }
