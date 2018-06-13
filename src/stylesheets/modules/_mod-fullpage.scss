@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   padding-top: 63px;
+  overflow: hidden;
   h1,
   h2 {
     @extend .text-uppercase;
