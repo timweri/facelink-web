@@ -26,7 +26,6 @@ const FullPage = (($) => {
     constructor (element, config) {
       this._element = $(element)
       this._config = this._getConfig(config)
-      this.fullPage = $('#fullpage')
       this.footer = $('#footer')
       this.header = $('#header')
       this.cta = $('.mod-cta')
@@ -40,21 +39,60 @@ const FullPage = (($) => {
     }
     onResizeWindow () {
       this.setHeightCTA()
+      this.fullPageHome()
     }
    
     fullPageHome() {
-      this.fullPage.fullpage({
-        navigation: false,
-        css3: true,
-        scrollingSpeed: 800,
-        responsiveHeight: 100,
-        dragAndMove: true,
-        lockAnchors: true
-      })
+      let $fullPage = this._element
+      let scroll = window.innerWidth - document.documentElement.clientWidth
+      let winW = document.documentElement.clientWidth
+
+      function initFullPage() {
+        $fullPage.fullpage({
+          navigation: false,
+          css3: true,
+          scrollingSpeed: 800,
+          responsiveHeight: 100,
+          dragAndMove: true,
+          lockAnchors: true
+        })
+      }
+      function destroyFullPage() {
+        $.fn.fullpage.destroy('all');
+      }
+      if (scroll > 0) {
+        if ((winW + scroll) <= 992) {
+          if ($fullPage.find('.fp-section').length) {
+            setTimeout(function () {
+              destroyFullPage()
+            }, 300)
+          }
+        } else {
+          if ($fullPage.find('.fp-section').length) {
+
+          } else {
+            initFullPage()
+          }
+        }
+      } else {
+        if (winW <= 992) {
+          if ($fullPage.find('.fp-section').length) {
+            setTimeout(function () {
+              destroyFullPage()
+            }, 300)
+          }
+        } else {
+          if ($fullPage.find('.fp-section').length) {
+
+          } else {
+            initFullPage()
+          }
+        }
+      }
     }
 
     setHeightCTA() {
-      if(this.fullPage.length) {
+      if(this._element.length) {
         let $FooterHeight = this.footer.innerHeight()
         let $windowHeight = $(window).height()
         let $headerHeight = this.header.innerHeight()
