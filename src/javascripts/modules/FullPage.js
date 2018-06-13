@@ -27,14 +27,19 @@ const FullPage = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this.fullPage = $('#fullpage')
+      this.footer = $('#footer')
+      this.header = $('#header')
+      this.cta = $('.mod-cta')
       this.fullPageHome()
+      this.setHeightCTA()
+      $(window).resize(this.onResizeWindow.bind(this))
     }
     // public api
     static get Default () {
       return Default
     }
     onResizeWindow () {
-     
+      this.setHeightCTA()
     }
    
     fullPageHome() {
@@ -46,6 +51,15 @@ const FullPage = (($) => {
         dragAndMove: true,
         lockAnchors: true
       })
+    }
+
+    setHeightCTA() {
+      if(this.fullPage.length) {
+        let $FooterHeight = this.footer.innerHeight()
+        let $windowHeight = $(window).height()
+        let $headerHeight = this.header.innerHeight()
+        this.cta.css('height', $windowHeight - $FooterHeight - $headerHeight)
+      }
     }
    
     _getConfig (config) {
