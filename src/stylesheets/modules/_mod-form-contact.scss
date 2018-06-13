@@ -1,72 +1,68 @@
 .mod-form-contact {
-    position: relative;
-    background-color: $orange;
-    padding: 50px 20px 80px 20px;
-
-    h2 {
-        text-align: center;
-        color: $white;
-    }
-
-    .btn-form-wrap {
-        width: 100%;
-        margin-top: 50px;
-        text-align: center;
-    }
-
-    .btn {
-        display: inline-block;
-    }
-
-    .form-group {
-        color: $white;
-        padding: 50px 0;
-      
-        label {
-          position: absolute;
-          z-index: 1;
-          display: block;
-          font-weight: bold;
-          font-size: 18px;
-          transform: translateY(-2px);
-          cursor: text;
-          transition: 0.25s all;
-          
-          &.up {
-            cursor: none;
-            font-weight: normal;
-            font-size: 15px;
-            transform: translateY(-33px);
-            transition: 0.25s all;
-          }
-        }
-    }
-
-    .form-control {
-        position: relative;
-        height: 40px;
-        appearance: none;
-        font-weight: bold;
-        font-size: 18px;
-        border: none;
-        border-bottom: solid 2px $white;
-        z-index: 0;
-        padding-bottom: 30px;
-      
-        &:focus {
-          border-bottom: solid 4px $white;
-        }
+  position: relative;
+  background-color: $orange;
+  padding: 50px 20px;
+  h2 {
+    text-align: center;
+    color: $white;
+  }
+  .btn-form-wrap {
+    width: 100%;
+    margin-top: 35px;
+    text-align: center;
+  }
+  .btn {
+    display: inline-block;
+  }
+  .form-group {
+    color: $white;
+    padding: 15px 0;
+    label {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      font-weight: 700;
+      font-size: 18px;
+      transform: translateY(-2px);
+      cursor: text;
+      transition: .25s all;
+      &.up {
+        cursor: none;
+        font-weight: 400;
+        font-size: 15px;
+        transform: translateY(-33px);
+        transition: .25s all;
       }
-
-    textarea.form-control {
-        height: 80px;
     }
+  }
+  .form-control {
+    position: relative;
+    height: 40px;
+    appearance: none;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-bottom: solid 2px $white;
+    z-index: 0;
+    padding-bottom: 30px;
+    &:focus {
+      border-bottom: solid 4px $white;
+    }
+  }
+  textarea.form-control {
+    height: 80px;
+  }
+  #contactForm {
+    margin-top: 70px;
+  }
 }
 
 @include media-breakpoint-up(lg) {
-    .mod-form-contact {
-        .btn-form-wrap {
-            text-align: right;
-        }
+  .mod-form-contact {
+    padding: 50px 80px;
+    .btn-form-wrap {
+      text-align: right;
+      margin-top: 30px;
     }
+  }
 }

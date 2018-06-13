@@ -30,8 +30,17 @@
   .social,
   .extra,
   .email {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     padding-left: 30px;
+  }
+  .extra {
+    h4 {
+      margin-top: -15px;
+      line-height: 1.05;
+    }
+    .btn {
+      margin-top: 5px;
+    }
   }
 }
 
