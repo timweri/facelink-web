@@ -1,9 +1,71 @@
 .mod-form-contact {
+    position: relative;
     background-color: $orange;
-    padding: 50px 20px 140px 20px;
+    padding: 50px 20px 80px 20px;
+
+    h2 {
+        text-align: center;
+        color: $white;
+    }
+
+    .btn-form-wrap {
+        width: 100%;
+        margin-top: 50px;
+        text-align: center;
+    }
 
     .btn {
-        float: center;
-        margin-top: 50px;
+        display: inline-block;
+    }
+
+    .form-group {
+        color: $white;
+        padding: 50px 0;
+      
+        label {
+          position: absolute;
+          z-index: 1;
+          display: block;
+          font-weight: bold;
+          font-size: 18px;
+          transform: translateY(5px);
+          cursor: text;
+          transition: 0.25s all;
+          
+          &.up {
+            cursor: none;
+            font-weight: normal;
+            font-size: 15px;
+            transform: translateY(-33px);
+            transition: 0.25s all;
+          }
+        }
+    }
+
+    .form-control {
+        position: relative;
+        height: 40px;
+        appearance: none;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border-bottom: solid 2px $white;
+        z-index: 0;
+      
+        &:focus {
+          border-bottom: solid 4px $white;
+        }
+      }
+
+    textarea.form-control {
+        height: 80px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mod-form-contact {
+        .btn-form-wrap {
+            text-align: right;
+        }
     }
 }
