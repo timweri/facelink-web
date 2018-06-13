@@ -4,6 +4,22 @@
   position: relative;
   padding-top: 63px;
   overflow: hidden;
+  
+  .section-frame1 {
+    h3 {
+      color: $black;
+    }
+  }
+  .btn {
+    padding: 0 21px;
+  }
+}
+.section-frame2 {
+  h2 {
+    font-size: 26px;
+  }
+}
+.style-subhead {
   h1,
   h2 {
     @extend .text-uppercase;
@@ -20,23 +36,12 @@
     letter-spacing: 1.2px;
     font-size: 16px;
   }
-  .section-frame1 {
-    h3 {
-      color: $black;
-    }
-  }
-  .btn {
-    padding: 0 21px;
-  }
-}
-.section-frame2 {
-  h2 {
-    font-size: 26px;
-  }
 }
 @include media-breakpoint-up(lg) {
   .section {
     padding-top: 93px;
+  }
+  .style-subhead {
     h3 {
       letter-spacing: 1.4px;
     }
