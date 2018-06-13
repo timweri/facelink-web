@@ -1,5 +1,4 @@
 #fullpage {
-  padding-top: 63px;
   h1,
   h2 {
     @extend .text-uppercase;
@@ -7,24 +6,37 @@
     margin-bottom: 0;
     line-height: 1.3;
   }
-  h3 {
-    letter-spacing: 1.4px;
-    font-size: 16px;
-  }
   h2,
   .h2 {
     @include font(null, 30px, $white);
+  }
+  h3 {
+    @include font($font-family-base, null, $white, 400);
+    letter-spacing: 1.2px;
+    font-size: 16px;
+  }
+  .section-frame1 {
+    h3 {
+      color: $black;
+    }
+  }
+  .btn {
+    padding: 0 21px;
   }
 }
 
 section {
   height: 100vh;
   position: relative;
-  padding-top: 93px;
+  padding-top: 63px;
 }
 @include media-breakpoint-up(lg) {
-  #fullpage {
+  section {
     padding-top: 93px;
-    
+  }
+  #fullpage {
+    h3 {
+      letter-spacing: 1.4px;
+    }
   }
 }
