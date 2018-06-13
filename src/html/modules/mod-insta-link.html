@@ -1,4 +1,14 @@
 <!-- module 'Mod Insta Link' -->
 <section class="module mod-insta-link">
-
-</section>
+    <div class="insta-link-wrap">
+        <img class="img-fluid d-block d-md-none" src="{{ insta_link.mobile_bg }}">
+        <img class="img-fluid d-none d-md-block" src="{{ insta_link.desktop_bg }}">
+        <a href="{{ insta_link.link }}" class="hover-overlay">
+            <div class="d-table">
+                <div class="d-table-cell align-middle">
+                    <i class="icomoon icon-instagram" aria-hidden="true"></i>
+                    <p>{{ insta_link.text }}</p>
+                </div>
+            </div>
+        </a>
+    </section>

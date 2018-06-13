@@ -7,5 +7,6 @@ module.exports = {
   banner_media: require('./modules/banner-media'),
   banner_story: require('./modules/banner-story'),
   cta: require('./modules/cta'),
-  infor_contact: require('./modules/infor-contact')
+  infor_contact: require('./modules/infor-contact'),
+  insta_link: require('./modules/insta-link')
 }
