@@ -1,4 +1,8 @@
-#fullpage {
+
+.section {
+  height: 100vh;
+  position: relative;
+  padding-top: 63px;
   h1,
   h2 {
     @extend .text-uppercase;
@@ -24,19 +28,21 @@
     padding: 0 21px;
   }
 }
-
-section {
-  height: 100vh;
-  position: relative;
-  padding-top: 63px;
+.section-frame2 {
+  h2 {
+    font-size: 26px;
+  }
 }
 @include media-breakpoint-up(lg) {
-  section {
+  .section {
     padding-top: 93px;
-  }
-  #fullpage {
     h3 {
       letter-spacing: 1.4px;
+    }
+  }
+  .section-frame2 {
+    h2 {
+      font-size: 30px;
     }
   }
 }
