@@ -7,8 +7,9 @@
     <div class="space-80"></div>
 
     {% set banner_data = banner_shop %}
-    {% include "modules/mod-banner.html"%}
+    {% include 'modules/mod-banner.html'%}
     {% include 'modules/mod-contact-container.html' %}
+    {% include 'modules/mod-promotion.html' %}
 
     <div class="container">
       <h1>{{ author }}
@@ -90,7 +91,7 @@
       </div>
       <div class="space-50"></div>
     </div>
-    {% include "modules/mod-insta-link.html" %}
-    {% include "modules/mod-cta.html" %}
+    {% include 'modules/mod-insta-link.html' %}
+    {% include 'modules/mod-cta.html' %}
   </main>
 {% endblock %}
