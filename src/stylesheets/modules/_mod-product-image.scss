@@ -1,0 +1,43 @@
+.mod-product-image {
+  position: relative;
+  text-align: center;
+  .image-sm-wrap {
+    img {
+      width: 100%;
+    }
+  }
+  .btn {
+    padding: 0 30px;
+    text-transform: uppercase;
+  }
+  .btn-wrap {
+    @include position(absolute, $left:0, $right:0, $bottom:45px);
+  }
+  .image-lg-wrap {
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .mod-product-image {
+    .btn-wrap {
+      bottom: 20px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-product-image {
+    .btn-wrap {
+      bottom: 40px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-product-image {
+    .btn-wrap {
+      bottom: 70px;
+    }
+  }
+}

@@ -9,5 +9,6 @@ module.exports = {
   cta: require('./modules/cta'),
   infor_contact: require('./modules/infor-contact'),
   insta_link: require('./modules/insta-link'),
-  promotion: require('./modules/promotion')
+  promotion: require('./modules/promotion'),
+  product: require('./modules/product-image')
 }
