@@ -4,7 +4,6 @@
   position: relative;
   padding-top: 63px;
   overflow: hidden;
-  
   .section-frame1 {
     h3 {
       color: $black;
@@ -13,6 +12,13 @@
   .btn {
     padding: 0 21px;
   }
+  .fp-tableCell {
+    display: block;
+  }
+}
+.fp-section.fp-table,
+.fp-slide.fp-table {
+  display: block;
 }
 .section-frame2 {
   h2 {
@@ -35,6 +41,105 @@
     @include font($font-family-base, null, $white, 400);
     letter-spacing: 1.2px;
     font-size: 16px;
+  }
+}
+#fp-nav {
+  top: auto;
+  bottom: 67px;
+  right: 25px;
+  &::after {
+    @include position(absolute, 100%, 0, null, 0);
+    @include sizeEx(3px, 52px);
+    content: "";
+    display: block;
+    margin: 15px auto 0;
+    background: $color-e5;
+  }
+  &.blue {
+    &::after {
+      background: $color-9d;
+    }
+    a {
+      color: $color-9d;
+      &.active {
+        color: $blue;
+        background: $color-9d;
+      }
+    }
+  }
+  &.red {
+    &::after {
+      background: $orange;
+    }
+    a {
+      color: $orange;
+      &.active {
+        color: $red;
+        background: $orange;
+      }
+    }
+  }
+  &.orange {
+    &::after {
+      background: $orange;
+    }
+    a {
+      color: $orange;
+      &.active {
+        color: $color-ff;
+        background: $orange;
+      }
+    }
+  }
+  &.gray {
+    &::after {
+      background: $border-gray;
+    }
+    a {
+      color: $border-gray;
+      &.active {
+        color: $white;
+        background: $border-gray;
+      }
+    }
+  }
+  &.green {
+    top: 67px;
+    bottom: auto;
+    &::after {
+      background: $white;
+      top: auto;
+      bottom: 100%;
+      margin: 0 auto 15px;
+    }
+    a {
+      color: $white;
+      &.active {
+        color: $color-c6;
+        background: $white;
+      }
+    }
+  }
+  ul {
+    li {
+      @include sizeEx(27px);
+      text-align: center;
+      margin: 2px 0;
+      a {
+        @include font($os, 18px, $color-e5, 600);
+        line-height: 27px;
+        span {
+          @include sizeEx(auto !important);
+          position: static;
+          background: transparent;
+          margin: 0 !important;
+        }
+        &.active {
+          color: $color-c6;
+          background: $color-e5;
+        }
+      }
+    }
   }
 }
 @include media-breakpoint-up(lg) {
