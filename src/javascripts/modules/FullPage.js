@@ -4,7 +4,6 @@ import 'fullpage.js'
 import {
   TweenMax,
   TimelineMax
-  // TimelineLite 
 } from 'gsap'
 const FullPage = (($) => {
   const NAME = 'fullPage'
@@ -41,20 +40,49 @@ const FullPage = (($) => {
       this.setHeightCTA()
       this.fullPageHome()
     }
-   
+
     fullPageHome() {
       let $fullPage = this._element
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
-
+      let itemLength = this._element.find('.section').length
       function initFullPage() {
         $fullPage.fullpage({
-          navigation: false,
+          anchors: ['First', '2nd', '3rd', '4th', '5th', '6th'],
+          navigation: true,
+          navigationPosition: 'right',
           css3: true,
           scrollingSpeed: 800,
           responsiveHeight: 100,
           dragAndMove: true,
-          lockAnchors: true
+          // lockAnchors: true,
+          afterRender: function(){
+            for (var i = 0; i< itemLength; i++) {
+              $('#fp-nav li').eq(i).find('span').html(i +1)
+            }
+          },
+			    afterLoad: function(anchorLink, index){
+            let Nav = $('#fp-nav')
+            switch(index) {
+              case 2:
+                Nav.removeAttr('class').addClass('blue')
+                break;
+              case 3:
+                Nav.removeAttr('class').addClass('red')
+                break;
+              case 4:
+                Nav.removeAttr('class').addClass('orange')
+                break;
+              case 5:
+                Nav.removeAttr('class').addClass('gray')
+                break;
+              case 6:
+                Nav.removeAttr('class').addClass('green')
+                break;
+              default:
+                Nav.removeAttr('class')
+            }
+			    }
         })
       }
       function destroyFullPage() {
@@ -99,7 +127,7 @@ const FullPage = (($) => {
         this.cta.css('height', $windowHeight - $FooterHeight - $headerHeight)
       }
     }
-   
+
     _getConfig (config) {
       config = $.extend({}, Default, config)
       return config
