@@ -11,7 +11,8 @@
     margin-top: 100px;
 
     .form-contact {
-      @include position(relative, $top:-200px);
+      position: relative;
+      margin-top: -200px;
     }
   }
 }
