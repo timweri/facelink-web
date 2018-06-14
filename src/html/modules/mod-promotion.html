@@ -1,4 +1,19 @@
-<section class="module mod-infor-contact">
-  
+<section class="module mod-promotion" style="background-image: url({{ promotion.background }});
+                                              background-position: {{ promotion.background_position }};">
+  <div class="promo-overlay d-none d-lg-block" style="background-image: url({{ promotion.overlay }});">
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for item in promotion.items %}
+        <div class="col-6 col-md-4 promo-item">
+          <div class="icon-wrap">
+            <img src="{{ item.icon }}" alt="{{ item.title }}">
+          </div>
+          <p>
+            {{ item.title }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
-

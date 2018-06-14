@@ -8,5 +8,6 @@ module.exports = {
   banner_story: require('./modules/banner-story'),
   cta: require('./modules/cta'),
   infor_contact: require('./modules/infor-contact'),
-  insta_link: require('./modules/insta-link')
+  insta_link: require('./modules/insta-link'),
+  promotion: require('./modules/promotion')
 }
