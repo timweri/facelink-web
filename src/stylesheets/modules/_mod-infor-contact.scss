@@ -46,10 +46,11 @@
 
 @include media-breakpoint-up(lg) {
   .mod-infor-contact {
+    padding: 15px 0;
     .social {
       position: relative;
       &::before {
-        @include position(absolute,0, null, null, -3px);
+        @include position(absolute, 0, null, null, -3px);
         @include sizeEx(100%);
         content: "";
         border-left: 5px solid $orange;
