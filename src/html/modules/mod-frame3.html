@@ -1,8 +1,33 @@
 <section class="section section-frame3">
   <div class="subhead-frame3 style-subhead">
-    <h3>{{ frame3.subhead }}</h3>
-    <h2>{{ frame3.title }}</h2>
-    {{ frame3.body }}
+    <div class="container">
+      <div class="subhead-frame3-title">
+        <h3>{{ frame3.subhead }}</h3>
+        <div class="title-frame3">
+          <h2><span>{{ frame3.title }}</span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rotate-image"></div>
+  <div class="bg-blue"></div>
+  <div class="cont-frame3">
+    <div class="container">
+      <div class="row">
+        <div class="col-list-frame3">
+          <div class="list-item-frame3">
+            {% for item in frame3.list_icon %}
+              <div class="item">
+                <div class="icon">
+                  <img src="{{item.icon}}" alt="{{item.icon}}">
+                </div>
+                <span>{{ item.icon_title }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

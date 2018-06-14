@@ -1,6 +1,5 @@
 
 .section {
-  height: 100vh;
   position: relative;
   padding-top: 63px;
   overflow: hidden;
@@ -145,6 +144,7 @@
 @include media-breakpoint-up(lg) {
   .section {
     padding-top: 93px;
+    height: 100vh;
   }
   .style-subhead {
     h3 {
