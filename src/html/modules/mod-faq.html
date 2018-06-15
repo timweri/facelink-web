@@ -1,3 +1,21 @@
-<section class="module mod-faq">
-  
+<section class="module mod-faq" data-module="faq">
+  {% for category in faq.categories %}
+    <div class="row faq-cat">
+      <div class="col-left">
+        <h2>
+          {{ category.title }}
+        </h2>
+      </div>
+      <div class="col-right">
+        {% for item in category.items %}
+          <div class="faq-item faq-closed">
+            <h4>{{ item.question }}</h4>
+            <div class="faq-answer">
+              {{ item.answer }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
 </section>

@@ -1,0 +1,136 @@
+.mod-faq {
+  position: relative;
+
+  .col-left,
+  .col-right {
+    @extend .col-12;
+    padding: 0;
+  }
+
+  .col-left {
+    @extend .col-lg-4;
+  }
+
+  .col-right {
+    @extend .col-lg-8;
+  }
+
+  .faq-cat {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 70px;
+  }
+
+  .faq-item {
+    padding: 0 16px;
+    position: relative;
+    transition: padding .25s;
+
+    h4 {
+      transition: .25s;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        transition: .25s;
+        font-family: $icomoon;
+        font-size: 35px;
+        color: $black !important;
+      }
+    }
+  }
+
+  .faq-closed {
+    border-top: none;
+    margin-top: 0;
+
+    h4 {
+      border-bottom: solid 2px $border-gray;
+      padding: 27px 70px 27px 0;
+      margin: 0;
+
+      &::after {
+        @include position(absolute, $right: 0, $top: 50%);
+        transform: translateY(-50%);
+        content: "\e921";
+      }
+    }
+
+    .faq-answer {
+      display: none;
+    }
+  }
+
+  .faq-opened {
+    padding: 36px 15px 36px 49px;
+    background-color: $menu-gray;
+    border-left: solid 5px $orange;
+    border-top: solid 2px $border-gray;
+    margin-top: -2px;
+
+    h4 {
+      position: relative;
+      border-bottom: none;
+      padding-top: 0;
+      color: $orange;
+
+      &::after {
+        @include position(absolute, $right: 0, $top: 0);
+        transform: translateY(-25%);
+        content: "\e926";
+      }
+    }
+
+    h4,
+    .faq-answer {
+      padding-right: 50px;
+    }
+  }
+
+  h4 {
+    font-family: $font-family-base;
+    line-height: 1.33;
+    letter-spacing: 1.3px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    width: 100%;
+    background: $black;
+    color: $white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .faq-answer {
+    line-height: 1.87;
+    letter-spacing: .4px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-faq {
+    .faq-closed {
+      padding: 0;
+
+      h4 {
+        &::after {
+          right: 23px;
+        }
+      }
+    }
+
+    .faq-opened {
+      h4 {
+        &::after {
+          right: 8px;
+        }
+      }
+    }
+
+    .col-right {
+      padding: 0 90px;
+    }
+  }
+}

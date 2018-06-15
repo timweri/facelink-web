@@ -10,5 +10,6 @@ module.exports = {
   infor_contact: require('./modules/infor-contact'),
   insta_link: require('./modules/insta-link'),
   promotion: require('./modules/promotion'),
-  product: require('./modules/product-image')
+  product: require('./modules/product-image'),
+  faq: require('./modules/faq')
 }
