@@ -31,6 +31,8 @@
   }
   .col-left {
     @extend .col-lg-6, .order-lg-1;
+    line-height: 2;
+    letter-spacing: 1.1px;
   }
   .col-right {
     @extend .col-lg-5, .offset-lg-1, .order-lg-2;
