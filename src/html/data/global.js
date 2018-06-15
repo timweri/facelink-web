@@ -11,5 +11,6 @@ module.exports = {
   insta_link: require('./modules/insta-link'),
   promotion: require('./modules/promotion'),
   product: require('./modules/product-image'),
-  faq: require('./modules/faq')
+  faq: require('./modules/faq'),
+  quote: require('./modules/quote')
 }

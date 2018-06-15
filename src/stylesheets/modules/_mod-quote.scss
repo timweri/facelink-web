@@ -1,0 +1,75 @@
+$quote-blockquote-color: rgba(56, 54, 54, .12);
+$black-two: #383636;
+.mod-quote {
+  .centered-row {
+    @extend .row;
+    align-items: center;
+  }
+  .col-right,
+  .col-left {
+    @extend .col-12;
+  }
+  .col-right {
+    @extend .col-lg-5;
+  }
+  .col-left {
+    @extend .col-lg-7;
+  }
+  blockquote {
+    position: relative;
+    z-index: 1;
+    display: block;
+    @include font($os, rem(26), $black-two, 700);
+    text-transform: uppercase;
+    text-align: center;
+    &::before,
+    &::after {
+      @include font($os, 200px, $quote-blockquote-color);
+      line-height: 0;
+      position: absolute;
+      display: block;
+    }
+    &::before {
+      content: open-quote;
+      top: 0;
+      left: -17px;
+    }
+    &::after {
+      content: close-quote;
+      bottom: -80px;
+      right: -19px;
+    }
+    cite {
+      display: block;
+      letter-spacing: 1.4px;
+      @include font($font-family-base, rem(18), $black-two, 400, normal);
+      text-transform: none;
+      &::before,
+      &::after {
+        content: "-";
+      }
+    }
+  }
+}
+
+.quote-img-wrap {
+  position: relative;
+  text-align: center;
+  img {
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-quote {
+    blockquote {
+      &::after,
+      &::before {
+        font-size: 255px;
+      }
+      cite {
+        margin-top: 20px;
+      }
+    }
+  }
+}
