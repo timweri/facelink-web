@@ -13,5 +13,6 @@ module.exports = {
   product: require('./modules/product-image'),
   faq: require('./modules/faq'),
   quote: require('./modules/quote'),
-  our_story: require('./modules/our-story')
+  our_story: require('./modules/our-story'),
+  benefits: require('./modules/content-benefits')
 }

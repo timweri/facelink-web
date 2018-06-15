@@ -1,0 +1,70 @@
+.mod-content-benefits {
+  position: relative;
+  max-width: 2000px;
+  .decor-bar {
+    @extend .d-none, .d-lg-flex;
+    @include position(absolute, $top: 0, $left:0, $right: 70%);
+    justify-content: flex-end;
+
+    .img-wrap {
+      position: relative;
+      top: -20px;
+      right: -30px;
+      width: 225px;
+    }
+
+    &::before {
+      @include position(absolute, $bottom: 0, $left:0, $right: 0);
+      content: "";
+      height: 177px;
+      background-color: $red;
+      z-index: 0;
+    }
+  }
+  .centered-row {
+    @extend .row;
+    align-items: center;
+  }
+  .col-left,
+  .col-right {
+    @extend .col-12;
+  }
+  .col-left {
+    @extend .col-lg-6, .order-lg-1;
+  }
+  .col-right {
+    @extend .col-lg-5, .offset-lg-1, .order-lg-2;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-end;
+    margin-bottom: 53px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-content-benefits {
+    .col-left,
+    .col-right {
+      padding: 0;
+    }
+    .col-right {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .mod-content-benefits {
+    .col-left {
+      padding: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-content-benefits {
+    .container {
+      padding-top: 210px;
+    }
+  }
+}
