@@ -24,15 +24,13 @@
   .faq-item {
     padding: 0 16px;
     position: relative;
-    transition: padding .25s;
+    transition: .25s, padding-top 0s, padding-bottom .1s;
 
     h4 {
-      transition: .25s;
-      position: relative;
+      transition: padding 0s, color .25s, margin 0s;
       cursor: pointer;
 
       &::after {
-        transition: .25s;
         font-family: $icomoon;
         font-size: 35px;
         color: $black !important;
@@ -51,7 +49,7 @@
 
       &::after {
         @include position(absolute, $right: 0, $top: 50%);
-        transform: translateY(-50%);
+        transform: translateY(-50%) translateX(-42%);
         content: "\e921";
       }
     }
@@ -66,13 +64,13 @@
 
     h4 {
       position: relative;
-      border-bottom: none;
+      border-bottom: solid 2px transparent;
       padding-top: 0;
       color: $orange;
 
       &::after {
         @include position(absolute, $right: 0, $top: 0);
-        transform: translateY(-25%);
+        transform: translateY(-35%);
         content: "\e926";
       }
     }
@@ -113,7 +111,7 @@
 
       h4 {
         &::after {
-          right: 23px;
+          right: 7px;
         }
       }
     }
