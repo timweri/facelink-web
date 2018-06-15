@@ -48,7 +48,7 @@
       margin: 0;
 
       &::after {
-        @include position(absolute, $right: 0, $top: 50%);
+        @include position(absolute, $right: 0, $top: 40px);
         transform: translateY(-50%) translateX(-42%);
         content: "\e921";
       }
