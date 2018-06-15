@@ -1,5 +1,8 @@
 #main-menu {
   @extend .navbar-collapse;
+  @include sizeEx(0,100vh);
+  display: block;
+  transition: width .2s;
   ul {
     margin: 0;
     list-style: none;
@@ -16,6 +19,9 @@
     position: relative;
     font-size: rem(25);
     line-height: 0;
+  }
+  &.is-open-menu {
+    width: 295px;
   }
 }
 
@@ -81,7 +87,7 @@
 
   > li {
     font-size: rem(26px);
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
     border-top: solid 1px $border-gray;
     > a {
@@ -217,6 +223,7 @@
     @include position(initial, $top: unset, $right: unset);
     background-color: transparent;
     justify-content: flex-end;
+    height: auto;
   }
 
   #header-logo {
@@ -293,7 +300,8 @@
 }
 
 @include media-breakpoint-up(xl) {
-  .menu-center, .menu-right {
+  .menu-center,
+  .menu-right {
     li {
       > a {
         padding: 22px 25px;
