@@ -1,4 +1,18 @@
 <section class="module mod-our-story">
-  
+  <div class="os-headline-wrap">
+    <h2 class="os-headline">
+      {{ our_story.headline }}
+    </h2>
+    <div class="line"></div>
+  </div>
+  <div class="container">
+    <div class="centered-row">
+      <div class="col-left">
+        <img src="{{ our_story.image }}">
+      </div>
+      <div class="col-right">
+        {{ our_story.body }}
+      </div>
+    </div>
+  </div>
 </section>
-

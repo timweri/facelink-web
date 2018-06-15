@@ -12,5 +12,6 @@ module.exports = {
   promotion: require('./modules/promotion'),
   product: require('./modules/product-image'),
   faq: require('./modules/faq'),
-  quote: require('./modules/quote')
+  quote: require('./modules/quote'),
+  our_story: require('./modules/our-story')
 }
