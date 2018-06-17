@@ -1,34 +1,89 @@
 
 .section-frame3 {
+  color: $white;
+  .title-frame3 {
+    margin-bottom: 27px;
+  }
   .bg-orange {
-    @include position(absolute, 0, 0, 0, null);
-    width: 60%;
+    position: relative;
     background: $red;
+    margin-top: 70%;
     &::before,
     &::after {
-      @include sizeEx(4000px, 50%);
-      @include position(absolute, null, 100%, null, null);
+      @include sizeEx(50%, 4000px);
+      @include position(absolute, null, null, 100%, null);
       content: "";
       display: block;
       background: $red;
-
     }
     &::before {
-      top: 0;
-      transform: rotate(45deg);
+      left: 0;
+      transform: rotate(-45deg);
       transform-origin: 100% 100%;
     }
     &::after {
-      bottom: 0;
-      transform: rotate(-45deg);
-      transform-origin: 100% 0%;
+      right: 0;
+      transform: rotate(45deg);
+      transform-origin: 0% 100%;
     }
   }
 }
 .bg-image-frame3 {
   @include position(absolute, 0, null,null, 0);
-  @include sizeEx(40%, 100%);
+  @include sizeEx(100%,auto);
+  padding-top: 70%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
+}
+.subhead-frame3 {
+  @include position(relative, $index: 1);
+  @extend .d-lg-flex;
+  @extend .align-items-lg-center;
+}
+
+.subhead-frame3-title {
+  padding: 35px 15px 65px;
+}
+@include media-breakpoint-up(lg) {
+  .subhead-frame3-title {
+    max-width: 420px;
+    width: 100%;
+    padding: 0;
+  }
+  .section-frame3 {
+    padding-left: 70px;
+    height: 100%;
+    .bg-orange {
+      @include position(absolute, 0, 0, 0, null);
+      width: 55%;
+      background: $red;
+      padding-top: 93px;
+      margin-top: 0;
+      &::before,
+      &::after {
+        @include sizeEx(4000px, 50%);
+        @include position(absolute, null, 100%, null, null);
+      }
+      &::before {
+        top: 0;
+        left: auto;
+        bottom: auto;
+        transform: rotate(45deg);
+      }
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transform-origin: 100% 0%;
+      }
+    }
+  }
+  .bg-image-frame3 {
+    @include sizeEx(45%, 100%);
+    padding-top: 0;
+  }
+  .subhead-frame3 {
+    height: 100%;
+    padding-left: 70px;
+  }
 }

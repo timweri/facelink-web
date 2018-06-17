@@ -1,7 +1,8 @@
-
+#fullpage {
+  padding-top: 63px;
+}
 .section {
   position: relative;
-  padding-top: 63px;
   overflow: hidden;
   .section-frame1 {
     h3 {
@@ -13,6 +14,7 @@
   }
   .fp-tableCell {
     display: block;
+    // position: relative;
   }
 }
 .fp-section.fp-table,
