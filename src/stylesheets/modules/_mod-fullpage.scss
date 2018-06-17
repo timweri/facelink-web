@@ -36,7 +36,7 @@
   }
   h2,
   .h2 {
-    @include font(null, 30px, $white);
+    @include font(null, 30px, $white, null);
   }
   h3 {
     @include font($font-family-base, null, $white, 400);
