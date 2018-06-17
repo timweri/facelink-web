@@ -143,6 +143,20 @@
     }
   }
 }
+.section-frame2,
+.section-frame3,
+.section-frame4,
+.section-frame6 {
+  .fp-tableCell {
+    &::before {
+      @include position(absolute, 0, 0, null, null, 1);
+      @include sizeEx(100%);
+      background: url("../images/bg-opacity.png") right top no-repeat;
+      content: "";
+      display: block;
+    }
+  }
+}
 @include media-breakpoint-up(lg) {
   .section {
     padding-top: 93px;

@@ -59,6 +59,7 @@
 }
 .cont-frame4 {
   position: relative;
+  z-index: 1;
   padding: 90px 0 50px;
   .image-product {
     margin-top: 85px;
@@ -110,6 +111,12 @@
 }
 .col-image-product-frame4 {
   @extend .col-lg-7;
+}
+.fruit-frame4 {
+  @include position(absolute, null, null, 0, 0);
+  @extend .d-none;
+  @extend .d-lg-block;
+  width: 30%;
 }
 @include media-breakpoint-up(lg) {
   .subhead-frame4-title {
