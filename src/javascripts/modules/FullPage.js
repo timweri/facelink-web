@@ -121,10 +121,15 @@ const FullPage = (($) => {
 
     setHeightCTA() {
       if(this._element.length) {
+        let $windowWidth = $(window).width()
         let $FooterHeight = this.footer.innerHeight()
         let $windowHeight = $(window).height()
         let $headerHeight = this.header.innerHeight()
-        this.cta.css('height', $windowHeight - $FooterHeight - $headerHeight)
+        if($windowHeight < 641 || $windowWidth < 992 ) {
+          this.cta.removeAttr('style')
+        } else {
+          this.cta.css('height', $windowHeight - $FooterHeight - $headerHeight)
+        }
       }
     }
 

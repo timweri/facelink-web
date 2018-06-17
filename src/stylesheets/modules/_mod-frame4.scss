@@ -2,30 +2,27 @@
 .section-frame4 {
   color: $white;
   background: $color-ffc6;
-  .title-frame4 {
-    margin: 0 0 27px -15px;
-  }
   .bg-orange {
-    position: relative;
+    @include position(absolute, 0, null, 0, 0);
+    @include sizeEx(100%, 55%);
     background: $orange;
-    margin-top: 70%;
     &::before,
     &::after {
       @include sizeEx(50%, 4000px);
-      @include position(absolute, null, null, 100%, null);
+      @include position(absolute, 100%, null, null, null);
       content: "";
       display: block;
       background: $orange;
     }
     &::before {
       left: 0;
-      transform: rotate(-45deg);
-      transform-origin: 0 100%;
+      transform: rotate(45deg);
+      transform-origin: 100% 0;
     }
     &::after {
       right: 0;
-      transform: rotate(45deg);
-      transform-origin: 100% 100%;
+      transform: rotate(-45deg);
+      transform-origin: 0 0;
     }
   }
 }
@@ -37,7 +34,7 @@
 }
 .subhead-frame4 {
   width: 100%;
-  padding-top: 70px;
+  margin-left: -15px;
   h2 {
     @extend .text-center;
     @extend .text-lg-left;
@@ -62,7 +59,7 @@
 }
 .cont-frame4 {
   position: relative;
-  padding: 35px 0 65px;
+  padding: 90px 0 50px;
   .image-product {
     margin-top: 85px;
     img {
@@ -95,13 +92,17 @@
 .cont-text-frame4 {
   max-width: 1000px;
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto 0;
 }
 .list-item-frame4 {
   .item {
-    @include font($os, 18px,$black);
+    @include font($os, 18px,$black, 700);
     @extend .text-uppercase;
     letter-spacing: .5px;
+    margin-bottom: 25px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 .col-list-frame4 {
@@ -120,28 +121,24 @@
     padding-left: 70px;
     height: 100%;
     .bg-orange {
-      @include position(absolute, 0, null, 0, 0);
-      width: 45%;
-      background: $orange;
+      @include sizeEx(45%, 100%);
       padding-top: 93px;
       margin-top: 0;
       &::before,
       &::after {
         @include sizeEx(4000px, 50%);
-        @include position(absolute, null, null, null, 100%);
+        @include position(absolute, auto, null, 100%, 100%);
       }
       &::before {
-        top: 0;
-        right: auto;
-        bottom: auto;
-        transform: rotate(-45deg);
+        @include position(null, 0, auto, auto, null);
         height: 65%;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
       }
       &::after {
         bottom: 0;
-        transform: rotate(45deg);
-        transform-origin: 0 0;
         height: 35%;
+        transform: rotate(45deg);
       }
     }
   }
@@ -153,6 +150,7 @@
     @include position(relative, null, null, null, null);
     width: 100%;
     padding-top: 0;
+    margin: 0;
     h2 {
       padding: 16px 32px 16px 0;
       &::before {
@@ -165,6 +163,7 @@
     }
   }
   .cont-frame4 {
+    padding: 35px 0 65px;
     .image-product {
       margin-top: 0;
       img {
