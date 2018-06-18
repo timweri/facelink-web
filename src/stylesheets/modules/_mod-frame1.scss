@@ -3,6 +3,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.container-frame1 {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  position: relative;
+}
 .cont-frame1 {
   max-width: 395px;
   margin-left: auto;
@@ -73,7 +79,7 @@
     margin-top: -20px;
   }
   .image-frame1 {
-    left: -100px;
+    left: -130px;
     top: 15%;
   }
 }

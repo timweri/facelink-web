@@ -101,8 +101,18 @@
     @extend .text-uppercase;
     letter-spacing: .5px;
     margin-bottom: 25px;
+    position: relative;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .butlet {
+    &::before,
+    &::after {
+      @extend .icomoon;
     }
   }
 }
@@ -170,7 +180,7 @@
     }
   }
   .cont-frame4 {
-    padding: 35px 0 65px;
+    padding: 130px 0 65px;
     .image-product {
       margin-top: 0;
       img {
