@@ -157,6 +157,16 @@
     }
   }
 }
+@include media-breakpoint-down(lg) {
+  .subhead-frame2,
+  .subhead-frame4 {
+    &.style-subhead {
+      h2 {
+        font-size: 26px;
+      }
+    }
+  }
+}
 @include media-breakpoint-up(lg) {
   .section {
     padding-top: 93px;
