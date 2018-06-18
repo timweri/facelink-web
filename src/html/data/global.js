@@ -15,5 +15,6 @@ module.exports = {
   quote: require('./modules/quote'),
   our_story: require('./modules/our-story'),
   benefits: require('./modules/content-benefits'),
-  tab_benefits: require('./modules/tab-benefits')
+  tab_benefits: require('./modules/tab-benefits'),
+  instagram: require('./modules/instagram')
 }

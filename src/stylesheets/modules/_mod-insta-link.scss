@@ -111,7 +111,11 @@
     }
   }
 }
-
+.insta-universal {
+  .row-insta2 {
+    @extend .d-lg-none;
+  }
+}
 @include media-breakpoint-up(lg) {
   .mod-insta-link {
     line-height: 75px;
