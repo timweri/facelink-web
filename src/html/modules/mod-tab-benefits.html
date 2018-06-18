@@ -1,3 +1,23 @@
-<section class="module mod-tab-benefits">
-  
+<section class="module mod-tab-benefits" data-module="tab-benefits">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-left">
+          {% for tab_item in tab_benefits.tabs %}
+            <h2>{{ tab_item.title }}</h2>
+          {% endfor %}
+        </div>
+        <div class="col-right">
+          {% for tab_item in tab_benefits.tabs %}
+            <div class="tab-item">
+              <h2>{{ tab_item.title }}</h2>
+              <div class="tab-content">
+                {{ tab_item.content }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
