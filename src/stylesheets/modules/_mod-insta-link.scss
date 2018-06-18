@@ -27,10 +27,88 @@
     font-size: rem(35);
   }
 }
-
+.col-insta {
+  @extend .col-lg-6;
+  padding: 0;
+  .col-item {
+    max-width: 50%;
+    flex: 50%;
+  }
+}
+.col-small {
+  .item-insta {
+    max-width: 50%;
+    flex: 50%;
+  }
+}
+.box-img-insta {
+  @include background-size(cover);
+}
+.row-col-insta,
+.row-item-insta {
+  @extend .row;
+  margin: 0;
+}
 .insta-link-wrap {
+  padding: 6px;
+  .row-insta1,
+  .row-insta2 {
+    margin: 0;
+  }
   img {
     width: 100%;
+  }
+}
+.item-insta {
+  padding: 4px;
+}
+.col-insta2 {
+  @extend .d-none;
+  @extend .d-lg-block;
+}
+.row-insta1 {
+  .col-insta1 {
+    .item-insta3 {
+      .box-img-insta {
+        background: $color-c6;
+      }
+    }
+  }
+  .col-insta2 {
+    .item-insta3 {
+      .box-img-insta {
+        background: $color-9d;
+      }
+    }
+    .item-insta4 {
+      .box-img-insta {
+        background: $orange;
+      }
+    }
+  }
+}
+.row-insta2 {
+  .row-col-insta {
+    @extend .flex-row-reverse;
+  }
+  .col-insta1 {
+    .item-insta2 {
+      .box-img-insta {
+        background: $red;
+      }
+    }
+    .item-insta5 {
+      .box-img-insta {
+        background: $color-9d;
+      }
+    }
+  }
+  .col-insta2 {
+    .item-insta5 {
+      .box-img-insta {
+        background: $color-e2;
+      }
+    }
   }
 }
 
