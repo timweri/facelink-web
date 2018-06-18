@@ -48,6 +48,7 @@
   top: auto;
   bottom: 67px;
   right: 25px;
+  margin-top: 0 !important;
   &::after {
     @include position(absolute, 100%, 0, null, 0);
     @include sizeEx(3px, 52px);
