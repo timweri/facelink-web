@@ -1,4 +1,15 @@
 <section class="module mod-featured-news-post">
-  
+  <div class="container">
+    <div class="featured-news-logo">
+      <img src="{{ featured_news_post.logo }}">
+    </div>
+    <h2>
+      {{ featured_news_post.title }}
+    </h2>
+    <div class="content">
+      {{ featured_news_post.body }}
+    </div>
+    <a class="btn btn-form" href="{{ featured_news_post.link }}">View article</a>
+  </div>
 </section>
 

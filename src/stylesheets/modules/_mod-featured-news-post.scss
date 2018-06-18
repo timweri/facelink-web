@@ -1,0 +1,21 @@
+.mod-featured-news-post {
+  color: $white;
+  > .container {
+    padding: 49px 0;
+    background-color: $orange;
+    text-align: center;
+  }
+  .featured-news-logo {
+    width: 133px;
+    display: inline-block;
+    margin-bottom: 26px;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  .btn {
+    margin-top: 29px;
+    color: $orange;
+    text-transform: uppercase;
+  }
+}
