@@ -116,6 +116,7 @@
     @extend .d-lg-none;
   }
 }
+
 @include media-breakpoint-up(lg) {
   .mod-insta-link {
     line-height: 75px;
@@ -125,11 +126,6 @@
     .icomoon {
       font-size: rem(62);
     }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .mod-insta-link {
     .hover-overlay {
       transition: .25s;
       opacity: 0;
@@ -141,3 +137,5 @@
     }
   }
 }
+
+

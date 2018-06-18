@@ -32,7 +32,7 @@
   }
 }
 .cont-frame1-primary {
-  max-width: 230px;
+  max-width: 180px;
   margin-left: auto;
 }
 .col-frame1 {
@@ -40,9 +40,8 @@
   padding: 0;
 }
 .image-frame1 {
-  @include position(absolute, 21%, null, null, -65%);
-  width: 172%;
-  opacity: .8;
+  @include position(absolute, 24%, null, null, -62%);
+  width: 150%;
 }
 .frame1-container {
   @include position(relative, 0, null, null, 0);
