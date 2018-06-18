@@ -1,7 +1,18 @@
 .mod-our-story {
+  position: relative;
+  max-width: 2000px;
+  overflow-x: hidden;
+  margin: 0 auto;
   .centered-row {
     @extend .row;
     align-items: center;
+    margin-top: 200px;
+  }
+  .solid-bg {
+    @include position(absolute, $top: -25%, $right: 35%);
+    width: 4000px;
+    height: 85%;
+    background: $color-c6;
   }
   .col-left,
   .col-right {
@@ -13,6 +24,10 @@
     justify-content: flex-end;
     align-content: flex-end;
     margin-bottom: 53px;
+
+    img {
+      position: relative;
+    }
   }
   .col-right {
     @extend .col-lg-6, .offset-lg-1;
@@ -45,6 +60,9 @@
     max-width: 370px;
   }
   .mod-our-story {
+    .centered-row {
+      margin-top: 7.5%;
+    }
     .col-left,
     .col-right {
       padding: 0;
