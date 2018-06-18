@@ -100,8 +100,9 @@
     @include font($os, 18px,$black, 700);
     @extend .text-uppercase;
     letter-spacing: .5px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     position: relative;
+    padding-left: 50px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -110,17 +111,34 @@
     margin: 0;
   }
   .butlet {
+    @include position(absolute, 2px, null, null, 0);
+    @include sizeEx(29px);
+    display: block;
     &::before,
     &::after {
       @extend .icomoon;
+      display: block;
+      content: "";
+      font-size: 29px;
+    }
+    &::before {
+      content: "\e92c";
+    }
+    &::after {
+      @include position(absolute, 0, 0, 0, 0);
+      content: "\e92d";
+      margin: auto;
+      color: $white;
     }
   }
 }
 .col-list-frame4 {
-  @extend .col-lg-5;
+  @extend .col-lg-6;
+  @extend .d-lg-flex;
+  @extend .justify-content-lg-end;
 }
 .col-image-product-frame4 {
-  @extend .col-lg-7;
+  @extend .col-lg-6;
 }
 .fruit-frame4 {
   @include position(absolute, null, null, 0, 0);
@@ -135,10 +153,9 @@
     position: relative;
   }
   .section-frame4 {
-    padding-left: 70px;
     height: 100%;
     .bg-orange {
-      @include sizeEx(45%, 100%);
+      @include sizeEx(45.4%, 100%);
       padding-top: 93px;
       margin-top: 0;
       &::before,
@@ -148,13 +165,13 @@
       }
       &::before {
         @include position(null, 0, auto, auto, null);
-        height: 65%;
+        height: 75%;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
       }
       &::after {
         bottom: 0;
-        height: 35%;
+        height: 30%;
         transform: rotate(45deg);
       }
     }
@@ -184,8 +201,14 @@
     .image-product {
       margin-top: 0;
       img {
-        margin: 0;
+        margin: 0 0 0 auto;
       }
     }
+  }
+  .title-frame4 {
+    padding-left: 65px;
+  }
+  .list-item-frame4 {
+    padding-right: 65px;
   }
 }
