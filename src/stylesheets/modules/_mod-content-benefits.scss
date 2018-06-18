@@ -1,24 +1,33 @@
 .mod-content-benefits {
   position: relative;
   max-width: 2000px;
+  margin: 50px auto 0;
+  padding-top: 100px;
+  overflow-x: hidden;
+  .solid-bg {
+    @include position(absolute, $top: 0, $left: 25%);
+    @include sizeEx(4000px, 85%);
+    z-index: 0;
+    margin-top: -25%;
+    background: $color-c6;
+  }
   .decor-bar {
     @extend .d-none, .d-lg-flex;
-    @include position(absolute, $top: 0, $left:0, $right: 70%);
+    @include position(absolute, $top: 0, $right: 180%);
+    @include sizeEx(4000px, 177px);
     justify-content: flex-end;
-
+    margin-top: 0;
     .img-wrap {
-      position: relative;
-      top: -20px;
+      position: absolute;
+      top: -50px;
       right: -30px;
       width: 225px;
     }
-
     &::before {
       @include position(absolute, $bottom: 0, $left:0, $right: 0);
       content: "";
       height: 177px;
       background-color: $red;
-      z-index: 0;
     }
   }
   .centered-row {
@@ -36,15 +45,22 @@
   }
   .col-right {
     @extend .col-lg-5, .offset-lg-1, .order-lg-2;
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-end;
     margin-bottom: 53px;
+
+    img {
+      position: relative;
+    }
   }
 }
 
 @include media-breakpoint-up(lg) {
   .mod-content-benefits {
+    margin-top: 0;
+
+    .solid-bg,
+    .decor-bar {
+      margin-top: -290px;
+    }
     .col-left,
     .col-right {
       padding: 0;
