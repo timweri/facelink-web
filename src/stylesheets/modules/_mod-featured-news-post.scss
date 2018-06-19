@@ -1,20 +1,29 @@
 .mod-featured-news-post {
   color: $white;
   > .container {
-    padding: 49px 0;
+    padding: 56px 0 49px;
     background-color: $orange;
     text-align: center;
   }
   .featured-news-logo {
     width: 133px;
     display: inline-block;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
   }
   h2 {
     text-transform: uppercase;
+    margin-bottom: 30px;
   }
   .btn {
     margin-top: 29px;
     color: $orange;
+    padding: 0 30px;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .mod-featured-news-post {
+    > .container {
+      padding: 60px 0 65px;
+    }
   }
 }
