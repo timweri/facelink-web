@@ -213,6 +213,23 @@ h6,
     padding-top: 63px;
   }
 }
+
+.mCS-scroller-theme {
+  .mCSB_container {
+    margin-right: 40px;
+  }
+  .mCSB_dragger_bar,
+  .mCSB_draggerRail {
+    width: 7.5px !important;
+  }
+  .mCSB_dragger_bar {
+    background-color: $menu-gray !important;
+  }
+  .mCSB_draggerRail {
+    background-color: $white;
+  }
+}
+
 @include media-breakpoint-up(lg) {
   /* font heading */
 

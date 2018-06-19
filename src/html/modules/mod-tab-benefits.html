@@ -12,7 +12,9 @@
             <div class="tab-item">
               <h2>{{ tab_item.title }}</h2>
               <div class="tab-content">
-                {{ tab_item.content }}
+                <div class="tab-content-scroll">
+                  {{ tab_item.content }}
+                </div>
               </div>
             </div>
           {% endfor %}

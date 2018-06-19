@@ -19,6 +19,6 @@ module.exports = {
       body: 'Headline of the article of quote of the mention as the headline',
     }
   ],
-  quote: '<h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h2>\
-  <p>By: Doug Fancy on Friday February 4<sup>th</sup> 2016</p>'
+  quote: `<h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h2>
+  <p>By: Doug Fancy on Friday February 4<sup>th</sup> 2016</p>`
 }
