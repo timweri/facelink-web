@@ -8,4 +8,14 @@
     display: block;
     padding-bottom: 100%;
   }
+  &::before {
+    @include position(absolute, $top: 0, $right: 0, $index: 1);
+    @include sizeEx(100%);
+    background: url("../images/bg-opacity.png") right top no-repeat;
+    content: "";
+    display: block;
+  }
+  &.not-quote {
+    overflow: hidden;
+  }
 }
