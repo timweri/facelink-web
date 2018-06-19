@@ -1,6 +1,6 @@
 .mod-infor-contact {
   position: relative;
-  padding: 42px 0;
+  margin-top: 42px;
   .wrapper {
     border-left: solid 2px rgba($border-gray, .3);
   }
@@ -34,6 +34,7 @@
     padding-left: 30px;
   }
   .extra {
+    margin-bottom: 0;
     h4 {
       margin-top: -15px;
       line-height: 1.05;
@@ -46,7 +47,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-infor-contact {
-    padding: 15px 0;
+    margin-top: 15px;
     .social {
       position: relative;
       &::before {

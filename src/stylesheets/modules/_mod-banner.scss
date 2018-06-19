@@ -4,19 +4,15 @@
   background-size: cover;
   position: relative;
   text-align: center;
-
   &::before {
     @include position(absolute, $top:0, $left:0);
-    content: '';
-    background-color: rgba($black, 0.6);
+    content: "";
+    background-color: rgba($black, .6);
     @include sizeEx(100%,100%);
   }
-
   .d-table {
     position: relative;
     @include sizeEx(100%, 343px);
-
-
     .d-table-cell {
       text-align: left;
       padding: 64px 0;
@@ -29,18 +25,21 @@
 }
 
 .green-kite {
+  @include sizeEx(36px);
   position: absolute;
   display: inline-block;
-  @include sizeEx(55px, 55px);
   background-color: $color-c6;
   transform: rotate(45deg) translateY(50%);
-  bottom:-8px;
+  bottom: -5px;
 }
 
 .banner-content {
   color: $white;
   text-transform: uppercase;
   max-width: 556px;
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .product-box-inner {
@@ -60,5 +59,9 @@
     max-width: 410px;
     width: 40%;
     transform: translateY(30%);
+  }
+  .green-kite {
+    @include sizeEx(57px);
+    bottom: -8px;
   }
 }
