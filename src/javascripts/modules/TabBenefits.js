@@ -1,4 +1,6 @@
 import $ from 'jquery'
+import 'jquery-mousewheel'
+import 'malihu-custom-scrollbar-plugin'
 
 const TabBenefits = (($) => {
   const NAME = 'tab-benefits'
@@ -29,12 +31,20 @@ const TabBenefits = (($) => {
       this.openTabMobile()
       this.openTabDesktop()
       this.resetOnResize()
+      this.scrollInit()
     }
 
-    resetOnResize () {
+    scrollInit() {
+      $('.tab-content-scroll').mCustomScrollbar({
+        setHeight: 450,
+        theme: 'scroller-theme'
+      });
+    }
+
+    resetOnResize() {
       let $desktopHeaders = this.$desktopHeaders,
-          $firstHeader = $desktopHeaders.eq(0),
-          $firstTabItem= this.$tabs.eq(0);
+        $firstHeader = $desktopHeaders.eq(0),
+        $firstTabItem = this.$tabs.eq(0);
       $(window).resize(() => {
         if ($desktopHeaders.is(':visible') && $firstHeader.hasClass('is-open-tab')) {
           $firstTabItem.children('.tab-content').css('display', 'block');
