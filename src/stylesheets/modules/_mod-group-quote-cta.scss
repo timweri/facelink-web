@@ -1,0 +1,11 @@
+.mod-group-quote-cta {
+  position: relative;
+  .bg-green {
+    @include position(absolute, $bottom: 0, $right: -50%);
+    @include sizeEx(62%, auto);
+    transform: skewX(-45deg);
+    background: $color-e5;
+    display: block;
+    padding-bottom: 100%;
+  }
+}

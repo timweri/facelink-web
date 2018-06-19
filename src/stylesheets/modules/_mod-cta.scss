@@ -1,18 +1,28 @@
 .mod-cta {
-  background: url("../images/cta-bg.jpg") center center no-repeat;
-  background-size: cover;
-  position: relative;
-  text-align: center;
+  background: $color-c6;
   height: 300px;
+  overflow: hidden;
+  // &::before {
+  //   @include position(absolute, $top: 0, $left: 50%);
+  //   @include sizeEx(100%);
+  //   transform: skewX(-45deg);
+  //   background: $color-e5;
+  //   content: "";
+  //   display: block;
+  // }
   .container {
     @extend .d-flex;
     @extend .align-items-center;
     @extend .justify-content-center;
     @include sizeEx(100%);
+    @include position(relative, $index: 1);
   }
   h2 {
     @extend .style-h2;
     text-transform: uppercase;
+  }
+  p {
+    letter-spacing: 1.4px;
   }
   .form-control {
     background-color: $white;
@@ -25,10 +35,18 @@
     padding: 0 20px;
   }
 }
-
-#ctaForm {
+.cta-content {
+  @extend .text-center;
+}
+.form-cta {
   position: relative;
-  display: inline-block;
+  display: block;
   max-width: 380px;
   width: 100%;
+  margin: 20px auto 0;
+}
+@include media-breakpoint-up(lg) {
+  .form-cta {
+    margin-top: 30px;
+  }
 }

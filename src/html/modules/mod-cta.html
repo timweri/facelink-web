@@ -5,10 +5,12 @@
       <div class="cta-content">
         {{ cta.body }}
       </div>
-      <form id="ctaForm" name="ctaForm" method="POST" action="/api/cta">
-        {{ formBlock('', 'email', '', id='fullname', message='') }}
-        <button type="button" class="btn btn-primary">Sign up</button>
-      </form>
+      <div class="form-cta">
+        <form name="ctaForm" method="POST" action="/api/cta">
+          {{ formBlock('', 'email', '', id='fullname', message='') }}
+          <button type="button" class="btn btn-primary">Sign up</button>
+        </form>
+    </div>
     </div>
   </div>
 </section>
