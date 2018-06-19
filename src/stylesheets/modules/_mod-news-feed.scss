@@ -1,11 +1,11 @@
 .mod-news-feed {
+  margin-top: 60px;
   .btn {
     padding: 0 33px;
   }
   .first-col-right,
   .first-col-left {
     @extend .col-12, .col-lg-6;
-    padding: 0;
   }
   > .container {
     > .row {
@@ -13,7 +13,12 @@
     }
   }
 }
-
+.news-feed-image {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
 .news-feed-post {
   text-align: center;
   margin: 50px 0 60px;
@@ -41,6 +46,7 @@
   color: $white;
   overflow-x: hidden;
   padding: 120px 23px 90px;
+  margin: 0 -15px;
   &::before {
     @include sizeEx(4000px, 100%);
     @include position(absolute, $top:0, $right:0);
@@ -94,5 +100,6 @@
   .news-feed-quote {
     text-align: left;
     overflow-x: visible;
+    margin: 0;
   }
 }
