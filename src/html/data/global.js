@@ -14,7 +14,7 @@ module.exports = {
   faq: require('./modules/faq'),
   quote: require('./modules/quote'),
   our_story: require('./modules/our-story'),
-  benefits: require('./modules/content-benefits'),
+  content_benefits: require('./modules/content-benefits'),
   tab_benefits: require('./modules/tab-benefits'),
   featured_news_post: require('./modules/featured-news-post'),
   news_feed: require('./modules/news-feed'),

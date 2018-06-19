@@ -1,11 +1,6 @@
 .mod-tab-benefits {
   background: $gray-bg;
-  padding: 0 0 20px;
-  >.wrapper {
-    max-width: 2000px;
-    overflow-x: hidden;
-    margin: 0 auto;
-  }
+  padding: 60px 0 40px;
   .container {
     padding: 0;
     >.row {
@@ -67,6 +62,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-tab-benefits {
+    padding: 108px 0 168px;
     h2.is-open-tab {
       z-index: 1;
       &::after {
