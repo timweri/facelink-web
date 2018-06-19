@@ -1,6 +1,6 @@
 .mod-faq {
   position: relative;
-
+  margin: 64px 0 74px;
   .col-left,
   .col-right {
     @extend .col-12;
@@ -106,6 +106,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-faq {
+    margin: 118px 0 98px;
     .faq-closed {
       padding: 0;
 

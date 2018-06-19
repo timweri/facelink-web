@@ -1,42 +1,29 @@
 .mod-product-image {
   position: relative;
   text-align: center;
-  .image-sm-wrap {
-    img {
-      width: 100%;
-    }
-  }
   .btn {
     padding: 0 30px;
   }
   .btn-wrap {
-    @include position(absolute, $left:0, $right:0, $bottom:45px);
+    @include position(absolute, $left:0, $right:0, $bottom: 8%);
+  }
+  .image-sm-wrap {
+    @extend .d-md-none;
+    img {
+      width: 100%;
+    }
   }
   .image-lg-wrap {
+    @extend .d-none;
+    @extend .d-md-block;
     text-align: center;
-  }
-}
-
-@include media-breakpoint-up(sm) {
-  .mod-product-image {
-    .btn-wrap {
-      bottom: 20px;
-    }
   }
 }
 
 @include media-breakpoint-up(md) {
   .mod-product-image {
     .btn-wrap {
-      bottom: 40px;
-    }
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .mod-product-image {
-    .btn-wrap {
-      bottom: 70px;
+      bottom: 16%;
     }
   }
 }

@@ -208,7 +208,11 @@ h6,
     margin-left: auto;
   }
 }
-
+.page-internal {
+  #main-content {
+    padding-top: 63px;
+  }
+}
 @include media-breakpoint-up(lg) {
   /* font heading */
 
@@ -244,6 +248,12 @@ h6,
   h6,
   .h6 {
     font-size: rem(12);
+  }
+
+  .page-internal {
+    #main-content {
+      padding-top: 93px;
+    }
   }
 }
 

@@ -45,6 +45,21 @@
 .subhead-frame3-title {
   padding: 35px 15px 65px;
 }
+.description-iframe3 {
+  @extend .d-none;
+  @extend .d-lg-block;
+  @include position(absolute, null, 100%, 80px, null, 1);
+  max-width: 160px;
+  width: 100%;
+  p {
+    margin: 0;
+    font-style: italic;
+  }
+  .name {
+    font-weight: 700;
+    font-style: normal;
+  }
+}
 @include media-breakpoint-up(lg) {
   .subhead-frame3-title {
     max-width: 420px;
@@ -76,6 +91,9 @@
         transform: rotate(-45deg);
         transform-origin: 100% 0%;
       }
+    }
+    .title-frame3 {
+      margin-top: 10px;
     }
   }
   .bg-image-frame3 {

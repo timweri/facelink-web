@@ -5,6 +5,9 @@
   &.pin-header {
     box-shadow: 2px 9px 18px -6px rgba(0, 0, 0, .22);
   }
+  &.visibility-hide {
+    visibility: hidden;
+  }
 }
 
 #header-logo {

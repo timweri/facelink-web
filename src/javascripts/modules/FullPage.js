@@ -46,6 +46,7 @@ const FullPage = (($) => {
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
       let itemLength = this._element.find('.section').length
+      let that = this
       function initFullPage() {
         $fullPage.fullpage({
           anchors: ['First', '2nd', '3rd', '4th', '5th', '6th'],
@@ -82,7 +83,14 @@ const FullPage = (($) => {
               default:
                 Nav.removeAttr('class')
             }
-			    }
+          },
+          onLeave: function(index, nextIndex, direction){
+            if(nextIndex == 6 ) {
+              that.header.addClass('visibility-hide')
+            } else {
+              that.header.removeClass('visibility-hide')
+            }
+          }
         })
       }
       function destroyFullPage() {
@@ -128,7 +136,7 @@ const FullPage = (($) => {
         if($windowHeight < 641 || $windowWidth < 992 ) {
           this.cta.removeAttr('style')
         } else {
-          this.cta.css('height', $windowHeight - $FooterHeight - $headerHeight)
+          this.cta.css('height', $windowHeight - $FooterHeight)
         }
       }
     }
