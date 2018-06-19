@@ -1,0 +1,88 @@
+.mod-news-feed {
+  max-width: 2000px;
+  text-align: center;
+  overflow-x: hidden;
+  h2 {
+    text-transform: uppercase;
+  }
+  .btn {
+    margin-top: 30px;
+    padding: 0 33px;
+  }
+  .first-col-right,
+  .first-col-left {
+    @extend .col-12, .col-lg-6;
+    padding: 0;
+  }
+  > .container {
+    > .row {
+      position: relative;
+    }
+  }
+}
+
+.news-feed-post {
+  text-align: center;
+  margin: 50px 0 60px;
+  padding: 0 13px;
+  h2 {
+    margin-bottom: 43px;
+  }
+}
+.news-feed-logo {
+  display: inline-block;
+  width: 103px;
+  margin-bottom: 24px;
+}
+.news-feed-quote {
+  position: relative;
+  color: $white;
+  overflow-x: hidden;
+  padding: 109px 23px;
+  &::before {
+    @include sizeEx(4000px, 100%);
+    @include position(absolute, $top:0, $right:0);
+    background: $red;
+    content: "";
+    z-index: 0;
+  }
+  h2 {
+    margin-bottom: 41px;
+    letter-spacing: .8px;
+  }
+  p {
+    letter-spacing: .4px;
+  }
+  h2,
+  p {
+    position: relative;
+  }
+}
+.news-feed-post-col {
+  @extend .col-12, .col-lg-6;
+}
+.twitter-feed {
+  @include sizeEx(100%);
+  background-repeat: no-repeat;
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-news-feed {
+    .first-col-left {
+      padding-right: 15px;
+    }
+    .first-col-right {
+      padding-left: 15px;
+    }
+  }
+  .news-feed-post {
+    text-align: left;
+  }
+  .news-feed-post-col {
+    padding: 0 15px;
+  }
+  .news-feed-quote {
+    text-align: left;
+    overflow-x: visible;
+  }
+}

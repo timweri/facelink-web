@@ -16,7 +16,7 @@ module.exports = {
   our_story: require('./modules/our-story'),
   content_benefits: require('./modules/content-benefits'),
   tab_benefits: require('./modules/tab-benefits'),
-  instagram: require('./modules/instagram'),
-  featured_news_post: require('./modules/featured-news-post')
-
+  featured_news_post: require('./modules/featured-news-post'),
+  news_feed: require('./modules/news-feed'),
+  instagram: require('./modules/instagram')
 }

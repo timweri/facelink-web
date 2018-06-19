@@ -7,8 +7,7 @@ $number-per-row-lg: 5;
   letter-spacing: .4px;
   line-height: 1.22;
   font-family: $os;
-  padding: 90px 0 0;
-  margin: 65px 0 50px;
+  padding: 80px 0 0;
   position: relative;
 
   &::before {
@@ -42,7 +41,6 @@ $number-per-row-lg: 5;
 
 @include media-breakpoint-up(lg) {
   .mod-promotion {
-    margin: 110px 0 75px;
     .promo-item {
       max-width: (100% / $number-per-row-lg);
       flex: 0 0 (100% / $number-per-row-lg);

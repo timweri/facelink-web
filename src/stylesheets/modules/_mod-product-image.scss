@@ -3,7 +3,6 @@
   text-align: center;
   .btn {
     padding: 0 30px;
-    text-transform: uppercase;
   }
   .btn-wrap {
     @include position(absolute, $left:0, $right:0, $bottom: 8%);
