@@ -2,7 +2,7 @@
   position: relative;
   max-width: 2000px;
   overflow-x: hidden;
-  margin: 0 auto;
+  margin: 60px auto 0;
   .centered-row {
     @extend .row;
     align-items: center;
@@ -30,6 +30,11 @@
     @extend .col-lg-6, .offset-lg-1;
     line-height: 2;
     letter-spacing: 1.1px;
+    * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -51,6 +56,7 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0;
+  line-height: 1.4;
 }
 
 @include media-breakpoint-up(lg) {
@@ -58,6 +64,7 @@
     max-width: 370px;
   }
   .mod-our-story {
+    margin: 110px 0 70px;
     .centered-row {
       margin-top: 7.5%;
     }
