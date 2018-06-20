@@ -1,4 +1,5 @@
 .mod-shop-product {
+  margin-top: 129px;
   >.container {
     position: relative;
     display: flex;
@@ -36,10 +37,16 @@
   h2 {
     padding: 23px 25px 23px 0;
   }
-  .shop-product-overlay {
+  .shop-product-overlay1 {
     @include position(absolute, $bottom: 30px, $left:0);
     max-width: 40%;
     transform: translateX(-30%);
+  }
+  .shop-product-overlay2 {
+    @extend .d-lg-none;
+    @include position(absolute, $top: 0, $right:0);
+    transform: translate(20%, -20%);
+    max-width: 40%;
   }
 }
 
@@ -74,7 +81,7 @@
   h2 {
     padding: 23px 0 23px 25px;
   }
-  .shop-product-overlay {
+  .shop-product-overlay1 {
     @include position(absolute, $bottom: 30px, $right:0);
     max-height: 80%;
     transform: translateX(30%);
@@ -83,6 +90,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-shop-product {
+    margin-top: 107px;
     >.container {
       flex-direction: row;
     }
@@ -91,6 +99,9 @@
     margin-top: 40px;
     width: 60%;
     z-index: 0;
+    .btn {
+      margin-top: 30px;
+    }
   }
   .shop-product-left {
     margin-right: -5%;
@@ -99,6 +110,9 @@
     .shop-product-image {
       background-blend-mode: multiply;
       box-shadow: 9px 15.6px 43.2px 2.8px rgba(93, 93, 93, .49);
+    }
+    .btn {
+      margin-top: 50px;
     }
   }
 }
