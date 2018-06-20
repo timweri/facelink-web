@@ -4,14 +4,22 @@
   .container {
     padding: 0;
   }
+  .icomoon {
+    &:hover {
+      color: $color-c6;
+    }
+  }
 }
+
 #logo-footer {
   width: 86px;
   margin: 0 auto 40px;
 }
+
 .footer-top {
   padding: 0 15px;
 }
+
 .footer-item-col {
   color: $white;
   h5 {
@@ -19,6 +27,33 @@
     @extend .text-uppercase;
     line-height: 1.8;
     margin-bottom: 18px;
+    &.active {
+      color: $color-c6;
+    }
+    >a {
+      position: relative;
+      z-index: 0;
+      transition: color .5s;
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      &::before {
+        @include position(absolute, $top: 0, $left: -5%);
+        @include sizeEx(110%);
+        content: "";
+        z-index: -1;
+        padding: 0 6px;
+        background: $color-c6;
+        transform: scale3d(0, 1, 1);
+        transform-origin: 0% 50%;
+        transition: transform .5s;
+        transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      }
+      &:hover {
+        color: $black;
+        &::before {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+    }
   }
   a {
     letter-spacing: 1.1px;
@@ -71,6 +106,7 @@
     }
   }
 }
+
 .cont-footer {
   max-width: 940px;
   width: 100%;
@@ -82,6 +118,7 @@
     flex: 0 0 100%;
   }
 }
+
 @include media-breakpoint-up(md) {
   #footer {
     .container {
@@ -92,6 +129,7 @@
     padding: 0;
   }
 }
+
 @include media-breakpoint-up(lg) {
   #footer {
     padding-top: 65px;
