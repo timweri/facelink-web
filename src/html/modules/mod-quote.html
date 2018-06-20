@@ -1,17 +1,21 @@
+{% if status === true %}
 <section class="module mod-quote">
-  <div class="centered-row">
-    <div class="col-left">
-      <div class="container">
-        <blockquote>
-          {{ quote_data.quote }}
-          <cite>{{ quote_data.cite }}</cite>
-        </blockquote>
+  <div class="container">
+    <div class="centered-row">
+      <div class="col-left">
+        <div class="container">
+          <blockquote>
+            {{ quote_data.quote }}
+            <cite>{{ quote_data.cite }}</cite>
+          </blockquote>
+        </div>
       </div>
-    </div>
-    <div class="col-right">
-      <div class="quote-img-wrap">
-        <img class="img-fluid" src="{{ quote_data.image }}" alt="Fitness">
+      <div class="col-right">
+        <div class="quote-img-wrap">
+          <img class="img-fluid" src="{{ quote_data.image }}" alt="Fitness">
+        </div>
       </div>
     </div>
   </div>
 </section>
+{% endif %}

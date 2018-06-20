@@ -2,12 +2,20 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  .show-mb {
+    @extend .d-lg-none;
+  }
+  .show-desktop {
+    @extend .d-none;
+    @extend .d-lg-block;
+  }
 }
 .container-frame1 {
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 .cont-frame1 {
   max-width: 395px;
@@ -42,6 +50,9 @@
 .image-frame1 {
   @include position(absolute, 24%, null, null, -62%);
   width: 150%;
+  img {
+    width: 100%;
+  }
 }
 .frame1-container {
   @include position(relative, 0, null, null, 0);
@@ -74,8 +85,10 @@
     }
   }
   .img-production-frame1 {
+    @include position(absolute, $right: 110px, $bottom: 0);
     max-width: 410px;
     margin: 20px 0 0 auto;
+    margin: 0;
   }
   .frame1-container {
     padding-top: 100px;
@@ -83,11 +96,20 @@
 }
 @include media-breakpoint-up(xl) {
   .img-production-frame1 {
-    margin-top: -20px;
+    width: 33%;
+    max-width: none;
   }
   .image-frame1 {
     left: -130px;
-    top: 15%;
+    top: 20%;
+    max-width: none;
+    width: 55%;
   }
 }
 
+@media screen and (min-width: 1500px) {
+  .img-production-frame1 {
+    right: 190px;
+    width: 26%;
+  }
+}

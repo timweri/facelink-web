@@ -1,0 +1,6 @@
+<div class="mod-group-quote-cta {% if status != true %}not-quote{% endif %}">
+  <div class="bg-green"></div>
+  {% set quote_data = quote %}
+  {% include 'modules/mod-quote.html' %}
+  {% include 'modules/mod-cta.html' %}
+</div>

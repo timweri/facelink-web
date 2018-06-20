@@ -1,0 +1,30 @@
+.mod-group-quote-cta {
+  position: relative;
+  overflow: hidden;
+  .bg-green {
+    @include position(absolute, $bottom: 0, $right: -50%);
+    transform: skewX(-45deg);
+    background: $color-e5;
+    display: block;
+    padding-bottom: 100%;
+    padding-right: 65%;
+    overflow: hidden;
+    &::before {
+      @include position(absolute, $bottom: 0, $right: 0, $index: 1);
+      @include sizeEx(100%, 70%);
+      background: url("../images/bg-transparent2.png") right top no-repeat;
+      content: "";
+      display: block;
+      transform: skewX(45deg);
+      transform-origin: 0 100%;
+    }
+  }
+  &.not-quote {
+    overflow: hidden;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .mod-group-quote-cta {
+    overflow: inherit;
+  }
+}

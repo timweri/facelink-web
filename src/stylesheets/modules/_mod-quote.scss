@@ -61,6 +61,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
 
 @include media-breakpoint-up(lg) {
   .mod-quote {
+    margin-top: 15%;
     blockquote {
       &::after,
       &::before {
