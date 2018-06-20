@@ -1,5 +1,5 @@
 .mod-shop-product {
-  margin-top: 129px;
+  margin: 129px 0 44px;
   >.container {
     position: relative;
     display: flex;
@@ -90,7 +90,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-shop-product {
-    margin-top: 107px;
+    margin: 107px 0 135px;
     >.container {
       flex-direction: row;
     }
