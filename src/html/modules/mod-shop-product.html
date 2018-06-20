@@ -1,0 +1,40 @@
+<!-- module 'Mod Shop Product' -->
+<section class="module mod-shop-product">
+  <div class="container">
+    {% set cur_product = shop_product.products[0] %}
+    <div class="shop-product-left">
+      <div class="shop-product-overlay">
+        <img src="{{ cur_product.overlay_image }}">
+      </div>
+      <div class="shop-product-title">
+        <h2>
+          {{ cur_product.title }}
+        </h2>
+      </div>
+      <div class="shop-product-image">
+        <img src="{{ cur_product.image }}">
+      </div>
+      <p>
+        <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
+      </p>
+    </div>
+    {% set cur_product = shop_product.products[1] %}
+    <div class="shop-product-right">
+      <div class="shop-product-overlay">
+        <img src="{{ cur_product.overlay_image }}">
+      </div>
+      <div class="shop-product-title">
+        <h2>
+          {{ cur_product.title }}
+        </h2>
+      </div>
+      <div class="shop-product-image">
+        <img src="{{ cur_product.image }}">
+      </div>
+      <p>
+        <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
+      </p>
+    </div>
+  </div>
+</div>
+</section>
