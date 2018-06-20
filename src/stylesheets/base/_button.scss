@@ -57,16 +57,35 @@ $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
   }
 }
 
+button.btn-form,
+button.btn-featured-news {
+  line-height: 0;
+}
+a.btn-form,
+a.btn-featured-news {
+  line-height: 2;
+}
+
 .btn-form {
-  box-sizing: border-box;
   color: $black;
   background-color: $white;
   border: solid 4px transparent;
-  display: flex;
-  line-height: 0;
 
   &:hover {
-    background-color: transparent !important;
+    background-color: transparent;
+    color: $white;
+    border: solid 4px $white;
+  }
+}
+
+.btn-featured-news {
+  padding: 0 30px;
+  color: $orange;
+  background-color: $white;
+  border: solid 4px transparent;
+
+  &:hover {
+    background-color: transparent;
     color: $white;
     border: solid 4px $white;
   }
