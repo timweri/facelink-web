@@ -87,6 +87,10 @@
         align-items: center;
         &:hover {
           @extend h2.is-open-tab;
+          &::after,
+          &::before {
+            background: $black-two;
+          }
         }
         &::before {
           @include position(absolute, $top:0, $right:0);
