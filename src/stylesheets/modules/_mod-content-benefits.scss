@@ -16,9 +16,9 @@
     margin-top: 0;
     .img-wrap {
       position: absolute;
-      top: -50px;
-      right: -30px;
-      width: 225px;
+      bottom: -10px;
+      right: -65px;
+      width: 295px;
     }
     &::before {
       @include position(absolute, $bottom: 0, $left:0, $right: 0);
@@ -64,15 +64,9 @@
   .mod-content-benefits {
     margin-bottom: 120px;
     padding-top: 80px;
-    // .solid-bg,
-    // .decor-bar {
-    //   margin-top: -290px;
-    // }
     .col-left,
     .col-right {
       padding: 0;
-    }
-    .solid-bg {
     }
     .col-left {
       padding-top: 95px;
