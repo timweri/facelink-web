@@ -1,3 +1,4 @@
 module.exports = {
-  'title': 'Contact'
+  'title': 'Contact',
+  banner: require('./modules/banner-contact'),
 }

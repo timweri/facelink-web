@@ -1,3 +1,4 @@
 module.exports = {
-  'title': 'Benefits'
+  'title': 'Benefits',
+  banner: require('./modules/banner-benefits'),
 }

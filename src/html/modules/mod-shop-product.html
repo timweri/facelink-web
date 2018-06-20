@@ -3,11 +3,14 @@
   <div class="container">
     {% set cur_product = shop_product.products[0] %}
     <div class="shop-product-left">
-      <div class="shop-product-overlay1">
-        <img src="{{ cur_product.overlay_image1 }}">
+      <div class="shop-product-pa-overlay">
+        <img src="images/pineapple.png">
       </div>
-      <div class="shop-product-overlay2">
-        <img src="{{ cur_product.overlay_image2 }}">
+      <div class="shop-product-paorange-overlay">
+        <img src="images/pineapple-orange.png">
+      </div>
+      <div class="shop-product-orange-overlay">
+        <img src="images/orange-slices.png">
       </div>
       <div class="shop-product-title">
         <h2>
@@ -23,8 +26,8 @@
     </div>
     {% set cur_product = shop_product.products[1] %}
     <div class="shop-product-right">
-      <div class="shop-product-overlay1">
-        <img src="{{ cur_product.overlay_image1 }}">
+      <div class="shop-product-cap-overlay">
+        <img src="images/cap.png">
       </div>
       <div class="shop-product-title">
         <h2>
