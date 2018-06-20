@@ -18,5 +18,6 @@ module.exports = {
   tab_benefits: require('./modules/tab-benefits'),
   featured_news_post: require('./modules/featured-news-post'),
   news_feed: require('./modules/news-feed'),
-  instagram: require('./modules/instagram')
+  instagram: require('./modules/instagram'),
+  shop_product: require('./modules/shop-product')
 }
