@@ -83,3 +83,8 @@ strong {
 @include media-breakpoint-up(lg) {
   // min-width: 992px
 }
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 1430px;
+  }
+}

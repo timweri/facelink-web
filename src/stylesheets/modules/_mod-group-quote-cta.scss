@@ -25,6 +25,6 @@
 }
 @include media-breakpoint-up(lg) {
   .mod-group-quote-cta {
-    overflow: auto;
+    overflow: inherit;
   }
 }

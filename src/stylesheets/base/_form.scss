@@ -2,7 +2,7 @@
   position: relative;
   height: 40px;
   appearance: none;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   border: none;
 }
@@ -46,7 +46,6 @@ input:-webkit-autofill {
   label {
     position: relative;
     padding: 0 1.25rem;
-  
   }
 
   &.error {
@@ -63,7 +62,6 @@ input:-webkit-autofill {
 .btn-form {
   background-color: $white;
   color: $black;
-
   &:hover {
     background-color: darken($white, 20);
   }
