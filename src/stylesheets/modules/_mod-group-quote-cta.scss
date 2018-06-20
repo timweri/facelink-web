@@ -21,6 +21,15 @@
   }
   &.not-quote {
     overflow: hidden;
+    .bg-green {
+      display: none;
+    }
+    .mod-cta {
+      &::before,
+      &::after {
+        content: "";
+      }
+    }
   }
 }
 @include media-breakpoint-up(lg) {

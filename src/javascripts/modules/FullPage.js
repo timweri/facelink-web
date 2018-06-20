@@ -45,6 +45,7 @@ const FullPage = (($) => {
       let $fullPage = this._element
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
+      let winH = $(window).height()
       let itemLength = this._element.find('.section').length
       let that = this
       function initFullPage() {
@@ -97,31 +98,43 @@ const FullPage = (($) => {
         $.fn.fullpage.destroy('all');
       }
       if (scroll > 0) {
-        if ((winW + scroll) <= 992) {
+        if ((winW + scroll) < 992) {
           if ($fullPage.find('.fp-section').length) {
             setTimeout(function () {
               destroyFullPage()
             }, 300)
           }
-        } else {
+        } else if((winW + scroll) >= 992 && winH >= 640 ){
           if ($fullPage.find('.fp-section').length) {
 
           } else {
             initFullPage()
+          }
+        } else if((winW + scroll) >= 992 && winH < 640 ){
+          if ($fullPage.find('.fp-section').length) {
+            setTimeout(function () {
+              destroyFullPage()
+            }, 300)
           }
         }
       } else {
-        if (winW <= 992) {
+        if (winW < 992) {
           if ($fullPage.find('.fp-section').length) {
             setTimeout(function () {
               destroyFullPage()
             }, 300)
           }
-        } else {
+        } else if((winW + scroll) >= 992 && winH >= 640 ){
           if ($fullPage.find('.fp-section').length) {
 
           } else {
             initFullPage()
+          }
+        } else if((winW + scroll) >= 992 && winH < 640 ){
+          if ($fullPage.find('.fp-section').length) {
+            setTimeout(function () {
+              destroyFullPage()
+            }, 300)
           }
         }
       }

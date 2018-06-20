@@ -2,14 +2,21 @@
   background: $color-c6;
   height: 300px;
   overflow: hidden;
-  // &::before {
-  //   @include position(absolute, $top: 0, $left: 50%);
-  //   @include sizeEx(100%);
-  //   transform: skewX(-45deg);
-  //   background: $color-e5;
-  //   content: "";
-  //   display: block;
-  // }
+  &::before,
+  &::after {
+    display: block;
+  }
+  &::before {
+    @include position(absolute, $top: 0, $left: 40%);
+    @include sizeEx(100%);
+    transform: skewX(-45deg);
+    background: $color-e5;
+  }
+  &::after {
+    @include position(absolute, $bottom: 0, $right: 0, $index: 1);
+    @include sizeEx(110px, 100%);
+    background: url("../images/bg-transparent2.png") center left no-repeat;
+  }
   .container {
     @extend .d-flex;
     @extend .align-items-center;
@@ -48,5 +55,13 @@
 @include media-breakpoint-up(lg) {
   .form-cta {
     margin-top: 30px;
+  }
+  .mod-cta {
+    &::before {
+      left: 50%;
+    }
+    &::after {
+      width: 220px;
+    }
   }
 }
