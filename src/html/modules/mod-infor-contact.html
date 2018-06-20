@@ -16,7 +16,7 @@
             {% if infor_contact.email %}
                 <div class="email">
                     <p>Email</p>
-                    <a class="email-text">{{ infor_contact.email }}</a>
+                    <a href="mailto:{{ infor_contact.email }}" class="email-text">{{ infor_contact.email }}</a>
                 </div>
             {% endif %}
             {% if infor_contact.title %}
