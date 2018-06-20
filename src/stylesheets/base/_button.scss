@@ -72,7 +72,7 @@ a.btn-featured-news {
   border: solid 4px transparent;
 
   &:hover {
-    background-color: transparent;
+    background-color: $orange !important;
     color: $white;
     border: solid 4px $white;
   }
@@ -85,7 +85,7 @@ a.btn-featured-news {
   border: solid 4px transparent;
 
   &:hover {
-    background-color: transparent;
+    background-color: $orange;
     color: $white;
     border: solid 4px $white;
   }
