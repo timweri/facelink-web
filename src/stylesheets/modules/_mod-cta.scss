@@ -1,11 +1,13 @@
 #email_cta {
   opacity: .85;
+  text-transform: uppercase;
 }
 
 .mod-cta {
   background: $color-c6;
   height: 300px;
   overflow: hidden;
+  padding: 14px 0 0;
   &::before,
   &::after {
     display: block;
@@ -30,16 +32,32 @@
   }
   h2 {
     @extend .style-h2;
+    font-weight: 700;
+    letter-spacing: .8px;
     text-transform: uppercase;
   }
   p {
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
+    font-size: rem(16);
   }
   .form-control {
     background-color: $white;
     height: 54px;
     color: $black;
-    padding-right: 120px;
+    padding-right: 135px;
+  }
+  .form-group {
+    .form-control {
+      border: 1px solid transparent;
+    }
+    &.error {
+      .form-control {
+        border: 1px solid $red;
+      }
+      .messages-error {
+        display: none;
+      }
+    }
   }
   .btn {
     @include position(absolute, 10px, 10px, null, null);
@@ -58,14 +76,24 @@
 }
 @include media-breakpoint-up(lg) {
   .form-cta {
-    margin-top: 30px;
+    margin-top: 25px;
   }
   .mod-cta {
+    padding: 31px 0 14px;
     &::before {
       left: 50%;
     }
     &::after {
       width: 220px;
+    }
+    p {
+      font-size: rem(18);
+      margin-bottom: 0;
+      letter-spacing: 1.4px;
+    }
+    h2 {
+      letter-spacing: 1.2px;
+      margin-bottom: 10px;
     }
   }
 }

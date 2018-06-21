@@ -59,6 +59,11 @@ input:-webkit-autofill {
   }
 }
 
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
 .btn-form {
   background-color: $white;
   color: $black;
