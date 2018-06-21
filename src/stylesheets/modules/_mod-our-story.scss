@@ -6,7 +6,7 @@
   .centered-row {
     @extend .row;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 125px;
   }
   .solid-bg {
     @include position(absolute, $top: -25%, $right: 35%);
@@ -57,6 +57,14 @@
   text-transform: uppercase;
   margin-bottom: 0;
   line-height: 1.4;
+}
+
+@include media-breakpoint-up(sm) {
+  .mod-our-story {
+    .centered-row {
+      margin-top: 200px;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
