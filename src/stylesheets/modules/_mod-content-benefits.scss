@@ -27,9 +27,6 @@
       background-color: $red;
     }
   }
-  .centered-row {
-    @extend .row;
-  }
   .col-left,
   .col-right {
     @extend .col-12;
