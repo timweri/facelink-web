@@ -62,7 +62,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-tab-benefits {
-    padding: 108px 0 168px;
+    padding: 108px 0 158px;
     h2.is-open-tab {
       z-index: 1;
       &::after {
@@ -79,8 +79,8 @@
       h2 {
         height: 91px;
         text-align: left;
-        margin: 10px 0;
-        padding-left: 33px;
+        margin: 19px 0;
+        padding: 33px;
         background: transparent;
 
         display: flex;

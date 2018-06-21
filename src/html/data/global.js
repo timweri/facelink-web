@@ -6,7 +6,6 @@ module.exports = {
   insta_link: require('./modules/insta-link'),
   promotion: require('./modules/promotion'),
   product: require('./modules/product-image'),
-  faq: require('./modules/faq'),
   our_story: require('./modules/our-story'),
   content_benefits: require('./modules/content-benefits'),
   tab_benefits: require('./modules/tab-benefits'),
