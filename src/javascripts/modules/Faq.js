@@ -21,34 +21,33 @@ const Faq = (($) => {
     constructor (element, config) {
       this._element = $(element)
       this._config = this._getConfig(config)
-      var $faq_items = $(`[data-module="${NAME}"] .faq-item`)
-      $.each($faq_items, (index, parent) => {
-        this.clickEvent($faq_items, $(parent))
+      var $faqItems = $(`[data-module="${NAME}"] .faq-item`)
+      $.each($faqItems, (index, parent) => {
+        this.clickEvent($faqItems, $(parent))
       })
     }
 
-    clickEvent ($faq_items, $parent) {
-      let $child_h4 = $parent.children('h4'),
-          $child_content = $parent.children('.faq-answer');
-      $child_h4.click(() => {
+    clickEvent ($faqItems, $parent) {
+      let $childH4 = $parent.children('h4')
+      let $childContent = $parent.children('.faq-answer')
+      $childH4.click(() => {
         if ($parent.hasClass('faq-opened')) {
-          $child_content.slideUp(() => {
-            $parent.removeClass('faq-opened').addClass('faq-closed');
-          });
-        }
-        else {
-          $.map($faq_items, (value, index) => {
-            let $value = $(value);
+          $childContent.slideUp(() => {
+            $parent.removeClass('faq-opened').addClass('faq-closed')
+          })
+        } else {
+          $.map($faqItems, (value, index) => {
+            let $value = $(value)
             if ($value.hasClass('faq-opened')) {
               $value.children('.faq-answer').slideUp(() => {
-                $value.removeClass('faq-opened').addClass('faq-closed');
-              });
+                $value.removeClass('faq-opened').addClass('faq-closed')
+              })
             }
-          });
-          $parent.removeClass('faq-closed').addClass('faq-opened');
-          $child_content.slideDown();
+          })
+          $parent.removeClass('faq-closed').addClass('faq-opened')
+          $childContent.slideDown()
         }
-      });
+      })
     }
 
     _getConfig (config) {
