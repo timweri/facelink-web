@@ -57,6 +57,11 @@
 @include media-breakpoint-up(lg) {
   .mod-infor-contact {
     margin-top: 15px;
+    .social,
+    .email,
+    .extra {
+      padding-left: 50px;
+    }
     .social {
       position: relative;
       &::before {

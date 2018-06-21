@@ -112,7 +112,7 @@
   }
 
   .mod-shop-product {
-    margin: 107px 0 135px;
+    margin: 189px 0 157px;
     >.container {
       flex-direction: row;
     }
@@ -147,6 +147,11 @@
   }
   .shop-product-left {
     margin-right: 15px;
+    .shop-product-title {
+      h2 {
+        padding-left: 18px;
+      }
+    }
     &:hover {
       margin-right: -5%;
       .shop-product-image {
