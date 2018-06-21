@@ -12,13 +12,14 @@
   }
   .d-table {
     position: relative;
-    @include sizeEx(100%, 343px);
+    @include sizeEx(100%, 241px);
     .d-table-cell {
       text-align: left;
-      padding: 64px 0;
     }
   }
-
+  .banner-content {
+    margin-bottom: 28px;
+  }
   .btn {
     margin-left: 5px;
   }
@@ -54,6 +55,11 @@
 }
 
 @include media-breakpoint-up(lg) {
+  .banner-background {
+    .d-table {
+      height: 343px;
+    }
+  }
   .product-box-inner {
     @include position(absolute, $right: 0, $bottom: 0);
     max-width: 410px;

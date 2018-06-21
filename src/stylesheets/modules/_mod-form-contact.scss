@@ -16,13 +16,13 @@
   }
   .form-group {
     color: $white;
-    padding: 15px 0;
+    margin-bottom: 50px;
     label {
       position: absolute;
       z-index: 1;
       display: block;
-      font-weight: 700;
-      font-size: 18px;
+      letter-spacing: .4px;
+      font-size: rem(15);
       transform: translateY(-2px);
       cursor: text;
       transition: .25s all;
@@ -44,10 +44,7 @@
     border: none;
     border-bottom: solid 2px $white;
     z-index: 0;
-    padding-bottom: 30px;
-    &:focus {
-      border-bottom: solid 4px $white;
-    }
+    padding-bottom: 34px;
   }
   textarea.form-control {
     height: 80px;
@@ -63,6 +60,12 @@
     .btn-form-wrap {
       text-align: right;
       margin-top: 35px;
+    }
+    .form-control {
+      &:focus {
+        border-bottom: solid 4px $white;
+        padding-bottom: 32px;
+      }
     }
   }
 }
