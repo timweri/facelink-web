@@ -63,9 +63,11 @@ blockquote {
   font-size: 1em;
   font-style: italic;
 }
+
 p {
   letter-spacing: .4px;
 }
+
 label {
   margin-bottom: 0;
 }
@@ -83,6 +85,7 @@ strong {
 @include media-breakpoint-up(lg) {
   // min-width: 992px
 }
+
 @media screen and (min-width: 1500px) {
   .container {
     max-width: 1430px;
