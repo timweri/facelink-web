@@ -93,7 +93,7 @@
           }
         }
         &::before {
-          @include position(absolute, $top:0, $right:0);
+          @include position(absolute, $top:0, $right:-20px);
           @include sizeEx(4000px, 100%);
           z-index: -1;
           content: "";
