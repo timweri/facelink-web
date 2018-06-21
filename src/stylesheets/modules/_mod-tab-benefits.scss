@@ -112,8 +112,12 @@
     .tab-content {
       position: relative;
       margin: 59px 0;
-      padding: 0 81px;
+      padding: 0 0 0 81px;
       background: transparent;
+    }
+    .tab-content-scroll {
+      height: 410px;
+      
     }
   }
 }

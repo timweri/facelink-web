@@ -36,7 +36,6 @@ const TabBenefits = (($) => {
 
     scrollInit() {
       $('.tab-content-scroll').mCustomScrollbar({
-        setHeight: 450,
         theme: 'scroller-theme'
       });
     }
