@@ -105,11 +105,15 @@
   }
 }
 
+
 @include media-breakpoint-up(lg) {
   .mod-faq {
     margin: 118px auto 98px;
     h2 {
       padding: 20px 0;
+      &::before {
+        right: -15px;
+      }
     }
     .faq-closed {
       padding: 0;
@@ -140,7 +144,7 @@
     }
     .col-right {
       margin-top: 0;
-      padding: 0 0 0 90px;
+      padding: 0 0 0 105px;
     }
   }
 }
