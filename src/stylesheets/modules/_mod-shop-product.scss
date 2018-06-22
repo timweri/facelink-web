@@ -165,15 +165,19 @@
         box-shadow: 9px 2.8px 43.2px 15.6px rgba(93, 93, 93, .49);
       }
     }
-    h2 {
-      padding: 17px 0 17px 25px;
+    .shop-product-title {
+      left: 47%;
+      margin-left: -72px;
+      h2 {
+        padding: 17px 0 17px 72px;
+      }
     }
   }
   .shop-product-left {
     margin-right: 15px;
     .shop-product-title {
       h2 {
-        padding-left: 18px;
+        padding-left: 36px;
       }
     }
     &:hover {
@@ -183,7 +187,7 @@
       }
     }
     h2 {
-      padding: 17px 25px 17px 0;
+      padding: 17px 72px 17px 0;
     }
   }
 }
