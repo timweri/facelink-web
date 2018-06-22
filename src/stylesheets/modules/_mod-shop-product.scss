@@ -2,8 +2,6 @@
   margin: 129px 0 44px;
   >.container {
     position: relative;
-    display: flex;
-    flex-direction: column;
   }
   h2 {
     position: relative;
@@ -13,10 +11,16 @@
   }
 }
 
+.shop-product-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .shop-product-left,
 .shop-product-right {
   width: 100%;
   text-align: center;
+  position: relative;
 }
 
 .shop-product-cap-overlay {
@@ -47,7 +51,6 @@
 }
 
 .shop-product-left {
-  position: relative;
   .shop-product-title {
     @include position(absolute, $top: 0, $left:0);
     transform: translateY(-50%);
@@ -67,19 +70,22 @@
 }
 
 .shop-product-title {
+  position: relative;
+  z-index: 1;
   h2 {
     text-align: left;
   }
 }
 
 .shop-product-image {
+  position: relative;
+  z-index: 0;
   img {
     width: 100%;
   }
 }
 
 .shop-product-right {
-  position: relative;
   margin-top: 100px;
   .shop-product-title {
     @include position(absolute, $top: 0, $left: 55%);
@@ -97,34 +103,39 @@
   h2 {
     padding: 23px 0 23px 25px;
   }
-  .shop-product-overlay1 {
-    @include position(absolute, $bottom: 30px, $right:0);
-    max-height: 80%;
-    transform: translateX(30%);
-  }
 }
 
 @include media-breakpoint-up(lg) {
   .shop-product-cap-overlay {
     @include position(absolute, $bottom: 0, $right:0);
     max-width: 290px;
-    transform: translateX(50%) translateY(-40%);
+    transform: translateX(50%) translateY(0%);
   }
-
+  .shop-product-paorange-overlay {
+    max-width: 460px;
+    transform: translateX(-60%) translateY(22%);
+  }
   .mod-shop-product {
-    margin: 189px 0 157px;
-    >.container {
-      flex-direction: row;
-    }
+    margin: 189px 0 159px;
+  }
+  .shop-product-wrap {
+    position: relative;
+    flex-direction: row;
   }
   .shop-product-right,
   .shop-product-left {
     width: 50%;
+    transition: .3s;
+    margin-top: 0;
+    * {
+      transition: .3s;
+    }
+    z-index: 0;
     .btn {
       margin-top: 30px;
     }
     &:hover {
-      z-index: 1;
+      z-index: 50;
       width: 55%;
       margin-top: -40px;
       .shop-product-image {
@@ -136,7 +147,6 @@
     }
   }
   .shop-product-right {
-    margin-top: 0;
     margin-left: 15px;
     &:hover {
       margin-left: -5%;
