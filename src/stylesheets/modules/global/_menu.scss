@@ -1,6 +1,6 @@
 #main-menu {
   @extend .navbar-collapse;
-  @include sizeEx(0,100vh);
+  @include sizeEx(0,100vh !important);
   display: block;
   transition: width .2s;
   ul {
@@ -229,7 +229,7 @@
     @include position(initial, $top: unset, $right: unset);
     background-color: transparent;
     justify-content: flex-end;
-    height: auto;
+    height: auto !important;
   }
 
   #header-logo {
