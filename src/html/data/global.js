@@ -12,5 +12,6 @@ module.exports = {
   featured_news_post: require('./modules/featured-news-post'),
   news_feed: require('./modules/news-feed'),
   instagram: require('./modules/instagram'),
-  shop_product: require('./modules/shop-product')
+  shop_product: require('./modules/shop-product'),
+  content_editor: require('./modules/content-editor')
 }
