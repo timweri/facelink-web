@@ -1,4 +1,4 @@
-<section class="module mod-our-story">
+<section class="module mod-our-story lazyload-image">
   <div class="os-headline-wrap">
     <h2 class="os-headline">
       {{ our_story.headline }}
@@ -11,7 +11,7 @@
         <div class="solid-bg"></div>
         <div class="row">
           <div class="col-9 offset-3">
-            <img src="{{ our_story.image }}">
+            <img src="images/ajax-loader.svg" data-src="{{ our_story.image }}" alt="Illustration">
           </div>
         </div>
       </div>

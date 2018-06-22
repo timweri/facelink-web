@@ -1,45 +1,46 @@
-<!-- module 'Mod Shop Product' -->
-<section class="module mod-shop-product">
+<section class="module mod-shop-product lazyload-image" data-module="shop-product">
   <div class="container">
     {% set cur_product = shop_product.products[0] %}
-    <div class="shop-product-left">
-      <div class="shop-product-pa-overlay">
-        <img src="images/pineapple.png">
+    <div class="shop-product-wrap">
+      <div class="shop-product-left">
+        <div class="shop-product-title">
+          <h2>
+            {{ cur_product.title }}
+          </h2>
+        </div>
+        <div class="shop-product-image">
+          <div class="shop-product-pa-overlay">
+            <img data-src="images/pineapple.png" src="images/ajax-loader.svg" alt="Pineapple">
+          </div>
+          <div class="shop-product-paorange-overlay">
+            <img data-src="images/pineapple-orange.png" src="images/ajax-loader.svg" alt="Pineapple Oranges">
+          </div>
+          <div class="shop-product-orange-overlay">
+            <img data-src="images/orange-slices.png" src="images/ajax-loader.svg" alt="Orange slices">
+          </div>
+          <img data-src="{{ cur_product.image }}" src="images/ajax-loader.svg" alt="Product">
+        </div>
+        <p>
+          <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
+        </p>
       </div>
-      <div class="shop-product-paorange-overlay">
-        <img src="images/pineapple-orange.png">
+      {% set cur_product = shop_product.products[1] %}
+      <div class="shop-product-right">
+        <div class="shop-product-title">
+          <h2>
+            {{ cur_product.title }}
+          </h2>
+        </div>
+        <div class="shop-product-image">
+          <div class="shop-product-cap-overlay">
+            <img data-src="images/cap.png" src="images/ajax-loader.svg" alt="Cap">
+          </div>
+          <img data-src="{{ cur_product.image }}" src="images/ajax-loader.svg" alt="Gear">
+        </div>
+        <p>
+          <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
+        </p>
       </div>
-      <div class="shop-product-orange-overlay">
-        <img src="images/orange-slices.png">
-      </div>
-      <div class="shop-product-title">
-        <h2>
-          {{ cur_product.title }}
-        </h2>
-      </div>
-      <div class="shop-product-image">
-        <img src="{{ cur_product.image }}">
-      </div>
-      <p>
-        <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
-      </p>
-    </div>
-    {% set cur_product = shop_product.products[1] %}
-    <div class="shop-product-right">
-      <div class="shop-product-cap-overlay">
-        <img src="images/cap.png">
-      </div>
-      <div class="shop-product-title">
-        <h2>
-          {{ cur_product.title }}
-        </h2>
-      </div>
-      <div class="shop-product-image">
-        <img src="{{ cur_product.image }}">
-      </div>
-      <p>
-        <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
-      </p>
     </div>
   </div>
 </div>

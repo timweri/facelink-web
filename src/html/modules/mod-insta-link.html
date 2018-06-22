@@ -1,5 +1,5 @@
 <!-- module 'Mod Insta Link' -->
-<section class="module mod-insta-link {% if title != 'Home' %}insta-universal{% endif %}">
+<section class="module mod-insta-link lazyload-image {% if title != 'Home' %}insta-universal{% endif %}">
   <div class="insta-link-wrap">
     <div class="list-insta">
       {% for list in list_instagram %}
@@ -12,7 +12,7 @@
                 {% if loop.index == 1 %}
                 <div class="item-insta item-insta{{loop.index}}">
                   <div class="box-img-insta" style="background-image: url({{item.image}});">
-                    <img src="images/bg-transparent.png" alt="images/bg-transparent.png">
+                    <img src="images/ajax-loader.svg" data-src="images/bg-transparent.png" alt="images/bg-transparent.png">
                   </div>
                 </div>
                 {% endif %}
@@ -24,7 +24,7 @@
                   {% if loop.index > 1 %}
                   <div class="item-insta item-insta{{loop.index}}">
                     <div class="box-img-insta" style="background-image: url({{item.image}});">
-                      <img src="images/bg-transparent.png" alt="images/bg-transparent.png">
+                      <img src="images/ajax-loader.svg" data-src="images/bg-transparent.png" alt="images/bg-transparent.png">
                     </div>
                   </div>
                   {% endif %}

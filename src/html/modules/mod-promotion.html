@@ -1,4 +1,4 @@
-<section class="module mod-promotion" style="background-image: url({{ promotion.background }});
+<section class="module mod-promotion lazyload-image" style="background-image: url({{ promotion.background }});
                                               background-position: {{ promotion.background_position }};">
   <div class="promo-overlay">
   </div>
@@ -7,7 +7,7 @@
       {% for item in promotion.items %}
         <div class="col-6 col-md-4 promo-item">
           <div class="icon-wrap">
-            <img src="{{ item.icon }}" alt="{{ item.title }}">
+            <img src="images/ajax-loader.svg" data-src="{{ item.icon }}" alt="{{ item.title }}">
           </div>
           <p>
             {{ item.title }}

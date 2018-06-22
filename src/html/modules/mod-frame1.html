@@ -1,6 +1,6 @@
-<section class="section section-frame1" style="background-image: url(images/bg-section1.jpg);">
+<section class="section section-frame1 lazyload-image" style="background-image: url(images/bg-section1.jpg);">
   <div class="image-frame1">
-    <img src="{{ frame1.image }}" alt="">
+    <img src="images/ajax-loader.svg" data-src="{{ frame1.image }}" alt="">
   </div>
   <div class="container-frame1">
     <div class="frame1-container">
@@ -15,7 +15,7 @@
               </div>
             </div>
             <div class="img-production-frame1 show-mb">
-              <img src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
+              <img src="images/ajax-loader.svg" data-src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
     </div>
   </div>
    <div class="img-production-frame1 show-desktop">
-      <img src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
+      <img src="images/ajax-loader.svg" data-src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
     </div>
 </section>
 
