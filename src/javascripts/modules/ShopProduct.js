@@ -33,6 +33,7 @@ const ShopProduct = (($) => {
       let $this = this._element
       $this.css('height', $this.height())
       $(window).resize(() => {
+        $this.css('height', 'auto')
         $this.css('height', $this.height())
       })
     }
