@@ -30,7 +30,8 @@
   position: absolute;
   display: inline-block;
   background-color: $color-c6;
-  transform: rotate(45deg) translateY(50%);
+  transform-origin: center;
+  transform: translateX(-50%) translateY(35%) rotate(45deg);
   bottom: -5px;
 }
 
