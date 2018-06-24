@@ -1,5 +1,5 @@
 {% if status === true %}
-<section class="module mod-quote">
+<section class="module mod-quote lazyload-image">
   <div class="container">
     <div class="centered-row">
       <div class="col-left">
@@ -12,7 +12,7 @@
       </div>
       <div class="col-right">
         <div class="quote-img-wrap">
-          <img class="img-fluid" src="{{ quote.image }}" alt="Fitness">
+          <img class="img-fluid" src="images/ajax-loader.svg" data-src="{{ quote.image }}" alt="Fitness">
         </div>
       </div>
     </div>

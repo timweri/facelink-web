@@ -1,15 +1,15 @@
-<section class="module mod-news-feed">
+<section class="module mod-news-feed lazyload-image">
   <div class="container">
     <div class="row">
       {% for post in news_feed.list_news_feed %}
         {% if loop.index == 1 %}
           <div class="first-col-left">
             <div class="news-feed-image">
-              <img src="{{ post.image }}" alt="Featured image">
+              <img src="images/ajax-loader.svg" data-src="{{ post.image }}" alt="Featured image">
             </div>
             <div class="news-feed-post">
               <div class="news-feed-logo">
-                <img src="{{ post.logo }}" alt="News logo">
+                <img src="images/ajax-loader.svg" data-src="{{ post.logo }}" alt="News logo">
               </div>
               <h2>
                 {{ post.title }}
@@ -29,7 +29,7 @@
           <div class="news-feed-post-col">
             <div class="news-feed-post">
               <div class="news-feed-logo">
-                <img src="{{ post.logo }}" alt="News logo">
+                <img src="images/ajax-loader.svg" data-src="{{ post.logo }}" alt="News logo">
               </div>
               <h2>
                 {{ post.title }}

@@ -1,14 +1,14 @@
-<section class="module mod-content-benefits">
+<section class="module mod-content-benefits lazyload-image">
   <div class="container">
-    <div class="centered-row">
+    <div class="row">
       <div class="col-right">
         <div class="solid-bg"></div>
         <div class="decor-bar">
           <div class="img-wrap">
-            <img src="../images/benefit-weight.png" alt="Weight">
+            <img src="images/benefit-weight.png" alt="Weight">
           </div>
         </div>
-        <img src="{{ content_benefits.image }}">
+        <img data-src="{{ content_benefits.image }}" src="images/ajax-loader.svg" alt="Illustration">
       </div>
       <div class="col-left">
         {{ content_benefits.body }}

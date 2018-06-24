@@ -2,10 +2,10 @@
   position: relative;
   text-align: center;
   .btn {
-    padding: 0 30px;
+    padding: 0 40px;
   }
   .btn-wrap {
-    @include position(absolute, $left:0, $right:0, $bottom: 8%);
+    @include position(absolute, $left:0, $right:0, $bottom: 80px);
   }
   .image-sm-wrap {
     @extend .d-md-none;
@@ -20,10 +20,26 @@
   }
 }
 
+@include media-breakpoint-up(sm) {
+  .mod-product-image {
+    .btn-wrap {
+      bottom: 120px;
+    }
+  }
+}
+
 @include media-breakpoint-up(md) {
   .mod-product-image {
     .btn-wrap {
-      bottom: 16%;
+      bottom: 40px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-product-image {
+    .btn-wrap {
+      bottom: 80px;
     }
   }
 }
