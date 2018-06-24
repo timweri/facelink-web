@@ -1,5 +1,5 @@
-<section class="module mod-banner">
-  <div class="banner-background bg" style="background-image: url({{ banner.background_image }}); background-position: {{ banner.position_background_image }};">
+<section class="module mod-banner lazyload-image">
+  <div class="banner-background" style="background-image: url({{ banner.background_image }}); background-position: {{ banner.position_background_image }};">
     <div class="d-table">
       <div class="d-table-cell align-middle">
         <div class="container">
@@ -22,7 +22,7 @@
     {% if banner.product_image %}
       <div class="product-box-outer container">
         <div class="product-box-inner">
-          <img src="{{ banner.product_image }}">
+          <img data-src="{{ banner.product_image }}" src="images/ajax-loader.svg" alt="Product">
         </div>
       </div>
     {% endif %}

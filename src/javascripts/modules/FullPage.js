@@ -63,9 +63,9 @@ const FullPage = (($) => {
               $('#fp-nav li').eq(i).find('span').html(i + 1)
             }
           },
-			    afterLoad: function (anchorLink, index) {
-      let Nav = $('#fp-nav')
-      switch (index) {
+          afterLoad: function (anchorLink, index) {
+            let Nav = $('#fp-nav')
+            switch (index) {
               case 2:
                 Nav.removeAttr('class').addClass('blue')
                 break
@@ -84,9 +84,9 @@ const FullPage = (($) => {
               default:
                 Nav.removeAttr('class')
             }
-    },
+          },
           onLeave: function (index, nextIndex, direction) {
-            if (nextIndex == 6) {
+            if (nextIndex === 6) {
               that.header.addClass('visibility-hide')
             } else {
               that.header.removeClass('visibility-hide')

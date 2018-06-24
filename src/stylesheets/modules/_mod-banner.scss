@@ -19,9 +19,15 @@
   }
   .banner-content {
     margin-bottom: 28px;
+    h1 {
+      line-height: 1.1;
+      margin: 0;
+    }
   }
   .btn {
+    margin-top: 31px;
     margin-left: 5px;
+    padding: 0 33px;
   }
 }
 
@@ -30,7 +36,8 @@
   position: absolute;
   display: inline-block;
   background-color: $color-c6;
-  transform: rotate(45deg) translateY(50%);
+  transform-origin: center;
+  transform: translateX(-50%) translateY(35%) rotate(45deg);
   bottom: -5px;
 }
 
@@ -58,6 +65,12 @@
   .banner-background {
     .d-table {
       height: 343px;
+    }
+  }
+  .banner-content {
+    margin-left: 75px;
+    .btn {
+      margin-top: 40px;
     }
   }
   .product-box-inner {

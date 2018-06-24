@@ -19,30 +19,30 @@ const FormAnimation = (($) => {
 
   class FormAnimation {
     constructor (element, config) {
-      this._element = $(element);
-      this._config = this._getConfig(config);
-      this.$module_items = $(`[data-module="${NAME}"]`);
-      this.$form_controls = this.$module_items.find('.form-group').find('.form-control');
-      //this.$textareas = this.$module_items.find('textarea.form-control');
-      console.log(this.$form_groups);
+      this._element = $(element)
+      this._config = this._getConfig(config)
+      this.$module_items = $(`[data-module="${NAME}"]`)
+      this.$form_controls = this.$module_items.find('.form-group').find('.form-control')
+      // this.$textareas = this.$module_items.find('textarea.form-control');
+      console.log(this.$form_groups)
 
-      this.$form_controls.focus(this.textFocus);
-      this.$form_controls.focusout(this.textFocusOut);
-    }
-    
-    textFocus() {
-      let $this = $(this);
-      let $this_label = $this.parent().siblings('label');
-      
-      $this_label.addClass('up');
+      this.$form_controls.focus(this.textFocus)
+      this.$form_controls.focusout(this.textFocusOut)
     }
 
-    textFocusOut() {
-      let $this = $(this);
-      let $this_label = $this.parent().siblings('label');
+    textFocus () {
+      let $this = $(this)
+      let $thisLabel = $this.parent().siblings('label')
+
+      $thisLabel.addClass('up')
+    }
+
+    textFocusOut () {
+      let $this = $(this)
+      let $thisLabel = $this.parent().siblings('label')
 
       if (!$this.val()) {
-        $this_label.removeClass('up');
+        $thisLabel.removeClass('up')
       }
     }
 

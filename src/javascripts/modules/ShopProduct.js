@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
-const Faq = (($) => {
-  const NAME = 'faq'
+const ShopProduct = (($) => {
+  const NAME = 'shop-product'
   const DATA_KEY = `bs.${NAME}`
   const EVENT_KEY = `.${DATA_KEY}`
   const DATA_API_KEY = '.data-api'
@@ -17,35 +17,26 @@ const Faq = (($) => {
     DATA_MODULE: `[data-module="${NAME}"]`
   }
 
-  class Faq {
+  class ShopProduct {
     constructor (element, config) {
       this._element = $(element)
       this._config = this._getConfig(config)
-      this.clickEvent()
+      this._addEventListener()
+    }
+    // public api
+    static get Default () {
+      return Default
     }
 
-    clickEvent () {
-      let $mod = this._element
-      this._element.on('click', '.faq-item h4', (e) => {
-        let $targetH4 = $(e.target)
-        let $targetItem = $targetH4.parent()
-        let $targetContent = $targetH4.siblings('.faq-answer')
-        let $otherOpenItem = $mod.find('.faq-item.faq-opened')
-
-        if ($targetItem.hasClass('faq-opened')) {
-          $targetContent.slideUp(() => {
-            $targetItem.removeClass('faq-opened').addClass('faq-closed')
-          })
-        } else {
-          $otherOpenItem.children('.faq-answer').slideUp(() => {
-            $otherOpenItem.removeClass('faq-opened').addClass('faq-closed')
-          })
-          $targetItem.removeClass('faq-closed').addClass('faq-opened')
-          $targetContent.slideDown()
-        }
+    // private api
+    _addEventListener () {
+      let $this = this._element
+      $this.css('height', $this.height())
+      $(window).resize(() => {
+        $this.css('height', 'auto')
+        $this.css('height', $this.height())
       })
     }
-
     _getConfig (config) {
       config = $.extend({}, Default, config)
       return config
@@ -61,7 +52,7 @@ const Faq = (($) => {
         )
         let data = $element.data(DATA_KEY)
         if (!data) {
-          data = new Faq(this, _config)
+          data = new ShopProduct(this, _config)
           $element.data(DATA_KEY, data)
         }
       })
@@ -72,16 +63,16 @@ const Faq = (($) => {
    * Data Api implement
    */
   $(window).on(Event.LOAD_DATA_API, () => {
-    Faq._jQueryInterface.call($(Selector.DATA_MODULE))
+    ShopProduct._jQueryInterface.call($(Selector.DATA_MODULE))
   })
 
   /**
    * jQuery
    */
-  $.fn[NAME] = Faq._jQueryInterface
-  $.fn[NAME].Constructor = Faq
+  $.fn[NAME] = ShopProduct._jQueryInterface
+  $.fn[NAME].Constructor = ShopProduct
 
-  return Faq
+  return ShopProduct
 })($)
 
-export default Faq
+export default ShopProduct
