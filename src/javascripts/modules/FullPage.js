@@ -41,14 +41,14 @@ const FullPage = (($) => {
       this.fullPageHome()
     }
 
-    fullPageHome() {
+    fullPageHome () {
       let $fullPage = this._element
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
       let winH = $(window).height()
       let itemLength = this._element.find('.section').length
       let that = this
-      function initFullPage() {
+      function initFullPage () {
         $fullPage.fullpage({
           anchors: ['First', '2nd', '3rd', '4th', '5th', '6th'],
           navigation: true,
@@ -58,35 +58,35 @@ const FullPage = (($) => {
           responsiveHeight: 100,
           dragAndMove: true,
           // lockAnchors: true,
-          afterRender: function(){
-            for (var i = 0; i< itemLength; i++) {
-              $('#fp-nav li').eq(i).find('span').html(i +1)
+          afterRender: function () {
+            for (var i = 0; i < itemLength; i++) {
+              $('#fp-nav li').eq(i).find('span').html(i + 1)
             }
           },
-			    afterLoad: function(anchorLink, index){
-            let Nav = $('#fp-nav')
-            switch(index) {
+			    afterLoad: function (anchorLink, index) {
+      let Nav = $('#fp-nav')
+      switch (index) {
               case 2:
                 Nav.removeAttr('class').addClass('blue')
-                break;
+                break
               case 3:
                 Nav.removeAttr('class').addClass('red')
-                break;
+                break
               case 4:
                 Nav.removeAttr('class').addClass('orange')
-                break;
+                break
               case 5:
                 Nav.removeAttr('class').addClass('gray')
-                break;
+                break
               case 6:
                 Nav.removeAttr('class').addClass('green')
-                break;
+                break
               default:
                 Nav.removeAttr('class')
             }
-          },
-          onLeave: function(index, nextIndex, direction){
-            if(nextIndex == 6 ) {
+    },
+          onLeave: function (index, nextIndex, direction) {
+            if (nextIndex == 6) {
               that.header.addClass('visibility-hide')
             } else {
               that.header.removeClass('visibility-hide')
@@ -94,8 +94,8 @@ const FullPage = (($) => {
           }
         })
       }
-      function destroyFullPage() {
-        $.fn.fullpage.destroy('all');
+      function destroyFullPage () {
+        $.fn.fullpage.destroy('all')
       }
       if (scroll > 0) {
         if ((winW + scroll) < 992) {
@@ -104,13 +104,13 @@ const FullPage = (($) => {
               destroyFullPage()
             }, 300)
           }
-        } else if((winW + scroll) >= 992 && winH >= 640 ){
+        } else if ((winW + scroll) >= 992 && winH >= 640) {
           if ($fullPage.find('.fp-section').length) {
 
           } else {
             initFullPage()
           }
-        } else if((winW + scroll) >= 992 && winH < 640 ){
+        } else if ((winW + scroll) >= 992 && winH < 640) {
           if ($fullPage.find('.fp-section').length) {
             setTimeout(function () {
               destroyFullPage()
@@ -124,13 +124,13 @@ const FullPage = (($) => {
               destroyFullPage()
             }, 300)
           }
-        } else if((winW + scroll) >= 992 && winH >= 640 ){
+        } else if ((winW + scroll) >= 992 && winH >= 640) {
           if ($fullPage.find('.fp-section').length) {
 
           } else {
             initFullPage()
           }
-        } else if((winW + scroll) >= 992 && winH < 640 ){
+        } else if ((winW + scroll) >= 992 && winH < 640) {
           if ($fullPage.find('.fp-section').length) {
             setTimeout(function () {
               destroyFullPage()
@@ -140,13 +140,13 @@ const FullPage = (($) => {
       }
     }
 
-    setHeightCTA() {
-      if(this._element.length) {
+    setHeightCTA () {
+      if (this._element.length) {
         let $windowWidth = $(window).width()
         let $FooterHeight = this.footer.innerHeight()
         let $windowHeight = $(window).height()
         let $headerHeight = this.header.innerHeight()
-        if($windowHeight < 641 || $windowWidth < 992 ) {
+        if ($windowHeight < 641 || $windowWidth < 992) {
           this.cta.removeAttr('style')
         } else {
           this.cta.css('height', $windowHeight - $FooterHeight)
