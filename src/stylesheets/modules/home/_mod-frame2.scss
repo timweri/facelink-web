@@ -20,8 +20,7 @@
       background: $black;
     }
     span {
-      position: relative;
-      z-index: 1;
+      @include position(relative, $index: 1);
     }
   }
   h3 {
@@ -63,8 +62,7 @@
 .cont-frame2 {
   @extend .d-lg-flex;
   @extend .align-items-lg-center;
-  position: relative;
-  z-index: 1;
+  @include position(relative, $index: 1);
   .row {
     @extend .justify-content-lg-end;
     margin: 0;

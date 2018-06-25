@@ -5,11 +5,6 @@
     background-color: $orange;
     text-align: center;
   }
-  .featured-news-logo {
-    width: 133px;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
   h2 {
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -17,6 +12,11 @@
   .btn {
     margin-top: 29px;
   }
+}
+.featured-news-logo {
+  width: 133px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 @include media-breakpoint-up(lg) {
   .mod-featured-news-post {

@@ -93,6 +93,10 @@ html,
   }
 }
 
+#footer {
+  display: none;
+}
+
 @page {
   margin: 1cm;
 }
@@ -236,15 +240,100 @@ h3,
 h4,
 h5,
 h6 {
+  color: #000;
   opacity: 1 !important;
   width: auto !important;
   transform: none !important;
   height: auto !important;
   position: static !important;
+  &::before,
+  &::after {
+    background: none;
+  }
 }
 
 .slick-dotted:not(.accordion),
 .slick-dots,
 .slick-arrow {
   display: none !important;
+}
+
+.section-frame1,
+.section-frame2,
+.section-frame3,
+.section-frame4 {
+  margin-bottom: 30pt;
+}
+
+.section-frame1 {
+  .show-mb {
+    display: none !important;
+  }
+}
+
+.section-frame4 {
+  .fruit-frame4 {
+    display: none !important;
+  }
+}
+
+.mod-insta-link {
+  .list-insta {
+    display: none !important;
+  }
+}
+
+.form-group {
+  display: none !important;
+}
+
+.mod-shop-product {
+  [class*="-overlay"] {
+    display: none !important;
+  }
+}
+
+.mod-infor-contact {
+  .social {
+    display: none !important;
+  }
+}
+
+.mod-tab-benefits {
+  .col-left {
+    display: none !important;
+  }
+}
+
+.mod-promotion {
+  img {
+    display: none !important;
+  }
+}
+
+.mod-product-image {
+  .image-sm-wrap {
+    display: none !important;
+  }
+}
+
+.mod-content-benefits {
+  .decor-bar {
+    display: none !important;
+  }
+}
+
+.mod-faq {
+  .faq-answer {
+    margin-bottom: 20pt;
+  }
+}
+
+.mod-news-feed {
+  .news-feed-logo {
+    width: 100pt !important;
+  }
+  .news-feed-post {
+    margin: 30pt 0;
+  }
 }

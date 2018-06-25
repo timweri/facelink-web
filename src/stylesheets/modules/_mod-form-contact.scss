@@ -18,8 +18,7 @@
     color: $white;
     margin-bottom: 50px;
     label {
-      @include position(absolute, $left:0, $top:0);
-      z-index: 1;
+      @include position(absolute, $left:0, $top:0, $index: 1);
       display: block;
       letter-spacing: .4px;
       font-size: rem(15);
@@ -48,12 +47,11 @@
     }
   }
   .form-control {
-    position: relative;
+    @include position(relative, $index: 0);
     height: 40px;
     appearance: none;
     border: none;
     border-bottom: solid 2px $white;
-    z-index: 0;
     padding-bottom: 34px;
 
     font-size: rem(18);

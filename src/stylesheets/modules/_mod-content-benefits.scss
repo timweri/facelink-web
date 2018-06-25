@@ -3,9 +3,8 @@
   margin: 0 auto 60px;
   padding-top: 175px;
   .solid-bg {
-    @include position(absolute, $top: -25%, $left: 26%);
+    @include position(absolute, $top: -25%, $left: 26%, $index: 0);
     @include sizeEx(4000px, 76%);
-    z-index: 0;
     background: $color-c6;
   }
   .decor-bar {
