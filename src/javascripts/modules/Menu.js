@@ -10,7 +10,7 @@ const Menu = (($) => {
     CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`
   }
   const Default = {
-    elementItem: '.hamburger-menu, #main-menu, #header',
+    elementItem: '.hamburger-menu, html, #main-menu, #header',
     navItemArrows: '.nav-item-arrows'
   }
   const Selector = {
