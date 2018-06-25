@@ -10,7 +10,7 @@ const Menu = (($) => {
     CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`
   }
   const Default = {
-    elementItem: '.hamburger-menu, html, #main-menu, #header',
+    elementItem: '.hamburger-menu, #main-menu, #header',
     navItemArrows: '.nav-item-arrows'
   }
   const Selector = {
@@ -23,10 +23,15 @@ const Menu = (($) => {
       this._config = this._getConfig(config)
       this.header = $('#header, #main-menu-mobile')
       this.openMainMenu()
+      this.preventJumpToTop()
     }
     // public api
     static get Default () {
       return Default
+    }
+
+    preventJumpToTop () {
+      // this.
     }
 
     openMainMenu () {
