@@ -24,7 +24,8 @@
 }
 
 .banner-content {
-  margin-bottom: 28px;
+  margin-top: 91px;
+  margin-bottom: 81px;
   color: $white;
   text-transform: uppercase;
   max-width: 556px;
@@ -62,10 +63,13 @@
   .banner-background {
     .d-table {
       height: 343px;
+      .d-table-cell {
+        vertical-align: middle;
+      }
     }
   }
   .banner-content {
-    margin-left: 75px;
+    margin: 102px auto 94px 75px;
     .btn {
       margin-top: 40px;
     }
