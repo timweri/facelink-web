@@ -3,6 +3,9 @@
   max-width: 2000px;
   overflow-x: hidden;
   margin: 64px 0 74px;
+  > .container {
+    padding: 0;
+  }
   .col-left,
   .col-right {
     @extend .col-12;
@@ -23,7 +26,7 @@
   .faq-item {
     padding: 0 16px;
     position: relative;
-    transition: .25s, padding-top 0s, padding-bottom .1s;
+    transition: .25s, padding-top 0s, margin-bottom .1s, padding-bottom .1s;
     h4 {
       transition: padding 0s, color .25s, margin 0s;
       cursor: pointer;
@@ -55,7 +58,7 @@
     }
   }
   .faq-opened {
-    padding: 36px 15px 36px 49px;
+    padding: 0 15px 36px 49px;
     background-color: $menu-gray;
     border-left: solid 5px $orange;
     border-top: solid 2px $border-gray;
@@ -63,11 +66,11 @@
     h4 {
       position: relative;
       border-bottom: solid 2px transparent;
-      padding-top: 0;
       color: $orange;
+      padding-top: 36px;
       &::after {
-        @include position(absolute, $right: 0, $top: 0);
-        transform: translateY(-35%);
+        @include position(absolute, $right: 0, $top: 40px);
+        transform: translateY(-50%);
         content: "\e926";
       }
     }
