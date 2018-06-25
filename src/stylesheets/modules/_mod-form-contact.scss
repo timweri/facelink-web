@@ -34,6 +34,18 @@
         transition: .25s all;
       }
     }
+    &.error {
+      .form-control {
+        border-bottom: 2px solid $red;
+
+        &:focus {
+          border-bottom: 4px solid $red;
+        }
+      }
+      .messages-error {
+        display: none;
+      }
+    }
   }
   .form-control {
     position: relative;
