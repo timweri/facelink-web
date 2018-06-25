@@ -12,10 +12,6 @@ $number-per-row-lg: 5;
   margin: 65px 0 50px;
   position: relative;
 
-  .promo-overlay {
-    @extend .d-none, .d-lg-block;
-  }
-
   &::before {
     @include position(absolute, 0,0,0,0);
     content: "";
@@ -34,6 +30,10 @@ $number-per-row-lg: 5;
     }
   }
 
+  .promo-overlay {
+    @extend .d-none, .d-lg-block;
+  }
+
   .promo-item {
     text-align: center;
     margin-bottom: 80px;
@@ -47,19 +47,17 @@ $number-per-row-lg: 5;
 }
 
 @include media-breakpoint-up(lg) {
-  .mod-promotion {
-    .promo-item {
-      max-width: (100% / $number-per-row-lg);
-      flex: 0 0 (100% / $number-per-row-lg);
-    }
-    .promo-overlay {
-      @include position(absolute, $left: 0, $top:0, $bottom: 0);
-      @include sizeEx($height:100%, $width:200px);
-      background-image: url("../images/promotion-overlay.png");
-      background-size: cover;
-      background-position: left center;
-      background-repeat: no-repeat;
-      opacity: .05;
-    }
+  .promo-item {
+    max-width: (100% / $number-per-row-lg);
+    flex: 0 0 (100% / $number-per-row-lg);
+  }
+  .promo-overlay {
+    @include position(absolute, $left: 0, $top:0, $bottom: 0);
+    @include sizeEx($height:100%, $width:200px);
+    background-image: url("../images/promotion-overlay.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: .05;
   }
 }

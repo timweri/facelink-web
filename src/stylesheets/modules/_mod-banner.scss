@@ -16,17 +16,24 @@
       text-align: left;
     }
   }
-  .banner-content {
-    margin-bottom: 28px;
-    h1 {
-      line-height: 1.1;
-      margin: 0;
-    }
-  }
   .btn {
     margin-top: 31px;
     margin-left: 5px;
     padding: 0 33px;
+  }
+}
+
+.banner-content {
+  margin-bottom: 28px;
+  color: $white;
+  text-transform: uppercase;
+  max-width: 556px;
+  h1 {
+    line-height: 1.1;
+    margin: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -38,15 +45,6 @@
   background-color: $color-c6;
   transform-origin: center;
   transform: translateX(-50%) translateY(35%) rotate(45deg);
-}
-
-.banner-content {
-  color: $white;
-  text-transform: uppercase;
-  max-width: 556px;
-  *:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .product-box-inner {
