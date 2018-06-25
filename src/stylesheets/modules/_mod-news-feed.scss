@@ -49,10 +49,9 @@
   margin: 0 -15px;
   &::before {
     @include sizeEx(4000px, 100%);
-    @include position(absolute, $top:0, $right:0);
+    @include position(absolute, $top:0, $right:0, $index:0);
     background: $red;
     content: "";
-    z-index: 0;
   }
   h2 {
     margin-bottom: 25px;

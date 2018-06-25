@@ -15,8 +15,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
     @extend .col-lg-7;
   }
   blockquote {
-    position: relative;
-    z-index: 1;
+    @include position(relative, $index:1);
     display: block;
     @include font($os, rem(26), $black-two, 700);
     text-transform: uppercase;

@@ -73,16 +73,14 @@
 }
 
 .shop-product-title {
-  position: relative;
-  z-index: 1;
+  @include position(relative, $index: 1);
   h2 {
     text-align: left;
   }
 }
 
 .shop-product-image-wrap {
-  position: relative;
-  z-index: 0;
+  @include position(relative, $index: 0);
 }
 
 .shop-product-image {
@@ -119,10 +117,9 @@
 
 @include media-breakpoint-up(lg) {
   .shop-product-cap-overlay {
-    @include position(absolute, $bottom: 0, $right:0);
+    @include position(absolute, $bottom: 0, $right:0, $index: 1);
     max-width: 290px;
     transform: translateX(50%) translateY(0%);
-    z-index: 1;
   }
   .shop-product-paorange-overlay {
     max-width: 460px;
@@ -144,10 +141,11 @@
     width: 50%;
     transition: .3s;
     margin-top: 0;
+    z-index: 0;
+
     * {
       transition: .3s;
     }
-    z-index: 0;
     .btn {
       margin-top: 30px;
     }

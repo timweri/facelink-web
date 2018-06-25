@@ -6,10 +6,9 @@
   text-transform: uppercase;
   position: relative;
   a {
-    @include position(absolute, 0, 0, 0, 0);
+    @include position(absolute, 0, 0, 0, 0, 1);
     text-decoration: none;
     color: $white;
-    z-index: 1;
   }
   .hover-overlay {
     @include position(absolute, $top: 0, $left: 0);
