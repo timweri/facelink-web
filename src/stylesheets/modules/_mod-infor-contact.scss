@@ -19,10 +19,12 @@
   p {
     color: $border-gray;
   }
-  .email-text {
-    @include font($os, rem(30), null, 700);
-    text-transform: uppercase;
-    line-height: 20px;
+  .email {
+    a {
+      @include font($os, rem(30), null, 700);
+      text-transform: uppercase;
+      line-height: 20px;
+    }
   }
   ul {
     margin-bottom: 0;
