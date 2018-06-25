@@ -35,7 +35,8 @@
     @include position(relative, $index: 0);
     width: 100%;
     margin: 0;
-    padding: 16px 0;
+    padding: 18px 0;
+    font-size: rem(26);
     text-transform: uppercase;
     text-align: center;
     color: $white;
