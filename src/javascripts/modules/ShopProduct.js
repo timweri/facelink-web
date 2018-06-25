@@ -22,6 +22,7 @@ const ShopProduct = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this._addEventListener()
+      this._element.css('height', 'auto')
     }
     // public api
     static get Default () {
