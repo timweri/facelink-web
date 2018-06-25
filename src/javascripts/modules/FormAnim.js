@@ -23,8 +23,6 @@ const FormAnimation = (($) => {
       this._config = this._getConfig(config)
       this.$module_items = $(`[data-module="${NAME}"]`)
       this.$form_controls = this.$module_items.find('.form-group').find('.form-control')
-      // this.$textareas = this.$module_items.find('textarea.form-control');
-      console.log(this.$form_groups)
 
       this.$form_controls.focus(this.textFocus)
       this.$form_controls.focusout(this.textFocusOut)
