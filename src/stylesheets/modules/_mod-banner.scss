@@ -1,7 +1,6 @@
 // css mod-cta
 .banner-background {
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background-size(cover);
   position: relative;
   text-align: center;
   &::before {
@@ -33,12 +32,12 @@
 
 .green-kite {
   @include sizeEx(36px);
+  @include position(absolute, $bottom: -5px, $left: 50%);
   position: absolute;
   display: inline-block;
   background-color: $color-c6;
   transform-origin: center;
   transform: translateX(-50%) translateY(35%) rotate(45deg);
-  bottom: -5px;
 }
 
 .banner-content {
