@@ -63,6 +63,9 @@
   .banner-background {
     .d-table {
       height: 343px;
+      .d-table-cell {
+        vertical-align: middle;
+      }
     }
   }
   .banner-content {
