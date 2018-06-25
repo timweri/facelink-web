@@ -3,6 +3,9 @@
   max-width: 2000px;
   overflow-x: hidden;
   margin: 64px 0 74px;
+  > .container {
+    padding: 0;
+  }
   .col-left,
   .col-right {
     @extend .col-12;
