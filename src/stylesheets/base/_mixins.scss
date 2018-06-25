@@ -94,7 +94,7 @@
   height: $height;
 }
 
-@mixin font($name: $font-family-sans-serif, $size: $font-size-base, $color: $text-color, $weight: normal, $style: normal) {
+@mixin font($name: $font-family-sans-serif, $size: $font-size-base, $color: $body-color, $weight: normal, $style: normal) {
   font-family: $name;
   font-size: $size;
   color: $color;
