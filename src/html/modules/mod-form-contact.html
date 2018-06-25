@@ -1,16 +1,16 @@
 {% from 'macros/form.html' import formBlock, textarea %}
 
 <div class="module mod-form-contact" data-module="form-animation">
-    <h2>
-        GET IN TOUCH
-    </h2>
-    <form id="contactForm" name="contactForm" method="POST" action="/api/contact">
-        {{ formBlock('Full Name', 'text', '', id='fullname', message='') }}
-        {{ formBlock('Email', 'email', '', id='email', message='') }}
-        {{ formBlock('Phone', 'tel', '', id='address', message='') }}
-        {{ textarea('Message', 'text', id='message', message='') }}
-        <div class="btn-form-wrap">
-            <button type="button" class="btn btn-form">Send</button>
-        </div>
+  <h2>GET IN TOUCH</h2>
+  <div id="contactForm">
+    <form>
+      {{ formBlock('Full Name', 'text', '', id='fullname', message='') }}
+      {{ formBlock('Email', 'email', '', id='email', message='') }}
+      {{ formBlock('Phone', 'tel', '', id='phone', message='') }}
+      {{ textarea('Message', 'text', id='message', message='') }}
+      <div class="btn-form-wrap">
+        <button type="button" class="btn btn-form">Send</button>
+      </div>
     </form>
+  </div>
 </div>
