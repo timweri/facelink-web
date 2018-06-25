@@ -7,7 +7,7 @@
     @include position(absolute, $top:0, $left:0);
     content: "";
     background-color: rgba($black, .6);
-    @include sizeEx(100%,100%);
+    @include sizeEx(100%);
   }
   .d-table {
     position: relative;
