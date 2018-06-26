@@ -66,9 +66,10 @@
   textarea.form-control {
     height: 80px;
   }
-  #contactForm {
-    margin-top: 70px;
-  }
+}
+
+#contactForm {
+  margin-top: 70px;
 }
 
 @include media-breakpoint-up(lg) {
