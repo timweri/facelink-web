@@ -1,0 +1,94 @@
+html#ecwid_html {
+  body#ecwid_body {
+    .ecwid {
+      div.ecwid-productBrowser-head {
+        @include font(null, 26px, $black, 700);
+        text-transform: uppercase;
+        text-align: center;
+      }
+      td.ecwid-Invoice-itemsTable-headerCell-thumbnail,
+      td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
+      .ecwid-productBrowser-cart-itemsTable-headerCell-descr,
+      .ecwid-productBrowser-cart-itemsTable-headerCell-price,
+      .ecwid-productBrowser-cart-itemsTable-headerCell-qty,
+      .ecwid-productBrowser-cart-itemsTable-headerCell-subtotal {
+        @include font($font-family-base, 18px !important, $black-two, $weight: 700);
+        padding-bottom: 10px !important;
+      }
+      .ecwid-productBrowser-cart-itemsTable-headerCell-qty {
+        text-transform: uppercase;
+      }
+      .ecwid-productBrowser-cart-itemsTable-headerCell-price {
+        text-align: right;
+      }
+      div.ecwid-productBrowser-cart {
+        div.ecwid-productBrowser-price {
+          @include font(null, 22px, $orange, 400);
+        }
+        input.ecwid-productBrowser-cart-qtyTextField {
+          @include font($font-family-base, 18px,$black-two, 700);
+          width: 38px;
+          padding: 6px 3px;
+          text-align: center !important;
+          margin: 14px 0 30px;
+          border-color: $color-c5;
+        }
+      }
+      div.ecwid-productBrowser-productNameLink a {
+        @include font($font-family-base, 18px,$black-two, 700);
+      }
+      td.ecwid-productBrowser-cart-itemsTable-cell {
+        padding: 30px 9px 15px;
+      }
+      .ecwid-productBrowser-cart-itemsTable-cell-price-compact-subtotal {
+        .ecwid-productBrowser-price {
+          padding: 10px 0 0 30px;
+        }
+      }
+      div.ecwid-productBrowser-cart-itemsTable-price-compact-times {
+        top: 30px;
+      }
+      div.ecwid-productBrowser-cart-optionsList {
+        @include font($font-family-base, 15px, $black);
+      }
+      // .ecwid-lte-480px {
+      //   td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
+      //   td.ecwid-productBrowser-cart-itemsTable-cell-thumbnail {
+      //     display: block;
+      //   }
+      // }
+    }
+  }
+}
+
+@media screen and (min-width: 529px) {
+  html#ecwid_html {
+    body#ecwid_body {
+      .ecwid {
+        div.ecwid-productBrowser-cart-qtyTextField-multiplication {
+          display: none;
+        }
+        div.ecwid-productBrowser-cart {
+          input.ecwid-productBrowser-cart-qtyTextField {
+            margin: 0;
+          }
+        }
+        td.ecwid-productBrowser-cart-itemsTable-cell {
+          padding: 15px 10px;
+        }
+        td.ecwid-productBrowser-cart-itemsTable-cell-thumbnail,
+        td.ecwid-productBrowser-cart-itemsTable-cell-descr {
+          padding: 30px 10px;
+        }
+        .ecwid-productBrowser-cart-itemsTable-cell-price,
+        .ecwid-productBrowser-cart-itemsTable-cell-qty,
+        .ecwid-productBrowser-cart-itemsTable-cell-subtotal {
+          vertical-align: middle;
+        }
+        .ecwid-productBrowser-cart-itemsTable-cell-qty {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
