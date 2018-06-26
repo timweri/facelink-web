@@ -7,7 +7,7 @@
           <div class="title-frame4">
             <h2><span>{{ frame4.title }}</span></h2>
           </div>
-          {% for i in [1,2,3]%}
+          {% for i in frame4.block_list %}
           <div class="number number{{loop.index}}">
             {{loop.index}}
           </div>
@@ -18,11 +18,7 @@
         <div class="row">
           <div class="col-frame4 col-list-frame4">
             <div class="list-item-frame4">
-              {% for item in frame4.optimize %}
-                <div class="item">
-                  <p><span class="butlet"></span>{{ item.title }}</p>
-                </div>
-              {% endfor %}
+              {{ frame4.bullet_list }}
             </div>
           </div>
           <div class="col-frame4 col-image-product-frame4">
