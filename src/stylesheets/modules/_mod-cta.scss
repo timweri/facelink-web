@@ -32,10 +32,12 @@
   }
   h2 {
     @extend .style-h2;
+    color: $black;
     letter-spacing: .8px;
     text-transform: uppercase;
   }
   p {
+    color: $black;
     letter-spacing: 1.2px;
     font-size: rem(16);
   }
