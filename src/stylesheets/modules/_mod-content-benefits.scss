@@ -2,6 +2,14 @@
   position: relative;
   margin: 0 auto 60px;
   padding-top: 175px;
+  h3 {
+    font-family: $font-family-base;
+    font-weight: 400;
+    margin-bottom: 29px;
+  }
+  p {
+    margin-bottom: 40px;
+  }
   .solid-bg {
     @include position(absolute, $top: -25%, $left: 26%, $index: 0);
     @include sizeEx(4000px, 76%);
