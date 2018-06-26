@@ -47,8 +47,10 @@ $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
       transition: transform .3s cubic-bezier(.75, 0, .125, 1);
       transform: translate3d(-100%, 0, 0);
     }
-    &:hover{
+    &:hover,
+    &:not(:disabled):active:focus {
       color: map-get($hover-color-settings, hover-color);
+      box-shadow: none !important;
       &::before {
         transform: translate3d(0, 0, 0);
       }
