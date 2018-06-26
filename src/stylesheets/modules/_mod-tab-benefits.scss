@@ -64,9 +64,8 @@
     h2.is-open-tab {
       z-index: 1;
       &::after {
-        @include position(absolute, $top: 50%, $right:0, $index: -1);
+        @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
         @include sizeEx((91 / 2) * 1.414px);
-        background: $black;
         content: "";
         transform-origin: center;
         transform: translateY(-49%) translateX(49.5%) rotate(45deg);
@@ -82,10 +81,10 @@
         background: transparent;
         display: flex;
         align-items: center;
+        z-index: 1;
         &:hover {
-          z-index: 1;
           &::after {
-            @include position(absolute, $top: 50%, $right:0, $index: -1);
+            @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
             @include sizeEx((91 / 2) * 1.414px);
             content: "";
             transform-origin: center;
@@ -95,6 +94,15 @@
           &::before {
             background: $black-two;
           }
+        }
+        &::after {
+          @include position(absolute, $top: 50%, $right:50px, $index: -1);
+          @include sizeEx((91 / 2) * 1.414px);
+          content: "";
+          background: $black;
+          transform-origin: center;
+          transform: translateY(-49%) translateX(49.5%) rotate(45deg);
+          transition: right .2s;
         }
         &::before {
           @include position(absolute, $top: 0, $right: 0, $index: -1);
