@@ -83,6 +83,9 @@
 @include media-breakpoint-up(lg) {
   .mod-news-feed {
     margin-top: 120px;
+    > .container {
+      padding: 0;
+    }
     .first-col-left {
       padding-right: 15px;
     }
@@ -92,6 +95,7 @@
   }
   .news-feed-post {
     text-align: left;
+    margin: 45px 0 55px;
   }
   .news-feed-post-col {
     padding: 0 15px;
@@ -99,6 +103,9 @@
   .news-feed-quote {
     text-align: left;
     overflow-x: visible;
-    margin: 0;
+    margin-bottom: 20px;
+    &::before {
+      @include position(absolute, $top:0, $right:10px, $index:0);
+    }
   }
 }
