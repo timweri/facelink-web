@@ -94,39 +94,36 @@
   @include position(relative, $index: 1);
 }
 .list-item-frame4 {
-  .item {
-    @include font($os, 18px,$black, 700);
-    @extend .text-uppercase;
-    letter-spacing: .5px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-left: 50px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  p {
-    margin: 0;
-  }
-  .butlet {
-    @include position(absolute, 2px, null, null, 0);
-    @include sizeEx(29px);
-    display: block;
-    &::before,
-    &::after {
-      @extend .icomoon;
-      display: block;
-      content: "";
-      font-size: 29px;
-    }
-    &::before {
-      content: "\e92c";
-    }
-    &::after {
-      @include position(absolute, 0, 0, 0, 0);
-      content: "\e92d";
-      margin: auto;
-      color: $white;
+  > ul {
+    list-style: none;
+    > li {
+      @include font($os, 18px,$black, 700);
+      @extend .text-uppercase;
+      letter-spacing: .5px;
+      margin: 0;
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &::before,
+      &::after {
+        @extend .icomoon;
+        display: block;
+        content: "";
+        font-size: 29px;
+      }
+      &::before {
+        @include position(absolute, 0, 0, 0, 0);
+        content: "\e92c";
+      }
+      &::after {
+        @include position(absolute, 0, 0, 0, 0);
+        content: "\e92d";
+        margin: auto;
+        color: $white;
+      }
     }
   }
 }

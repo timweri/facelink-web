@@ -1,4 +1,4 @@
 module.exports = {
   title: 'Cart',
-  item_info: '(2 items)'
+  item_info: '<p>(2 items)</p>'
 }
