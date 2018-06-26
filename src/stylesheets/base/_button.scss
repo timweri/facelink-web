@@ -40,10 +40,9 @@ $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
     color: map-get($hover-color-settings, norm-color);
     overflow: hidden;
     &::before {
-      @include position(absolute, $top:0, $right:0);
+      @include position(absolute, $top:0, $right:0, $index: -1);
       @include sizeEx(100%);
       content: "";
-      z-index: -1;
       background: map-get($hover-color-settings, hover-bg);
       transition: transform .3s cubic-bezier(.75, 0, .125, 1);
       transform: translate3d(-100%, 0, 0);
@@ -70,7 +69,6 @@ a.btn-featured-news {
   color: $black;
   background-color: $white;
   border: solid 4px transparent;
-
   &:hover {
     background-color: $orange !important;
     color: $white;
@@ -83,7 +81,6 @@ a.btn-featured-news {
   color: $orange;
   background-color: $white;
   border: solid 4px transparent;
-
   &:hover {
     background-color: $orange;
     color: $white;

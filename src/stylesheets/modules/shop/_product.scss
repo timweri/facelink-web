@@ -1,0 +1,117 @@
+#ecwid_body {
+  .ec-likely__icon {
+    @extend .icomoon;
+    &::before {
+      font-size: 22px;
+    }
+  }
+  .ec-likely__icon--facebook {
+    @extend .icon-facebook;
+  }
+  .ec-likely__icon--twitter {
+    @extend .icon-twitter;
+  }
+  .ec-likely__icon--gplus {
+    @extend .icon-pinterest-p;
+  }
+  .ec-likely__icon--pinterest {
+    @extend .icon-google;
+  }
+  .ec-likely__widget {
+    svg {
+      display: none;
+    }
+  }
+}
+html#ecwid_html {
+  body.page-internal#ecwid_body {
+    .ecwid {
+      color: $black;
+    }
+    .ec-size {
+      .ec-store {
+        .product-details-module {
+          margin-bottom: 40px;
+        }
+        .product-details__product-title {
+          @include font(null, 26px, $black !important, $weight: 700);
+          text-transform: uppercase;
+          margin-bottom: 15px;
+          &+.ec-breadcrumbs {
+            margin-top: 0;
+          }
+        }
+        .product-details__product-price {
+          @include font($size: 24px !important, $color: $orange, $weight: 500 );
+        }
+        .product-details-module__title,
+        .product-details__product-description {
+          @include font($font-family-base, 15px,$black-two, 400);
+          line-height: 1.87;
+          letter-spacing: .4px;
+        }
+        .form-control--primary {
+          .form-control__button {
+            @include font($os, 15px, $white, 700);
+            width: auto;
+            padding: 0 15px;
+            min-height: 35px;
+            overflow: hidden;
+            text-transform: uppercase;
+            background: $orange;
+            letter-spacing: 1.1px;
+            border: 0;
+            border-radius: 0;
+          }
+          .form-control__button-text {
+            &::before {
+              @extend .icomoon;
+              content: "\e92b";
+              margin-right: 15px;
+            }
+            .svg-icon {
+              display: none;
+            }
+          }
+        }
+        .ec-likely__button {
+          @include font($font-family-base, 15px,$black-two, 400);
+          letter-spacing: .4px;
+        }
+        .ec-likely__widget {
+          background: transparent;
+        }
+        .ec-likely__icon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(xl) {
+  html#ecwid_html {
+    body.page-internal#ecwid_body {
+      .ec-size {
+        .ec-store {
+          .form-control--primary {
+            .form-control__button {
+              &::before {
+                @include position(absolute, $top:0, $right:0, $index: -1);
+                @include sizeEx(100%);
+                content: "";
+                background: $orange-hover;
+                transition: transform .3s cubic-bezier(.75, 0, .125, 1);
+                transform: translate3d(-100%, 0, 0);
+              }
+              &:hover{
+                &::before {
+                  transform: translate3d(0, 0, 0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
