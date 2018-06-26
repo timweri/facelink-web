@@ -17,11 +17,6 @@
     @extend .col-lg-8;
     margin-top: 10px;
   }
-  .faq-cat {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 70px;
-  }
   .container {
     overflow-x: hidden;
   }
@@ -47,6 +42,13 @@
     }
   }
 }
+
+.faq-cat {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 70px;
+}
+
 .faq-item {
   padding: 0 16px;
   position: relative;
@@ -122,6 +124,9 @@
       margin-top: 0;
       padding: 0 0 0 105px;
     }
+  }
+  .faq-cat {
+    margin-bottom: 145px;
   }
   .faq-closed {
     padding: 0;
