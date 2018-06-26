@@ -4,7 +4,12 @@
   overflow-x: hidden;
   margin: 60px auto 0;
   h3 {
+    font-family: $font-family-base;
+    font-weight: 400;
     margin-bottom: 29px;
+  }
+  p {
+    margin-bottom: 40px;
   }
   .pic-wrap {
     @extend .col-9, .offset-3, .col-lg-11, .offset-lg-1;
@@ -75,6 +80,7 @@
 
 @include media-breakpoint-up(lg) {
   .os-headline {
+    font-size: rem(30);
     max-width: 370px;
   }
   .mod-our-story {
