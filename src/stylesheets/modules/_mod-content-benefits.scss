@@ -2,16 +2,18 @@
   position: relative;
   margin: 0 auto 60px;
   padding-top: 175px;
+
   h3 {
     font-family: $font-family-base;
     font-weight: 400;
     margin-bottom: 29px;
+    font-size: rem(18);
   }
   p {
     margin-bottom: 40px;
   }
   .solid-bg {
-    @include position(absolute, $top: -25%, $left: 26%, $index: 0);
+    @include position(absolute, $top: -25%, $left: 35%, $index: 0);
     @include sizeEx(4000px, 76%);
     background: $color-c6;
   }
@@ -67,6 +69,9 @@
   .mod-content-benefits {
     margin-bottom: 120px;
     padding-top: 80px;
+    > .container {
+      padding: 0 60px 0 90px;
+    }
     .col-left,
     .col-right {
       padding: 0;
@@ -77,11 +82,29 @@
     .col-right {
       margin-bottom: 0;
     }
+
   }
 }
 
 @media (min-width: 1500px) {
   .mod-content-benefits {
     margin-top: 30px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .mod-content-benefits {
+    > .container {
+      padding: 0 0 0 120px;
+    }
+    .col-left {
+      flex: 0 0 47.5%;
+      max-width: 47.5%;
+    }
+    .col-right {
+      flex: 0 0 42.5%;
+      max-width: 42.5%;
+      margin-left: 10%;
+    }
   }
 }
