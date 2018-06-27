@@ -2,14 +2,60 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ecwid {
       .ecwid-btn {
-        // @include font($os, 15px, $orange, 700);
-        // border-radius: 0;
-        // text-transform: uppercase;
-        // letter-spacing: 1.1px;
+        @include font($os, 15px, $orange, 700);
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        box-shadow: none;
       }
-      // .ecwid-btn--secondary {
-      //   border: 3px solid $orange;
-      // }
+      .ecwid-btn--secondary {
+        border: 3px solid $orange;
+      }
+      .ecwid-btn--primary {
+        color: $white;
+      }
+      .ecwid-btn--checkout {
+        width: 180px;
+        &::before {
+          @extend .icomoon;
+          content: "\e92b";
+          margin-right: 15px;
+        }
+      }
+      .ecwid-btn--changeAddress {
+        @include font($font-family-base, 15px, $blue, 400);
+        border: 0;
+        text-decoration: underline;
+        text-transform: none;
+        padding: 0;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+          border: 3px solid $orange;
+          &:hover,
+          &:active,
+          &:focus {
+            background: $orange;
+            border-width: 3px;
+            color: $white;
+          }
+        }
+        .ecwid-btn--changeAddress {
+          &:hover,
+          &:active,
+          &:focus {
+            background: transparent;
+            border-width: 0;
+            color: $blue;
+          }
+        }
+      }
     }
   }
 }
