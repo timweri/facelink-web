@@ -178,12 +178,12 @@
 
   .icon-bar {
     display: block;
-    @include sizeEx(34px, 3px);
+    @include sizeEx(31px, 5px);
     background: $white;
     position: relative;
     margin-left: auto;
     + .icon-bar {
-      margin-top: 7px;
+      margin-top: 5px;
     }
   }
 
@@ -198,7 +198,7 @@
       &:first-child {
         transform: rotate(45deg);
         transform-origin: top left;
-        @include position($top: -3px, $left: 3px);
+        @include position($top: -1px, $left: 4px);
       }
 
       &:nth-child(2) {
