@@ -25,7 +25,7 @@ const TabBenefits = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this.$tabs = $('.mod-tab-benefits .tab-item')
-      this.$desktopHeaders = $('.mod-tab-benefits .col-left h2')
+      this.$desktopHeaders = $('.mod-tab-benefits .col-left h3')
       this.$tabs.eq(0).addClass('is-open-tab').children('.tab-content').css('display', 'block')
       this.$desktopHeaders.eq(0).addClass('is-open-tab')
       this.openTabMobile()
@@ -67,7 +67,7 @@ const TabBenefits = (($) => {
 
     openTabMobile () {
       let $desktopHeaders = this.$desktopHeaders
-      this.$tabs.on('click', 'h2', (e) => {
+      this.$tabs.on('click', 'h3', (e) => {
         const $ele = $(e.currentTarget)
         const $parent = $ele.parent('.tab-item')
         const $content = $ele.siblings('.tab-content')

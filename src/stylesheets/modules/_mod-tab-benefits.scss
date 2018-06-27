@@ -17,7 +17,7 @@
     @extend .d-none, .d-lg-block;
   }
   .is-open-tab {
-    h2 {
+    h3 {
       &::after {
         @include position(absolute, $left: 50%, $bottom: -20px, $index: -1);
         @include sizeEx(60px);
@@ -27,11 +27,11 @@
       }
     }
   }
-  h2 {
+  h3 {
     @include position(relative, $index: 0);
     text-transform: uppercase;
     width: 100%;
-    padding: 10px 0;
+    padding: 18px 0;
     text-align: center;
     margin: 0;
     color: $white;
@@ -39,7 +39,7 @@
   }
   .tab-item {
     margin: 5px 0;
-    >h2 {
+    >h3 {
       @extend .d-lg-none, .d-block;
       background: $black;
     }
@@ -48,7 +48,7 @@
     display: none;
     background: $white;
     margin: 0 18px 20px;
-    padding: 50px 20px;
+    padding: 50px 20px 0;
     letter-spacing: 1.1px;
     line-height: 2;
     p,
@@ -61,7 +61,7 @@
 @include media-breakpoint-up(lg) {
   .mod-tab-benefits {
     padding: 95px 0 168px;
-    h2.is-open-tab {
+    h3.is-open-tab {
       z-index: 1;
       &::after {
         @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
@@ -72,7 +72,7 @@
       }
     }
     .col-left {
-      h2 {
+      h3 {
         height: 91px;
         text-align: left;
         margin: 19px 0;
@@ -81,6 +81,7 @@
         background: transparent;
         display: flex;
         align-items: center;
+        font-size: rem(30);
         z-index: 1;
         &:hover {
           &::after {
