@@ -1,11 +1,13 @@
 .mod-product-image {
   position: relative;
   text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: 50px;
   .btn {
     padding: 0 20px;
   }
   .btn-wrap {
-    @include position(absolute, $left:0, $right:0, $bottom: 40px);
+    @include position(absolute, $left:0, $right:0, $bottom: 0);
   }
   .image-sm-wrap {
     @extend .d-md-none;
@@ -23,7 +25,7 @@
 @include media-breakpoint-up(sm) {
   .mod-product-image {
     .btn-wrap {
-      bottom: 60px;
+      bottom: 20px;
     }
   }
 }
@@ -31,7 +33,7 @@
 @include media-breakpoint-up(md) {
   .mod-product-image {
     .btn-wrap {
-      bottom: 40px;
+      bottom: 60px;
     }
   }
 }
@@ -39,7 +41,7 @@
 @include media-breakpoint-up(lg) {
   .mod-product-image {
     .btn-wrap {
-      bottom: 80px;
+      bottom: 110px;
     }
   }
 }
