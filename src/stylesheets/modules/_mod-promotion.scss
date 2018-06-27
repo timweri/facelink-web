@@ -47,6 +47,11 @@ $number-per-row-lg: 5;
 }
 
 @include media-breakpoint-up(lg) {
+  .mod-promotion {
+    > .container {
+      padding: 0 45px;
+    }
+  }
   .promo-item {
     max-width: (100% / $number-per-row-lg);
     flex: 0 0 (100% / $number-per-row-lg);
