@@ -1,6 +1,11 @@
 html#ecwid_html {
   body#ecwid_body {
     .ecwid {
+      .ecwid-lte-600px {
+        div.ecwid-productBrowser {
+          padding: 0;
+        }
+      }
       div.ecwid-productBrowser-head {
         @include font(null, 26px, $black, 700);
         text-transform: uppercase;
@@ -24,6 +29,7 @@ html#ecwid_html {
       div.ecwid-productBrowser-cart {
         div.ecwid-productBrowser-price {
           @include font(null, 22px, $orange, 400);
+          text-align: right;
         }
         input.ecwid-productBrowser-cart-qtyTextField {
           @include font($font-family-base, 18px,$black-two, 700);
@@ -48,6 +54,9 @@ html#ecwid_html {
       }
       div.ecwid-productBrowser-cart-itemsTable-price-compact-times {
         top: 30px;
+        color: $black;
+        font-size: 15px;
+        left: -20px;
       }
       div.ecwid-productBrowser-cart-optionsList {
         @include font($font-family-base, 15px, $black);
@@ -57,12 +66,25 @@ html#ecwid_html {
         padding: 70px 0 20px;
         text-align: center;
       }
-      // .ecwid-lte-480px {
-      //   td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
-      //   td.ecwid-productBrowser-cart-itemsTable-cell-thumbnail {
-      //     display: block;
-      //   }
-      // }
+      .ecwid-productBrowser-cart-totalLabel {
+        @include font($os, 18px, $black, 700);
+        text-transform: uppercase;
+      }
+      div.ecwid-productBrowser-cart-shippingLabel {
+        font-size: 15px;
+        font-family: $font-family-base;
+        letter-spacing: .4px;
+      }
+      div.ecwid-productBrowser-cart-totalAmount {
+        @include font($os, 24px, $orange, 500);
+      }
+      div.ecwid-productBrowser-cart-estimationNote {
+        color: $border-gray;
+        font-style: italic;
+      }
+      .ecwid-productBrowser-cart-estimation {
+        margin: 25px auto 0;
+      }
     }
   }
 }
@@ -80,6 +102,9 @@ html#ecwid_html {
           }
           td.ecwid-productBrowser-cart-itemsTable-cell-qty {
             padding-top: 15px;
+          }
+          div.ecwid-productBrowser-price {
+            text-align: center;
           }
         }
         td.ecwid-productBrowser-cart-itemsTable-cell {
@@ -104,6 +129,43 @@ html#ecwid_html {
         div.ecwid-productBrowser-cart-hint {
           text-align: left;
           padding-left: 35px;
+        }
+        table.ecwid-productBrowser-cart-subtotalAmountPanel {
+          td {
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  html#ecwid_html {
+    body#ecwid_body {
+      .ecwid {
+        .ecwid-responsive {
+          div.ecwid-productBrowser-cart-compact {
+            table.ecwid-productBrowser-cart-rightPanel {
+              margin-left: 0;
+              width: 100%;
+            }
+          }
+        }
+        div.ecwid-productBrowser-cart {
+          div.ecwid-productBrowser-backgroundedPanel {
+            min-width: auto;
+            max-width: 375px;
+            margin: 0 auto;
+            height: 100% !important;
+            padding: 0;
+          }
+        }
+        .ecwid-productBrowser-backgroundedPanelInner {
+          padding: 25px 23px !important;
+        }
+        table.ecwid-productBrowser-cart-estimation {
+          width: 100%;
+          max-width: 375px;
         }
       }
     }
