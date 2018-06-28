@@ -129,11 +129,11 @@ html#ecwid_html {
         content: "";
         display: block;
         @include sizeEx(36px);
-        @include position(absolute, $bottom: -5px, $left: 50%);
+        @include position(absolute, $top: -5px, $left: 50%);
         position: absolute;
         background-color: $color-c6;
         transform-origin: center;
-        transform: translateX(-50%) translateY(35%) rotate(45deg);
+        transform: translateX(-50%) translateY(-35%) rotate(45deg);
       }
     }
   }
@@ -144,7 +144,7 @@ html#ecwid_html {
       .ecwid-productBrowser-ProductPage {
         &::before {
           @include sizeEx(57px);
-          bottom: -8px;
+          top: -8px;
         }
       }
     }

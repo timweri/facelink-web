@@ -43,7 +43,7 @@
     "selector-max-attribute": 2,
     "selector-max-class": 4,
     "selector-max-combinators": 4,
-    "selector-max-compound-selectors": 5,
+    "selector-max-compound-selectors": 10,
     "selector-max-empty-lines": 1,
     "selector-max-id": null,
     "selector-max-specificity": null,
