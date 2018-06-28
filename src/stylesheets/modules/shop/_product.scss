@@ -1,3 +1,6 @@
+// #ecwid-store-13653034 {
+//   background: $white;
+// }
 #ecwid_body {
   .ec-likely__icon {
     @extend .icomoon;
@@ -24,10 +27,7 @@
   }
 }
 html#ecwid_html {
-  body.page-internal#ecwid_body {
-    .ecwid {
-      color: $black;
-    }
+  body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
         .product-details-module {
@@ -84,13 +84,75 @@ html#ecwid_html {
         .ec-likely__icon {
           margin-right: 5px;
         }
+        .ec-footer {
+          a {
+            color: $black;
+            &:visited {
+              color: $orange;
+            }
+          }
+        }
+        .details-gallery__thumb-img {
+          &::after {
+            box-shadow: inset 0 0 0 2px $gray-bg;
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+        .details-gallery__thumb--active {
+          .details-gallery__thumb-img::after {
+            box-shadow: inset 0 0 0 3px $black;
+          }
+        }
+        .details-gallery__thumbs.details-gallery__thumbs--aspect-ratio-auto {
+          .details-gallery__thumb--aspect-ratio-1 {
+            margin: 0 22px;
+          }
+        }
+        .details-product-purchase--checkout {
+          .details-product-purchase__checkout {
+            margin-top: 21px !important;
+          }
+        }
+      }
+      &.ec-size--s {
+        .ec-store {
+          .product-details-module__content--collapsed::after {
+            background-image: linear-gradient(180deg, rgba(235, 235, 235, 0) 0%, $white .95);
+          }
+        }
+      }
+    }
+    .ecwid-productBrowser-ProductPage {
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        @include sizeEx(36px);
+        @include position(absolute, $bottom: -5px, $left: 50%);
+        position: absolute;
+        background-color: $color-c6;
+        transform-origin: center;
+        transform: translateX(-50%) translateY(35%) rotate(45deg);
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-productBrowser-ProductPage {
+        &::before {
+          @include sizeEx(57px);
+          bottom: -8px;
+        }
       }
     }
   }
 }
 @include media-breakpoint-down(xl) {
   html#ecwid_html {
-    body.page-internal#ecwid_body {
+    body#ecwid_body.page-internal {
       .ec-size {
         .ec-store {
           .form-control--primary {

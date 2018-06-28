@@ -1,6 +1,18 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    background: $gray-bg;
     .ecwid {
+      color: $black;
+      .ecwid-lte-600px {
+        div.ecwid-productBrowser {
+          padding: 20px 15px;
+          background: $white;
+        }
+      }
+      div.ecwid-productBrowser {
+        padding: 20px 15px;
+        background: $white;
+      }
       .ecwid-btn {
         @include font($os, 15px, $orange, 700);
         border-radius: 0;

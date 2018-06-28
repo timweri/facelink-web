@@ -1,139 +1,130 @@
 html#ecwid_html {
-  body#ecwid_body {
-    .ecwid {
-      .ecwid-lte-600px {
-        div.ecwid-productBrowser {
-          padding: 0;
-        }
-      }
-      div.ecwid-productBrowser-head {
-        @include font(null, 26px, $black, 700);
-        text-transform: uppercase;
-        text-align: center;
-      }
-      td.ecwid-Invoice-itemsTable-headerCell-thumbnail,
-      td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
-      .ecwid-productBrowser-cart-itemsTable-headerCell-descr,
-      .ecwid-productBrowser-cart-itemsTable-headerCell-price,
-      .ecwid-productBrowser-cart-itemsTable-headerCell-qty,
-      .ecwid-productBrowser-cart-itemsTable-headerCell-subtotal {
-        @include font($font-family-base, 18px !important, $black-two, $weight: 700);
-        padding-bottom: 10px !important;
-      }
-      .ecwid-productBrowser-cart-itemsTable-headerCell-qty {
-        text-transform: uppercase;
-      }
-      .ecwid-productBrowser-cart-itemsTable-headerCell-price {
+  body#ecwid_body.page-internal {
+    div.ecwid-productBrowser-head {
+      @include font(null, 26px, $black, 700);
+      text-transform: uppercase;
+      text-align: center;
+    }
+    td.ecwid-Invoice-itemsTable-headerCell-thumbnail,
+    td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
+    .ecwid-productBrowser-cart-itemsTable-headerCell-descr,
+    .ecwid-productBrowser-cart-itemsTable-headerCell-price,
+    .ecwid-productBrowser-cart-itemsTable-headerCell-qty,
+    .ecwid-productBrowser-cart-itemsTable-headerCell-subtotal {
+      @include font($font-family-base, 18px !important, $black-two, $weight: 700);
+      padding-bottom: 10px !important;
+    }
+    .ecwid-productBrowser-cart-itemsTable-headerCell-qty {
+      text-transform: uppercase;
+    }
+    .ecwid-productBrowser-cart-itemsTable-headerCell-price {
+      text-align: right;
+    }
+    div.ecwid-productBrowser-cart {
+      div.ecwid-productBrowser-price {
+        @include font(null, 22px, $orange, 400);
         text-align: right;
       }
-      div.ecwid-productBrowser-cart {
-        div.ecwid-productBrowser-price {
-          @include font(null, 22px, $orange, 400);
-          text-align: right;
-        }
-        input.ecwid-productBrowser-cart-qtyTextField {
-          @include font($font-family-base, 18px,$black-two, 700);
-          width: 38px;
-          padding: 6px 3px;
-          text-align: center !important;
-          margin: 14px 0 30px;
-          border-color: $color-c5;
-        }
-      }
-      div.ecwid-productBrowser-productNameLink a {
+      input.ecwid-productBrowser-cart-qtyTextField {
         @include font($font-family-base, 18px,$black-two, 700);
+        width: 38px;
+        padding: 6px 3px;
+        text-align: center !important;
+        margin: 14px 0 30px;
+        border-color: $color-c5;
       }
-      td.ecwid-productBrowser-cart-itemsTable-cell {
-        padding: 30px 9px 15px;
-        border-bottom: 2px solid $black;
+    }
+    div.ecwid-productBrowser-productNameLink a {
+      @include font($font-family-base, 18px,$black-two, 700);
+    }
+    td.ecwid-productBrowser-cart-itemsTable-cell {
+      padding: 30px 9px 15px;
+      border-bottom: 2px solid $black;
+    }
+    .ecwid-productBrowser-cart-itemsTable-cell-price-compact-subtotal {
+      .ecwid-productBrowser-price {
+        padding: 10px 0 0 30px;
       }
-      .ecwid-productBrowser-cart-itemsTable-cell-price-compact-subtotal {
-        .ecwid-productBrowser-price {
-          padding: 10px 0 0 30px;
-        }
-      }
-      div.ecwid-productBrowser-cart-itemsTable-price-compact-times {
-        top: 30px;
-        color: $black;
-        font-size: 15px;
-        left: -20px;
-      }
-      div.ecwid-productBrowser-cart-optionsList {
-        @include font($font-family-base, 15px, $black);
-      }
-      div.ecwid-productBrowser-cart-hint {
-        @include font($font-family-base, 15px, $border-gray);
-        padding: 70px 0 20px;
-        text-align: center;
-      }
-      .ecwid-productBrowser-cart-totalLabel {
-        @include font($os, 18px, $black, 700);
-        text-transform: uppercase;
-      }
-      div.ecwid-productBrowser-cart-shippingLabel {
-        font-size: 15px;
-        font-family: $font-family-base;
-        letter-spacing: .4px;
-      }
-      div.ecwid-productBrowser-cart-totalAmount {
-        @include font($os, 24px, $orange, 500);
-      }
-      div.ecwid-productBrowser-cart-estimationNote {
-        color: $border-gray;
-        font-style: italic;
-      }
-      .ecwid-productBrowser-cart-estimation {
-        margin: 25px auto 0;
-      }
+    }
+    div.ecwid-productBrowser-cart-itemsTable-price-compact-times {
+      top: 30px;
+      color: $black;
+      font-size: 15px;
+      left: -20px;
+    }
+    div.ecwid-productBrowser-cart-optionsList {
+      @include font($font-family-base, 15px, $black);
+    }
+    div.ecwid-productBrowser-cart-hint {
+      @include font($font-family-base, 15px, $border-gray);
+      padding: 70px 0 20px;
+      text-align: center;
+    }
+    .ecwid-productBrowser-cart-totalLabel {
+      @include font($os, 18px, $black, 700);
+      text-transform: uppercase;
+    }
+    div.ecwid-productBrowser-cart-shippingLabel {
+      font-size: 15px;
+      font-family: $font-family-base;
+      letter-spacing: .4px;
+    }
+    div.ecwid-productBrowser-cart-totalAmount {
+      @include font($os, 24px, $orange, 500);
+    }
+    div.ecwid-productBrowser-cart-estimationNote {
+      color: $border-gray;
+      font-style: italic;
+    }
+    .ecwid-productBrowser-cart-estimation {
+      margin: 25px auto 0;
     }
   }
 }
 
 @media screen and (min-width: 529px) {
   html#ecwid_html {
-    body#ecwid_body {
-      .ecwid {
-        div.ecwid-productBrowser-cart-qtyTextField-multiplication {
-          display: none;
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart-qtyTextField-multiplication {
+        display: none;
+      }
+      div.ecwid-productBrowser-cart {
+        input.ecwid-productBrowser-cart-qtyTextField {
+          margin: 0;
         }
-        div.ecwid-productBrowser-cart {
-          input.ecwid-productBrowser-cart-qtyTextField {
-            margin: 0;
-          }
-          td.ecwid-productBrowser-cart-itemsTable-cell-qty {
-            padding-top: 15px;
-          }
-          div.ecwid-productBrowser-price {
-            text-align: center;
-          }
+        td.ecwid-productBrowser-cart-itemsTable-cell-qty {
+          padding-top: 15px;
         }
-        td.ecwid-productBrowser-cart-itemsTable-cell {
-          padding: 15px 10px;
+        div.ecwid-productBrowser-price {
+          text-align: center;
         }
-        td.ecwid-productBrowser-cart-itemsTable-cell-thumbnail,
-        td.ecwid-productBrowser-cart-itemsTable-cell-descr {
-          padding: 30px 10px;
+      }
+      td.ecwid-productBrowser-cart-itemsTable-cell {
+        padding: 15px 10px;
+      }
+      td.ecwid-productBrowser-cart-itemsTable-cell-thumbnail,
+      td.ecwid-productBrowser-cart-itemsTable-cell-descr {
+        padding: 30px 10px;
+      }
+      .ecwid-productBrowser-cart-itemsTable-cell-price,
+      .ecwid-productBrowser-cart-itemsTable-cell-qty,
+      .ecwid-productBrowser-cart-itemsTable-cell-subtotal {
+        vertical-align: middle;
+      }
+      .ecwid-productBrowser-cart-itemsTable-cell-thumbnail {
+        width: 17%;
+        img {
+          @include sizeEx(100% !important, auto !important);
+          max-height: none !important;
         }
-        .ecwid-productBrowser-cart-itemsTable-cell-price,
-        .ecwid-productBrowser-cart-itemsTable-cell-qty,
-        .ecwid-productBrowser-cart-itemsTable-cell-subtotal {
-          vertical-align: middle;
-        }
-        .ecwid-productBrowser-cart-itemsTable-cell-thumbnail {
-          width: 17%;
-          img {
-            @include sizeEx(100% !important, auto !important);
-            max-height: none !important;
-          }
-        }
-        div.ecwid-productBrowser-cart-hint {
-          text-align: left;
-          padding-left: 35px;
-        }
-        table.ecwid-productBrowser-cart-subtotalAmountPanel {
-          td {
-            padding-bottom: 15px;
-          }
+      }
+      div.ecwid-productBrowser-cart-hint {
+        text-align: left;
+        padding-left: 35px;
+      }
+      table.ecwid-productBrowser-cart-subtotalAmountPanel {
+        td {
+          padding-bottom: 15px;
         }
       }
     }
@@ -141,31 +132,44 @@ html#ecwid_html {
 }
 @media screen and (max-width: 991px) {
   html#ecwid_html {
-    body#ecwid_body {
-      .ecwid {
-        .ecwid-responsive {
-          div.ecwid-productBrowser-cart-compact {
-            table.ecwid-productBrowser-cart-rightPanel {
-              margin-left: 0;
+    body#ecwid_body.page-internal {
+      .ecwid-responsive {
+        div.ecwid-productBrowser-cart-compact {
+          table.ecwid-productBrowser-cart-rightPanel {
+            margin-left: 0;
+            width: 100%;
+          }
+        }
+      }
+      div.ecwid-productBrowser-cart {
+        div.ecwid-productBrowser-backgroundedPanel {
+          min-width: auto;
+          max-width: 375px;
+          margin: 0 auto;
+          height: 100% !important;
+          padding: 0;
+        }
+      }
+      .ecwid-productBrowser-backgroundedPanelInner {
+        padding: 25px 23px !important;
+      }
+      table.ecwid-productBrowser-cart-estimation {
+        width: 100%;
+        max-width: 375px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 509px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size.ec-size--xs:not(.ec-size--s) {
+        .ec-store {
+          .product-details--layout-sidebar-right {
+            .product-details__sidebar {
               width: 100%;
             }
           }
-        }
-        div.ecwid-productBrowser-cart {
-          div.ecwid-productBrowser-backgroundedPanel {
-            min-width: auto;
-            max-width: 375px;
-            margin: 0 auto;
-            height: 100% !important;
-            padding: 0;
-          }
-        }
-        .ecwid-productBrowser-backgroundedPanelInner {
-          padding: 25px 23px !important;
-        }
-        table.ecwid-productBrowser-cart-estimation {
-          width: 100%;
-          max-width: 375px;
         }
       }
     }
