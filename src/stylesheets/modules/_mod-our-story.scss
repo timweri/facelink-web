@@ -10,9 +10,13 @@
   }
   p {
     margin-bottom: 40px;
+    img {
+      display: inline !important;
+    }
   }
   .pic-wrap {
-    @extend .col-9, .offset-3, .col-lg-11, .offset-lg-1;
+    @extend .col-9, .offset-3, .col-lg-10, .offset-lg-2;
+    padding: 0;
   }
   .centered-row {
     @extend .row;
@@ -52,7 +56,7 @@
 .os-headline-wrap {
   @extend .text-center;
   margin: 0 auto 43px;
-  max-width: 320px;
+  max-width: 360px;
   .line {
     display: inline-block;
     width: 80px;
@@ -67,6 +71,7 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0;
+  letter-spacing: 1.8px;
   line-height: 1.4;
 }
 
