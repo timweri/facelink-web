@@ -52,9 +52,7 @@
   .extra {
     margin-bottom: 0;
     p {
-      font-size: rem(17.7);
-      color: $black;
-      font-weight: 700;
+      @include font(null, rem(17.7),$black, 700);
       margin-top: -5px;
       line-height: 1.05;
       letter-spacing: 1.3px;

@@ -38,9 +38,9 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
       right: -19px;
     }
     cite {
+      @include font($font-family-base, rem(18), $black-two, 400, normal);
       display: block;
       letter-spacing: 1.4px;
-      @include font($font-family-base, rem(18), $black-two, 400, normal);
       text-transform: none;
       &::before,
       &::after {

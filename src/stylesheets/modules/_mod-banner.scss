@@ -5,27 +5,25 @@
   text-align: center;
   &::before {
     @include position(absolute, $top:0, $left:0);
+    @include sizeEx(100%);
     content: "";
     background-color: rgba($black, .6);
-    @include sizeEx(100%);
   }
   .d-table {
-    position: relative;
     @include sizeEx(100%, 241px);
+    position: relative;
     .d-table-cell {
       text-align: left;
     }
   }
   .btn {
-    margin-top: 31px;
-    margin-left: 5px;
+    margin: 31px 0 0 5px;
     padding: 0 33px;
   }
 }
 
 .banner-content {
-  margin-top: 91px;
-  margin-bottom: 81px;
+  margin: 91px 0 81px;
   color: $white;
   text-transform: uppercase;
   max-width: 556px;
@@ -42,7 +40,6 @@
 .green-kite {
   @include sizeEx(36px);
   @include position(absolute, $bottom: -5px, $left: 50%);
-  position: absolute;
   display: inline-block;
   background-color: $color-c6;
   transform-origin: center;
