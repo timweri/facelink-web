@@ -2,7 +2,6 @@
 .banner-background {
   @include background-size(cover);
   position: relative;
-  text-align: center;
   &::before {
     @include position(absolute, $top:0, $left:0);
     @include sizeEx(100%);
@@ -13,7 +12,7 @@
     @include sizeEx(100%, 241px);
     position: relative;
     .d-table-cell {
-      text-align: left;
+      vertical-align: middle;
     }
   }
   .btn {
@@ -61,9 +60,6 @@
   .banner-background {
     .d-table {
       height: 335px;
-      .d-table-cell {
-        vertical-align: middle;
-      }
     }
   }
   .banner-content {

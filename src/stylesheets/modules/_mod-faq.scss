@@ -1,7 +1,7 @@
 .mod-faq {
   position: relative;
   max-width: 2000px;
-  margin: 64px 0 74px;
+  margin: 64px 0 0;
   .col-left,
   .col-right {
     @extend .col-12;
@@ -12,7 +12,8 @@
   }
   .col-right {
     @extend .col-lg-8;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 70px;
   }
   .container {
     overflow-x: hidden;
@@ -67,11 +68,11 @@
   margin-top: 0;
   h4 {
     border-bottom: solid 2px $border-gray;
-    padding: 27px 70px 27px 0;
+    padding: 20px 70px 27px 0;
     margin: 0;
     &::after {
-      @include position(absolute, $right: 0, $top: 40px);
-      transform: translateY(-50%) translateX(-42%);
+      @include position(absolute, $right: 0, $top: 50%);
+      transform: translateY(-52%) translateX(-25%);
       content: "\e931";
     }
     &:hover {
@@ -91,7 +92,7 @@
     color: $orange;
     padding-top: 36px;
     &::after {
-      @include position(absolute, $right: 0, $top: 40px);
+      @include position(absolute, $right: 0, $top: 50px);
       transform: translateY(-50%);
       content: "\e930";
     }
@@ -109,7 +110,7 @@
 
 @include media-breakpoint-up(lg) {
   .mod-faq {
-    margin: 118px auto 98px;
+    margin: 110px auto 30px;
     > .container {
       padding: 0;
     }
@@ -128,20 +129,24 @@
     }
   }
   .faq-cat {
-    margin-bottom: 145px !important;
+    margin-bottom: 75px !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
   }
   .faq-closed {
     padding: 0;
     &:first-child {
       h4 {
-        padding: 4px 70px 27px 0;
+        padding: 4px 70px 25px 0;
         &::after {
-          @include position(absolute, $right: 0, $top: 27%);
-          transform: translateY(-50%) translateX(-62%);
+          @include position(absolute, $right: 0, $top: 25%);
+          transform: translateY(-46%) translateX(-45%);
         }
       }
     }
     h4 {
+      padding: 30px 70px 25px 0;
       &::after {
         right: 7px;
       }
