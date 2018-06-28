@@ -19,19 +19,8 @@
 .footer-top {
   padding: 0 15px;
 }
-
-.footer-item-col-mb {
-  @extend .col-6, .d-md-flex;
-  padding: 0;
-
-  &:first-child {
-    @extend .p-md-0;
-    padding-left: 50px;
-  }
-}
-
 .footer-item-col {
-  @extend .col-md-6;
+  @extend .col-md-3, .col-6;
   color: $white;
   h5 {
     @include font($os, 14px, $white, 700);
