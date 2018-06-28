@@ -1,5 +1,5 @@
 .mod-shop-product {
-  margin: 129px 0 44px;
+  margin: 160px 0 44px;
   >.container {
     position: relative;
   }
@@ -10,7 +10,7 @@
     color: $white;
   }
   .btn {
-    padding: 0 33px;
+    padding: 0 30px;
   }
 }
 
@@ -29,14 +29,14 @@
 .shop-product-cap-overlay {
   @include position(absolute, $bottom: 0, $right:0);
   max-width: 290px;
-  transform: translateX(50%) translateY(20%);
+  transform: translateX(50%) translateY(30%) scale(.65);
 }
 
 .shop-product-pa-overlay {
   @extend .d-lg-none;
   @include position(absolute, $bottom: 0, $left:0);
   max-width: 290px;
-  transform: translate(-50%, 20%);
+  transform: translate(-50%, 22.5%) scale(.85);
 }
 
 .shop-product-orange-overlay {
@@ -88,9 +88,9 @@
 }
 
 .shop-product-right {
-  margin-top: 100px;
+  margin-top: 85px;
   .shop-product-title {
-    @include position(absolute, $top: 0, $left: 40%);
+    @include position(absolute, $top: 0, $left: 53%);
     transform: translateY(-50%);
     &::before {
       @include sizeEx(2000px, 100%);
@@ -107,10 +107,15 @@
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 370px) {
+  .mod-shop-product {
+    h2 {
+      font-size: rem(20);
+    }
+  }
   .shop-product-right {
     .shop-product-title {
-      left: 30%;
+      left: 40%;
     }
   }
 }
@@ -127,7 +132,7 @@
     z-index: 1;
   }
   .mod-shop-product {
-    margin: 189px 0 159px;
+    margin: 195px 0 105px;
   }
   .shop-product-wrap {
     position: relative;
