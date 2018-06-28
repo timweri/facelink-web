@@ -44,101 +44,103 @@
     font-size: 16px;
   }
 }
-.page-home #fp-nav {
-  top: auto;
-  bottom: 67px;
-  right: 25px;
-  margin-top: 0 !important;
-  &::after {
-    @include position(absolute, 100%, 0, null, 0);
-    @include sizeEx(3px, 52px);
-    content: "";
-    display: block;
-    margin: 15px auto 0;
-    background: $color-e5;
-  }
-  &.blue {
+body {
+  #fp-nav {
+    top: auto;
+    bottom: 67px;
+    right: 25px;
+    margin-top: 0 !important;
     &::after {
-      background: $color-9d;
+      @include position(absolute, 100%, 0, null, 0);
+      @include sizeEx(3px, 52px);
+      content: "";
+      display: block;
+      margin: 15px auto 0;
+      background: $color-e5;
     }
-    a {
-      color: $color-9d;
-      &.active {
-        color: $blue;
+    &.blue {
+      &::after {
         background: $color-9d;
       }
-    }
-  }
-  &.red {
-    &::after {
-      background: $orange;
-    }
-    a {
-      color: $orange;
-      &.active {
-        color: $red;
-        background: $orange;
+      a {
+        color: $color-9d;
+        &.active {
+          color: $blue;
+          background: $color-9d;
+        }
       }
     }
-  }
-  &.orange {
-    &::after {
-      background: $orange;
-    }
-    a {
-      color: $orange;
-      &.active {
-        color: $color-ff;
+    &.red {
+      &::after {
         background: $orange;
       }
+      a {
+        color: $orange;
+        &.active {
+          color: $red;
+          background: $orange;
+        }
+      }
     }
-  }
-  &.gray {
-    &::after {
-      background: $border-gray;
+    &.orange {
+      &::after {
+        background: $orange;
+      }
+      a {
+        color: $orange;
+        &.active {
+          color: $color-ff;
+          background: $orange;
+        }
+      }
     }
-    a {
-      color: $border-gray;
-      &.active {
-        color: $white;
+    &.gray {
+      &::after {
         background: $border-gray;
       }
-    }
-  }
-  &.green {
-    top: 67px;
-    bottom: auto;
-    &::after {
-      background: $white;
-      top: auto;
-      bottom: 100%;
-      margin: 0 auto 15px;
-    }
-    a {
-      color: $white;
-      &.active {
-        color: $color-c6;
-        background: $white;
+      a {
+        color: $border-gray;
+        &.active {
+          color: $white;
+          background: $border-gray;
+        }
       }
     }
-  }
-  ul {
-    li {
-      @include sizeEx(27px);
-      text-align: center;
-      margin: 2px 0;
+    &.green {
+      top: 67px;
+      bottom: auto;
+      &::after {
+        background: $white;
+        top: auto;
+        bottom: 100%;
+        margin: 0 auto 15px;
+      }
       a {
-        @include font($os, 18px, $color-e5, 600);
-        line-height: 27px;
-        span {
-          @include sizeEx(auto !important);
-          position: static;
-          background: transparent;
-          margin: 0 !important;
-        }
+        color: $white;
         &.active {
           color: $color-c6;
-          background: $color-e5;
+          background: $white;
+        }
+      }
+    }
+    ul {
+      li {
+        @include sizeEx(27px);
+        text-align: center;
+        margin: 2px 0;
+        a {
+          @include font($os, 18px, $color-e5, 600);
+          line-height: 27px;
+          span {
+            @include sizeEx(auto !important);
+            position: static;
+            background: transparent;
+            margin: 0 !important;
+          }
+          &.active {
+            color: $color-c6;
+            background: $color-e5;
+          }
         }
       }
     }

@@ -1,0 +1,67 @@
+html#ecwid_html {
+  body#ecwid_body.page-internal {
+    .ec-size {
+      .ec-store {
+        .grid__products--large-items {
+          .grid-product__title-inner {
+            @include font($os, 18px, $black, 700, null);
+            text-transform: uppercase;
+          }
+        }
+        .grid__products--appearance-frame {
+          .grid-product__wrap-inner {
+            border-radius: 0;
+            border: 0;
+            background: none;
+            box-shadow: none;
+          }
+        }
+        .grid-product__price {
+          margin-top: 15px;
+        }
+        .grid-product__price-amount {
+          @include font($os, 18px, $orange, 500, null);
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  html#ecwid_html body#ecwid_body.page-internal {
+    .ec-size {
+      .ec-store {
+        .grid__products--appearance-frame {
+          .grid-product__wrap-inner {
+            padding: 15px 30px;
+            &:hover {
+              box-shadow: 9px 15.6px 43.2px 2.8px rgba(93, 93, 93, .49);
+            }
+          }
+        }
+        .grid__products--classic {
+          padding: 40px;
+        }
+        .form-control--secondary {
+          .form-control__button {
+            @include font($os, 15px, $white, 700);
+            background: $orange;
+            border: 0;
+            text-transform: uppercase;
+            width: 180px;
+            &::before {
+              font-family: 'icomoon' !important;
+              speak: none;
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1;
+              content: "\e92b";
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
