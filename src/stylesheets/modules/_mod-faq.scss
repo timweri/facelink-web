@@ -22,6 +22,7 @@
     font-family: $font-family-base;
     line-height: 1.33;
     letter-spacing: 1.3px;
+    font-size: rem(17.7);
     &::after {
       font-weight: 100;
     }
@@ -52,7 +53,7 @@
 .faq-item {
   padding: 0 16px;
   position: relative;
-  transition: .25s, margin-bottom .1s, padding-bottom .1s;
+  transition: .25s, margin-bottom .1s, padding-bottom .1s, padding-right 0s;
   h4 {
     transition: padding 0s, color .25s, margin 0s;
     cursor: pointer;
@@ -83,16 +84,15 @@
 .faq-opened {
   padding: 0 15px 36px 49px;
   background-color: $menu-gray;
+  // border-top: solid 2px $border-gray;
   border-left: solid 5px $orange;
-  border-top: solid 2px $border-gray;
-  margin-top: -2px;
   h4 {
     position: relative;
     border-bottom: solid 2px transparent;
     color: $orange;
-    padding-top: 36px;
+    padding-top: 34px;
     &::after {
-      @include position(absolute, $right: 0, $top: 50px);
+      @include position(absolute, $right: 0, $top: 45px);
       transform: translateY(-50%);
       content: "\e930";
     }
@@ -115,9 +115,12 @@
       padding: 0;
     }
     h2 {
-      padding: 31px 0;
+      padding: 28.5px 0;
+      font-size: rem(30);
+      letter-spacing: 1.8px;
+      left: -40px;
       &::before {
-        right: -15px;
+        right: -55px;
       }
     }
     .container {
@@ -136,9 +139,12 @@
   }
   .faq-closed {
     padding: 0;
+    border-top: solid 2px $border-gray;
+    margin-bottom: -2px;
     &:first-child {
+      border-top: 0;
       h4 {
-        padding: 4px 70px 25px 0;
+        padding: 0 70px 25px 4px;
         &::after {
           @include position(absolute, $right: 0, $top: 25%);
           transform: translateY(-46%) translateX(-45%);
@@ -146,16 +152,22 @@
       }
     }
     h4 {
-      padding: 30px 70px 25px 0;
+      padding: 28px 70px 29px 4px;
       &::after {
         right: 7px;
       }
     }
   }
   .faq-opened {
+    margin-top: 2px;
+    padding-left: 36px;
+    padding-bottom: 29px;
     h4 {
+      padding-left: 3px;
+      padding-top: 35px;
       &::after {
-        right: 8px;
+        top: 42px;
+        right: 0;
       }
     }
   }
