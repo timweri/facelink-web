@@ -49,7 +49,13 @@ html#ecwid_html {
             text-transform: uppercase;
             width: 180px;
             &::before {
-              @extend .icomoon;
+              font-family: 'icomoon' !important;
+              speak: none;
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1;
               content: "\e92b";
               margin-right: 15px;
             }
