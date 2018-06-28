@@ -3,6 +3,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
   .centered-row {
     @extend .row;
     align-items: center;
+    padding: 0;
   }
   .col-right,
   .col-left {
@@ -13,29 +14,31 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
   }
   .col-left {
     @extend .col-lg-7;
+    padding: 0;
   }
   blockquote {
     @include position(relative, $index:1);
-    display: block;
     @include font($os, rem(26), $black-two, 700);
+    display: block;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 80px;
     &::before,
     &::after {
-      @include font($os, 200px, $quote-blockquote-color);
+      @include font($icomoon, 100px, $quote-blockquote-color);
       line-height: 0;
       position: absolute;
       display: block;
     }
     &::before {
-      content: open-quote;
-      top: 0;
-      left: -17px;
+      content: "\e934";
+      top: -52px;
+      left: -25px;
     }
     &::after {
-      content: close-quote;
-      bottom: -80px;
-      right: -19px;
+      content: "\e933";
+      bottom: -15px;
+      right: -25px;
     }
     cite {
       @include font($font-family-base, rem(18), $black-two, 400, normal);
@@ -62,9 +65,19 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
   .mod-quote {
     margin-top: 15%;
     blockquote {
+      max-width: 460px;
+      margin: auto;
       &::after,
       &::before {
-        font-size: 255px;
+        font-size: 100px;
+      }
+      &::before {
+        top: -65px;
+        left: -40px;
+      }
+      &::after {
+        bottom: -35px;
+        right: -40px;
       }
       cite {
         margin-top: 20px;
