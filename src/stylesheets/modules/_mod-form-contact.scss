@@ -1,7 +1,7 @@
 .mod-form-contact {
   position: relative;
   background-color: $orange;
-  padding: 50px 20px;
+  padding: 50px 20px 45px;
   input:-webkit-autofill {
     box-shadow: 0 0 0 100px $orange inset !important;
   }
@@ -9,6 +9,7 @@
     text-align: center;
     letter-spacing: 2px;
     color: $white;
+    margin-bottom: 76px;
   }
   .btn-form-wrap {
     width: 100%;
@@ -27,24 +28,20 @@
       display: block;
       letter-spacing: .4px;
       font-size: rem(15);
-      transform: translateY(-2px);
+      transform: translateY(-11px);
       cursor: text;
       transition: .25s all;
       &.up {
         cursor: none;
         font-weight: 400;
         font-size: 15px;
-        transform: translateY(-33px);
+        transform: translateY(-48px);
         transition: .25s all;
       }
     }
     &.error {
       .form-control {
         border-bottom: 2px solid $red;
-
-        &:focus {
-          border-bottom: 4px solid $red;
-        }
       }
       .messages-error {
         display: none;
@@ -57,13 +54,16 @@
     appearance: none;
     border: none;
     border-bottom: solid 2px $white;
-    padding-bottom: 34px;
+    padding-bottom: 38px;
     text-transform: uppercase;
     font-size: rem(18);
     font-weight: 700;
+    &:focus {
+      border-bottom: solid 2px $white;
+    }
   }
   textarea.form-control {
-    height: 80px;
+    height: 69px;
   }
 }
 
@@ -82,7 +82,16 @@
       &:focus,
       &:hover {
         border-bottom: solid 4px $white;
-        padding-bottom: 32px;
+        padding-bottom: 36px;
+      }
+    }
+    .form-group {
+      &.error {
+        .form-control {
+          &:focus {
+            border-bottom: 4px solid $red;
+          }
+        }
       }
     }
   }

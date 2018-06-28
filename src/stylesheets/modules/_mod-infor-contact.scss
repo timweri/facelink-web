@@ -24,6 +24,7 @@
       @include font($os, rem(30), null, 700);
       text-transform: uppercase;
       line-height: 20px;
+      letter-spacing: 1.6px;
       color: $black;
       &:hover {
         color: $orange;
@@ -37,7 +38,7 @@
   .list-social,
   .extra,
   .email {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     padding-left: 30px;
     h6 {
       @include font($font-family-base, rem(15), $border-gray, 400);
@@ -45,6 +46,9 @@
     }
   }
   .list-social {
+    h6 {
+      margin-bottom: 25px;
+    }
     .social {
       padding-left: 0;
     }
@@ -58,7 +62,9 @@
       letter-spacing: 1.3px;
     }
     .btn {
-      margin-top: 5px;
+      margin-top: 10px;
+      padding: 0;
+      width: 139px;
     }
   }
 }
@@ -69,13 +75,17 @@
     .list-social,
     .email,
     .extra {
-      padding-left: 50px;
+      padding-left: 43px;
+      margin-bottom: 46px;
       h6 {
         margin-bottom: 17px;
       }
     }
     .list-social {
       position: relative;
+      h6 {
+        margin-bottom: 27px;
+      }
       &::before {
         @include position(absolute, 0, null, null, -3px);
         @include sizeEx(100%);
