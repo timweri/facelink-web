@@ -1,3 +1,5 @@
+$tab-arrow-size: (91.2 / 2) * 1.414px;
+
 .mod-tab-benefits {
   background: $gray-bg;
   padding: 50px 0 40px;
@@ -68,7 +70,7 @@
       z-index: 1;
       &::after {
         @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
-        @include sizeEx((91 / 2) * 1.414px);
+        @include sizeEx($tab-arrow-size);
         content: "";
         transform-origin: center;
         transform: translateY(-49%) translateX(49.5%) rotate(45deg);
@@ -89,7 +91,7 @@
         &:hover {
           &::after {
             @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
-            @include sizeEx((91 / 2) * 1.414px);
+            @include sizeEx($tab-arrow-size);
             content: "";
             transform-origin: center;
             transform: translateY(-49%) translateX(49.5%) rotate(45deg);
@@ -101,7 +103,7 @@
         }
         &::after {
           @include position(absolute, $top: 50%, $right:50px, $index: -1);
-          @include sizeEx((91 / 2) * 1.414px);
+          @include sizeEx($tab-arrow-size);
           content: "";
           background: $black;
           transform-origin: center;
