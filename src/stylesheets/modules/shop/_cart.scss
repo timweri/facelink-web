@@ -79,6 +79,14 @@ html#ecwid_html {
     .ecwid-productBrowser-cart-estimation {
       margin: 25px auto 0;
     }
+    .ecwid {
+      .ecwid-btn--secondary {
+        background: none;
+      }
+    }
+    div.ecwid-productBrowser-backgroundedPanel {
+      background: $menu-gray;
+    }
   }
 }
 
