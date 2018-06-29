@@ -1,5 +1,6 @@
 module.exports = {
   background: 'images/promotion-bg.jpg',
+  background_position: 'center 80%',
   items: [
     {
       icon: 'images/icon1-w.svg',
