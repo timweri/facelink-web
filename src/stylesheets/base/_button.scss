@@ -37,6 +37,7 @@ $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
     position: relative;
     z-index: 0;
     background: map-get($hover-color-settings, norm-bg);
+    border: solid 1px map-get($hover-color-settings, norm-bg);
     color: map-get($hover-color-settings, norm-color);
     overflow: hidden;
     &::before {
