@@ -25,7 +25,7 @@
   margin: 91px 0 81px;
   color: $white;
   text-transform: uppercase;
-  max-width: 556px;
+  max-width: 600px;
   h1 {
     letter-spacing: 2.5px;
     line-height: 1.1;
@@ -69,9 +69,9 @@
     }
   }
   .product-box-inner {
-    @include position(absolute, $right: 0, $bottom: 0);
-    max-width: 410px;
-    width: 40%;
+    @include position(absolute, $right: 20px, $bottom: 0);
+    max-width: 500px;
+    width: 44%;
     transform: translateY(30%);
   }
   .green-kite {
