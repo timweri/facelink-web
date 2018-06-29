@@ -8,7 +8,7 @@ $number-per-row-lg: 5;
   letter-spacing: .4px;
   line-height: 1.22;
   font-family: $os;
-  padding: 80px 0 0;
+  padding: 70px 0 0;
   margin: 65px 0 50px;
   position: relative;
 
@@ -20,9 +20,9 @@ $number-per-row-lg: 5;
   }
 
   .icon-wrap {
-    @include sizeEx(36px);
+    @include sizeEx(26px);
     display: inline-flex;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     justify-content: center;
 
     img {
@@ -36,6 +36,7 @@ $number-per-row-lg: 5;
 
   .promo-item {
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 80px;
     padding: 0;
   }
@@ -58,7 +59,7 @@ $number-per-row-lg: 5;
   }
   .promo-overlay {
     @include position(absolute, $left: 0, $top:0, $bottom: 0);
-    @include sizeEx($height:100%, $width: 310px);
+    @include sizeEx($height:100%, $width: 265px);
     background: url("../images/promotion-overlay.png") left center no-repeat;
     background-size: cover;
     opacity: .05;
