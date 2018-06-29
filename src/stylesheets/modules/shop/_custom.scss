@@ -69,6 +69,9 @@ html#ecwid_html {
           }
         }
       }
+      .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+        border: 3px solid $orange;
+      }
     }
     .ec-size.ec-size--l {
       .ec-store {
@@ -95,7 +98,6 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid {
         .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
-          border: 3px solid $orange;
           &:hover,
           &:active,
           &:focus {

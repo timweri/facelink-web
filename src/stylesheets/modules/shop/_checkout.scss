@@ -40,6 +40,15 @@ html#ecwid_html {
           width: 100%;
         }
       }
+      .ecwid-PaymentMethodsBlock-PaymentOption {
+        input {
+          @include position(absolute, -9999px, $left: -9999px);
+        }
+        span {
+          min-height: 28px;
+          display: block;
+        }
+      }
     }
     table.ecwid-Checkout-blockTitle div.gwt-HTML,
     div.ecwid-Checkout-blockTitle {
@@ -94,48 +103,51 @@ html#ecwid_html {
       margin-top: 5px;
       width: 100% !important;
     }
-    .ecwid-shippingOptions-List {
-      span.ecwid-shippingOption {
+    .ecwid-shippingOptions-List span.ecwid-shippingOption,
+    span.gwt-RadioButton {
+      position: relative;
+      margin: 10px 0;
+      label {
+        @include font($font-family-base, 18px, $border-gray, 700, null);
+        margin: 0;
+        padding-left: 60px;
         position: relative;
-        margin: 10px 0;
-        label {
-          @include font($font-family-base, 18px, $border-gray, 700, null);
-          margin: 0;
-          padding-left: 60px;
-          position: relative;
-          &::after,
-          &::before {
-            content: "";
-            display: block;
-          }
-          &::before {
-            @include sizeEx(28px);
-            @include position(absolute, $top: 0, $left: 0);
-            background: $white;
-          }
-          &::after {
-            @include sizeEx(16px);
-            @include position(absolute, $top: 6px, $left: 6px);
-            background: $color-c6;
-            opacity: 0;
-          }
+        &::after,
+        &::before {
+          content: "";
+          display: block;
         }
-        .ecwid-shippingOption-rate {
-          color: $black;
+        &::before {
+          @include sizeEx(28px);
+          @include position(absolute, $top: 0, $left: 0);
+          background: $white;
         }
-        input {
+        &::after {
+          @include sizeEx(16px);
+          @include position(absolute, $top: 6px, $left: 6px);
+          background: $color-c6;
           opacity: 0;
-          &:checked {
-            ~label {
-              color: $black;
-              &::after {
-                opacity: 1;
-              }
+        }
+      }
+      .ecwid-shippingOption-rate {
+        color: $black;
+      }
+      input {
+        opacity: 0;
+        &:checked {
+          ~label {
+            color: $black;
+            &::after {
+              opacity: 1;
             }
           }
         }
       }
     }
+    .ecwid-PaymentMethodsBlock-PaymentOption-htmlBlock {
+      padding-left: 60px;
+    }
+    
     div.ecwid-AddressForm-secureLockIcon {
       background: none;
       &::after {
@@ -155,6 +167,15 @@ html#ecwid_html {
         margin-bottom: 0;
         input.gwt-TextBox {
           width: 100%;
+        }
+      }
+      .ecwid-Checkout-blockTitle {
+        span {
+          display: block;
+          margin-top: 15px;
+        }
+        .ecwid-btn {
+          margin: 0;
         }
       }
     }
