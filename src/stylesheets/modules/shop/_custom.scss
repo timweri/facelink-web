@@ -18,10 +18,15 @@ html#ecwid_html {
         border-radius: 0;
         text-transform: uppercase;
         letter-spacing: 1.1px;
-        box-shadow: none;
+        box-shadow: none !important;
+        padding: 0 10px;
+        min-height: 35px;
+        overflow: hidden;
       }
-      .ecwid-btn--secondary {
+      .ecwid-btn--changeOptions {
         border: 3px solid $orange;
+        background: transparent;
+        min-height: 36px !important;
       }
       .ecwid-btn--primary {
         color: $white;
@@ -41,9 +46,50 @@ html#ecwid_html {
         text-transform: none;
         padding: 0;
       }
+      .details-product-purchase__add-more {
+        .form-control__button {
+          @include font($os, 15px !important, $white, 700);
+          background: $orange;
+          border: 0;
+          text-transform: uppercase;
+          width: auto;
+          padding: 0 15px;
+          min-height: 35px !important;
+          letter-spacing: 1.1px;
+          &::before {
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            content: "\e92b";
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    .ec-size.ec-size--l {
+      .ec-store {
+        .form-control--large {
+          .form-control__button {
+            font-size: 15px;
+          }
+        }
+        .details-product-purchase__add-more {
+          .form-control__button {
+            background: $orange;
+            border-radius: 0;
+            width: auto;
+            padding: 0 15px;
+          }
+        }
+      }
     }
   }
 }
+
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -65,6 +111,41 @@ html#ecwid_html {
             background: transparent;
             border-width: 0;
             color: $blue;
+          }
+        }
+        .form-control--primary,
+        .details-product-purchase__add-more {
+          .form-control__button {
+            overflow: hidden;
+            &::after {
+              @include position(absolute, $top:0, $right:0, $index: -1);
+              @include sizeEx(100%);
+              content: "";
+              background: $orange-hover;
+              transition: transform .3s cubic-bezier(.75, 0, .125, 1);
+              transform: translate3d(-100%, 0, 0);
+            }
+            &:hover{
+              &::after {
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+        }
+        .ecwid-btn--checkout {
+          &::after {
+            @include position(absolute, $top:0, $right:0, $index: -1);
+            @include sizeEx(100%);
+            content: "";
+            background: $orange-hover;
+            transition: transform .3s cubic-bezier(.75, 0, .125, 1);
+            transform: translate3d(-100%, 0, 0);
+          }
+          &:hover{
+            color: $white;
+            &::after {
+              transform: translate3d(0, 0, 0);
+            }
           }
         }
       }

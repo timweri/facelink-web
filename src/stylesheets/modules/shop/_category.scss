@@ -22,6 +22,28 @@ html#ecwid_html {
         .grid-product__price-amount {
           @include font($os, 18px, $orange, 500, null);
         }
+        .form-control--secondary {
+          .form-control__button {
+            @include font($os, 15px, $white, 700);
+            background: $orange;
+            border: 0;
+            text-transform: uppercase;
+            min-height: 35px;
+            margin: 0;
+            &::before {
+              @extend .icomoon;
+              content: "\e92b";
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+      &.ec-size--l {
+        .ec-store {
+          .form-control__button {
+            min-height: 35px;
+          }
+        }
       }
     }
   }
@@ -41,26 +63,7 @@ html#ecwid_html {
         .grid__products--classic {
           padding: 40px;
         }
-        .form-control--secondary {
-          .form-control__button {
-            @include font($os, 15px, $white, 700);
-            background: $orange;
-            border: 0;
-            text-transform: uppercase;
-            width: 180px;
-            &::before {
-              font-family: 'icomoon' !important;
-              speak: none;
-              font-style: normal;
-              font-weight: normal;
-              font-variant: normal;
-              text-transform: none;
-              line-height: 1;
-              content: "\e92b";
-              margin-right: 15px;
-            }
-          }
-        }
+        
       }
     }
   }

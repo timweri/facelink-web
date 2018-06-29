@@ -5,5 +5,21 @@ html#ecwid_html {
         padding: 60px 15px;
       }
     }
+    .ec-size {
+      .ec-store {
+        h1 {
+          text-transform: uppercase;
+        }
+        .signin__description {
+          @include font($font-family-base, 15px, $border-gray, 400, null);
+        }
+        .form-control__button {
+          margin-top: 20px;
+        }
+        .signin__page {
+          margin-top: 30px;
+        }
+      }
+    }
   }
 }
