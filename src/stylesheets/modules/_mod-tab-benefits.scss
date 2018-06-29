@@ -49,12 +49,14 @@ $tab-arrow-size: (91.2 / 2) * 1.414px;
   .tab-content {
     display: none;
     background: $white;
-    margin: 0 18px 20px;
-    padding: 50px 20px;
+    margin: 0 18px 30px;
+    padding: 50px 21px 40px;
     letter-spacing: 1.1px;
     line-height: 2;
-    p,
     h4 {
+      margin-bottom: 30px;
+    }
+    p {
       margin-bottom: 45px;
     }
     p:last-child {
