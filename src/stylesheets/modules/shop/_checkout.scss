@@ -26,10 +26,17 @@ html#ecwid_html {
           padding: 0 20px;
           border-radius: 0;
           box-sizing: border-box;
+          background: $white;
         }
       }
-      .ecwid-productBrowser-CheckoutShippingAddressPage {
+      .ecwid-productBrowser-CheckoutShippingAddressPage,
+      .ecwid-fieldWrapper, {
         table {
+          width: 100%;
+        }
+      }
+      div.ecwid-Checkout-EmailBlock {
+        .ecwid-form {
           width: 100%;
         }
       }
@@ -52,6 +59,7 @@ html#ecwid_html {
       }
     }
     div.ecwid-AddressForm {
+      overflow: hidden;
       * {
         box-sizing: border-box;
       }
@@ -142,6 +150,14 @@ html#ecwid_html {
         transform-origin: right;
       }
     }
+    .ecwid-Checkout-EmailBlock {
+      div.ecwid-fieldWrapper {
+        margin-bottom: 0;
+        input.gwt-TextBox {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -178,7 +194,7 @@ html#ecwid_html {
           .ecwid-fieldLabel {
             margin: 8px 0 0 !important;
             &~table {
-              width: 60%;
+              width: 59%;
               float: left;
               margin: 0;
             }
@@ -210,8 +226,14 @@ html#ecwid_html {
           padding: 0 15px;
         }
       }
+      .ecwid-Checkout-ShippingAddress-container,
+      .ecwid-Checkout-BillingAddress-container {
+        div.ecwid-form {
+          padding: 57px 45px 83px !important;
+        }
+      }
       div.ecwid-form {
-        padding: 57px 45px 83px !important;
+        padding: 57px 45px !important;
       }
       div.ecwid-AddressForm-secureLockIcon {
         @include sizeEx(67px);
@@ -240,7 +262,6 @@ html#ecwid_html {
           margin-top: -10px;
         }
       }
-      
     }
   }
 }
@@ -255,7 +276,8 @@ html#ecwid_html {
           }
         }
       }
-      div.ecwid-AddressForm {
+      div.ecwid-AddressForm,
+      div.ecwid-Checkout-EmailBlock {
         div.ecwid-fieldWrapper {
           label.ecwid-fieldLabel {
             width: 180px;
