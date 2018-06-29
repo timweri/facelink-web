@@ -1,0 +1,231 @@
+html#ecwid_html {
+  body#ecwid_body.page-internal {
+    .ec-size {
+      .ec-store {
+        .form-control--label {
+          .form-control__text {
+            box-shadow: none;
+          }
+        }
+        .ecwid-productBrowser-head {
+          font-size: 18px;
+        }
+      }
+    }
+    .ecwid {
+      div.ecwid-productBrowser-head {
+        font-size: 18px;
+      }
+      .ecwid-fieldEnvelope-around {
+        padding: 0;
+        input,
+        select {
+          @include font($os, 18px, $black-two, 700, null);
+          @include sizeEx(100%, 35px);
+          border: 0;
+          padding: 0 20px;
+          border-radius: 0;
+          box-sizing: border-box;
+        }
+      }
+      .ecwid-productBrowser-CheckoutShippingAddressPage {
+        table {
+          width: 100%;
+        }
+      }
+    }
+    table.ecwid-Checkout-blockTitle div.gwt-HTML,
+    div.ecwid-Checkout-blockTitle {
+      @include font($os, 18px, $black, 700);
+      text-transform: uppercase;
+    }
+    div.ecwid-fieldWrapper {
+      margin-bottom: 12px;
+      label.ecwid-fieldLabel {
+        @include font($font-family-base, 15px, $border-gray, 400, null);
+        margin: 0 0 8px !important;
+      }
+      table.ecwid-fieldEnvelope {
+        float: none;
+      }
+    }
+    div.ecwid-AddressForm {
+      * {
+        box-sizing: border-box;
+      }
+      div.ecwid-form {
+        width: 100%;
+      }
+    }
+    div.ecwid-Checkout-DeliveryMethod {
+      div.ecwid-form {
+        width: 100%;
+      }
+    }
+    div.ecwid-form {
+      background: $menu-gray;
+      padding: 45px 20px !important;
+    }
+    .ecwid-Checkout-ShippingAddress {
+      .ecwid-btn--address_book_sign_in {
+        margin-top: -10px;
+      }
+    }
+    div.ecwid-Checkout-blockTitle,
+    table.ecwid-Checkout-blockTitle {
+      margin-bottom: 17px;
+    }
+    .ecwid-note {
+      @include font($font-family-base, 12px, $border-gray, 400, null);
+      text-align: center;
+      margin-top: 5px;
+    }
+    .ecwid-shippingOptions-List {
+      span.ecwid-shippingOption {
+        position: relative;
+        margin: 10px 0;
+        label {
+          @include font($font-family-base, 18px, $border-gray, 700, null);
+          margin: 0;
+          padding-left: 60px;
+          position: relative;
+          &::after,
+          &::before {
+            content: "";
+            display: block;
+          }
+          &::before {
+            @include sizeEx(28px);
+            @include position(absolute, $top: 0, $left: 0);
+            background: $white;
+          }
+          &::after {
+            @include sizeEx(16px);
+            @include position(absolute, $top: 6px, $left: 6px);
+            background: $color-c6;
+            opacity: 0;
+          }
+        }
+        .ecwid-shippingOption-rate {
+          color: $black;
+        }
+        input {
+          opacity: 0;
+          &:checked {
+            ~label {
+              color: $black;
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-Checkout {
+        div.ecwid-floatLeftPanel {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        div.ecwid-productBrowser-head {
+          font-size: 30px;
+        }
+        .ecwid-fieldEnvelope-around {
+          input,
+          select {
+            padding: 0 40px;
+          }
+        }
+        .ecwid-fieldWrapper {
+          &::after {
+            clear: both;
+            content: "";
+            display: block;
+          }
+          .ecwid-fieldLabel {
+            margin-bottom: 0 !important;
+            &~table {
+              width: 60%;
+              float: left;
+            }
+          }
+        }
+      }
+      div.ecwid-AddressForm {
+        div.ecwid-fieldWrapper {
+          label.ecwid-fieldLabel {
+            width: 140px;
+          }
+        }
+      }
+      
+      .ecwid-productBrowser-head-panel {
+        ~div {
+          margin: 0 -15px;
+        }
+      }
+      div.ecwid-Checkout {
+        div.ecwid-floatLeftPanel {
+          width: 50%;
+          margin: 0 !important;
+          padding: 0 15px;
+        }
+      }
+      div.ecwid-AddressForm {
+        .div.ecwid-form {
+          padding: 57px 45px 83px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1499px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .ecwid-fieldWrapper {
+          .ecwid-fieldLabel~table {
+            width: 65%;
+          }
+        }
+        table.ecwid-AccentedContinueButton {
+          max-width: none;
+          td[align="center"] {
+            text-align: right;
+          }
+        }
+      }
+      div.ecwid-AddressForm {
+        div.ecwid-fieldWrapper {
+          label.ecwid-fieldLabel {
+            width: 180px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 529px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-Checkout-ShippingAddress {
+        .ecwid-btn--address_book_sign_in {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
