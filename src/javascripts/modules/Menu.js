@@ -33,9 +33,10 @@ const Menu = (($) => {
 
     closeWhenClickOutside () {
       let $container = $('#main-menu')
+      let $closeButton = $container.siblings('.hamburger-menu')
       this.html.mouseup((e) => {
         // if the target of the click isn't the container nor a descendant of the container
-        if (!$container.is(e.target) && $container.has(e.target).length === 0) {
+        if (!$closeButton.is(e.target) && $closeButton.has(e.target).length === 0 && !$container.is(e.target) && $container.has(e.target).length === 0) {
           if ($container.hasClass('is-open-menu')) {
             $(this._config.elementItem).removeClass('is-open-menu')
           }
@@ -45,6 +46,7 @@ const Menu = (($) => {
 
     openMainMenu () {
       this.header.on('click', '.hamburger-menu', (e) => {
+        e.stopPropagation()
         const ele = e.currentTarget
         if ($(ele).hasClass('is-open-menu')) {
           $(this._config.elementItem).removeClass('is-open-menu')
