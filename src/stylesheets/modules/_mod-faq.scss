@@ -82,18 +82,20 @@
   }
 }
 .faq-opened {
-  padding: 0 15px 36px 49px;
+  padding: 0 15px 36px 40px;
   background-color: $menu-gray;
-  // border-top: solid 2px $border-gray;
+  border-top: solid 2px $border-gray;
+  margin-top: -2px;
   border-left: solid 5px $orange;
   h4 {
     position: relative;
     border-bottom: solid 2px transparent;
     color: $orange;
     padding-top: 34px;
+    padding-left: 4px;
     &::after {
       @include position(absolute, $right: 0, $top: 45px);
-      transform: translateY(-50%);
+      transform: translateX(20%) translateY(-50%);
       content: "\e930";
     }
   }
@@ -159,15 +161,20 @@
     }
   }
   .faq-opened {
+    border-top: 0;
     margin-top: 2px;
     padding-left: 36px;
     padding-bottom: 29px;
+    &:first-child {
+      margin-top: 0;
+    }
     h4 {
       padding-left: 3px;
       padding-top: 35px;
       &::after {
         top: 42px;
         right: 0;
+        transform: translateY(-50%);
       }
     }
   }
