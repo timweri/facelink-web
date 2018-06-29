@@ -22,16 +22,25 @@ const Menu = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this.header = $('#header, #main-menu-mobile')
+      this.html = $('html')
       this.openMainMenu()
-      this.preventJumpToTop()
+      this.closeWhenClickOutside()
     }
     // public api
     static get Default () {
       return Default
     }
 
-    preventJumpToTop () {
-      // this.
+    closeWhenClickOutside () {
+      let $container = $('#main-menu')
+      this.html.mouseup((e) => {
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!$container.is(e.target) && $container.has(e.target).length === 0) {
+          if ($container.hasClass('is-open-menu')) {
+            $(this._config.elementItem).removeClass('is-open-menu')
+          }
+        }
+      })
     }
 
     openMainMenu () {

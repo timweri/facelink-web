@@ -1,3 +1,5 @@
+$tab-arrow-size: (91.2 / 2) * 1.414px;
+
 .mod-tab-benefits {
   background: $gray-bg;
   padding: 50px 0 40px;
@@ -47,12 +49,14 @@
   .tab-content {
     display: none;
     background: $white;
-    margin: 0 18px 20px;
-    padding: 50px 20px;
+    margin: 0 18px 30px;
+    padding: 50px 21px 40px;
     letter-spacing: 1.1px;
     line-height: 2;
-    p,
     h4 {
+      margin-bottom: 30px;
+    }
+    p {
       margin-bottom: 45px;
     }
     p:last-child {
@@ -63,12 +67,12 @@
 
 @include media-breakpoint-up(lg) {
   .mod-tab-benefits {
-    padding: 95px 0 168px;
+    padding: 95px 0 175px;
     h3.is-open-tab {
       z-index: 1;
       &::after {
         @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
-        @include sizeEx((91 / 2) * 1.414px);
+        @include sizeEx($tab-arrow-size);
         content: "";
         transform-origin: center;
         transform: translateY(-49%) translateX(49.5%) rotate(45deg);
@@ -89,7 +93,7 @@
         &:hover {
           &::after {
             @include position(absolute, $top: 50%, $right:0 !important, $index: -1);
-            @include sizeEx((91 / 2) * 1.414px);
+            @include sizeEx($tab-arrow-size);
             content: "";
             transform-origin: center;
             transform: translateY(-49%) translateX(49.5%) rotate(45deg);
@@ -101,7 +105,7 @@
         }
         &::after {
           @include position(absolute, $top: 50%, $right:50px, $index: -1);
-          @include sizeEx((91 / 2) * 1.414px);
+          @include sizeEx($tab-arrow-size);
           content: "";
           background: $black;
           transform-origin: center;
