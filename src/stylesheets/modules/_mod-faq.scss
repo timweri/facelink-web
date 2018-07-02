@@ -163,19 +163,23 @@
   .faq-opened {
     border-top: 0;
     margin-top: 2px;
-    padding-left: 36px;
-    padding-bottom: 29px;
+    padding-left: 37px;
+    padding-bottom: 28px;
     &:first-child {
       margin-top: 0;
     }
     h4 {
       padding-left: 3px;
-      padding-top: 35px;
+      padding-top: 32px;
+      margin-bottom: 20px;
       &::after {
         top: 42px;
         right: 0;
         transform: translateY(-50%);
       }
+    }
+    .faq-answer {
+      padding-right: 60px;
     }
   }
 }
