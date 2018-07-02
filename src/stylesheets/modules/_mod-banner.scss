@@ -47,8 +47,8 @@
 
 .product-box-inner {
   @include position(absolute, $right: 0, $bottom: 0);
-  transform: translateY(60%);
-  max-width: 223px;
+  transform: translate(-4%, 64%);
+  max-width: 270px;
   width: auto;
 }
 
@@ -63,16 +63,16 @@
     }
   }
   .banner-content {
-    margin: 102px auto 94px 75px;
+    margin: 102px auto 94px 60px;
     .btn {
       margin-top: 40px;
     }
   }
   .product-box-inner {
-    @include position(absolute, $right: 20px, $bottom: 0);
+    @include position(absolute, $right: 26px, $bottom: 0);
     max-width: 500px;
     width: 44%;
-    transform: translateY(30%);
+    transform: translateY(33%);
   }
   .green-kite {
     @include sizeEx(57px);

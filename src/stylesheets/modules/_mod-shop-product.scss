@@ -166,6 +166,11 @@
       }
       .btn {
         transform: translateY(60px);
+        color: map-get(map-get($hover-colors, primary), hover-color);
+        box-shadow: none !important;
+        &::before {
+          transform: translate3d(0, 0, 0) !important;
+        }
       }
       .shop-product-title {
         margin-top: -5%;

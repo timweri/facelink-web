@@ -1,4 +1,5 @@
-$tab-arrow-size: (91.2 / 2) * 1.414px;
+$tab-arrow-size: (91 / 2) * 1.4145px;
+$tab-arrow-transform: translateY(-49%) translateX(50.5%) rotate(45deg);
 
 .mod-tab-benefits {
   background: $gray-bg;
@@ -75,7 +76,7 @@ $tab-arrow-size: (91.2 / 2) * 1.414px;
         @include sizeEx($tab-arrow-size);
         content: "";
         transform-origin: center;
-        transform: translateY(-49%) translateX(49.5%) rotate(45deg);
+        transform: $tab-arrow-transform;
       }
     }
     .col-left {
@@ -96,7 +97,7 @@ $tab-arrow-size: (91.2 / 2) * 1.414px;
             @include sizeEx($tab-arrow-size);
             content: "";
             transform-origin: center;
-            transform: translateY(-49%) translateX(49.5%) rotate(45deg);
+            transform: $tab-arrow-transform;
           }
           &::after,
           &::before {
@@ -109,7 +110,7 @@ $tab-arrow-size: (91.2 / 2) * 1.414px;
           content: "";
           background: $black;
           transform-origin: center;
-          transform: translateY(-49%) translateX(49.5%) rotate(45deg);
+          transform: $tab-arrow-transform;
           transition: right .2s;
         }
         &::before {
