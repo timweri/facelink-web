@@ -49,6 +49,49 @@ html#ecwid_html {
           display: block;
         }
       }
+      div.ecwid-AddressForm {
+        .ecwid-btn--secondary-inverse {
+          border: 0 !important;
+          padding: 0;
+          background: transparent !important;
+          .gwt-HTML {
+            padding: 2px 0 0 30px;
+          }
+          
+          label {
+            &::after,
+            &::before {
+              content: "";
+              display: block;
+            }
+            &::before {
+              @include sizeEx(28px);
+              @include position(absolute, $top: 0, $left: 0);
+              background: $white;
+            }
+            &::after {
+              @include sizeEx(16px);
+              @include position(absolute, $top: 6px, $left: 6px);
+              background: $color-c6;
+              opacity: 0;
+            }
+          }
+          input {
+            opacity: 0;
+            &:checked {
+              ~label {
+                color: $black;
+                &::after {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .ecwid-AddressForm-fields {
+        display: block;
+      }
     }
     table.ecwid-Checkout-blockTitle div.gwt-HTML,
     div.ecwid-Checkout-blockTitle {
@@ -147,7 +190,6 @@ html#ecwid_html {
     .ecwid-PaymentMethodsBlock-PaymentOption-htmlBlock {
       padding-left: 60px;
     }
-    
     div.ecwid-AddressForm-secureLockIcon {
       background: none;
       &::after {
@@ -214,6 +256,7 @@ html#ecwid_html {
           }
           .ecwid-fieldLabel {
             margin: 8px 0 0 !important;
+            width: 140px;
             &~table {
               width: 59%;
               float: left;
@@ -279,8 +322,10 @@ html#ecwid_html {
             }
           }
         }
-        .ecwid-btn {
-          margin-top: -10px;
+        .ecwid-Checkout-ShippingAddress {
+          .ecwid-btn {
+            margin-top: -10px;
+          }
         }
       }
     }
