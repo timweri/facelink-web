@@ -141,8 +141,7 @@
   }
   .shop-product-image {
     z-index: -1;
-    width: 557px;
-    height: 497px;
+    @include sizeEx(557px, 497px);
   }
   .shop-product-right,
   .shop-product-left {
