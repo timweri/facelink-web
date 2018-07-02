@@ -129,11 +129,14 @@
   }
   .shop-product-paorange-overlay {
     max-width: 460px;
-    transform: translateX(-60%) translateY(22%);
+    transform: translateX(-60%) translateY(35%);
     z-index: 1;
   }
   .mod-shop-product {
     margin: 195px 0 55px;
+    > .container {
+      padding: 0;
+    }
   }
   .shop-product-wrap {
     position: relative;
@@ -141,7 +144,6 @@
   }
   .shop-product-image {
     z-index: -1;
-    @include sizeEx(557px, 497px);
   }
   .shop-product-right,
   .shop-product-left {
