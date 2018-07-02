@@ -1,14 +1,16 @@
 .mod-group-quote-cta {
   position: relative;
   overflow: hidden;
-  .bg-green {
+  .bg-green-quote {
     @include position(absolute, $bottom: 0, $right: -50%);
-    transform: skewX(-45deg);
-    background: $color-e5;
     display: block;
-    padding: 0 65% 100% 0;
     overflow: hidden;
-    &::before {
+    mix-blend-mode: multiply;
+    z-index: 1;
+    background: $color-e5;
+    transform: skewX(-45deg);
+    padding: 0 65% 100% 0;
+    &::after {
       @include position(absolute, $bottom: 0, $right: 0, $index: 1);
       @include sizeEx(100%, 70%);
       background: url("../images/bg-transparent2.png") right top no-repeat;
@@ -29,6 +31,9 @@
         content: "";
       }
     }
+  }
+  .mod-cta {
+    @include position(relative, $index: 2);
   }
 }
 @include media-breakpoint-up(lg) {

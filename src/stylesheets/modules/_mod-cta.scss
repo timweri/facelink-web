@@ -3,7 +3,27 @@
   text-transform: uppercase;
 }
 
+.bg-green-cta {
+  @include position(absolute, $bottom: 0, $right: -50%);
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  background: $color-e5;
+  transform: skewX(-45deg);
+  padding: 0 65% 100% 0;
+  &::after {
+    @include position(absolute, $bottom: 0, $right: 0, $index: 1);
+    @include sizeEx(100%, 70%);
+    background: url("../images/bg-transparent2.png") right top no-repeat;
+    content: "";
+    display: block;
+    transform: skewX(45deg);
+    transform-origin: 0 100%;
+  }
+}
+
 .mod-cta {
+  position: relative;
   background: $color-c6;
   height: 300px;
   overflow: hidden;

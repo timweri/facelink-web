@@ -1,5 +1,6 @@
 $quote-blockquote-color: rgba(56, 54, 54, .12);
 .mod-quote {
+  position: relative;
   margin-top: 18px;
   .centered-row {
     @extend .row;
@@ -12,6 +13,8 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
   }
   .col-right {
     @extend .col-lg-5;
+    position: relative;
+    transform: translateX(15px);
   }
   .col-left {
     @extend .col-lg-7;
@@ -62,10 +65,29 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
   }
 }
 
+@include media-breakpoint-up(md) {
+  .mod-quote {
+    .col-right {
+      right: -17%;
+    }
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .mod-quote {
+    position: relative;
     margin-top: 15%;
-    margin-bottom: 100px;
+    margin-bottom: 260px;
+    .col-right {
+      @include position(absolute, $right:-15px, $bottom: -250px, $index: 0);
+      max-width: 55%;
+    }
+    .quote-img-wrap {
+      img {
+        max-height: 700px;
+        width: auto;
+      }
+    }
     blockquote {
       max-width: 460px;
       margin: auto;
