@@ -116,7 +116,12 @@ html#ecwid_html {
       background: #000;
       margin-bottom: 210px;
       background-size: cover;
-      background-position: left center;
+      background-position: left top;
+    }
+    &.ecwid-shopping-cart {
+      .ec-size {
+        padding-top: 90px !important;
+      }
     }
   }
 }
