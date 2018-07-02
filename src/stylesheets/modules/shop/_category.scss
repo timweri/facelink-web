@@ -51,12 +51,27 @@ html#ecwid_html {
           .form-control__button {
             min-height: 35px;
           }
+          .ec-related-products {
+            display: none;
+            .ec-related-products__title {
+              @include font($os, 30px, $black, 700);
+              text-transform: uppercase;
+            }
+          }
         }
       }
     }
   }
 }
-
+@include media-breakpoint-up(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-related-products {
+        display: block;
+      }
+    }
+  }
+}
 @include media-breakpoint-up(xl) {
   html#ecwid_html body#ecwid_body.page-internal {
     .ec-size {
@@ -97,6 +112,7 @@ html#ecwid_html {
       div.ecwid-productBrowser-CategoryPage {
         max-width: 825px;
         margin-left: auto;
+        padding-bottom: 0 !important;
       }
     }
   }

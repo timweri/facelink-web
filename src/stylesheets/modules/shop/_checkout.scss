@@ -232,6 +232,29 @@ html#ecwid_html {
           width: 100%;
         }
       }
+      .ecwid-productBrowser-CartPage {
+        div.ecwid-productBrowser-cart-removeItemButton {
+          @include font($icomoon, 17px, null, 400);
+          @include sizeEx(17px,20px);
+          display: block;
+          position: static;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          background: none;
+          &::after {
+            content: "\e932";
+            display: block;
+          }
+        }
+        .ecwid-productBrowser-cart-itemsTable-cell-removeItem {
+          vertical-align: middle !important;
+          padding: 0 20px;
+          >div {
+            @include sizeEx(auto !important);
+          }
+        }
+      }
     }
   }
 }

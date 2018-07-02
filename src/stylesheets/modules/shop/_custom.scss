@@ -5,8 +5,12 @@ html#ecwid_html {
       margin-top: 60px;
       position: relative;
     }
+    .ec-footer {
+      display: none;
+    }
     div.ecwid-ProductBrowser-auth-anonim {
       margin-right: 0;
+      display: none;
       a {
         font-size: 18px;
         text-decoration: underline;
