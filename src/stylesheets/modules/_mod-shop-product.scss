@@ -141,6 +141,8 @@
   }
   .shop-product-image {
     z-index: -1;
+    width: 557px;
+    height: 497px;
   }
   .shop-product-right,
   .shop-product-left {
@@ -149,7 +151,10 @@
     margin-top: 0;
     z-index: 0;
     padding-bottom: 50px;
-
+    h2 {
+      font-size: rem(30);
+      letter-spacing: 1.6px;
+    }
     * {
       transition: .3s;
     }
@@ -182,6 +187,9 @@
   }
   .shop-product-right {
     margin-left: 15px;
+    .btn {
+      padding: 0 19px;
+    }
     &:hover {
       transform: translateX(-2.5%);
       .shop-product-image {
