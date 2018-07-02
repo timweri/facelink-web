@@ -23,6 +23,13 @@ html#ecwid_html {
           padding: 60px 15px 20px;
           background: $white;
         }
+        .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
+          padding: 0;
+          background: transparent;
+          .product-details {
+            padding: 0 15px 30px;
+          }
+        }
       }
       div.ecwid-productBrowser {
         padding: 60px 15px 20px;
