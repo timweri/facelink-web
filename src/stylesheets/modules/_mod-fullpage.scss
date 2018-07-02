@@ -4,6 +4,7 @@
 .section {
   position: relative;
   overflow: hidden;
+  display: block;
   .section-frame1 {
     h3 {
       color: $black;
@@ -19,7 +20,7 @@
 }
 .fp-section.fp-table,
 .fp-slide.fp-table {
-  display: block;
+  display: block !important;
 }
 .section-frame2 {
   h2 {

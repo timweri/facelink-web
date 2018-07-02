@@ -1,0 +1,62 @@
+html#ecwid_html {
+  body#ecwid_body.page-internal {
+    .ecwid {
+      .ecwid-Invoice-footer-placeOrder {
+        padding-right: 0;
+      }
+      .ecwid-btn--placeOrder {
+        margin-top: 15px;
+      }
+      div.ecwid-Checkout {
+        .ecwid-Invoice-ShippingBlock {
+          div.ecwid-floatLeftPanel {
+            background: $menu-gray;
+            margin-bottom: 0;
+            padding-bottom: 40px;
+          }
+        }
+      }
+      div.ecwid-Invoice-SummaryContainer {
+        background: $menu-gray;
+      }
+      .ecwid-btn--primary {
+        color: $white;
+        position: relative;
+        transform: perspective(1px) translateZ(0);
+        &:hover {
+          color: $white;
+          background: $orange;
+        }
+        &::before {
+          @include position(absolute, $top:0, $right:0, $index: -1);
+          @include sizeEx(100%);
+          content: "";
+          background: $orange-hover;
+          transition: transform .3s cubic-bezier(.75, 0, .125, 1);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+    }
+    .ecwid-productBrowser-head-panel ~ div {
+      margin: 0;
+    }
+    td.ecwid-Invoice-cell {
+      background: $menu-gray;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .ecwid-btn--primary {
+          &:hover {
+            &::before {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

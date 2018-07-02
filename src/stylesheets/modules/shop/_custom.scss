@@ -1,6 +1,17 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .mod-content-editor {
+      margin-top: 60px;
+      position: relative;
+    }
+    div.ecwid-ProductBrowser-auth-anonim {
+      margin-right: 0;
+      a {
+        font-size: 18px;
+        text-decoration: underline;
+      }
+    }
     .ecwid {
       color: $black;
       .ecwid-lte-600px {
@@ -57,10 +68,9 @@ html#ecwid_html {
           min-height: 35px !important;
           letter-spacing: 1.1px;
           &::before {
-            font-family: 'icomoon' !important;
-            speak: none;
+            font-family: $icomoon !important;
             font-style: normal;
-            font-weight: normal;
+            font-weight: 400;
             font-variant: normal;
             text-transform: none;
             line-height: 1;
@@ -73,25 +83,28 @@ html#ecwid_html {
         border: 3px solid $orange;
       }
     }
-    .ec-size.ec-size--l {
-      .ec-store {
-        .form-control--large {
-          .form-control__button {
-            font-size: 15px;
+    .ec-size {
+      &.ec-size--l {
+        .ec-store {
+          .form-control--large {
+            .form-control__button {
+              font-size: 15px;
+            }
           }
-        }
-        .details-product-purchase__add-more {
-          .form-control__button {
-            background: $orange;
-            border-radius: 0;
-            width: auto;
-            padding: 0 15px;
+          .details-product-purchase__add-more {
+            .form-control__button {
+              background: $orange;
+              border-radius: 0;
+              width: auto;
+              padding: 0 15px;
+            }
           }
         }
       }
     }
   }
 }
+
 
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
