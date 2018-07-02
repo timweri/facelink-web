@@ -45,6 +45,29 @@ html#ecwid_html {
         .grid__products[data-cols="3"] .grid-product:nth-child(n+1) {
           width: 50%;
         }
+        .ec-related-products {
+          display: none;
+          .ec-related-products__title {
+            @include font($os, 30px, $black, 700);
+            text-transform: uppercase;
+          }
+          .grid-product {
+            width: 33.33% !important;
+          }
+          .grid-product__title-inner {
+            @include font($os, 18px, $black, 700);
+            text-transform: uppercase;
+          }
+          .grid-product__price-amount {
+            @include font($os, 18px !important, $orange, 500 !important);
+          }
+          .grid__products--appearance-frame:not(.grid__products--appearance-hover) {
+            .grid-product__wrap-inner {
+              box-shadow: none;
+              background: none;
+            }
+          }
+        }
       }
       &.ec-size--l {
         .ec-store {
@@ -52,7 +75,6 @@ html#ecwid_html {
             min-height: 35px;
           }
           .ec-related-products {
-            display: none;
             .ec-related-products__title {
               @include font($os, 30px, $black, 700);
               text-transform: uppercase;
@@ -66,8 +88,12 @@ html#ecwid_html {
 @include media-breakpoint-up(md) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
-      .ec-related-products {
-        display: block;
+      .ec-size {
+        .ec-store {
+          .ec-related-products {
+            display: block;
+          }
+        }
       }
     }
   }
@@ -102,6 +128,18 @@ html#ecwid_html {
             &:hover{
               &::after {
                 transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+        }
+        .ec-related-products {
+          .grid-product__wrap-inner {
+            .grid-product__image {
+              transition: .25s all;
+            }
+            &:hover {
+              .grid-product__image {
+                box-shadow: 9px 15.6px 43.2px 2.8px rgba(93, 93, 93, .49);
               }
             }
           }
