@@ -133,6 +133,12 @@ h6,
       padding-top: 93px;
     }
   }
+
+  .ie .page-internal {
+    #main-content {
+      padding-top: 92px;
+    }
+  }
 }
 
 @media only screen and (max-device-width: 1024px) {
