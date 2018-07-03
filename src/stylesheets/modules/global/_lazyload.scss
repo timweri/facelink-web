@@ -2,6 +2,9 @@
   width: 100%;
   animation: opacity .3s;
 }
+img[data-src] {
+  opacity: 0;
+}
 .lazyload-image{
   img:not(.b-loaded){
     margin: 0 auto;
