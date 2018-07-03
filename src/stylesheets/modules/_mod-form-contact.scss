@@ -4,6 +4,7 @@
   padding: 50px 20px 45px;
   input:-webkit-autofill {
     box-shadow: 0 0 0 100px $orange inset !important;
+    -webkit-text-fill-color: $white;
   }
   h2 {
     text-align: center;

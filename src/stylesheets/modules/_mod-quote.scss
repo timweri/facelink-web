@@ -30,7 +30,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
     margin-top: 80px;
     &::before,
     &::after {
-      @include font($icomoon, 90px, $quote-blockquote-color);
+      @include font($icomoon, 100px, $quote-blockquote-color);
       line-height: 0;
       position: absolute;
       display: block;
@@ -94,7 +94,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
       margin: auto;
       &::after,
       &::before {
-        font-size: 100px;
+        font-size: 130px;
       }
       &::before {
         top: -65px;

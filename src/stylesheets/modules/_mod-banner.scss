@@ -67,6 +67,9 @@
     .btn {
       margin-top: 40px;
     }
+    .small-h1 {
+      font-size: rem(50.4);
+    }
   }
   .product-box-inner {
     @include position(absolute, $right: 26px, $bottom: 0);
