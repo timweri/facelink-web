@@ -1,6 +1,5 @@
 .mod-our-story {
   position: relative;
-  max-width: 2000px;
   overflow-x: hidden;
   margin: 60px auto 0;
   h3 {
@@ -24,7 +23,7 @@
     margin-top: 125px;
   }
   .solid-bg {
-    @include position(absolute, $top: -25%, $right: 35%);
+    @include position(absolute, $top: -100px, $right: 35%);
     width: 4000px;
     height: 85%;
     background: $color-c6;
@@ -78,7 +77,7 @@
 @include media-breakpoint-up(sm) {
   .mod-our-story {
     .centered-row {
-      margin-top: 200px;
+      margin-top: 125px;
     }
   }
 }
@@ -89,7 +88,7 @@
     max-width: 370px;
   }
   .mod-our-story {
-    margin: 110px 0 70px;
+    margin: 110px auto 70px;
     .centered-row {
       margin-top: 7.5%;
     }
@@ -99,6 +98,17 @@
     }
     .col-left {
       margin-bottom: 0;
+    }
+    .solid-bg {
+      top: -39%;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .mod-our-story {
+    .solid-bg {
+      top: -23%;
     }
   }
 }
