@@ -93,9 +93,16 @@ const UserAgent = (() => {
     var dom = '<div class="list-bg-product">' + list +'</div>';
     $('.ecwid_html .mod-content-editor').append(dom)
   }
+  const slickProduction = () => {
+    $('.ec-related-products .grid__products').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    });
+  }
   $(window).on('load', function() {
-    addListImageProduct()
-    console.log(1)
+    // addListImageProduct()
+    // slickProduction();
   })
   checkDevice()
   browserDetection()

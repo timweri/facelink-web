@@ -120,12 +120,22 @@ html#ecwid_html {
         }
         .ec-related-products {
           display: none;
+          margin: 110px 0 40px;
           .grid__products--classic {
             padding-bottom: 0;
           }
           .ec-related-products__title {
             @include font($os, 30px, $black, 700);
             text-transform: uppercase;
+            margin: 0;
+            position: relative;
+            &::after {
+              @include sizeEx(79px,5px);
+              content: "";
+              display: block;
+              background: $color-c6;
+              margin-top: 25px;
+            }
           }
           .grid-product {
             width: 33.33% !important;
@@ -170,7 +180,7 @@ html#ecwid_html {
         content: "";
         display: block;
         @include sizeEx(36px);
-        @include position(absolute, $top: -5px, $left: 50%);
+        @include position(absolute, $top: 1px, $left: 50%);
         position: absolute;
         background-color: $color-c6;
         transform-origin: center;
@@ -226,7 +236,7 @@ html#ecwid_html {
       .ecwid-productBrowser-ProductPage {
         &::before {
           @include sizeEx(57px);
-          top: -8px;
+          top: -1px;
         }
       }
       .ec-size {
