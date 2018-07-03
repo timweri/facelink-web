@@ -207,32 +207,6 @@ html#ecwid_html {
   }
 }
 
-
-#ecwid_html body#ecwid_body.page-internal .product-details::before {
-  content: "";
-  display: block;
-  background: url("http://localhost:3000/briq-dev/wp-content/themes/Briq/images/pineapple.png");
-  width: 225px;
-  height: 297px;
-  position: absolute;
-  left: -130px;
-  top: 4%;
-  background-size: contain;
-  z-index: 1;
-}
-#ecwid_html body#ecwid_body.page-internal .product-details::after {
-  content: "";
-  display: block;
-  background: url("http://localhost:3000/briq-dev/wp-content/themes/Briq/images/orange-slices.png");
-  width: 116px;
-  height: 112px;
-  position: absolute;
-  right: -25px;
-  top: -35px;
-  background-size: contain;
-  z-index: 1;
-}
-
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -254,17 +228,6 @@ html#ecwid_html {
         }
       }
     }
-  }
-  #ecwid_html body#ecwid_body.page-internal .product-details::before {
-    background: url("http://localhost:3000/briq-dev/wp-content/themes/Briq/images/pineapple-orange.png");
-    width: 453px;
-    height: 531px;
-    left: -300px;
-    top: 8%;
-    z-index: 0;
-  }
-  #ecwid_html body#ecwid_body.page-internal .product-details::after {
-    display: none;
   }
 }
 @include media-breakpoint-up(md) {

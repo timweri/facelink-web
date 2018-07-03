@@ -116,8 +116,30 @@ html#ecwid_html {
         }
       }
     }
+
+    .item-breadCrumb {
+      @include font($font-family-base, 15px, $border-gray, 500);
+      display: inline-block;
+      margin: 20px 16px;
+      width: 158px;
+      padding-bottom: 22px;
+      border-bottom: solid 2px $border-gray;
+      p {
+        margin: 0;
+      }
+      &.active {
+        border-bottom: solid 4px $blue;
+        color: $blue;
+      }
+      &.done-action {
+        border-bottom-color: $black;
+        color: $black;
+      }
+    }
   }
 }
+
+
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {

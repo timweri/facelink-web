@@ -75,17 +75,6 @@ const UserAgent = (() => {
       }
     })
   }
-  const addListImageProduct = () => {
-    var category = $('.grid-category')
-    var product = $('.grid-product');
-    var num = Math.round((category.length + product.length )/4);
-    var list = '';
-    for(var i = 0; i< num; i++) {
-      list += `<div class="item-bg-product" style="background-image: url(http://localhost:3000/briq-dev/wp-content/themes/Briq/images/img-section-category.jpg)"></div>`
-    }
-    var dom = '<div class="list-bg-product">' + list +'</div>';
-    $('.ecwid_html .mod-content-editor').append(dom)
-  }
   const slickProduction = () => {
     $('.ec-related-products .grid__products').slick({
       infinite: true,
@@ -93,10 +82,7 @@ const UserAgent = (() => {
       slidesToScroll: 1
     });
   }
-  $(window).on('load', function() {
-    // addListImageProduct()
-    // slickProduction();
-  })
+
   checkDevice()
   browserDetection()
   // selectpicker()
