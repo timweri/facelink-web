@@ -64,13 +64,6 @@ const UserAgent = (() => {
       $html.addClass('edge')
     }
   }
-  /* const selectpicker = () => {
-    $('.selectpicker').selectpicker({
-      template: {
-        caret: '<i class="icomoon icon-chevron-thin-down caret"></i>'
-      }
-    })
-  } */
   const blazyload = () => {
     let bLazy = new Blazy({ // eslint-disable-line
       selector: '[data-src]',
