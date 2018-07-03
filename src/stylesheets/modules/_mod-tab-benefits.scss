@@ -1,5 +1,5 @@
-$tab-arrow-size: (91 / 2) * 1.4145px;
-$tab-arrow-transform: translateY(-49%) translateX(50.5%) rotate(45deg);
+$tab-arrow-size: (92 / 2) * 1.42px;
+$tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
 
 .mod-tab-benefits {
   background: $gray-bg;
@@ -80,7 +80,9 @@ $tab-arrow-transform: translateY(-49%) translateX(50.5%) rotate(45deg);
       }
     }
     .col-left {
+      position: relative;
       h3 {
+        clip-path: inset(.5px -50px -.5px -4000px);
         height: 91px;
         text-align: left;
         margin: 19px 0;
