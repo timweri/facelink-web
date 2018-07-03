@@ -146,6 +146,9 @@
 }
 
 @include media-breakpoint-up(lg) {
+  .cont-text-frame4 {
+    max-width: none;
+  }
   .subhead-frame4-title {
     padding: 0;
     display: inline-block;
