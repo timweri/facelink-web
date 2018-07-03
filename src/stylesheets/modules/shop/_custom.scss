@@ -118,7 +118,23 @@ html#ecwid_html {
     }
   }
 }
-
+@media screen and (min-width: 510px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .ecwid-lte-600px {
+          .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
+            padding: 0;
+            background: transparent;
+            .product-details {
+              padding: 60px 15px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
