@@ -131,6 +131,9 @@ h6,
   .page-internal {
     #main-content {
       padding-top: 93px;
+      max-width: 2000px;
+      margin: 0 auto;
+      overflow: hidden;
     }
   }
 
