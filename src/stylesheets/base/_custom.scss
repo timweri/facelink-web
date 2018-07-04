@@ -91,6 +91,13 @@ h6,
   }
 }
 
+@include media-breakpoint-between(md, lg) {
+  h1,
+  .h1 {
+    font-size: rem(40);
+  }
+}
+
 @include media-breakpoint-up(lg) {
   /* font heading */
 
