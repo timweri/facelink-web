@@ -234,7 +234,7 @@ html#ecwid_html {
       .ecwid-productBrowser-relatedProducts-title {
         @include font($os, 30px, $black, 700);
         text-transform: uppercase;
-        margin: 0;
+        margin: 0 0 20px;
         position: relative;
         &::after {
           @include sizeEx(79px,5px);

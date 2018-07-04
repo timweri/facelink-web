@@ -71,6 +71,10 @@ html#ecwid_html {
           }
         }
       }
+      .grid__sort,
+      .ec-breadcrumbs {
+        display: none !important;
+      }
     }
   }
 }
@@ -148,10 +152,9 @@ html#ecwid_html {
     }
     .ecwid {
       div.ecwid-productBrowser.ecwid-productBrowser-CategoryPage {
-        // max-width: 825px;
-        // margin-left: auto;
+        max-width: 825px;
+        margin-left: auto;
         padding-bottom: 0 !important;
-        background: transparent;
         .grid-product {
           width: 50% !important;
         }
