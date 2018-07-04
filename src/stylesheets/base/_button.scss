@@ -14,6 +14,8 @@ $hover-colors: ();
 $hover-colors: hover-color-add("primary", $orange, $orange-hover);
 $hover-colors: hover-color-add("blue", $blue-light, $blue);
 $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
+$hover-colors: hover-color-add("white-red", $white, $menu-gray, $red, $red);
+$hover-colors: hover-color-add("white-orange", $white, $menu-gray, $orange, $orange);
 
 .btn {
   text-decoration: none !important;
@@ -59,13 +61,10 @@ $hover-colors: hover-color-add("green", $color-c6, $color-c6-hover);
   }
 }
 
-button.btn-form,
-button.btn-featured-news {
+button.btn-form {
   line-height: 0;
 }
-a.btn-form,
-a.btn-featured-news,
-a.btn-news-quote {
+a.btn-form {
   line-height: 2;
 }
 
@@ -77,30 +76,6 @@ a.btn-news-quote {
     background-color: $orange !important;
     color: $white;
     border: solid 4px $white;
-  }
-}
-
-.btn-featured-news {
-  padding: 0 30px;
-  color: $orange;
-  background-color: $white;
-  border: solid 4px transparent;
-  &:hover {
-    background-color: transparent;
-    color: $white;
-    border: solid 4px $white;
-  }
-}
-
-.btn-news-quote {
-  padding: 0 30px;
-  color: $red;
-  background-color: $white;
-  border: solid 4px transparent;
-  &:hover {
-    background-color: transparent;
-    color: $menu-gray;
-    border: solid 4px $menu-gray;
   }
 }
 
