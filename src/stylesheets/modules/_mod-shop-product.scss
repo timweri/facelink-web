@@ -172,7 +172,7 @@
         transform: scale(1.1);
       }
       .btn {
-        transform: translateY(60px);
+        transform: translateY(32px);
         color: map-get(map-get($hover-colors, primary), hover-color);
         box-shadow: none !important;
         &::before {
