@@ -12,8 +12,14 @@
       position: relative;
     }
   }
+  h2 {
+    letter-spacing: 1.8px;
+  }
 }
 .news-feed-image {
+  @include position(relative, $index: 2);
+  margin-bottom: 50px;
+  transition: .25s;
   img {
     display: block;
     margin: 0 auto;
@@ -23,9 +29,23 @@
   text-align: center;
   margin: 50px 0 60px;
   padding: 0 13px;
+  cursor: pointer;
   h2 {
     margin-bottom: 30px;
     text-transform: uppercase;
+  }
+  * {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  h2,
+  p {
+    color: $black;
+    &:hover {
+      color: $black;
+    }
   }
 }
 .news-feed-logo {
@@ -45,7 +65,8 @@
   position: relative;
   color: $white;
   overflow-x: hidden;
-  padding: 120px 23px 90px;
+  text-align: center;
+  padding: 90px 23px 80px;
   margin: 0 -15px;
   &::before {
     @include sizeEx(4000px, 100%);
@@ -53,9 +74,12 @@
     background: $red;
     content: "";
   }
+  .btn {
+    margin-top: 29px;
+  }
   h2 {
     margin-bottom: 25px;
-    letter-spacing: .8px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
     line-height: 1.4;
   }
@@ -89,6 +113,9 @@
     }
     .first-col-left {
       padding-right: 15px;
+      .news-feed-post {
+        margin-top: 0;
+      }
     }
     .first-col-right {
       padding-left: 15px;
@@ -97,6 +124,18 @@
   .news-feed-post {
     text-align: left;
     margin: 45px 0 55px;
+    &:hover {
+      .news-feed-image {
+        transform: scale(1.2);
+      }
+      .btn {
+        color: map-get(map-get($hover-colors, primary), hover-color);
+        box-shadow: none !important;
+        &::before {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
   }
   .news-feed-post-col {
     padding: 0 15px;
@@ -105,6 +144,7 @@
     text-align: left;
     overflow-x: visible;
     margin-bottom: 20px;
+    padding: 90px 30px 80px;
     &::before {
       @include position(absolute, $top:0, $right:10px, $index:0);
     }

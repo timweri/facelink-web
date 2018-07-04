@@ -20,6 +20,9 @@
   &.is-open-menu {
     width: 295px;
   }
+  li > a {
+    letter-spacing: 1.5px;
+  }
 }
 
 .navbar {
@@ -247,7 +250,7 @@
         transition: color .5s;
         transition-timing-function: cubic-bezier(.2, 1, .3, 1);
         &::before {
-          @include position(absolute, $top: calc(50% - 19px), $left: 10px, $index: -1);
+          @include position(absolute, $top: calc(50% - 19px), $left: 9px, $index: -1);
           @include sizeEx(calc(100% - 20px), 35px);
           content: "";
           z-index: -1;
@@ -313,10 +316,10 @@
   .menu-center {
     li {
       > a {
-        padding: 22px 42px;
+        padding: 22px 30px;
         &::before {
-          width: calc(100% - 54px);
-          left: 27px;
+          width: calc(100% - 30px);
+          left: 14px;
         }
       }
     }
@@ -325,10 +328,10 @@
     margin-left: 75px;
     li {
       > a {
-        padding: 22px 35px;
+        padding: 22px 28px;
         &::before {
-          width: calc(100% - 40px);
-          left: 20px;
+          width: calc(100% - 26px);
+          left: 12px;
         }
       }
     }

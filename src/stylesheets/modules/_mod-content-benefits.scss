@@ -96,10 +96,18 @@
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1800px) {
   .mod-content-benefits {
+    padding-top: 51px;
+    .decor-bar {
+      right: 168%;
+    }
+    .solid-bg {
+      @include position(absolute, $left: 24%, $top: -19%);
+      height: 57%;
+    }
     > .container {
-      padding: 0 0 0 120px;
+      padding: 0 40px 0 120px;
     }
     .col-left {
       flex: 0 0 47.5%;

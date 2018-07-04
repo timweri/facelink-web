@@ -28,6 +28,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
     text-transform: uppercase;
     text-align: center;
     margin-top: 80px;
+    letter-spacing: 1.5px;
     &::before,
     &::after {
       @include font($icomoon, 100px, $quote-blockquote-color);
