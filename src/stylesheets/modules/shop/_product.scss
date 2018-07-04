@@ -192,6 +192,9 @@ html#ecwid_html {
         transform-origin: center;
         transform: translateX(-50%) translateY(-35%) rotate(45deg);
       }
+      .ec-store__content-wrapper {
+        max-width: 2000px !important;
+      }
     }
     .ecwid {
       .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
@@ -201,6 +204,12 @@ html#ecwid_html {
           background: $white;
           padding: 76px 40px 10px;
           position: relative;
+        }
+        .product-details,
+        .ec-related-products,
+        .ec-footer {
+          max-width: 1140px;
+          margin: 0 auto;
         }
       }
     }

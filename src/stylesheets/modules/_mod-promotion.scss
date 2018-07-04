@@ -18,7 +18,10 @@ $number-per-row-lg: 5;
     background-color: $black;
     opacity: .83;
   }
-
+  .container {
+    position: relative;
+    z-index: 1;
+  }
   .icon-wrap {
     @include sizeEx(26px);
     display: inline-flex;

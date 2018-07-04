@@ -30,12 +30,30 @@ var Shop = (function(){
       $('.ecwid_html .mod-content-editor').append(dom)
     }
   }
+  function addModulePromotion() {
+    var modPromotion = $('.mod-promotion');
+    Ecwid.OnCartChanged.add(function(cart){
+      // console.log('change', $('.product-details'));
+      setTimeout(function(){
+        if($('.product-details').length && $('.mod-promotion').length) {
+          var promotion = $('.mod-promotion')[0].outerHTML;
+          $(promotion).insertAfter(".product-details");
+          console.log(cart)
+        }
+      }, 1000);
+    });
+  }
+  Ecwid.OnPageLoad.add(function(page) {
+    console.log(page.type)
+    setTimeout(function() {
+      appendBreadCrumb()
+      addListImageProduct()
+      if(page.type == 'PRODUCT') {
+        addModulePromotion()
+      }
+    })
 
-  $(window).on('load', function() {
-    appendBreadCrumb()
-    addListImageProduct()
-    console.log('shop')
-  })
+  });
   return {
 
   }

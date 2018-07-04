@@ -90,7 +90,7 @@
   }
 }
 
-@media (min-width: 1500px) {
+@include media-custom-up(1500) {
   .mod-content-benefits {
     margin-top: 30px;
   }
