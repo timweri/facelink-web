@@ -11,7 +11,7 @@
 // $theme-colors: map-remove($theme-colors, "info", "secondary", "dark");
 @import "bootstrap/scss/print";
 @import "bootstrap/scss/reboot";
-// @import "bootstrap/scss/type";
+@import "bootstrap/scss/type";
 // @import "bootstrap/scss/images";
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/tables";
@@ -49,3 +49,4 @@
 @import "modules/global/*.scss";
 @import "modules/shop/*.scss";
 @import "modules/mod-cta.scss";
+@import "modules/mod-promotion.scss";

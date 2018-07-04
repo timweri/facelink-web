@@ -5,6 +5,9 @@ html#ecwid_html {
     .mod-content-editor {
       margin-top: 60px;
       position: relative;
+      >.container {
+        max-width: none;
+      }
     }
     select {
       appearance: none;
@@ -101,7 +104,12 @@ html#ecwid_html {
         .container {
           position: relative;
           z-index: 1;
+          margin: 0 auto;
         }
+      }
+      .promo-overlay {
+        position: absolute;
+        opacity: .05;
       }
     }
     .ec-size {
@@ -143,12 +151,9 @@ html#ecwid_html {
       }
     }
     .mod-promotion {
-      // display: none;
+      display: none;
     }
     .ec-store {
-      .mod-promotion {
-        display: block;
-      }
       .mod-promotion {
         background-position: center center;
         background-size: cover;
@@ -160,12 +165,14 @@ html#ecwid_html {
         padding: 70px 0 0;
         margin: 65px 0 50px;
         position: relative;
+        display: block;
         .icon-wrap {
           @include sizeEx(26px);
           display: inline-flex;
           margin-bottom: 25px;
           justify-content: center;
           img {
+            @include sizeEx(auto, 27px);
             align-self: center;
           }
         }
@@ -185,10 +192,8 @@ html#ecwid_html {
         }
       }
     }
-   
   }
 }
-
 
 @media screen and (min-width: 510px) {
   html#ecwid_html {
@@ -207,11 +212,41 @@ html#ecwid_html {
     }
   }
 }
-
+@include media-breakpoint-up(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .mod-promotion {
+          .container {
+            max-width: 720px;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .mod-promotion {
+          .container {
+            max-width: 960px;
+          }
+        }
+      }
+    }
+  }
+}
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid {
+        .mod-promotion {
+          .container {
+            max-width: 1140px;
+          }
+        }
         .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
           &:hover,
           &:active,
@@ -263,6 +298,20 @@ html#ecwid_html {
             &::after {
               transform: translate3d(0, 0, 0);
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-custom-up(1500) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .mod-promotion {
+          .container {
+            max-width: 1430px;
           }
         }
       }
