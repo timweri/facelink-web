@@ -1,3 +1,4 @@
+$number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
@@ -96,6 +97,12 @@ html#ecwid_html {
       .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
         border: 3px solid $orange;
       }
+      .mod-promotion {
+        .container {
+          position: relative;
+          z-index: 1;
+        }
+      }
     }
     .ec-size {
       &.ec-size--l {
@@ -116,7 +123,6 @@ html#ecwid_html {
         }
       }
     }
-
     .item-breadCrumb {
       @include font($font-family-base, 15px, $border-gray, 500);
       display: inline-block;
@@ -136,6 +142,50 @@ html#ecwid_html {
         color: $black;
       }
     }
+    .mod-promotion {
+      // display: none;
+    }
+    .ec-store {
+      .mod-promotion {
+        display: block;
+      }
+      .mod-promotion {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: $white;
+        letter-spacing: .4px;
+        line-height: 1.22;
+        font-family: $os;
+        padding: 70px 0 0;
+        margin: 65px 0 50px;
+        position: relative;
+        .icon-wrap {
+          @include sizeEx(26px);
+          display: inline-flex;
+          margin-bottom: 25px;
+          justify-content: center;
+          img {
+            align-self: center;
+          }
+        }
+        .promo-overlay {
+          @extend .d-none, .d-lg-block;
+        }
+        .promo-item {
+          text-align: center;
+          margin-top: 20px;
+          margin-bottom: 80px;
+          padding: 0;
+        }
+        p {
+          text-transform: uppercase;
+          margin-bottom: 0;
+          letter-spacing: 2px;
+        }
+      }
+    }
+   
   }
 }
 
