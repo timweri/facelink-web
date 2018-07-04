@@ -6,7 +6,8 @@ module.exports = {
       title: 'Publication with image',
       body: `<p>Headline of the article of quote of the mention as the headline</p>
         <p><a class="btn btn-primary" href="#">View article</a></p>
-      `
+      `,
+      link: '#'
     },
     {
       image: 'images/news-feed-image.jpg',
@@ -14,7 +15,8 @@ module.exports = {
       title: 'Publication title',
       body: `<p>Headline of the article of quote of the mention as the headline</p>
         <p><a class="btn btn-primary" href="#">View article</a></p>
-      `
+      `,
+      link: '#'
     },
     {
       image: 'images/news-feed-image.jpg',
@@ -22,7 +24,8 @@ module.exports = {
       title: 'Publication with image',
       body: `<p>Headline of the article of quote of the mention as the headline</p>
         <p><a class="btn btn-primary" href="#">View article</a></p>
-      `
+      `,
+      link: '#'
     }
   ],
   quote: `<h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h2>

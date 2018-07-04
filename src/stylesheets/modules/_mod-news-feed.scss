@@ -17,6 +17,9 @@
   }
 }
 .news-feed-image {
+  @include position(relative, $index: 2);
+  margin-bottom: 50px;
+  transition: .25s;
   img {
     display: block;
     margin: 0 auto;
@@ -26,9 +29,23 @@
   text-align: center;
   margin: 50px 0 60px;
   padding: 0 13px;
+  cursor: pointer;
   h2 {
     margin-bottom: 30px;
     text-transform: uppercase;
+  }
+  * {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  h2,
+  p {
+    color: $black;
+    &:hover {
+      color: $black;
+    }
   }
 }
 .news-feed-logo {
@@ -96,6 +113,9 @@
     }
     .first-col-left {
       padding-right: 15px;
+      .news-feed-post {
+        margin-top: 0;
+      }
     }
     .first-col-right {
       padding-left: 15px;
@@ -104,6 +124,18 @@
   .news-feed-post {
     text-align: left;
     margin: 45px 0 55px;
+    &:hover {
+      .news-feed-image {
+        transform: scale(1.2);
+      }
+      .btn {
+        color: map-get(map-get($hover-colors, primary), hover-color);
+        box-shadow: none !important;
+        &::before {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
   }
   .news-feed-post-col {
     padding: 0 15px;
