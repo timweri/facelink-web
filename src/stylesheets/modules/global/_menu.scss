@@ -52,6 +52,9 @@
   > i {
     padding: 0 0 0 28px;
   }
+  .cart-badge {
+    letter-spacing: normal;
+  }
 }
 
 .navbar-social {
@@ -266,7 +269,7 @@
             transform: scale3d(1, 1, 1);
           }
           .cart-badge {
-            background-color: darken($color-c6, 20);
+            background-color: $white;
           }
         }
       }
