@@ -20,6 +20,9 @@
   &.is-open-menu {
     width: 295px;
   }
+  li > a {
+    letter-spacing: 1.5px;
+  }
 }
 
 .navbar {
@@ -313,7 +316,7 @@
   .menu-center {
     li {
       > a {
-        padding: 22px 42px;
+        padding: 22px 30px;
         &::before {
           width: calc(100% - 54px);
           left: 27px;
@@ -325,7 +328,7 @@
     margin-left: 75px;
     li {
       > a {
-        padding: 22px 35px;
+        padding: 22px 28px;
         &::before {
           width: calc(100% - 40px);
           left: 20px;

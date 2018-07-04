@@ -5,6 +5,12 @@
   position: relative;
   overflow: hidden;
   display: block;
+  h2 {
+    letter-spacing: 1.8px;
+  }
+  li {
+    letter-spacing: 1.5px;
+  }
   .section-frame1 {
     h3 {
       color: $black;
@@ -175,6 +181,12 @@ body {
   .section {
     padding-top: 93px;
     height: 100vh;
+    h2 {
+      letter-spacing: 2.8px;
+    }
+    li {
+      letter-spacing: 1.8px;
+    }
   }
   .style-subhead {
     h3 {

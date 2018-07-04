@@ -9,6 +9,7 @@
     text-transform: uppercase;
     margin: 0;
     color: $white;
+    letter-spacing: 1.6px;
   }
   .btn {
     padding: 0 30px;
@@ -154,7 +155,7 @@
     padding-bottom: 50px;
     h2 {
       font-size: rem(30);
-      letter-spacing: 1.6px;
+      letter-spacing: 1.8px;
     }
     * {
       transition: .3s;

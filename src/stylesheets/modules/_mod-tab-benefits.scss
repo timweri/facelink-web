@@ -4,6 +4,9 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
 .mod-tab-benefits {
   background: $gray-bg;
   padding: 50px 0 40px;
+  h3 {
+    letter-spacing: 1.5px;
+  }
   .container {
     padding: 0;
     >.row {
@@ -69,6 +72,9 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
 @include media-breakpoint-up(lg) {
   .mod-tab-benefits {
     padding: 95px 0 175px;
+    h3 {
+      letter-spacing: 2px;
+    }
     h3.is-open-tab {
       z-index: 1;
       &::after {
