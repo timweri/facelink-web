@@ -1,6 +1,5 @@
 .mod-group-quote-cta {
   position: relative;
-  overflow: hidden;
   .bg-green-quote {
     @include position(absolute, $bottom: 0, $right: -50%);
     display: block;
@@ -38,6 +37,19 @@
 }
 @include media-breakpoint-up(lg) {
   .mod-group-quote-cta {
-    overflow: inherit;
+    overflow: visible;
+    .bg-green-quote,
+    .bg-green-cta {
+      padding-right: 62%;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .mod-group-quote-cta {
+    .bg-green-cta,
+    .bg-green-quote {
+      padding-right: 58%;
+    }
   }
 }
