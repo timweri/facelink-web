@@ -28,20 +28,16 @@
     height: 85%;
     background: $color-c6;
   }
-  .col-left,
-  .col-right {
-    @extend .col-12;
-  }
   .col-left {
-    @extend .col-lg-5, .text-right;
+    @extend .text-right;
+    position: relative;
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin-left: 10%;
     margin-bottom: 53px;
-
-    img {
-      position: relative;
-    }
   }
   .col-right {
-    @extend .col-lg-5, .offset-lg-1;
+    @extend .col-12, .col-lg-6;
     line-height: 2;
     letter-spacing: 1.1px;
     * {
@@ -49,6 +45,14 @@
         margin-bottom: 0;
       }
     }
+  }
+  .img-content {
+    @include sizeEx(100%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding-bottom: 135%;
   }
 }
 
@@ -90,25 +94,44 @@
   .mod-our-story {
     margin: 110px auto 70px;
     .centered-row {
-      margin-top: 7.5%;
+      margin-top: 5.5%;
+    }
+    .img-content {
+      padding-bottom: 134.5%;
     }
     .col-left,
     .col-right {
       padding: 0;
     }
     .col-left {
+      flex: 0 0 40%;
+      max-width: 40%;
+      margin-right: 10%;
+      margin-left: 0;
       margin-bottom: 0;
     }
+    .col-right {
+      padding-top: 10px;
+    }
     .solid-bg {
-      top: -39%;
+      @include position($top: -100px, $right: 20%);
     }
   }
 }
 
 @include media-breakpoint-up(xl) {
   .mod-our-story {
+    .col-left {
+      flex: 0 0 41%;
+      max-width: 41%;
+      margin-right: 9%;
+    }
+    .img-content {
+      padding-bottom: 140%;
+    }
     .solid-bg {
-      top: -23%;
+      @include position($top: -22.5%, $right: 33.5%);
+      height: 76%;
     }
   }
 }
@@ -117,6 +140,23 @@
   .mod-our-story {
     .col-left {
       padding: 0;
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .mod-our-story {
+    .col-left {
+      flex: 0 0 41%;
+      max-width: 41%;
+      margin-right: 9%;
+    }
+    .img-content {
+      padding-bottom: 140%;
+    }
+    .solid-bg {
+      @include position($top: -19%, $right: 33.5%);
+      height: 76%;
     }
   }
 }
