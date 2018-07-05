@@ -38,11 +38,23 @@
   .list-social,
   .extra,
   .email {
+    @include position(relative, $index: 1);
     margin-bottom: 45px;
     padding-left: 30px;
     h6 {
       @include font($font-family-base, rem(15), $border-gray, 400);
       letter-spacing: .4px;
+    }
+    &:hover {
+      &::before {
+        border-left: 5px solid $orange;
+      }
+    }
+    &::before {
+      @include position(absolute, 0, null, null, -3px, $index: 0);
+      @include sizeEx(100%);
+      content: "";
+      transition: .25s;
     }
   }
   .list-social {
@@ -80,17 +92,6 @@
       margin-bottom: 46px;
       h6 {
         margin-bottom: 17px;
-      }
-      &:hover {
-        &::before {
-          border-left: 5px solid $orange;
-        }
-      }
-      &::before {
-        @include position(absolute, 0, null, null, -3px);
-        @include sizeEx(100%);
-        content: "";
-        transition: .25s;
       }
     }
     .list-social {
