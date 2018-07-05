@@ -18,27 +18,29 @@ var Shop = (function(){
     }
   }
   function addListImageProduct() {
-    var category = $('.grid-category')
-    var product = $('.grid-product');
-    if(category.length) {
-      var num = Math.round((category.length + product.length )/4);
-      var list = '';
-      for(var i = 0; i< num; i++) {
-        list += `<div class="item-bg-product" style="background-image: url(http://localhost:3000/briq-dev/wp-content/themes/Briq/images/img-section-category.jpg)"></div>`
-      }
-      var dom = '<div class="list-bg-product">' + list +'</div>';
-      $('.ecwid_html .mod-content-editor').append(dom)
-    }
+    var $modContentEditor = $('.mod-content-editor');
+    $modContentEditor.removeClass('list-category');
+    Ecwid.OnCartChanged.add(function(cart){
+      setTimeout(function(){
+        var pageCategory = $('.ecwid-productBrowser-CategoryPage');
+        if(pageCategory.find('.grid-product').length) {
+          $modContentEditor.addClass('list-category');
+          var listbgProduct = $('.list-bg-product')[0].outerHTML;
+          $modContentEditor.append(listbgProduct);
+        } else {
+          $modContentEditor.find('.list-bg-product').remove()
+        }
+      }, 1000);
+    })
+    
   }
   function addModulePromotion() {
     var modPromotion = $('.mod-promotion');
     Ecwid.OnCartChanged.add(function(cart){
-      // console.log('change', $('.product-details'));
       setTimeout(function(){
         if($('.product-details').length && $('.mod-promotion').length) {
           var promotion = $('.mod-promotion')[0].outerHTML;
           $(promotion).insertAfter(".product-details");
-          console.log(cart)
         }
       }, 1000);
     });
