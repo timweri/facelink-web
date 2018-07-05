@@ -31,10 +31,14 @@
   .col-right {
     @extend .col-lg-5, .offset-lg-1, .order-lg-2;
     margin-bottom: 53px;
-
-    img {
-      position: relative;
-    }
+  }
+  .img-content {
+    @include sizeEx(100%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding-bottom: 138%;
   }
 }
 
@@ -68,8 +72,8 @@
   .mod-content-benefits {
     margin-bottom: 120px;
     padding-top: 80px;
-    > .container {
-      padding: 0 60px 0 90px;
+    .img-content {
+      padding-bottom: 139.5%;
     }
     .col-left,
     .col-right {
@@ -77,46 +81,51 @@
     }
     .col-left {
       padding-top: 95px;
+      padding-left: 82px;
     }
     .col-right {
       margin-bottom: 0;
+      padding-right: 47px;
+
+      max-width: 40%;
+      flex: 0 0 40%;
+      margin-left: 10%;
     }
     .solid-bg {
-      transform: translate(6px, -17px);
+      @include position($left: 31%, $top: -28.5%);
     }
   }
   .decor-bar {
-    transform: translate(-30px, -10px);
+    @include position($right: 184.5%, $bottom: 101%);
   }
 }
 
-@include media-custom-up(1500) {
+@media (min-width: 1500px) {
   .mod-content-benefits {
     margin-top: 30px;
-  }
-}
-
-@media (min-width: 1800px) {
-  .mod-content-benefits {
     padding-top: 51px;
+    .img-content {
+      padding-bottom: 100%;
+    }
     .decor-bar {
-      right: 168%;
+      @include position($right: 168%, $bottom: 102%);
     }
     .solid-bg {
-      @include position(absolute, $left: 24%, $top: -19%);
-      height: 57%;
-    }
-    > .container {
-      padding: 0 40px 0 120px;
+      @include position($left: 24%, $top: -26%);
+      height: 76%;
     }
     .col-left {
-      flex: 0 0 47.5%;
-      max-width: 47.5%;
+      padding-top: 117px;
+      padding-left: 106px;
+      flex: 0 0 50%;
+      max-width: 50%;
+      justify-content: center;
     }
     .col-right {
-      flex: 0 0 42.5%;
-      max-width: 42.5%;
-      margin-left: 10%;
+      padding-right: 16px;
+      flex: 0 0 41%;
+      max-width: 41%;
+      margin-left: 9%;
     }
   }
 }
