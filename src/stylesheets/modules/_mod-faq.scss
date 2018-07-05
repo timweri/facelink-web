@@ -137,6 +137,14 @@
       padding: 0 0 0 105px;
     }
   }
+  .faq-item {
+    &:first-child {
+      transition: .25s, margin-bottom .1s, padding-bottom .1s, padding-right 0s;
+      h4 {
+        transition: padding 0s, color .25s, margin 0s, padding-top .1s !important;
+      }
+    }
+  }
   .faq-cat {
     margin-bottom: 75px !important;
     &:last-child {
@@ -175,6 +183,9 @@
     padding-bottom: 0;
     &:first-child {
       margin-top: 0;
+      h4 {
+        transition: padding 0s, color .25s, margin 0s, padding-top 0 !important;
+      }
     }
     h4 {
       padding-left: 3px;

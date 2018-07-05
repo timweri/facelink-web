@@ -30,5 +30,6 @@ module.exports = {
   ],
   quote: `<h2>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h2>
   <p>By: Doug Fancy on Friday February 4<sup>th</sup> 2016</p>
-  <p><a class="btn btn-white-red" href="#">View article</a></p>`
+  <p><a class="btn btn-white-red" href="#">View article</a></p>`,
+  quote_link: '#'
 }
