@@ -45,11 +45,16 @@ var Shop = (function(){
       }, 1000);
     });
   }
+
+  function setTitle() {
+
+  }
   Ecwid.OnPageLoad.add(function(page) {
     console.log(page.type)
     setTimeout(function() {
       appendBreadCrumb()
       addListImageProduct()
+      setTitle()
       if(page.type == 'PRODUCT') {
         addModulePromotion()
       }
