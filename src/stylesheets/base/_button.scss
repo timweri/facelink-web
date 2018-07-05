@@ -26,6 +26,7 @@ $hover-colors: hover-color-add("white-orange", $white, $menu-gray, $orange, $ora
   height: 35px;
   line-height: 35px;
   padding: 0 50px;
+  padding-top: 1px !important;
   letter-spacing: 1.1px;
   border: 0;
   &.focus,
@@ -39,7 +40,6 @@ $hover-colors: hover-color-add("white-orange", $white, $menu-gray, $orange, $ora
     position: relative;
     z-index: 0;
     background: map-get($hover-color-settings, norm-bg);
-    border: solid 1px map-get($hover-color-settings, norm-bg);
     color: map-get($hover-color-settings, norm-color);
     overflow: hidden;
     &::before {
