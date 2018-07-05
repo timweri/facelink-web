@@ -19,10 +19,18 @@
 .news-feed-image {
   @include position(relative, $index: 2);
   margin-bottom: 50px;
-  transition: .25s;
+  overflow: hidden;
   img {
+    transition: .25s;
     display: block;
     margin: 0 auto;
+  }
+}
+.news-feed-post,
+.news-feed-quote {
+  > a {
+    @include position(absolute, $top: 0, $left: 0, $index: 1);
+    @include sizeEx(100%);
   }
 }
 .news-feed-post {
@@ -33,19 +41,6 @@
   h2 {
     margin-bottom: 30px;
     text-transform: uppercase;
-  }
-  * {
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  h2,
-  p {
-    color: $black;
-    &:hover {
-      color: $black;
-    }
   }
 }
 .news-feed-logo {
@@ -88,6 +83,7 @@
   }
   h2,
   p {
+    color: $white;
     position: relative;
   }
   >* {
@@ -126,10 +122,11 @@
     margin: 45px 0 55px;
     &:hover {
       .news-feed-image {
-        transform: scale(1.2);
+        img {
+          transform: scale(1.2);
+        }
       }
       .btn {
-        color: map-get(map-get($hover-colors, primary), hover-color);
         box-shadow: none !important;
         &::before {
           transform: translate3d(0, 0, 0);
@@ -147,6 +144,19 @@
     padding: 90px 30px;
     &::before {
       @include position(absolute, $top:0, $right:10px, $index:0);
+    }
+    &:hover {
+      .news-feed-image {
+        img {
+          transform: scale(1.2);
+        }
+      }
+      .btn {
+        box-shadow: none !important;
+        &::before {
+          transform: translate3d(0, 0, 0);
+        }
+      }
     }
   }
 }

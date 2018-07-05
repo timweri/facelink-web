@@ -4,26 +4,26 @@
       {% for post in news_feed.list_news_feed %}
         {% if loop.index == 1 %}
           <div class="first-col-left">
-            <a href="{{ post.link }}">
-              <div class="news-feed-post">
-                <div class="news-feed-image">
-                  <img src="" data-src="{{ post.image }}" alt="Featured image">
-                </div>
-                <div class="news-feed-logo">
-                  <img src="" data-src="{{ post.logo }}" alt="News logo">
-                </div>
-                <h2>
-                  {{ post.title }}
-                </h2>
-                <div class="news-feed-content">
-                  {{ post.body }}
-                </div>
+            <div class="news-feed-post">
+              <a href="{{ post.link }}"></a>
+              <div class="news-feed-image">
+                <img data-src="{{ post.image }}" alt="Featured image">
               </div>
-              <div class="news-feed-quote">
-                {{ news_feed.quote }}
+              <div class="news-feed-logo">
+                <img data-src="{{ post.logo }}" alt="News logo">
+              </div>
+              <h2>
+                {{ post.title }}
+              </h2>
+              <div class="news-feed-content">
+                {{ post.body }}
               </div>
             </div>
-          </a>
+            <div class="news-feed-quote">
+              <a href="{{ news_feed.quote_link }}"></a>
+              {{ news_feed.quote }}
+            </div>
+          </div>
           <div class="first-col-right">
             <div class="twitter-feed" style="background-image: url(images/twitter-feed.jpg);"></div>
           </div>
