@@ -20,46 +20,69 @@ var Shop = (function(){
   function addListImageProduct() {
     var $modContentEditor = $('.mod-content-editor');
     $modContentEditor.removeClass('list-category');
-    Ecwid.OnCartChanged.add(function(cart){
-      setTimeout(function(){
-        var pageCategory = $('.ecwid-productBrowser-CategoryPage');
-        if(pageCategory.find('.grid-product').length) {
-          $modContentEditor.addClass('list-category');
-          var listbgProduct = $('.list-bg-product')[0].outerHTML;
-          $modContentEditor.append(listbgProduct);
-        } else {
-          $modContentEditor.find('.list-bg-product').remove()
-        }
-      }, 1000);
-    })
+    var pageCategory = $('.ecwid-productBrowser-CategoryPage');
+    if(pageCategory.find('.grid-product').length) {
+      $modContentEditor.addClass('list-category');
+      var listbgProduct = $('.list-bg-product')[0].outerHTML;
+      $modContentEditor.append(listbgProduct);
+    } else {
+      $modContentEditor.find('.list-bg-product').remove()
+    }
     
   }
   function addModulePromotion() {
-    var modPromotion = $('.mod-promotion');
-    Ecwid.OnCartChanged.add(function(cart){
-      setTimeout(function(){
-        if($('.product-details').length && $('.mod-promotion').length) {
-          var promotion = $('.mod-promotion')[0].outerHTML;
-          $(promotion).insertAfter(".product-details");
-        }
-      }, 1000);
-    });
+    setTimeout(function() {
+      var modPromotion = $('.mod-promotion');
+      if($('.product-details').length && $('.mod-promotion').length) {
+        var promotion = $('.mod-promotion')[0].outerHTML;
+        $(promotion).insertAfter(".ec-footer");
+      }
+    }, 1000);
   }
 
   function setTitle() {
-
+    var $title = $('.page-title__name');
+    var modShopHeader = $('.mod-shop-header');
+    if($title.length) {
+      var txt = $title.html();
+      console.log(txt)
+      var dom = '<section class="module mod-shop-header">'
+        + '<div class="container">'
+        +  '<h1>' + txt +'</h1>'
+        +  '<p>(2 items)</p>'
+        + '</div>'
+        + '</section>';
+        $(dom).insertBefore("#ecwid_html .mod-content-editor");
+    } else {
+      modShopHeader.remove()
+    }
   }
-  Ecwid.OnPageLoad.add(function(page) {
+  Ecwid.OnPageLoaded.add(function(page) {
     console.log(page.type)
-    setTimeout(function() {
-      appendBreadCrumb()
-      addListImageProduct()
-      setTitle()
-      if(page.type == 'PRODUCT') {
-        addModulePromotion()
-      }
-    })
-
+    // setTimeout(function() {
+    //   appendBreadCrumb()
+    //   addListImageProduct()
+    //   setTitle()
+    if(page.type == 'PRODUCT') {
+      $('.mod-content-editor').addClass('page-product');
+    } else {
+      $('.mod-content-editor').removeClass('page-product');
+    }
+    if(page.type == 'CHECKOUT_PAYMENT_DETAILS' || page.type == 'CHECKOUT_PLACE_ORDER') {
+      $('.mod-content-editor').addClass('page-check-detail');
+    } else {
+      $('.mod-content-editor').addClass('page-check-detail');
+    }
+    // })
+    // Ecwid.OnCartChanged.add(function(cart){
+    //   console.log('change success')
+    //   setTitle();
+    // })
+    console.log('change success')
+    // appendBreadCrumb();
+    addListImageProduct();
+    addModulePromotion();
+    setTitle();
   });
   return {
 

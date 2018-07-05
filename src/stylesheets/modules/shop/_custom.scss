@@ -3,11 +3,19 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
     .mod-content-editor {
-      margin-top: 60px;
       position: relative;
+      margin-top: 60px;
       // >.container {
       //   max-width: none;
       // }
+    }
+    .mod-shop-header {
+      &~.mod-content-editor {
+        margin-top: 0;
+      }
+    }
+    .page-check-detail {
+      margin-top: 140px;
     }
     select {
       appearance: none;
@@ -101,10 +109,45 @@ html#ecwid_html {
         border: 3px solid $orange;
       }
       .mod-promotion {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: $white;
+        letter-spacing: .4px;
+        line-height: 1.22;
+        font-family: $os;
+        padding: 70px 0 0;
+        margin: 110px 0;
+        position: relative;
+        display: none;
         .container {
           position: relative;
           z-index: 1;
           margin: 0 auto;
+        }
+        .icon-wrap {
+          @include sizeEx(26px);
+          display: inline-flex;
+          margin-bottom: 25px;
+          justify-content: center;
+          img {
+            @include sizeEx(auto, 27px);
+            align-self: center;
+          }
+        }
+        .promo-overlay {
+          @extend .d-none, .d-lg-block;
+        }
+        .promo-item {
+          text-align: center;
+          margin-top: 20px;
+          margin-bottom: 80px;
+          padding: 0;
+        }
+        p {
+          text-transform: uppercase;
+          margin-bottom: 0;
+          letter-spacing: 2px;
         }
       }
       .promo-overlay {
@@ -153,44 +196,8 @@ html#ecwid_html {
     .mod-promotion {
       display: none;
     }
-    .ec-store {
-      .mod-promotion {
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: $white;
-        letter-spacing: .4px;
-        line-height: 1.22;
-        font-family: $os;
-        padding: 70px 0 0;
-        margin: 65px 0 50px;
-        position: relative;
-        display: block;
-        .icon-wrap {
-          @include sizeEx(26px);
-          display: inline-flex;
-          margin-bottom: 25px;
-          justify-content: center;
-          img {
-            @include sizeEx(auto, 27px);
-            align-self: center;
-          }
-        }
-        .promo-overlay {
-          @extend .d-none, .d-lg-block;
-        }
-        .promo-item {
-          text-align: center;
-          margin-top: 20px;
-          margin-bottom: 80px;
-          padding: 0;
-        }
-        p {
-          text-transform: uppercase;
-          margin-bottom: 0;
-          letter-spacing: 2px;
-        }
-      }
+    .page-title__name {
+      display: none;
     }
   }
 }
@@ -217,6 +224,7 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid {
         .mod-promotion {
+          display: block;
           .container {
             max-width: 720px;
           }
@@ -245,6 +253,7 @@ html#ecwid_html {
         .mod-promotion {
           .container {
             max-width: 1140px;
+            width: 100%;
           }
         }
         .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
