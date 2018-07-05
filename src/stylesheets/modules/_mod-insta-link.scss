@@ -2,9 +2,12 @@
 .mod-insta-link {
   @include font($os, rem(30), $white, 700);
   line-height: 40px;
-  letter-spacing: .7px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   position: relative;
+  p {
+    letter-spacing: 1.8px;
+  }
   a {
     @include position(absolute, 0, 0, 0, 0, 1);
   }
