@@ -1,7 +1,7 @@
 <section class="module mod-shop-product container-xl">
   <div class="container">
     {% set cur_product = shop_product.products[0] %}
-    <div class="shop-product-wrap">
+    <div class="shop-product-wrap d-flex flex-column flex-lg-row">
       <div class="shop-product-left">
         <div class="shop-product-title">
           <h2>
@@ -9,13 +9,13 @@
           </h2>
         </div>
         <div class="shop-product-image-wrap">
-          <div class="shop-product-pa-overlay">
+          <div class="shop-product-pa-overlay d-lg-none">
             <img src="images/pineapple.png" alt="Pineapple">
           </div>
-          <div class="shop-product-paorange-overlay">
+          <div class="shop-product-paorange-overlay d-none d-lg-block">
             <img src="images/pineapple-orange.png" alt="Pineapple Oranges">
           </div>
-          <div class="shop-product-orange-overlay">
+          <div class="shop-product-orange-overlay d-lg-none">
             <img src="images/orange-slices.png" alt="Orange slices">
           </div>
           <a href="#">
