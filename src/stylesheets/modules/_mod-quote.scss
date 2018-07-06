@@ -40,7 +40,7 @@ $quote-blockquote-color: rgb(220, 220, 217);
       bottom: -15px;
       right: -25px;
     }
-    cite {
+    p {
       @include font($font-family-base, rem(18), $black-two, 400, normal);
       display: block;
       letter-spacing: 1.4px;

@@ -1,19 +1,16 @@
 .mod-product-image {
   position: relative;
   text-align: center;
-  padding-bottom: 40px;
-  margin-bottom: 50px;
+  //padding-bottom: 40px;
+  //margin-bottom: 50px;
   .btn {
     padding: 0 20px;
   }
   .btn-wrap {
-    @include position(absolute, $left:0, $right:0, $bottom: 0);
+    @include position(absolute, $left:0, $right:0, $bottom: 10%);
   }
   .image-sm-wrap {
     @extend .d-md-none;
-    img {
-      width: 100%;
-    }
   }
   .image-lg-wrap {
     @extend .d-none;
@@ -22,26 +19,22 @@
   }
 }
 
-@include media-breakpoint-up(sm) {
-  .mod-product-image {
-    .btn-wrap {
-      bottom: 20px;
-    }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .mod-product-image {
-    .btn-wrap {
-      bottom: 60px;
-    }
-  }
-}
-
 @include media-breakpoint-up(lg) {
   .mod-product-image {
+    position: relative;
     .btn-wrap {
-      bottom: 110px;
+      bottom: 12%;
+    }
+    &~.mod-group-quote-cta {
+      margin-top: -6%;
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .mod-product-image {
+    &~.mod-group-quote-cta {
+      margin-top: -150px;
     }
   }
 }

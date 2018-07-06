@@ -7,6 +7,9 @@
   .first-col-left {
     @extend .col-12, .col-lg-6;
   }
+  .first-col-right {
+    height: 1000px;
+  }
   > .container {
     > .row {
       position: relative;
@@ -62,7 +65,7 @@
   overflow-x: hidden;
   text-align: center;
   padding: 90px 23px;
-  margin: 0 -15px;
+  margin: 0 -15px 40px;
   &::before {
     @include sizeEx(4000px, 100%);
     @include position(absolute, $top:0, $right:0, $index:0);
@@ -115,6 +118,7 @@
     }
     .first-col-right {
       padding-left: 15px;
+      height: auto;
     }
   }
   .news-feed-post {
@@ -140,8 +144,8 @@
   .news-feed-quote {
     text-align: left;
     overflow-x: visible;
-    margin-bottom: 20px;
-    padding: 90px 30px;
+    margin-bottom: 0;
+    padding: 80px 30px 90px;
     &::before {
       @include position(absolute, $top:0, $right:10px, $index:0);
     }
