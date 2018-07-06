@@ -16,6 +16,11 @@
     content: "";
     background: $color-c6;
   }
+  .container {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -25,7 +30,7 @@
       margin-bottom: 7px;
     }
     &::before {
-      @include sizeEx(100%, 44%);
+      @include sizeEx(100%, 55%);
     }
   }
 }

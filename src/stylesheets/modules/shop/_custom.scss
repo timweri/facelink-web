@@ -56,7 +56,7 @@ html#ecwid_html {
         text-transform: uppercase;
         letter-spacing: 1.1px;
         box-shadow: none !important;
-        padding: 0 10px;
+        padding: 0 10px !important;
         min-height: 35px;
         overflow: hidden;
       }
@@ -67,6 +67,7 @@ html#ecwid_html {
       }
       .ecwid-btn--primary {
         color: $white;
+        border: 0 !important;
       }
       .ecwid-btn--checkout {
         width: 180px;
@@ -240,7 +241,19 @@ html#ecwid_html {
         .mod-promotion {
           .container {
             max-width: 960px;
+            padding: 0 45px;
           }
+        }
+        .promo-item {
+          max-width: (100% / $number-per-row-lg);
+          flex: 0 0 (100% / $number-per-row-lg);
+        }
+        .promo-overlay {
+          @include position(absolute, $left: 0, $top:0, $bottom: 0);
+          @include sizeEx($height:100%, $width: 265px);
+          background: url("../images/promotion-overlay.png") left center no-repeat;
+          background-size: cover;
+          opacity: .05;
         }
       }
     }

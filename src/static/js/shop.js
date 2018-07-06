@@ -49,7 +49,7 @@ var Shop = (function(){
       var dom = '<section class="module mod-shop-header">'
         + '<div class="container">'
         +  '<h1>' + txt +'</h1>'
-        +  '<p>(2 items)</p>'
+        // +  '<p>(2 items)</p>'
         + '</div>'
         + '</section>';
         $(dom).insertBefore("#ecwid_html .mod-content-editor");
@@ -57,33 +57,25 @@ var Shop = (function(){
       modShopHeader.remove()
     }
   }
-  Ecwid.OnPageLoaded.add(function(page) {
-    console.log(page.type)
-    // setTimeout(function() {
-    //   appendBreadCrumb()
-    //   addListImageProduct()
-    //   setTitle()
-    if(page.type == 'PRODUCT') {
-      $('.mod-content-editor').addClass('page-product');
-    } else {
-      $('.mod-content-editor').removeClass('page-product');
-    }
-    if(page.type == 'CHECKOUT_PAYMENT_DETAILS' || page.type == 'CHECKOUT_PLACE_ORDER') {
-      $('.mod-content-editor').addClass('page-check-detail');
-    } else {
-      $('.mod-content-editor').addClass('page-check-detail');
-    }
-    // })
-    // Ecwid.OnCartChanged.add(function(cart){
-    //   console.log('change success')
-    //   setTitle();
-    // })
-    console.log('change success')
-    // appendBreadCrumb();
-    addListImageProduct();
-    addModulePromotion();
-    setTitle();
-  });
+  if ($("#ecwid_html").length) {
+    Ecwid.OnPageLoaded.add(function(page) {
+      console.log(page.type)
+      if(page.type == 'PRODUCT') {
+        $('.mod-content-editor').addClass('page-product');
+      } else {
+        $('.mod-content-editor').removeClass('page-product');
+      }
+      if(page.type == 'CHECKOUT_PAYMENT_DETAILS' || page.type == 'CHECKOUT_PLACE_ORDER') {
+        $('.mod-content-editor').addClass('page-check-detail');
+      } else {
+        $('.mod-content-editor').removeClass('page-check-detail');
+      }
+      addListImageProduct();
+      addModulePromotion();
+      setTitle();
+    });
+  }
+  
   return {
 
   }
