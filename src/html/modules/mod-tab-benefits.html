@@ -1,24 +1,22 @@
 <section class="module mod-tab-benefits container-xl" data-module="tab-benefits">
-  <div class="wrapper">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-left">
-          {% for tab_item in tab_benefits.tabs %}
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-left">
+        {% for tab_item in tab_benefits.tabs %}
+          <h3>{{ tab_item.title }}</h3>
+        {% endfor %}
+      </div>
+      <div class="col-right">
+        {% for tab_item in tab_benefits.tabs %}
+          <div class="tab-item">
             <h3>{{ tab_item.title }}</h3>
-          {% endfor %}
-        </div>
-        <div class="col-right">
-          {% for tab_item in tab_benefits.tabs %}
-            <div class="tab-item">
-              <h3>{{ tab_item.title }}</h3>
-              <div class="tab-content">
-                <div class="tab-content-scroll">
-                  {{ tab_item.content }}
-                </div>
+            <div class="tab-content">
+              <div class="tab-content-scroll">
+                {{ tab_item.content }}
               </div>
             </div>
-          {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
