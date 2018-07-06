@@ -3,7 +3,7 @@
     <div class="container">
       <div class="subhead-frame2-title">
         <h3>{{ frame2.subhead }}</h3>
-        <div class="title-frame2">
+        <div class="title-frame2 text-center text-lg-left">
           <h2><span>{{ frame2.title }}</span></h2>
         </div>
       </div>
@@ -13,13 +13,13 @@
     <div class="bg-rotate-image"></div>
   </div>
   <div class="bg-blue"></div>
-  <div class="cont-frame2">
+  <div class="cont-frame2 d-lg-flex align-items-lg-center">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-lg-end">
         <div class="col-list-frame2">
-          <div class="list-item-frame2">
+          <div class="list-item-frame2 text-uppercase">
             {% for item in frame2.list_icon %}
-              <div class="item">
+              <div class="item d-flex align-items-center">
                 <div class="icon">
                   <img src="{{item.icon}}" alt="{{item.icon}}">
                 </div>

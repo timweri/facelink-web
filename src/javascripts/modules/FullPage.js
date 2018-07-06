@@ -28,7 +28,7 @@ const FullPage = (($) => {
       this.footer = $('#footer')
       this.header = $('#header')
       this.cta = $('.mod-cta')
-      this.fullPageHome()
+      // this.fullPageHome()
       this.setHeightCTA()
       $(window).resize(this.onResizeWindow.bind(this))
     }
@@ -38,7 +38,7 @@ const FullPage = (($) => {
     }
     onResizeWindow () {
       this.setHeightCTA()
-      this.fullPageHome()
+      // this.fullPageHome()
     }
 
     fullPageHome () {

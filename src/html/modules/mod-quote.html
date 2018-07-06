@@ -1,8 +1,8 @@
 {% if status === true %}
 <section class="module mod-quote lazyload-image">
   <div class="container">
-    <div class="centered-row">
-      <div class="col-left">
+    <div class="row centered-row">
+      <div class="col-left col-12 col-lg-7">
         <div class="container">
           <blockquote>
             {{ quote.quote }}
@@ -10,7 +10,7 @@
           </blockquote>
         </div>
       </div>
-      <div class="col-right">
+      <div class="col-right col-12 col-lg-5">
         <div class="quote-img-wrap">
           <img class="img-fluid" src="{{ quote.image }}" alt="Fitness">
         </div>

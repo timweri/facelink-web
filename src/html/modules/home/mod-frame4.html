@@ -4,11 +4,11 @@
     <div class="container">
       <div class="subhead-frame4 style-subhead">
         <div class="subhead-frame4-title">
-          <div class="title-frame4">
+          <div class="title-frame4 text-center text-lg-left">
             <h2><span>{{ frame4.title }}</span></h2>
           </div>
           {% for i in frame4.block_list %}
-          <div class="number number{{loop.index}}">
+          <div class="number number{{loop.index}} d-none d-lg-flex align-items-center justify-content-center">
             {{loop.index}}
           </div>
           {% endfor %}
@@ -16,12 +16,12 @@
       </div>
       <div class="cont-text-frame4">
         <div class="row">
-          <div class="col-frame4 col-list-frame4">
+          <div class="col-frame4 col-list-frame4 col-lg-6 d-lg-flex justify-content-lg-end">
             <div class="list-item-frame4">
               {{ frame4.bullet_list }}
             </div>
           </div>
-          <div class="col-frame4 col-image-product-frame4">
+          <div class="col-frame4 col-image-product-frame4 col-lg-6">
             <div class="image-product">
               <img src="" data-src="{{ frame4.image_product }}" alt="{{ frame4.image_product }}">
             </div>
@@ -30,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="fruit-frame4">
+  <div class="fruit-frame4 d-none d-lg-block">
     <img src="images/pineapple-home.png" alt="Pineapple and Oranges">
   </div>
 </section>

@@ -7,8 +7,6 @@
   width: 100%;
   padding-top: 70px;
   h2 {
-    @extend .text-center;
-    @extend .text-lg-left;
     padding: 16px 15px;
     display: inline-block;
     position: relative;
@@ -32,12 +30,9 @@
 }
 
 .list-item-frame2 {
-  @extend .text-uppercase;
   max-width: 280px;
   margin: 0 auto;
   .item {
-    @extend .d-flex;
-    @extend .align-items-center;
     padding: 20px 0;
     border-bottom: 2px solid $black;
     &:last-child {
@@ -60,11 +55,8 @@
   }
 }
 .cont-frame2 {
-  @extend .d-lg-flex;
-  @extend .align-items-lg-center;
   @include position(relative, $index: 1);
   .row {
-    @extend .justify-content-lg-end;
     margin: 0;
   }
 }
@@ -75,8 +67,7 @@
 }
 @include media-breakpoint-up(lg) {
   .subhead-frame2 {
-    @include position(absolute, 20%, null, null, 0);
-    width: 100%;
+    @include position(absolute, 20%, null, null, 0, 2);
     padding-top: 0;
     h2 {
       padding: 16px 34px 16px 0;
@@ -98,7 +89,6 @@
   .cont-frame2 {
     @include position(absolute,45px, null, null);
     @include sizeEx(100%, 100vh);
-    height: 100vh;
     .col-list-frame2 {
       width: 40%;
     }

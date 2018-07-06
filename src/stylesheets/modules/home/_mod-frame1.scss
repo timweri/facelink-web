@@ -2,19 +2,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  .show-mb {
-    @extend .d-lg-none;
-  }
-  .show-desktop {
-    @extend .d-none;
-    @extend .d-lg-block;
-  }
 }
 .container-frame1 {
+  @include position(relative, $index: 1);
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  @include position(relative, $index: 1);
 }
 .cont-frame1 {
   max-width: 395px;
@@ -25,8 +18,6 @@
     }
   }
   h3 {
-    @extend .text-right;
-    @extend .text-lg-left;
     margin-bottom: 25px;
   }
   .btn {
@@ -43,7 +34,6 @@
   margin-left: auto;
 }
 .col-frame1 {
-  @extend .col-md-6;
   padding: 0;
 }
 .image-frame1 {
@@ -57,7 +47,6 @@
   @include position(relative, 0, null, null, 0);
   padding-top: 62px;
   .row {
-    @extend .justify-content-md-end;
     margin: 0;
   }
 }

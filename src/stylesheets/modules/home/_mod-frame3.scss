@@ -38,16 +38,12 @@
 }
 .subhead-frame3 {
   @include position(relative, $index: 1);
-  @extend .d-lg-flex;
-  @extend .align-items-lg-center;
 }
 
 .subhead-frame3-title {
   padding: 35px 15px 65px;
 }
 .description-iframe3 {
-  @extend .d-none;
-  @extend .d-lg-block;
   @include position(absolute, null, 100%, 80px, null, 1);
   max-width: 170px;
   width: 100%;

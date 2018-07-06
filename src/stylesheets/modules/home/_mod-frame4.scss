@@ -35,8 +35,6 @@
 .subhead-frame4 {
   width: 100%;
   h2 {
-    @extend .text-center;
-    @extend .text-lg-left;
     padding: 16px 25px 16px 15px;
     display: inline-block;
     position: relative;
@@ -68,10 +66,6 @@
 }
 .subhead-frame4-title {
   .number {
-    @extend .d-none;
-    @extend .d-lg-flex;
-    @extend .align-items-center;
-    @extend .justify-content-center;
     @include sizeEx(71px);
     @include position(absolute, 0, null, null, 100%);
     @include font($os, 30px, null, 700);
@@ -94,11 +88,11 @@
   @include position(relative, $index: 1);
 }
 .list-item-frame4 {
-  > ul {
+  ul {
     list-style: none;
-    > li {
+    li {
       @include font($os, 18px,$black, 700);
-      @extend .text-uppercase;
+      text-transform: uppercase;
       letter-spacing: .5px;
       margin: 0;
       margin-bottom: 20px;
@@ -127,18 +121,9 @@
     }
   }
 }
-.col-list-frame4 {
-  @extend .col-lg-6;
-  @extend .d-lg-flex;
-  @extend .justify-content-lg-end;
-}
-.col-image-product-frame4 {
-  @extend .col-lg-6;
-}
+
 .fruit-frame4 {
   @include position(absolute, null, null, -29%, -13%);
-  @extend .d-none;
-  @extend .d-lg-block;
   width: 50%;
   img {
     width: 100%;

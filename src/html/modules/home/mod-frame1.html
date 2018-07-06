@@ -5,16 +5,16 @@
   <div class="container-frame1">
     <div class="frame1-container">
       <div class="container">
-        <div class="row">
-          <div class="col-frame1">
+        <div class="row justify-content-md-end">
+          <div class="col-frame1 col-md-6">
             <div class="cont-frame1 style-subhead">
-              <h3>{{ frame1.subhead }}</h3>
+              <h3 class="text-right text-lg-left">{{ frame1.subhead }}</h3>
               <div class="cont-frame1-primary">
                 <h1>{{ frame1.title }}</h1>
                 <a href="{{ frame1.button_link }}" class="btn btn-primary" title="{{ frame1.button_text }}">{{ frame1.button_text }}</a>
               </div>
             </div>
-            <div class="img-production-frame1 show-mb">
+            <div class="img-production-frame1 show-mb d-lg-none">
               <img src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
             </div>
           </div>
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  <div class="img-production-frame1 show-desktop">
+  <div class="img-production-frame1 show-desktop d-none d-lg-block">
     <img src="{{ frame1.image_product }}" alt="{{ frame1.image_product }}">
   </div>
 </section>

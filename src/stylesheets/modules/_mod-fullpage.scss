@@ -181,6 +181,9 @@ body {
   }
 }
 @include media-breakpoint-up(lg) {
+  #fullpage {
+    padding-top: 0;
+  }
   .section {
     padding-top: 93px;
     height: 100vh;
@@ -202,14 +205,21 @@ body {
       font-size: 30px;
     }
   }
+  .section-frame-5 {
+    height: auto;
+    padding-top: 0;
+  }
+  .section-frame-6 {
+    padding-top: 0;
+  }
 }
 @media only screen and (min-width: 992px) and (max-height: 639px) {
   .section {
     padding-top: 0;
     height: 800px;
   }
-  .mod-frame-5,
-  .mod-frame-6 {
+  .section-frame-5,
+  .section-frame-6 {
     height: auto;
   }
 }

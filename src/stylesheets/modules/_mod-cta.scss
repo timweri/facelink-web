@@ -43,9 +43,6 @@
     background: url("../images/bg-transparent2.png") center left no-repeat;
   }
   .container {
-    @extend .d-flex;
-    @extend .align-items-center;
-    @extend .justify-content-center;
     @include sizeEx(100%);
     @include position(relative, $index: 1);
   }
@@ -88,9 +85,7 @@
     padding: 0 20px;
   }
 }
-.cta-content {
-  @extend .text-center;
-}
+
 .form-cta {
   position: relative;
   display: block;
