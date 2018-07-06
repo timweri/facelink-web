@@ -1,24 +1,5 @@
 .mod-group-quote-cta {
   position: relative;
-  .bg-green-quote {
-    @include position(absolute, $bottom: 0, $right: -50%);
-    display: block;
-    overflow: hidden;
-    mix-blend-mode: multiply;
-    z-index: 1;
-    background: $color-e5;
-    transform: skewX(-45deg);
-    padding: 0 100% 100% 0;
-    &::after {
-      @include position(absolute, $bottom: 0, $right: 0, $index: 1);
-      @include sizeEx(100%, 70%);
-      background: url("../images/bg-transparent2.png") right top no-repeat;
-      content: "";
-      display: block;
-      transform: skewX(45deg);
-      transform-origin: 0 100%;
-    }
-  }
   &.not-quote {
     overflow: hidden;
     .bg-green {
@@ -31,54 +12,69 @@
       }
     }
   }
-  .mod-cta {
-    @include position(relative, $index: 2);
+}
+
+.mod-cta {
+  @include position(relative, $index: 2);
+}
+
+.bg-green-cta,
+.bg-green-quote {
+  @include position(absolute, $bottom: 0, $right: -50%, $index: 1);
+  display: block;
+  overflow: hidden;
+  background: $color-e5;
+  transform: skewX(-45deg);
+  padding: 0 100% 100% 0;
+  &::after {
+    @include position(absolute, $bottom: 0, $right: 0, $index: 1);
+    @include sizeEx(30%, 100%);
+    background: url("../images/bg-transparent2.png") right top/cover no-repeat;
+    content: "";
+    display: block;
+    transform: skewX(45deg);
+    transform-origin: 0 100%;
   }
 }
 
+.bg-green-quote {
+  mix-blend-mode: multiply;
+}
+
 @include media-breakpoint-up(sm) {
-  .mod-group-quote-cta {
-    .bg-green-quote,
-    .bg-green-cta {
-      padding-right: 82%;
-    }
+  .bg-green-quote,
+  .bg-green-cta {
+    padding-right: 82%;
   }
 }
 
 @include media-breakpoint-up(md) {
-  .mod-group-quote-cta {
-    .bg-green-quote,
-    .bg-green-cta {
-      padding-right: 72%;
-    }
+  .bg-green-quote,
+  .bg-green-cta {
+    padding-right: 72%;
   }
 }
 
 @include media-breakpoint-up(lg) {
   .mod-group-quote-cta {
     overflow: visible;
-    .bg-green-quote,
-    .bg-green-cta {
-      padding-right: 62%;
-    }
+  }
+  .bg-green-quote,
+  .bg-green-cta {
+    padding-right: 65%;
   }
 }
 
 @include media-breakpoint-up(xl) {
-  .mod-group-quote-cta {
-    overflow: visible;
-    .bg-green-quote,
-    .bg-green-cta {
-      padding-right: 58%;
-    }
+  .bg-green-quote,
+  .bg-green-cta {
+    padding-right: 58%;
   }
 }
 
 @media (min-width: 1900px) {
-  .mod-group-quote-cta {
-    .bg-green-cta,
-    .bg-green-quote {
-      padding-right: 58%;
-    }
+  .bg-green-cta,
+  .bg-green-quote {
+    padding-right: 58%;
   }
 }
