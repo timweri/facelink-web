@@ -8,7 +8,7 @@
     z-index: 1;
     background: $color-e5;
     transform: skewX(-45deg);
-    padding: 0 65% 100% 0;
+    padding: 0 100% 100% 0;
     &::after {
       @include position(absolute, $bottom: 0, $right: 0, $index: 1);
       @include sizeEx(100%, 70%);
@@ -35,12 +35,41 @@
     @include position(relative, $index: 2);
   }
 }
+
+@include media-breakpoint-up(sm) {
+  .mod-group-quote-cta {
+    .bg-green-quote,
+    .bg-green-cta {
+      padding-right: 82%;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-group-quote-cta {
+    .bg-green-quote,
+    .bg-green-cta {
+      padding-right: 72%;
+    }
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .mod-group-quote-cta {
     overflow: visible;
     .bg-green-quote,
     .bg-green-cta {
       padding-right: 62%;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .mod-group-quote-cta {
+    overflow: visible;
+    .bg-green-quote,
+    .bg-green-cta {
+      padding-right: 58%;
     }
   }
 }
