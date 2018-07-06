@@ -22,6 +22,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
     text-align: center;
     margin-top: 80px;
     letter-spacing: 1.5px;
+    line-height: 1.3;
     &::before,
     &::after {
       @include font($icomoon, 100px, $quote-blockquote-color);
@@ -44,6 +45,7 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
       display: block;
       letter-spacing: 1.4px;
       text-transform: none;
+      margin-top: 20px;
       &::before,
       &::after {
         content: "-";
@@ -51,7 +53,6 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
     }
   }
 }
-
 .quote-img-wrap {
   position: relative;
   text-align: center;
@@ -91,16 +92,19 @@ $quote-blockquote-color: rgba(56, 54, 54, .12);
         font-size: 130px;
       }
       &::before {
-        top: -65px;
+        top: -80px;
         left: -40px;
       }
       &::after {
         bottom: -35px;
         right: -40px;
       }
-      cite {
-        margin-top: 20px;
-      }
     }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .mod-quote {
+    padding: 20% 0 260px;
   }
 }
