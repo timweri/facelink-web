@@ -72,9 +72,14 @@
   }
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1850px) {
   .bg-green-cta,
   .bg-green-quote {
-    padding-right: 58%;
+    transform: skewX(-47deg);
+    right: -54%;
+    padding-right: 59%;
+    &::after {
+      transform: skewX(47deg);
+    }
   }
 }

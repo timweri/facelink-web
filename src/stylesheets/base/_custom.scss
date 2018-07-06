@@ -138,9 +138,6 @@ h6,
   .page-internal {
     #main-content {
       padding-top: 93px;
-      max-width: 2000px;
-      margin: 0 auto;
-      overflow: hidden;
     }
   }
 
@@ -149,6 +146,13 @@ h6,
       padding-top: 92px;
     }
   }
+}
+
+.container-xl {
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
 }
 
 @media only screen and (max-device-width: 1024px) {
