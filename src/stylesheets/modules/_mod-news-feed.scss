@@ -140,8 +140,7 @@
   .news-feed-quote {
     text-align: left;
     overflow-x: visible;
-    margin-bottom: 20px;
-    padding: 90px 30px;
+    padding: 80px 30px 90px;
     &::before {
       @include position(absolute, $top:0, $right:10px, $index:0);
     }
