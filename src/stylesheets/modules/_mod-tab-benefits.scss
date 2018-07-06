@@ -5,7 +5,13 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
   background: $gray-bg;
   padding: 50px 0 40px;
   h3 {
+    @include position(relative, $index: 0);
+    width: 100%;
+    padding: 18px 0;
     letter-spacing: 1.5px;
+    margin: 0;
+    color: $white;
+    cursor: pointer;
   }
   .container {
     padding: 0;
@@ -15,12 +21,8 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
   }
   .col-left,
   .col-right {
-    @extend .col-12, .col-lg-6;
     position: relative;
     padding: 0;
-  }
-  .col-left {
-    @extend .d-none, .d-lg-block;
   }
   .is-open-tab {
     h3 {
@@ -33,20 +35,9 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
       }
     }
   }
-  h3 {
-    @include position(relative, $index: 0);
-    text-transform: uppercase;
-    width: 100%;
-    padding: 18px 0;
-    text-align: center;
-    margin: 0;
-    color: $white;
-    cursor: pointer;
-  }
   .tab-item {
     margin: 10px 0;
     >h3 {
-      @extend .d-lg-none, .d-block;
       background: $black;
     }
   }
