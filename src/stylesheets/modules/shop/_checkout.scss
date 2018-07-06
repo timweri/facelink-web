@@ -57,7 +57,6 @@ html#ecwid_html {
           .gwt-HTML {
             padding: 2px 0 0 30px;
           }
-          
           label {
             &::after,
             &::before {
@@ -250,6 +249,33 @@ html#ecwid_html {
       }
       .ecwid-productBrowser-price {
         @include font($os, 18px !important, $orange, 500 !important);
+      }
+    }
+    table.ecwid-Checkout-BreadCrumbs {
+      @include position(absolute, -150px, 0, null, 0);
+      width: 100%;
+      max-width: 740px;
+      .ecwid-Checkout-BreadCrumbs-point {
+        display: none;
+      }
+      div.ecwid-Checkout-BreadCrumbs-link {
+        @include font($font-family-base, 15px, $border-gray, 500);
+        margin: 20px 16px 0;
+        width: 158px;
+        padding-bottom: 22px;
+        border-bottom: solid 2px $border-gray;
+        text-align: center;
+        &.ecwid-Checkout-BreadCrumbs-link-visited {
+          border-bottom-color: $black;
+          color: $black;
+        }
+        &.ecwid-Checkout-BreadCrumbs-link-current {
+          border-bottom: solid 4px $blue;
+          color: $blue;
+        }
+      }
+      >tbody >tr:first-child {
+        display: none;
       }
     }
   }
