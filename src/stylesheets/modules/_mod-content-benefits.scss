@@ -16,12 +16,7 @@
     @include sizeEx(4000px, 76%);
     background: $color-c6;
   }
-  .col-left,
-  .col-right {
-    @extend .col-12;
-  }
   .col-left {
-    @extend .col-lg-6, .order-lg-1;
     line-height: 2;
     letter-spacing: 1.1px;
     *:last-child {
@@ -29,7 +24,6 @@
     }
   }
   .col-right {
-    @extend .col-lg-5, .offset-lg-1, .order-lg-2;
     margin-bottom: 53px;
   }
   .img-content {
@@ -43,7 +37,6 @@
 }
 
 .decor-bar {
-  @extend .d-none, .d-lg-flex;
   @include position(absolute, $right: 180%, $bottom: 100%);
   @include sizeEx(4000px, 177px);
   justify-content: flex-end;
