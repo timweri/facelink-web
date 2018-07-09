@@ -58,7 +58,7 @@
 }
 
 .shadowContainer {
-  @include position(absolute, $top: 0, $left:0)
+  @include position(absolute, $top: 0, $left:0);
   @include sizeEx(100%);
   pointer-events: none;
 }
