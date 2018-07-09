@@ -312,9 +312,6 @@ html#ecwid_html {
           }
         }
       }
-      div.ecwid-productBrowser-relatedProducts {
-        display: block;
-      }
     }
   }
 }
@@ -390,6 +387,9 @@ html#ecwid_html {
           border-right: 67px solid transparent;
           border-top: 67px solid $color-c6;
         }
+      }
+      div.ecwid-productBrowser-relatedProducts {
+        display: block;
       }
     }
   }

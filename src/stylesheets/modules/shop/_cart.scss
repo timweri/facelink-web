@@ -161,6 +161,12 @@ html#ecwid_html {
           }
         }
       }
+      div.ecwid-productBrowser-cart {
+        div.ecwid-productBrowser-backgroundedPanel {
+          min-width: 268px;
+          padding: 40px 40px 27px;
+        }
+      }
     }
   }
 }
