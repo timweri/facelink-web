@@ -1,9 +1,8 @@
 .mod-featured-news-post {
-  margin-top: 35px;
   color: $white;
   > .container {
     position: relative;
-    padding: 56px 0 49px;
+    padding: 56px 26px 49px;
     background-color: $orange;
     text-align: center;
     a {
@@ -17,6 +16,7 @@
     text-transform: uppercase;
     margin-bottom: 30px;
     letter-spacing: 1.8px;
+    font-size: rem(26);
   }
   .btn {
     margin-top: 12px;
@@ -30,6 +30,9 @@
 }
 @include media-breakpoint-up(lg) {
   .mod-featured-news-post {
+    h2 {
+      font-size: rem(30);
+    }
     > .container {
       padding: 60px 0 65px;
       &:hover {
