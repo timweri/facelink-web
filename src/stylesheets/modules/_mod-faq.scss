@@ -44,12 +44,10 @@
     }
   }
 }
-
 .faq-cat {
   width: 100%;
   margin: 0 !important;
 }
-
 .faq-item {
   padding: 0 16px;
   position: relative;
@@ -84,9 +82,14 @@
 .faq-opened {
   padding: 0 15px 0 40px;
   background-color: $menu-gray;
-  border-top: solid 2px $border-gray;
   margin-top: -2px;
   border-left: solid 5px $orange;
+  &::before {
+    @include sizeEx(calc(100% + 5px), 0);
+    @include position(absolute, $top: 0, $left: -5px);
+    border-bottom: solid 2px $border-gray;
+    content: "";
+  }
   h4 {
     position: relative;
     border-bottom: solid 2px transparent;
@@ -181,6 +184,9 @@
     margin-top: 2px;
     padding-left: 37px;
     padding-bottom: 0;
+    &::before {
+      content: none;
+    }
     &:first-child {
       margin-top: 0;
       h4 {
