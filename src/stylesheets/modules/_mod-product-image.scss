@@ -1,8 +1,7 @@
 .mod-product-image {
   position: relative;
+  z-index: 0;
   text-align: center;
-  //padding-bottom: 40px;
-  //margin-bottom: 50px;
   .btn {
     padding: 0 20px;
   }
@@ -23,9 +22,12 @@
   .mod-product-image {
     position: relative;
     .btn-wrap {
-      bottom: 12%;
+      bottom: 19%;
     }
     &~.mod-group-quote-cta {
+      margin-top: 28px;
+    }
+    &~.mod-group-quote-cta:not(.not-quote) {
       margin-top: -6%;
     }
   }
@@ -33,7 +35,7 @@
 
 @media (min-width: 2000px) {
   .mod-product-image {
-    &~.mod-group-quote-cta {
+    &~.mod-group-quote-cta:not(.not-quote) {
       margin-top: -150px;
     }
   }

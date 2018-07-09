@@ -84,10 +84,13 @@ const TabBenefits = (($) => {
             $otherParents.removeClass('is-open-tab')
           })
           $parent.addClass('is-open-tab')
-          $content.slideDown()
+          $content.slideDown(() => {
+            $('html, body').stop().animate({ scrollTop: $ele.offset().top - 65 }, 500)
+          })
           $desktopHeaders.removeClass('is-open-tab')
           $desktopHeaders.eq($parent.index()).addClass('is-open-tab')
         }
+        e.preventDefault()
       })
     }
 

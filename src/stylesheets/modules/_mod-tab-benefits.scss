@@ -5,7 +5,7 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
   background: $gray-bg;
   padding: 50px 0 40px;
   h3 {
-    @include position(relative, $index: 0);
+    @include position(relative, $index: 1);
     width: 100%;
     padding: 18px 0;
     letter-spacing: 1.5px;
@@ -42,6 +42,7 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
     }
   }
   .tab-content {
+    @include position(relative, $index: 0);
     display: none;
     background: $white;
     margin: 0 18px 30px;

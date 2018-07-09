@@ -3,6 +3,9 @@ $quote-blockquote-color: rgb(220, 220, 217);
   position: relative;
   margin-top: 20px;
   background: linear-gradient(to bottom, rgba(#eaece8, .1) 0%, #eaece8 80%, #eaece8 100%);
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: bottom;
   .centered-row {
     align-items: center;
     padding: 0;
