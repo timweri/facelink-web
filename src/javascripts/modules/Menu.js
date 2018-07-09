@@ -25,10 +25,19 @@ const Menu = (($) => {
       this.html = $('html')
       this.openMainMenu()
       this.closeWhenClickOutside()
+      this.scrollShadow()
     }
     // public api
     static get Default () {
       return Default
+    }
+
+    scrollShadow () {
+      $('.menu-wrap-inner').scroll((e) => {
+        let $ele = $(e.currentTarget)
+        if ($ele.scrollTop() > 20) $ele.addClass('shadow-top')
+        else $ele.removeClass('shadow-top')
+      })
     }
 
     closeWhenClickOutside () {
