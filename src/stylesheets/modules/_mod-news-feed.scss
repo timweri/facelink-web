@@ -9,6 +9,13 @@
   }
   .first-col-right {
     height: 1000px;
+    margin-bottom: 55px;
+  }
+  .first-col-left {
+    .news-feed-post {
+      margin-bottom: 63px;
+    }
+    margin-bottom: 49px;
   }
   > .container {
     > .row {
@@ -39,7 +46,6 @@
 }
 .news-feed-post {
   text-align: center;
-  margin: 50px 0 60px;
   padding: 0 15px;
   cursor: pointer;
   h2 {
@@ -69,7 +75,7 @@
   overflow-x: hidden;
   text-align: center;
   padding: 90px 23px;
-  margin: 0 -15px 40px;
+  margin: 0 -15px;
   &::before {
     @include sizeEx(4000px, 100%);
     @include position(absolute, $top:0, $right:0, $index:0);
@@ -101,6 +107,10 @@
 }
 .news-feed-post-col {
   @extend .col-12, .col-lg-6;
+  margin-bottom: 69px;
+}
+.news-feed-post-col:last-child {
+  margin-bottom: 66px;
 }
 .twitter-feed {
   @include sizeEx(100%);
@@ -117,6 +127,10 @@
     > .container {
       padding: 0;
     }
+    .first-col-left,
+    .first-col-right {
+      margin-bottom: 0;
+    }
     .first-col-left {
       padding-right: 15px;
       .news-feed-post {
@@ -130,7 +144,6 @@
   }
   .news-feed-post {
     text-align: left;
-    margin: 45px 0 55px;
     &:hover {
       .news-feed-image {
         img {
@@ -147,6 +160,7 @@
   }
   .news-feed-post-col {
     padding: 0 3px 0 15px;
+    margin: 70px 0 80px;
   }
   .news-feed-post-col:nth-child(even) {
     .news-feed-post {
@@ -156,7 +170,6 @@
   .news-feed-quote {
     text-align: left;
     overflow-x: visible;
-    margin-bottom: 0;
     padding: 80px 30px 90px;
     &::before {
       @include position(absolute, $top:0, $right:10px, $index:0);
