@@ -58,30 +58,38 @@
 }
 
 .shadowContainer {
-  @include position(absolute, $top: 0, $left:0)
-  @include sizeEx(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
 .myShadow {
-  @include position(absolute, $index: 1);
+  position: absolute;
+  z-index: 1;
 }
 
 .linearShadowTop {
-  @include position($top: 64px, $left: 0);
-  @include sizeEx(inherit, 10px);
-  background: linear-gradient(rgba(0, 0, 0, .3) 10%, rgba(255, 255, 255, 0)) 100% 0;
+  top: 64px;
+  left: 0;
+  background: linear-gradient(rgba(0,0,0,0.3) 10%, rgba(255, 255, 255, 0)) 100% 0;
   background-repeat: no-repeat;
   background-size: 100% 9px;
+  width: inherit;
+  height: 10px;
 }
 
 .shadowCoverTop {
-  @include position(relative, $index: 2);
-  @include sizeEx(100%, 5px);
   float: top;
-  background: linear-gradient(#f0f0f0 30%, rgba(255, 255, 255, 0)) 100% 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(#F0F0F0 30%, rgba(255, 255, 255, 0)) 100% 0;
   background-size: 100% 12px;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar-social {
