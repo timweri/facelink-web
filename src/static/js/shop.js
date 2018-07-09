@@ -42,41 +42,76 @@ var Shop = (function(){
 
   function setTitle() {
     var $title = $('.page-title__name');
+    var $titleBanner = $('.ecwid-productBrowser-head');
     var modShopHeader = $('.mod-shop-header');
-    if($title.length) {
+    if($title.length || $titleBanner.length) {
+      modShopHeader.remove();
       var txt = $title.html();
-      console.log(txt)
-      var dom = '<section class="module mod-shop-header">'
+      var txtBanner = $titleBanner.html()
+      if ((txt != '') && (txt != undefined)) {
+        var dom = '<section class="module mod-shop-header">'
         + '<div class="container">'
         +  '<h1>' + txt +'</h1>'
         // +  '<p>(2 items)</p>'
         + '</div>'
         + '</section>';
         $(dom).insertBefore("#ecwid_html .mod-content-editor");
+      }
+      if (txtBanner != '' && txtBanner != undefined) {
+        var dom = '<section class="module mod-shop-header">'
+        + '<div class="container">'
+        +  '<h1>' + txtBanner +'</h1>'
+        // +  '<p>(2 items)</p>'
+        + '</div>'
+        + '</section>';
+        $(dom).insertBefore("#ecwid_html .mod-content-editor");
+      }
     } else {
       modShopHeader.remove()
     }
   }
+  
   if ($("#ecwid_html").length) {
     Ecwid.OnPageLoaded.add(function(page) {
-      console.log(page.type)
       if(page.type == 'PRODUCT') {
-        $('.mod-content-editor').addClass('page-product');
+        $('body').addClass('page-product');
       } else {
-        $('.mod-content-editor').removeClass('page-product');
+        $('body').removeClass('page-product');
+      }
+      if(page.type == 'CART' || page.type == 'ORDER_CONFIRMATION') {
+        $('body').addClass('page-cart');
+      } else {
+        $('body').removeClass('page-cart');
       }
       if(page.type == 'CHECKOUT_PAYMENT_DETAILS' || page.type == 'CHECKOUT_PLACE_ORDER') {
-        $('.mod-content-editor').addClass('page-check-detail');
+        $('body').addClass('page-check-detail');
       } else {
-        $('.mod-content-editor').removeClass('page-check-detail');
+        $('body').removeClass('page-check-detail');
       }
+      function addRemoveClass() {
+        var $title = $('.page-title__name');
+        console.log(page.type , $title)
+        if (page.type == 'CATEGORY' && $title.length == 0 ) {
+          $('body').addClass('page-category')
+        } else {
+          $('body').removeClass('page-category')
+        }
+        if (page.type == 'CATEGORY' && $title.length) {
+          $('body').addClass('page-category-list')
+        } else {
+          $('body').removeClass('page-category-list')
+        }
+      }
+
       addListImageProduct();
       addModulePromotion();
       setTitle();
+      addRemoveClass();
+      
     });
   }
   function changePage(id, name) {
-    Ecwid.openPage('category', {'id': 29744019, 'name': "Gear", 'page': 1});
+    Ecwid.openPage('category', {'id': id, 'name': '"'+ name +'"', 'page': 1});
   }
   return {
     changePage: changePage

@@ -12,7 +12,7 @@
   }
   &::before {
     @include position(absolute, 0, 0, $index: -1);
-    @include sizeEx(100%, 41%);
+    @include sizeEx(100%, 50%);
     content: "";
     background: $color-c6;
   }

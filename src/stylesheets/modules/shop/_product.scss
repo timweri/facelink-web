@@ -220,18 +220,20 @@ html#ecwid_html {
   }
 }
 .page-product {
-  >.container {
-    max-width: none;
-  }
-  .ec-store__content-wrapper {
-    display: flex;
-    flex-flow: column;
-  }
-  .product-details {
-    order: 0;
-  }
-  .ec-related-products {
-    order: 2;
+  .mod-content-editor {
+    >.container {
+      max-width: none;
+    }
+    .ec-store__content-wrapper {
+      display: flex;
+      flex-flow: column;
+    }
+    .product-details {
+      order: 0;
+    }
+    .ec-related-products {
+      order: 2;
+    }
   }
 }
 @media screen and (min-width: 510px) {

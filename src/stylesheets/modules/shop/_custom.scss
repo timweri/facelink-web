@@ -15,7 +15,9 @@ html#ecwid_html {
       }
     }
     .page-check-detail {
-      margin-top: 140px;
+      .mod-content-editor {
+        margin-top: 140px;
+      }
     }
     select {
       appearance: none;
@@ -118,9 +120,9 @@ html#ecwid_html {
         line-height: 1.22;
         font-family: $os;
         padding: 70px 0 0;
-        margin: 110px 0 0;
+        margin: 110px 0;
         position: relative;
-        display: none;
+        // display: none;
         .container {
           position: relative;
           z-index: 1;
@@ -149,6 +151,11 @@ html#ecwid_html {
           text-transform: uppercase;
           margin-bottom: 0;
           letter-spacing: 2px;
+        }
+      }
+      .ec-related-products {
+        &~.mod-promotion {
+          margin-bottom: 0;
         }
       }
       .promo-overlay {
@@ -201,8 +208,27 @@ html#ecwid_html {
       display: none;
     }
   }
+  .ecwid-productBrowser-head {
+    display: none !important;
+  }
 }
-
+.page-category-list,
+.page-product,
+.page-cart,
+.page-check-detail {
+  .mod-banner,
+  .mod-shop-product {
+    display: none;
+  }
+}
+.page-category {
+  .ecwid {
+    display: none;
+  }
+  .mod-shop-header {
+    display: none;
+  }
+}
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
