@@ -45,7 +45,7 @@
     height: 54px;
     color: $black;
     padding-right: 135px;
-    border: 1px solid transparent;
+    border-bottom: 3px solid $white;
     &:focus {
       border-bottom: 3px solid $color-c6;
       padding-bottom: 3px;
@@ -54,7 +54,8 @@
   .form-group {
     &.error {
       .form-control {
-        border: 1px solid $red;
+        border-bottom: 3px solid $orange;
+        padding-bottom: 3px;
       }
       .messages-error {
         display: none;
