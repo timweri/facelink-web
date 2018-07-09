@@ -138,6 +138,7 @@ html#ecwid_html {
       @include position(absolute, 0, null, null, 0);
       @include sizeEx(100%);
       display: none;
+      overflow: hidden;
     }
     .list-category {
       .list-bg-product {
