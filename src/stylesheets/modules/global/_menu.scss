@@ -234,6 +234,11 @@
     &.is-open-menu {
       width: auto;
     }
+    .shadow-top {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   #header-logo {
