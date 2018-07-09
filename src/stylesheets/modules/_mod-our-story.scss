@@ -1,14 +1,16 @@
 .mod-our-story {
   position: relative;
   overflow-x: hidden;
-  margin: 60px auto 0;
+  margin: 60px auto 22px;
   h3 {
     font-family: $font-family-base;
     font-weight: 400;
-    margin-bottom: 29px;
+    margin-bottom: 22px;
+    font-size: rem(18);
   }
   p {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    line-height: 1.9;
     img {
       display: inline !important;
     }
@@ -112,6 +114,7 @@
     }
     .col-right {
       padding-top: 10px;
+      padding-right: 80px;
     }
     .solid-bg {
       @include position($top: -100px, $right: 20%);
