@@ -77,6 +77,8 @@ var Shop = (function(){
   }
   function changePage(id, name) {
     Ecwid.openPage('category', {'id': 29744019, 'name': "Gear", 'page': 1});
+    ecwid_ProductBrowserURL = '';
+    console.log(ecwid_ProductBrowserURL)
   }
   return {
     changePage: changePage
