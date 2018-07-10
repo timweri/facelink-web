@@ -41,6 +41,14 @@ html#ecwid_html {
             margin-top: 0;
           }
         }
+        .grid__products--appearance-hover {
+          .grid-product__picture {
+            filter: blur(0) !important;
+          }
+        }
+        .grid-product__shadow {
+          background: transparent !important;
+        }
         .product-details__product-price {
           @include font($size: 24px !important, $color: $orange, $weight: 500 );
         }
@@ -287,6 +295,7 @@ html#ecwid_html {
             .grid-product__wrap-inner {
               .grid-product__image {
                 transition: .25s all;
+                transform: scale(1) !important;
               }
               &:hover {
                 .grid-product__image {

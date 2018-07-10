@@ -62,6 +62,9 @@
   }
 }
 @include media-breakpoint-up(lg) {
+  .section-frame1 {
+    padding-top: 93px;
+  }
   .cont-frame1-primary {
     max-width: none;
     margin: 0;
