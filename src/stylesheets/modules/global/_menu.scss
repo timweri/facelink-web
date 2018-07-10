@@ -96,7 +96,9 @@
   width: 295px;
 
   .active {
-    color: $color-c6;
+    a {
+      color: $color-c6;
+    }
   }
 
   > li {
