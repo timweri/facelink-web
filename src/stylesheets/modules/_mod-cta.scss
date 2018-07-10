@@ -30,7 +30,6 @@
   h2 {
     @extend .style-h2;
     color: $black;
-    letter-spacing: 1.8px;
     text-transform: uppercase;
     margin-bottom: 30px;
   }
@@ -93,7 +92,7 @@
       letter-spacing: 1.4px;
     }
     h2 {
-      letter-spacing: 1.2px;
+      letter-spacing: 2.5px;
       margin-bottom: 18px;
     }
   }

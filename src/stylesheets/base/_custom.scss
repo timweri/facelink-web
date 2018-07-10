@@ -40,6 +40,21 @@ h6,
   font-family: $os;
 }
 
+h1,
+.h1 {
+  letter-spacing: 2px;
+}
+
+h2,
+.h2 {
+  letter-spacing: 1.8px;
+}
+
+h4,
+.h4 {
+  letter-spacing: 1.3px;
+}
+
 .clear {
   display: block;
   height: 0 !important;
@@ -104,11 +119,13 @@ h6,
   h1,
   .h1 {
     font-size: rem(55.7);
+    letter-spacing: 2.5px;
   }
 
   h2,
   .h2 {
     font-size: rem(30);
+    letter-spacing: 2px;
   }
 
   .style-h2 {
