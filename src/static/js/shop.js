@@ -18,7 +18,7 @@ var Shop = (function(){
       var productDetail = $('.product-details');
       var relatedProducts = $('.ec-related-products')
       var valHeight = '';
-      var promotion = $('.mod-promotion')[0].outerHTML;
+      
       $('.ec-store .mod-promotion').remove()
       if($(window).width() < 991) {
         valHeight = 40
@@ -26,6 +26,7 @@ var Shop = (function(){
         valHeight = 0
       }
       if(productDetail.length && modPromotion.length && relatedProducts.length) {
+        var promotion = $('.mod-promotion')[0].outerHTML;
         var top = relatedProducts.position().top - valHeight;
         var marginTop = modPromotion.innerHeight() + 110;
         relatedProducts.css('padding-top', marginTop);
@@ -35,6 +36,7 @@ var Shop = (function(){
         .css('top', top)
       }
       if(productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
+        var promotion = $('.mod-promotion')[0].outerHTML;
         $(promotion)
         .insertAfter(".ec-store__content-wrapper")
       }
