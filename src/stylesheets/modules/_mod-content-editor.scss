@@ -1,15 +1,19 @@
-.mod-editor {
-  > .container {
-    padding-top: 40px;
-    padding-bottom: 40px;
+.mod-content-editor {
+  margin: 40px auto;
+
+  img {
+    margin: 30px auto;
   }
 }
 
 @include media-breakpoint-up(lg) {
-  .mod-editor {
-    > .container {
-      padding-top: 80px;
-      padding-bottom: 70px;
+  .mod-content-editor {
+    margin: 50px auto;
+    img {
+      margin: 30px auto 50px;
+    }
+    p {
+      margin-bottom: 30px;
     }
   }
 }

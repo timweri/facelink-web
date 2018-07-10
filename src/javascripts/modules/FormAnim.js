@@ -24,10 +24,22 @@ const FormAnimation = (($) => {
       this.$module_items = $(`[data-module="${NAME}"]`)
       this.$form_controls = this.$module_items.find('.form-group').find('.form-control')
 
+      this.detectFocus()
       this.detectFill()
 
+      this.$form_controls.on('keyup change', this.animateLabelUp)
       this.$form_controls.focus(this.animateLabelUp)
       this.$form_controls.focusout(this.animateLabelDown)
+    }
+
+    detectFocus () {
+      $.each(this.$form_controls, (index, value) => {
+        let $this = $(value)
+        if ($this.is(':focus')) {
+          let $thisLabel = $this.parent().siblings('label')
+          $thisLabel.addClass('up')
+        }
+      })
     }
 
     detectFill () {
@@ -35,7 +47,6 @@ const FormAnimation = (($) => {
         let $this = $(value)
         if ($this.val()) {
           let $thisLabel = $this.parent().siblings('label')
-
           $thisLabel.addClass('up')
         }
       })
