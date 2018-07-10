@@ -127,6 +127,7 @@ html#ecwid_html {
           position: relative;
           z-index: 1;
           margin: 0 auto;
+          padding: 0 15px;
         }
         .icon-wrap {
           @include sizeEx(26px);
@@ -151,6 +152,13 @@ html#ecwid_html {
           text-transform: uppercase;
           margin-bottom: 0;
           letter-spacing: 2px;
+        }
+        &.position {
+          @include position(absolute, $left: 0, $right: 0);
+          width: 100%;
+          max-width: 2000px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
       .ec-related-products {

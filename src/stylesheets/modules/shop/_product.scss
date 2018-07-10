@@ -128,26 +128,28 @@ html#ecwid_html {
           }
         }
         .ec-related-products {
-          display: none;
-          margin: 110px auto 40px;
+          // display: none;
+          margin: 70px auto 40px;
+          background: #fff;
           .grid__products--classic {
-            padding-bottom: 0;
+            padding: 40px 0 0;
           }
           .ec-related-products__title {
             @include font($os, 30px, $black, 700);
             text-transform: uppercase;
             margin: 0;
             position: relative;
+            text-align: center !important;
             &::after {
               @include sizeEx(79px,5px);
               content: "";
               display: block;
               background: $color-c6;
-              margin-top: 25px;
+              margin: 25px auto 0;
             }
           }
           .grid-product {
-            width: 33.33% !important;
+            width: 100% !important;
           }
           .grid-product__title-inner {
             @include font($os, 18px, $black, 700);
@@ -165,7 +167,7 @@ html#ecwid_html {
             }
             .grid-product__wrap-inner {
               .grid-product__title {
-                margin-top: 35px;
+                margin-top: 25px;
               }
               .grid-product__price {
                 margin-top: 10px;
@@ -244,6 +246,21 @@ html#ecwid_html {
     }
   }
 }
+@include media-breakpoint-up(sm) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size {
+        .ec-store {
+          .ec-related-products {
+            .grid-product {
+              width: 50% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -274,6 +291,14 @@ html#ecwid_html {
         .ec-store {
           .ec-related-products {
             display: block;
+            margin: 110px 0 40px;
+            background: transparent;
+            .ec-related-products__title {
+              text-align: left !important;
+              &::after {
+                margin: 25px 0 0;
+              }
+            }
           }
         }
       }
@@ -314,6 +339,24 @@ html#ecwid_html {
             .details-gallery__thumb-img-wrapper {
               padding: 0 24px 8px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size {
+        .ec-store {
+          .grid__products--appearance-frame {
+            .grid-product__wrap {
+              padding: 24px 8px;
+            }
+          }
+          .ec-related-products__products {
+            padding: 0 55px 20px;
           }
         }
       }
