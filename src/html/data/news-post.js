@@ -3,7 +3,7 @@ module.exports = {
   banner: require('./modules/banner-media'),
   content_editor: {
     body: `<div class="center-content text-center" style="opacity: 1; transform: none;">
-    <img src="images/img-frame3.jpg">
+    <img src="images/banner-bg-shop.jpg">
     <h2 style="text-align: center;">Map Your Future</h2>
     <p style="text-align: left;">We asked ourselves one critical question when thinking about how best to grow Concept3D: What can we do to make this a place where we would want to work?</p>
     <h3 style="text-align: left;">Our answer?</h3>
