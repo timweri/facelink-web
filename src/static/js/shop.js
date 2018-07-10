@@ -70,7 +70,17 @@ var Shop = (function(){
       modShopHeader.remove()
     }
   }
-  
+  function changePage(id, name) {
+    Ecwid.openPage('category', {'id': id, 'name': '"'+ name +'"', 'page': 1});
+  }
+  function showLoading() {
+    var $overLoader = $('.over-loader')
+    $overLoader.removeClass('d-none')
+  }
+  function closeLoading() {
+    var $overLoader = $('.over-loader')
+    $overLoader.fadeOut()
+  }
   if ($("#ecwid_html").length) {
     Ecwid.OnPageLoaded.add(function(page) {
       if(page.type == 'PRODUCT') {
@@ -90,7 +100,6 @@ var Shop = (function(){
       }
       function addRemoveClass() {
         var $title = $('.page-title__name');
-        console.log(page.type , $title)
         if (page.type == 'CATEGORY' && $title.length == 0 ) {
           $('body').addClass('page-category')
         } else {
@@ -110,17 +119,7 @@ var Shop = (function(){
       closeLoading();
     });
   }
-  function changePage(id, name) {
-    Ecwid.openPage('category', {'id': id, 'name': '"'+ name +'"', 'page': 1});
-  }
-  function showLoading() {
-    var $overLoader = $('.over-loader')
-    $overLoader.removeClass('d-none')
-  }
-  function closeLoading() {
-    var $overLoader = $('.over-loader')
-    $overLoader.fadeOut()
-  }
+  
   return {
     changePage: changePage,
     showLoading: showLoading,
