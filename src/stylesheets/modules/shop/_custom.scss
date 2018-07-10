@@ -229,6 +229,14 @@ html#ecwid_html {
     display: none;
   }
 }
+// .mod-banner,
+// .mod-shop-product {
+//   &~.mod-content-editor {
+//     .ecwid {
+//       display: none;
+//     }
+//   }
+// }
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {

@@ -107,13 +107,23 @@ var Shop = (function(){
       addModulePromotion();
       setTitle();
       addRemoveClass();
-      
+      closeLoading();
     });
   }
   function changePage(id, name) {
     Ecwid.openPage('category', {'id': id, 'name': '"'+ name +'"', 'page': 1});
   }
+  function showLoading() {
+    var $overLoader = $('.over-loader')
+    $overLoader.removeClass('d-none')
+  }
+  function closeLoading() {
+    var $overLoader = $('.over-loader')
+    $overLoader.fadeOut()
+  }
   return {
-    changePage: changePage
+    changePage: changePage,
+    showLoading: showLoading,
+    closeLoading: closeLoading
   }
 })()
