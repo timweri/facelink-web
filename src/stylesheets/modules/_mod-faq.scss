@@ -21,7 +21,6 @@
   h4 {
     font-family: $font-family-base;
     line-height: 1.33;
-    letter-spacing: 1.3px;
     font-size: rem(17.7);
     &::after {
       font-weight: 100;
@@ -126,7 +125,6 @@
     h2 {
       padding: 28.5px 0;
       font-size: rem(30);
-      letter-spacing: 1.8px;
       left: -40px;
       &::before {
         right: -55px;
