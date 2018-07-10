@@ -451,8 +451,13 @@ html#ecwid_html {
           display: block;
           width: 100%;
         }
-        > tbody > tr:first-child {
-          display: block;
+        > tbody {
+          > tr:last-child {
+            display: block;
+            >td {
+              display: block;
+            }
+          }
         }
         div.ecwid-Checkout-BreadCrumbs-link {
           display: block;
@@ -478,6 +483,22 @@ html#ecwid_html {
           }
         }
       }
+      table.ecwid-Checkout-BreadCrumbs-Vertical {
+        > tbody {
+          > tr:first-child {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 648px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-productBrowser-CheckoutPaymentDetailsPage {
+        padding-bottom: 80px !important;
+      }
     }
   }
 }
@@ -488,9 +509,6 @@ html#ecwid_html {
         .ecwid-btn--address_book_sign_in {
           margin: 0;
         }
-      }
-      .ecwid-productBrowser-CheckoutPaymentDetailsPage {
-        padding-bottom: 40px !important;
       }
     }
   }
