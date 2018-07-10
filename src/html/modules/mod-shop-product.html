@@ -3,6 +3,7 @@
     <div class="shop-product-wrap d-flex flex-column flex-lg-row">
       {% set cur_product = shop_product.products[0] %}
       <div class="shop-product-left">
+        <a href="{{ cur_product.btn_link }}"></a>
         <div class="shop-product-title">
           <h2>
             {{ cur_product.title }}
@@ -18,9 +19,7 @@
           <div class="shop-product-orange-overlay d-lg-none">
             <img src="images/orange-slices.png" alt="Orange slices">
           </div>
-          <a href="#">
-            <img class="shop-product-image" data-src="{{ cur_product.image }}" src="" alt="Product">
-          </a>
+          <img class="shop-product-image" data-src="{{ cur_product.image }}" src="" alt="Product">
         </div>
         <p>
           <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
@@ -28,6 +27,7 @@
       </div>
       {% set cur_product = shop_product.products[1] %}
       <div class="shop-product-right">
+        <a href="{{ cur_product.btn_link }}"></a>
         <div class="shop-product-title">
           <h2>
             {{ cur_product.title }}
@@ -37,9 +37,7 @@
           <div class="shop-product-cap-overlay">
             <img src="images/cap.png" alt="Cap">
           </div>
-          <a href="#">
-            <img class="shop-product-image" data-src="{{ cur_product.image }}" src="" alt="Gear">
-          </a>
+          <img class="shop-product-image" data-src="{{ cur_product.image }}" src="" alt="Gear">
         </div>
         <p>
           <a class="btn btn-primary" href="{{ cur_product.btn_link }}">{{ cur_product.btn_text }}</a>
