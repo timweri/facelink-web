@@ -18,7 +18,6 @@ var Shop = (function(){
       var productDetail = $('.product-details');
       var relatedProducts = $('.ec-related-products')
       var valHeight = '';
-      
       $('.ec-store .mod-promotion').remove()
       if($(window).width() < 991) {
         valHeight = 40
@@ -28,7 +27,7 @@ var Shop = (function(){
       if(productDetail.length && modPromotion.length && relatedProducts.length) {
         var promotion = $('.mod-promotion')[0].outerHTML;
         var top = relatedProducts.position().top - valHeight;
-        var marginTop = modPromotion.innerHeight() + 110;
+        var marginTop = modPromotion.innerHeight() + 90;
         relatedProducts.css('padding-top', marginTop);
         $(promotion)
         .insertAfter(".ec-store__content-wrapper")
@@ -93,11 +92,11 @@ var Shop = (function(){
   }
   if ($("#ecwid_html").length) {
     Ecwid.OnPageLoad.add(function(page) {
-      console.log(page.type)
+      // console.log(page.type)
       showLoading();
     })
     Ecwid.OnPageLoaded.add(function(page) {
-      console.log(page.type)
+      // console.log(page.type)
       if(page.type == 'PRODUCT') {
         $('body').addClass('page-product');
       } else {

@@ -17,6 +17,9 @@ html {
   margin: 0 auto !important;
   overflow-x: hidden;
   background-color: $black;
+  &[class] {
+    margin-top: 0 !important;
+  }
 }
 
 body {
