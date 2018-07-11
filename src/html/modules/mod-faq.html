@@ -2,12 +2,12 @@
   <div class="container">
     {% for category in faq_data.categories %}
       <div class="row faq-cat">
-        <div class="col-left">
+        <div class="col-left col-12 col-lg-4">
           <h2>
             {{ category.title }}
           </h2>
         </div>
-        <div class="col-right">
+        <div class="col-right col-12 col-lg-8">
           {% for item in category.items %}
             <div class="faq-item faq-closed">
               <h4>{{ item.question }}</h4>

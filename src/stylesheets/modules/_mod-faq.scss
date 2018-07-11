@@ -4,14 +4,9 @@
   margin: 64px 0 0;
   .col-left,
   .col-right {
-    @extend .col-12;
     padding: 0;
   }
-  .col-left {
-    @extend .col-lg-4;
-  }
   .col-right {
-    @extend .col-lg-8;
     margin-top: 20px;
     margin-bottom: 70px;
   }

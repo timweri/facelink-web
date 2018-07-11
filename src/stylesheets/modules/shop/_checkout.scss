@@ -278,6 +278,13 @@ html#ecwid_html {
         display: none;
       }
     }
+    .ecwid-PaymentCommentsBlock {
+      .ecwid-PaymentCommentsBlock-textarea {
+        border: 0;
+        height: 289px;
+        padding: 25px 20px;
+      }
+    }
   }
 }
 
@@ -390,6 +397,11 @@ html#ecwid_html {
       }
       div.ecwid-productBrowser-relatedProducts {
         display: block;
+      }
+      .ecwid-PaymentCommentsBlock {
+        .ecwid-PaymentCommentsBlock-textarea {
+          padding: 25px 40px;
+        }
       }
     }
   }
