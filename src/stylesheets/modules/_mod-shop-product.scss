@@ -235,3 +235,15 @@
     transform: translateX(43%) translateY(60px) scale(1.2) translateZ(0);
   }
 }
+
+@media (min-width: 1500px) {
+  .shop-product-cap-overlay {
+    transform: translateX(43%) translateY(60px) scale(1.2) translateZ(0);
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1600px) {
+  .shop-product-cap-overlay {
+    transform: translateX(15%) translateY(60px) scale(1.2) translateZ(0);
+  }
+}
