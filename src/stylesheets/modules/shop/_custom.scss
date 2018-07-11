@@ -220,23 +220,29 @@ html#ecwid_html {
     display: none !important;
   }
 }
-.page-category-list,
-.page-product,
-.page-cart,
-.page-check-detail {
+#ecwid_body {
+  .mod-content-editor {
+    margin: 0 auto;
+  }
+  &.page-category {
+    .mod-banner,
+    .mod-shop-product {
+      display: block;
+    }
+    .mod-content-editor,
+    .ecwid {
+      display: none;
+    }
+    .mod-shop-header {
+      display: block;
+    }
+  }
   .mod-banner,
   .mod-shop-product {
     display: none;
   }
 }
-.page-category {
-  .ecwid {
-    display: none;
-  }
-  .mod-shop-header {
-    display: none;
-  }
-}
+
 // .mod-banner,
 // .mod-shop-product {
 //   &~.mod-content-editor {

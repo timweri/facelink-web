@@ -36,8 +36,10 @@ var Shop = (function(){
       }
       if(productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
         var promotion = $('.mod-promotion')[0].outerHTML;
-        $(promotion)
-        .insertAfter(".ec-store__content-wrapper")
+        modPromotion.addClass('d-block')
+        // .insertAfter(".ec-store__content-wrapper")
+      } else {
+        modPromotion.removeClass('d-block')
       }
     })
     
