@@ -18,6 +18,7 @@
 
 .footer-top {
   padding: 0 15px;
+  margin-bottom: 50px;
 }
 
 .footer-item-col-mb {
@@ -68,7 +69,6 @@
 }
 
 .footer-menu {
-  margin-bottom: 50px;
   li {
     margin-bottom: 18px;
     line-height: 1.8;
@@ -120,6 +120,11 @@
   }
   .footer-top {
     padding: 0;
+    margin-bottom: 0;
+  }
+
+  .footer-menu {
+    margin-bottom: 50px;
   }
 }
 
