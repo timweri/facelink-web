@@ -17,7 +17,6 @@
 .shop-product-left,
 .shop-product-right {
   width: 100%;
-  text-align: center;
   position: relative;
   > a {
     @include position(absolute, $top: 0, $left: 0, $index:5);
