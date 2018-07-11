@@ -4,8 +4,8 @@
       {% for list in list_instagram %}
       <div class="row row-insta{{loop.index}}">
         {% for col in list.col_instagram %}
-        <div class="col-insta col-insta{{loop.index}}">
-          <div class="row-col-insta">
+        <div class="col-insta col-insta{{loop.index}} col-lg-6">
+          <div class="row-col-insta row">
             <div class="col-item col-large">
               {% for item in col.list_item %}
                 {% if loop.index == 1 %}
@@ -18,7 +18,7 @@
               {% endfor %}
             </div>
             <div class="col-item col-small">
-              <div class="row-item-insta">
+              <div class="row-item-insta row">
                 {% for item in col.list_item %}
                   {% if loop.index > 1 %}
                   <div class="item-insta item-insta{{loop.index}}">

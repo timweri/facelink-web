@@ -26,15 +26,19 @@
   .icomoon {
     font-size: rem(35);
   }
-}
-.col-insta {
-  @extend .col-lg-6;
-  padding: 0;
-  .col-item {
-    max-width: 50%;
-    flex: 50%;
+  .row-col-insta,
+  .row-item-insta {
+    margin: 0;
+  }
+  .col-insta {
+    padding: 0;
+    .col-item {
+      max-width: 50%;
+      flex: 50%;
+    }
   }
 }
+
 .col-small {
   .item-insta {
     max-width: 50%;
@@ -44,11 +48,7 @@
 .box-img-insta {
   @include background-size(cover);
 }
-.row-col-insta,
-.row-item-insta {
-  @extend .row;
-  margin: 0;
-}
+
 .insta-link-wrap {
   padding: 6px;
   .row-insta1,
