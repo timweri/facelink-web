@@ -3,7 +3,7 @@
     <div class="row">
       {% for post in news_feed.list_news_feed %}
         {% if loop.index == 1 %}
-          <div class="first-col-left">
+          <div class="first-col-left col-12 col-lg-6">
             <div class="news-feed-post">
               <a href="{{ post.link }}"></a>
               <div class="news-feed-image">
@@ -24,11 +24,11 @@
               {{ news_feed.quote }}
             </div>
           </div>
-          <div class="first-col-right order-first order-lg-0">
+          <div class="first-col-right col-12 col-lg-6 order-first order-lg-0">
             <div class="twitter-feed" style="background-image: url(images/twitter-feed.jpg);"></div>
           </div>
         {% else %}
-          <div class="news-feed-post-col">
+          <div class="news-feed-post-col col-12 col-lg-6">
             <div class="news-feed-post">
               <a href="{{ post.link }}"></a>
               <div class="news-feed-logo">

@@ -3,10 +3,6 @@
   .btn {
     padding: 0 33px;
   }
-  .first-col-right,
-  .first-col-left {
-    @extend .col-12, .col-lg-6;
-  }
   .first-col-right {
     height: 1000px;
     margin-bottom: 55px;
@@ -104,7 +100,6 @@
   }
 }
 .news-feed-post-col {
-  @extend .col-12, .col-lg-6;
   margin-bottom: 69px;
 }
 .news-feed-post-col:last-child {
