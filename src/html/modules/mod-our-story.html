@@ -1,21 +1,21 @@
 <section class="module mod-our-story container-xl lazyload-image">
-  <div class="os-headline-wrap">
+  <div class="os-headline-wrap text-center">
     <h2 class="os-headline">
       {{ our_story.headline }}
     </h2>
     <div class="line"></div>
   </div>
   <div class="container">
-    <div class="centered-row">
-      <div class="col-left">
+    <div class="centered-row row">
+      <div class="col-left text-right">
         <div class="solid-bg"></div>
         <div class="row">
-          <div class="pic-wrap">
+          <div class="pic-wrap col-9 offset-3 col-lg-10 offset-lg-2">
             <div class="img-content" style="background-image: url({{ our_story.image }});"></div>
           </div>
         </div>
       </div>
-      <div class="col-right">
+      <div class="col-right col-12 col-lg-6">
         {{ our_story.body }}
       </div>
     </div>

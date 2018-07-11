@@ -8,12 +8,7 @@
   .btn-wrap {
     @include position(absolute, $left:0, $right:0, $bottom: 15%);
   }
-  .image-sm-wrap {
-    @extend .d-md-none;
-  }
   .image-lg-wrap {
-    @extend .d-none;
-    @extend .d-md-block;
     text-align: center;
   }
 }

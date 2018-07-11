@@ -24,28 +24,14 @@ $number-per-row-lg: 5;
   }
   .icon-wrap {
     @include sizeEx(26px);
-    display: inline-flex;
     margin-bottom: 25px;
-    justify-content: center;
-
-    img {
-      align-self: center;
-    }
   }
-
-  .promo-overlay {
-    @extend .d-none, .d-lg-block;
-  }
-
   .promo-item {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 61px;
+    margin: 20px 0 61px;
     padding: 0 10px;
   }
-
   p {
-    text-transform: uppercase;
     margin-bottom: 0;
     letter-spacing: 2.5px;
   }

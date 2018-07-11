@@ -16,11 +16,9 @@
     }
   }
   .pic-wrap {
-    @extend .col-9, .offset-3, .col-lg-10, .offset-lg-2;
     padding: 0;
   }
   .centered-row {
-    @extend .row;
     align-items: center;
     margin-top: 125px;
   }
@@ -31,7 +29,6 @@
     background: $color-c6;
   }
   .col-left {
-    @extend .text-right;
     position: relative;
     flex: 0 0 90%;
     max-width: 90%;
@@ -39,7 +36,6 @@
     margin-bottom: 53px;
   }
   .col-right {
-    @extend .col-12, .col-lg-6;
     line-height: 2;
     letter-spacing: 1.1px;
     * {
@@ -59,7 +55,6 @@
 }
 
 .os-headline-wrap {
-  @extend .text-center;
   margin: 0 auto 43px;
   max-width: 360px;
   .line {

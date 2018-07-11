@@ -1,10 +1,10 @@
 <section class="module mod-product-image container-xl lazyload-image">
   <div class="container">
-    <div class="image-lg-wrap">
+    <div class="image-lg-wrap d-none d-md-block">
       <a href="{{ product.btn_link }}"><img class="d-inline-block" src="{{ product.image_lg }}" alt="{{ product.btn_text }}"></a>
     </div>
   </div>
-  <div class="image-sm-wrap">
+  <div class="image-sm-wrap d-md-none">
     <a href="{{ product.btn_link }}"><img class="w-100" src="{{ product.image_sm }}" alt="{{ product.btn_text }}"></a>
   </div>
   <div class="btn-wrap">
