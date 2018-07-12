@@ -101,8 +101,12 @@ var Shop = (function(){
       // console.log(page.type)
       if(page.type == 'PRODUCT') {
         $('body').addClass('page-product');
+        if($('.details-gallery--one-image').length <= 0) {
+          $('.product-details').addClass('muti-item')
+        }
       } else {
         $('body').removeClass('page-product');
+        $('.product-details').addClass('muti-item')
       }
       if(page.type == 'CART' || page.type == 'ORDER_CONFIRMATION') {
         $('body').addClass('page-cart');
