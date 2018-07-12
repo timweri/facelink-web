@@ -31,7 +31,7 @@ html#ecwid_html {
             background: $orange;
             border: 0;
             text-transform: uppercase;
-            min-height: 35px;
+            min-height: 40px;
             margin: 0;
             box-shadow: none;
             &::before {
@@ -52,7 +52,7 @@ html#ecwid_html {
       &.ec-size--l {
         .ec-store {
           .form-control__button {
-            min-height: 35px;
+            min-height: 40px;
           }
           .ec-related-products {
             .ec-related-products__title {
