@@ -40,11 +40,17 @@
     }
   }
   .icon {
+    position: relative;
     width: 36px;
+    padding-right: 36px;
+    padding-top: 36px;
     margin: 0 13px;
     img {
+      position: absolute;
+      left: 50%;
+      top: calc(50% + 2px);
       display: block;
-      margin: 0 auto;
+      transform: translateX(-50%) translateY(-50%);
     }
   }
   span {

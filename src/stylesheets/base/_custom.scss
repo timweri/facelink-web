@@ -25,6 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.news-link {
+  margin-top: 25px;
+  .icon-chevron-left {
+    @include position(relative, $top: 2.5px);
+    font-size: rem(20);
+  }
+}
+
 h1,
 h2,
 h3,
