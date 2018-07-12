@@ -92,6 +92,9 @@ var Shop = (function(){
       })
     }, 500)
   }
+  function setLocalStorage() {
+    localStorage.setItem("ecwid-product", true);
+  }
   if ($("#ecwid_html").length) {
     Ecwid.OnPageLoad.add(function(page) {
       // console.log(page.type)
@@ -104,9 +107,16 @@ var Shop = (function(){
         if($('.details-gallery--one-image').length <= 0) {
           $('.product-details').addClass('muti-item')
         }
+        // if(localStorage.getItem("ecwid-product") == "true") {
+        //   location.reload();
+        //   localStorage.removeItem("ecwid-product");
+        // } else {
+        //   closeLoading()
+        // }
       } else {
         $('body').removeClass('page-product');
         $('.product-details').addClass('muti-item')
+        // closeLoading()
       }
       if(page.type == 'CART' || page.type == 'ORDER_CONFIRMATION') {
         $('body').addClass('page-cart');
@@ -136,7 +146,7 @@ var Shop = (function(){
       addModulePromotion();
       setTitle();
       addRemoveClass();
-      closeLoading();
+      closeLoading()
     });
    
   }
@@ -150,6 +160,7 @@ var Shop = (function(){
   return {
     changePage: changePage,
     showLoading: showLoading,
-    closeLoading: closeLoading
+    closeLoading: closeLoading,
+    setLocalStorage: setLocalStorage
   }
 })()

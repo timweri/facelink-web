@@ -76,6 +76,9 @@
 
 .shop-product-image-wrap {
   @include position(relative, $index: 0);
+  a {
+    display: block;
+  }
 }
 
 .shop-product-image {
