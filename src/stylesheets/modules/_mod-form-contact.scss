@@ -1,3 +1,7 @@
+.parsley-errors-list{
+  display: none;
+}
+
 .mod-form-contact {
   position: relative;
   background-color: $orange;
@@ -64,23 +68,6 @@
   }
   textarea.form-control {
     height: 93px;
-  }
-  .parsley-errors-list{
-    position: absolute;
-    right: 0;
-    bottom: -10px;
-    font-size: 12px;
-    color: #f15e2d;
-    font-style: normal;
-    padding: 2px 6px;
-    margin-top: 2px;
-    list-style-type: none;
-    li{
-      padding: 2px 6px;
-      background: #fff;
-      border-radius: 3px;
-      box-shadow: 1px 1px 3px #f15e2d;
-    }
   }
 }
 
