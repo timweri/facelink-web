@@ -1,1 +1,29 @@
 // page
+.pagination {
+  text-align: center;
+  list-style: none;
+  display: block;
+  padding: 0;
+  .icomoon::before {
+    position: relative;
+    top: 1px;
+  }
+  .page-item {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 5px;
+    &:not(.page-arrow) {
+      border: solid 2px transparent;
+    }
+    &:not(.page-arrow).active,
+    &:not(.page-arrow):hover {
+      border: solid 2px $orange;
+      border-radius: 50%;
+    }
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

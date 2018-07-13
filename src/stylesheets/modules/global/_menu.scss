@@ -292,6 +292,13 @@
           }
         }
       }
+
+      > a.cart-btn {
+        &::before {
+          width: calc(100% - 10px);
+          left: 4px;
+        }
+      }
     }
   }
 
