@@ -207,3 +207,7 @@ var Shop = (function(){
     setLocalStorage: setLocalStorage
   }
 })()
+
+Ecwid.OnCartChanged.add(function(cart) {
+    $(".cart-badge b").html(cart.productsQuantity);
+});
