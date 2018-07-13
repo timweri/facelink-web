@@ -210,4 +210,5 @@ var Shop = (function(){
 
 Ecwid.OnCartChanged.add(function(cart) {
     $(".cart-badge b").html(cart.productsQuantity);
+    
 });
