@@ -263,11 +263,15 @@ html#ecwid_html {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       div.ecwid-productBrowser-cart-EnterCouponBox {
-        div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-          position: static;
+        div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+          padding-right: 0;
         }
         div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
-          padding-left: 0;
+          button {
+            bottom: -65px;
+            left: 0;
+            margin: auto;
+          }
         }
       }
     }
