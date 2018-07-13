@@ -223,6 +223,9 @@ Ecwid.OnCartChanged.add(function(cart) {
     if(cart.productsQuantity > 99){
         number = "99+";
     }
+    if(cart.productsQuantity < 1){
+        number = "0";
+    }
     $(".cart-badge b").html(number);
 
 });
