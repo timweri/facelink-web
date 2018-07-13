@@ -1,7 +1,5 @@
 var Shop = (function(){
   var body = $('body')
-  var titleProductDetail = 'Briq Supplements';
-  var titleCategory = 'Briq Gear';
   function addListImageProduct() {
     var $modContentEditor = $('.mod-content-editor');
     $modContentEditor.removeClass('list-category');
@@ -34,7 +32,7 @@ var Shop = (function(){
         var marginTop;
         if(modPromotionDouble.length) {
           marginTop = modPromotionDouble.innerHeight() + 90;
-          // console.log(1)
+          console.log(1)
           modPromotionDouble.css('top', top)
         } else {
           marginTop = modPromotion.innerHeight() + 90;
@@ -43,9 +41,9 @@ var Shop = (function(){
           .insertAfter(".ec-store__content-wrapper")
           .addClass('position')
           .css('top', top)
-          // console.log(2)
+          console.log(2)
         }
-        // console.log(marginTop)
+        console.log(marginTop)
         
       }
       if(productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
@@ -83,7 +81,6 @@ var Shop = (function(){
         + '</section>';
         $(dom).insertBefore("#ecwid_html .mod-content-editor");
       }
-      
     } else {
       modShopHeader.remove()
     }
@@ -124,48 +121,41 @@ var Shop = (function(){
           location.reload();
           localStorage.removeItem("ecwid-product");
         } else {
-          setTimeout(function() {
-            var product = $('.grid__products')
-            var relatedProduct = $('.ec-related-products__products')
-            if(relatedProduct.length) {
-              var html = $('.ec-related-products__products')[0].outerHTML
-              $('.ec-related-products__products').eq(0).addClass('d-none');
-              $('.ec-related-products').append(html)
-              setTimeout(function(){
-                if(product.length) {
-                  $('.ec-related-products__products').eq(1).find('.grid__products').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    prevArrow: '<button type="button" class="slick-prev slick-arrow"><span class="icomoon icon-chevron-left"></span></button>',
-                    nextArrow: '<button type="button" class="slick-next slick-arrow"><span class="icomoon icon-chevron-right"></span></button>',
-                    responsive: [
-                      {
-                        breakpoint: 768,
-                        settings: {
-                          slidesToShow: 2
-                        }
-                      },
-                      {
-                        breakpoint: 480,
-                        settings: {
-                          slidesToShow: 1
-                        }
-                      }
-                    ]
-                  })
-                }
-              })
-            }
-            var dom = '<section class="module mod-shop-header">'
-            + '<div class="container">'
-            +  '<h1>' + titleProductDetail +'</h1>'
-            + '</div>'
-            + '</section>';
-            $(dom).insertBefore("#ecwid_html .mod-content-editor");
-          }, 1000)
           closeLoading()
         }
-        
+        setTimeout(function() {
+          var product = $('.grid__products')
+          var relatedProduct = $('.ec-related-products__products')
+          if(relatedProduct.length) {
+            var html = $('.ec-related-products__products')[0].outerHTML
+            $('.ec-related-products__products').eq(0).addClass('d-none');
+            $('.ec-related-products').append(html)
+            setTimeout(function(){
+              if(product.length) {
+                $('.ec-related-products__products').eq(1).find('.grid__products').slick({
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  prevArrow: '<button type="button" class="slick-prev slick-arrow"><span class="icomoon icon-chevron-left"></span></button>',
+                  nextArrow: '<button type="button" class="slick-next slick-arrow"><span class="icomoon icon-chevron-right"></span></button>',
+                  responsive: [
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 2
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        slidesToShow: 1
+                      }
+                    }
+                  ]
+                })
+              }
+            })
+          }
+        }, 1000)
       } else {
         body.removeClass('page-product');
         $('.product-details').addClass('muti-item')
@@ -223,9 +213,5 @@ Ecwid.OnCartChanged.add(function(cart) {
     if(cart.productsQuantity > 99){
         number = "99+";
     }
-    if(cart.productsQuantity < 1){
-        number = "0";
-    }
     $(".cart-badge b").html(number);
-
 });
