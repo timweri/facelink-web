@@ -31,7 +31,7 @@ html#ecwid_html {
         padding: 6px 3px;
         text-align: center !important;
         margin: 14px 0 30px;
-        border-color: $color-c5;
+        border: 1px solid $color-c5;
       }
     }
     div.ecwid-productBrowser-productNameLink a {
@@ -88,8 +88,58 @@ html#ecwid_html {
         margin: 20px 0 85px;
       }
     }
+   
     div.ecwid-productBrowser-backgroundedPanel {
       background: $menu-gray;
+    }
+    div.ecwid-productBrowser-cart-EnterCouponBox {
+      background: $menu-gray;
+      padding: 38px 25px !important;
+      margin: 0 0 30px;
+      position: relative;
+      div {
+        vertical-align: middle;
+      }
+      table {
+        width: 100% !important;
+      }
+      .ecwid-fieldEnvelope-around {
+        input {
+          height: 40px !important;
+          max-width: 100%;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: 40px;
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+        width: 100%;
+        position: relative;
+        padding-left: 130px;
+        button {
+          @include position(absolute, 0, 0, null, null);
+          width: 140px;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+        margin-right: 0;
+        width: 100%;
+        padding-right: 170px;
+        div {
+          width: 100%;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls,
+      .ecwid-btn--secondary {
+        vertical-align: middle;
+      }
+      .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        @include font(null, 15px, $black);
+        margin-right: 30px;
+      }
     }
   }
 }
@@ -157,6 +207,31 @@ html#ecwid_html {
           margin: 100px 0 70px;
         }
       }
+      td.ecwid-productBrowser-cart-itemsTable-headerCell {
+        padding: 0 50px;
+      }
+      .ecwid-productBrowser-cart-itemsTable-cell-qty {
+        * {
+          width: 100%;
+        }
+        table {
+          table {
+            td {
+              &:first-child {
+                width: 0;
+              }
+              &:last-child {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      div.ecwid-productBrowser-cart {
+        input.ecwid-productBrowser-cart-qtyTextField {
+          margin: 0 auto;
+        }
+      }
     }
   }
 }
@@ -207,6 +282,24 @@ html#ecwid_html {
       table.ecwid-productBrowser-cart-estimation {
         width: 100%;
         max-width: 375px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+          padding-right: 0;
+        }
+        div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+          button {
+            bottom: -65px;
+            left: 0;
+            margin: auto;
+          }
+        }
       }
     }
   }

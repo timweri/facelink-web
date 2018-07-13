@@ -50,7 +50,7 @@ $hover-colors: hover-color-add("white4", $white, $orange, $orange, $white);
     }
     span:nth-child(1) {
       position: relative;
-      z-index: 1;
+      z-index: -1;
       color: map-get($hover-color-settings, norm-color);
       width: 100%;
     }
