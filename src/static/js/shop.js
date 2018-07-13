@@ -217,3 +217,12 @@ var Shop = (function(){
     setLocalStorage: setLocalStorage
   }
 })()
+
+Ecwid.OnCartChanged.add(function(cart) {
+    var number = cart.productsQuantity;
+    if(cart.productsQuantity > 99){
+        number = "99+";
+    }
+    $(".cart-badge b").html(number);
+
+});
