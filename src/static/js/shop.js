@@ -209,6 +209,10 @@ var Shop = (function(){
 })()
 
 Ecwid.OnCartChanged.add(function(cart) {
-    $(".cart-badge b").html(cart.productsQuantity);
-    
+    var number = cart.productsQuantity;
+    if(cart.productsQuantity > 99){
+        number = "99+";
+    }
+    $(".cart-badge b").html(number);
+
 });
