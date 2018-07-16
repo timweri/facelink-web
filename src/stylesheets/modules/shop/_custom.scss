@@ -111,6 +111,10 @@ html#ecwid_html {
       }
       .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
         border: 3px solid $orange;
+        &:focus,
+        &:focus:active {
+          border: 3px solid $orange;
+        }
       }
       .mod-promotion {
         background-position: center center;
