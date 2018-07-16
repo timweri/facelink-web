@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-const SignUp = (($) => {
+const Signup = (($) => {
   const NAME = 'sign-up'
   const DATA_KEY = `bs.${NAME}`
   const EVENT_KEY = `.${DATA_KEY}`
@@ -17,45 +17,48 @@ const SignUp = (($) => {
     DATA_MODULE: `[data-module="${NAME}"]`
   }
 
-  class SignUp {
+  class Signup {
     constructor (element, config) {
       this._element = $(element)
       this._config = this._getConfig(config)
-      this.validateSignUp()
+      this.validateContact()
     }
 
-    validateSignUp () {
+    validateContact () {
       var func = this
-      var signUpForm = $('.form-cta .contact-form')
-      signUpForm.parsley()
-      $('#btn-signup').on('click submit', function () {
-        if (signUpForm.parsley().isValid()) {
-          func.processFormContact(signUpForm)
+      var signupForm = $('.mod-cta .contact-form')
+      signupForm.parsley()
+      signupForm.append('<div class="wait-loading-app"></div>')
+      $('#btn-signup').on('click', function () {
+        if (signupForm.parsley().isValid()) {
+          func.processFormContact(signupForm)
         } else {
-          if ($('#email_cta').val() === '') {
-            $('#email_cta').addClass('error')
+          let formGroup = signupForm.find('.group-contact')
+          if (formGroup.length) {
+            signupForm.parsley().on('form:error', function () {
+              formGroup.each(function (index, item) {
+                if (!$(item).hasClass('parsley-error')) {
+                  $(this).addClass('parsley-error')
+                }
+                $(item).find('.parsley-errors-list').remove()
+              })
+            })
           }
         }
       })
-
-      $('#email_cta').on('keyup keypress', function (e) {
-        if (signUpForm.parsley().isValid() === true) {
-          $(this).removeClass('error')
-        } else {
-          $(this).addClass('error')
-        }
-      })
     }
-
-      /*
+    /*
      * main method contact submit
      */
     processFormContact (object) {
-      var isClick = $(object).find('.submit').data('isClick') // do not allow spam
+      var isClick = false
       if (isClick == true) { // eslint-disable-line
         return false
       } else {
-        $(object).find('.submit').data('isClick', true)
+        isClick = true
+        console.log('object', object)
+        $(object).find('.wait-loading-app').hide()
+        $(object).find('.wait-loading-app').show()
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
         $.ajax({
           type: 'POST',
@@ -66,25 +69,28 @@ const SignUp = (($) => {
             $(object).find('button[type=submit]').prop('disabled', true)
           },
           success: function (data) {
+            $(object).find('.wait-loading-app').hide()
             $(object).find('button[type=submit]').prop('disabled', false)
+            isClick = false
+            console.log('data success', data)
           },
-          error: function () {
+          error: function (data) {
+            console.log('error', data)
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<div class="message-form">' + $('.response-fail-send').html() + '</div>')
+            // $(object).html('<div class="message-form">' + $('.form-cta .response-fail-send').html() + '</div>')
           },
           complete: function (xhr, data) {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<div class="message-form">' + $('.response-success-send').html() + '</div>')
+            console.log('data complete', data)
+            // $(object).html('<div class="message-form">' + $('.form-cta .response-success-send').html() + '</div>')
           }
         })
         return false
       }
-
-      return false // eslint-disable-line
     }
 
     _getConfig (config) {
@@ -102,7 +108,7 @@ const SignUp = (($) => {
         )
         let data = $element.data(DATA_KEY)
         if (!data) {
-          data = new SignUp(this, _config)
+          data = new Signup(this, _config)
           $element.data(DATA_KEY, data)
         }
       })
@@ -113,16 +119,16 @@ const SignUp = (($) => {
    * Data Api implement
    */
   $(window).on(Event.LOAD_DATA_API, () => {
-    SignUp._jQueryInterface.call($(Selector.DATA_MODULE))
+    Signup._jQueryInterface.call($(Selector.DATA_MODULE))
   })
 
   /**
    * jQuery
    */
-  $.fn[NAME] = SignUp._jQueryInterface
-  $.fn[NAME].Constructor = SignUp
+  $.fn[NAME] = Signup._jQueryInterface
+  $.fn[NAME].Constructor = Signup
 
-  return SignUp
+  return Signup
 })($)
 
-export default SignUp
+export default Signup
