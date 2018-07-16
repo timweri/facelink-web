@@ -26,12 +26,24 @@ const Contact = (($) => {
 
     validateContact () {
       var func = this
-      var contactForm = $('#contactForm .contact-form');
+      var contactForm = $('#contactForm .contact-form')
       contactForm.parsley()
       $('#btn-contact').on('click submit', function () {
         if ($('#contactForm .contact-form').parsley().isValid()) {
           func.processFormContact(contactForm)
         } else {
+          // let $groupContact = contactForm.find('.group-contact')
+          // if ($groupContact.length) {
+          //   contactForm.parsley().on('form:error', function () {
+          //     if (!$groupContact.hasClass('parsley-error')) {
+          //       $groupContact.addClass('parsley-error')
+          //     }
+          //     $($groupContact).find('.parsley-errors-list').remove()
+          //   })
+          //   contactForm.parsley().on('form:success', function () {
+          //     $groupContact.removeClass('parsley-error')
+          //   })
+          // }
           if ($('#fullname').val() === '') {
             $('#fullname').addClass('error')
           }
@@ -71,16 +83,12 @@ const Contact = (($) => {
      * main method contact submit
      */
     processFormContact (object) {
-      console.log('object', object)
       var isClick = $(object).find('.submit').data('isClick') // do not allow spam
-      console.log('isClick', isClick)
       if (isClick == true) { // eslint-disable-line
         return false
       } else {
         $(object).find('.submit').data('isClick', true)
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
-        console.log('aaaaaa', $(object).attr('action'))
-        console.log('dataString', dataString)
         $.ajax({
           type: 'POST',
           url: $(object).attr('action'),
@@ -96,13 +104,13 @@ const Contact = (($) => {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<label class="messenge">' + $('.response-fail-send').html() + '</label>')
+            $(object).html('<div class="message-form">' + $('.response-fail-send').html() + '</div>')
           },
           complete: function (xhr, data) {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<label class="messenge">' + $('.response-success-send').html() + '</label>')
+            $(object).html('<div class="message-form">' + $('.response-success-send').html() + '</div>')
           }
         })
         return false
