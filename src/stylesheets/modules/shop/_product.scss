@@ -30,6 +30,28 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+        .details-product-purchase__add-buttons {
+          .form-control--primary {
+            .form-control__button {
+              @include font($os, 15px, $white, 700);
+              background: $orange;
+              border: 0;
+              text-transform: uppercase;
+              min-height: 40px;
+              margin: 0;
+              box-shadow: none;
+              &::before {
+                @extend .icomoon;
+                content: "\e92b";
+                margin-right: 15px;
+              }
+              &:hover{
+                background: $orange;
+                border: 0;
+              }
+            }
+          }
+        }
         .details-product-purchase__qty-label {
           @include font($os, 15px, $black, 700);
           text-transform: uppercase;
@@ -46,6 +68,7 @@ html#ecwid_html {
             border-color: $color-c5 !important;
             text-align: center !important;
             width: 75px;
+            letter-spacing: 1.1px;
           }
         }
         .grid__products {
