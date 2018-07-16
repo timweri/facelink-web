@@ -1,6 +1,6 @@
 .mod-news-feed {
   margin-top: 60px;
-  .btn {
+  .btn-custom {
     padding: 0 33px;
   }
   .first-col-right {
@@ -9,6 +9,7 @@
   }
   .first-col-left {
     .news-feed-post {
+      position: relative;
       margin-bottom: 63px;
     }
     margin-bottom: 49px;
@@ -77,7 +78,7 @@
     background: $red;
     content: "";
   }
-  .btn {
+  .btn-custom {
     margin-top: 29px;
   }
   h2 {
@@ -143,7 +144,7 @@
           transform: scale(1.2);
         }
       }
-      .btn {
+      .btn-custom {
         box-shadow: none !important;
         &::before {
           transform: translate3d(0, 0, 0);
@@ -179,7 +180,7 @@
           transform: scale(1.2);
         }
       }
-      .btn {
+      .btn-custom {
         box-shadow: none !important;
         &::before {
           transform: translate3d(0, 0, 0);
