@@ -75,17 +75,21 @@ const UserAgent = (() => {
       }
     })
   }
-  const slickProduction = () => {
-    $('.ec-related-products .grid__products').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    });
+  const editButtonBanner = () => {
+    var Banner = $('.mod-banner')
+    var button = Banner.find('.btn-custom-primary')
+    if(button.length) {
+      var textBtn = button.html()
+      var dom = '<span>'+ textBtn +'</span>'
+        + '<span>'+ textBtn +'</span>'
+      button.html(dom)
+    }
   }
 
   checkDevice()
   browserDetection()
   // selectpicker()
   blazyload()
+  editButtonBanner()
 })()
 export default UserAgent

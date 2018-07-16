@@ -35,6 +35,7 @@ var Shop = (function(){
         if(modPromotionDouble.length) {
           marginTop = modPromotionDouble.innerHeight() + 90;
           modPromotionDouble.css('top', top)
+          relatedProducts.css('padding-top', marginTop);
         } else {
           marginTop = modPromotion.innerHeight() + 90;
           relatedProducts.css('padding-top', marginTop);
