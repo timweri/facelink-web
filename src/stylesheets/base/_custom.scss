@@ -97,7 +97,9 @@ h4,
     padding-top: 63px;
   }
 }
-
+html#ecwid_html body#ecwid_body.page-internal {
+  background: $white;
+}
 .mCS-scroller-theme {
   .mCSB_container {
     margin-right: 40px;
