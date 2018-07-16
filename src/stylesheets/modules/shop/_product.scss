@@ -39,12 +39,13 @@ html#ecwid_html {
           text-align: center !important;
         }
         .details-product-purchase__qty-field {
+          text-align: center !important;
           input {
             @include font($os, 15px, $black, 700);
             box-shadow: none !important;
             border-color: $color-c5 !important;
             text-align: center !important;
-            width: 46px;
+            width: 75px;
           }
         }
         .grid__products {
@@ -77,7 +78,7 @@ html#ecwid_html {
         }
         .product-details-module__title,
         .product-details__product-description {
-          @include font($font-family-base, 15px,$black-two, 400);
+          @include font($font-family-base, 15px !important,$black-two, 400);
           line-height: 1.87;
           letter-spacing: .4px;
         }
@@ -93,6 +94,7 @@ html#ecwid_html {
             letter-spacing: 1.1px;
             border: 0;
             border-radius: 0;
+            transform: none !important;
           }
           .form-control__button-text {
             .svg-icon {
