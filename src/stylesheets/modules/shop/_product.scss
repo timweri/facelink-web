@@ -30,6 +30,9 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+        .grid__products {
+          margin: 0 -30px;
+        }
         .product-details-module {
           margin-bottom: 47px !important;
         }
@@ -214,6 +217,9 @@ html#ecwid_html {
           .details-gallery__thumb {
             max-width: 100%;
           }
+        }
+        .details-gallery__images-carousel {
+          transition: transform .4s cubic-bezier(0, 0, .77, 1);
         }
       }
       &.ec-size--s {
@@ -434,6 +440,9 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size {
         .ec-store {
+          .grid__products {
+            margin: 0;
+          }
           .ec-related-products {
             .slick-prev {
               left: 0;

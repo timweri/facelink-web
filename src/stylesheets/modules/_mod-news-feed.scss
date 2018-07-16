@@ -148,6 +148,12 @@
         &::before {
           transform: translate3d(0, 0, 0);
         }
+        span:nth-child(1) {
+          width: .0001%;
+        }
+        span:nth-child(2) {
+          width: 100%;
+        }
       }
     }
   }
@@ -177,6 +183,12 @@
         box-shadow: none !important;
         &::before {
           transform: translate3d(0, 0, 0);
+        }
+        span:nth-child(1) {
+          width: .0001%;
+        }
+        span:nth-child(2) {
+          width: 100%;
         }
       }
     }

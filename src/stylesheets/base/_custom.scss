@@ -31,6 +31,9 @@
     @include position(relative, $top: 2.5px);
     font-size: rem(20);
   }
+  .btn {
+    padding: 0 20px;
+  }
 }
 
 h1,
