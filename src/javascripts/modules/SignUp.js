@@ -25,10 +25,13 @@ const SignUp = (($) => {
     }
 
     validateSignUp () {
-      $('.form-cta .contact-form').parsley()
+      var func = this
+      var signUpForm = $('.form-cta .contact-form')
+      signUpForm.parsley()
       $('#btn-signup').on('click submit', function () {
-        if ($('.form-cta .contact-form').parsley().isValid() === false) {
-          console.log('sign up')
+        if (signUpForm.parsley().isValid()) {
+          func.processFormContact(signUpForm)
+        } else {
           if ($('#email_cta').val() === '') {
             $('#email_cta').addClass('error')
           }
@@ -36,12 +39,52 @@ const SignUp = (($) => {
       })
 
       $('#email_cta').on('keyup keypress', function (e) {
-        if ($('.form-cta .contact-form').parsley().isValid() === true) {
+        if (signUpForm.parsley().isValid() === true) {
           $(this).removeClass('error')
         } else {
           $(this).addClass('error')
         }
       })
+    }
+
+      /*
+     * main method contact submit
+     */
+    processFormContact (object) {
+      var isClick = $(object).find('.submit').data('isClick') // do not allow spam
+      if (isClick == true) { // eslint-disable-line
+        return false
+      } else {
+        $(object).find('.submit').data('isClick', true)
+        var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
+        $.ajax({
+          type: 'POST',
+          url: $(object).attr('action'),
+          dataType: 'json',
+          data: dataString,
+          beforeSend: function () {
+            $(object).find('button[type=submit]').prop('disabled', true)
+          },
+          success: function (data) {
+            $(object).find('button[type=submit]').prop('disabled', false)
+          },
+          error: function () {
+            $('html, body').animate({
+              scrollTop: $(object).offset().top - 200
+            }, 200)
+            $(object).html('<div class="message-form">' + $('.response-fail-send').html() + '</div>')
+          },
+          complete: function (xhr, data) {
+            $('html, body').animate({
+              scrollTop: $(object).offset().top - 200
+            }, 200)
+            $(object).html('<div class="message-form">' + $('.response-success-send').html() + '</div>')
+          }
+        })
+        return false
+      }
+
+      return false // eslint-disable-line
     }
 
     _getConfig (config) {
