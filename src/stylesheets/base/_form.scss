@@ -12,7 +12,8 @@ textarea.form-control {
 }
 
 input:-webkit-autofill {
-  box-shadow: 0 0 0 30px #1f86c6 inset;
+  // box-shadow: 0 0 0 30px #1f86c6 inset;
+  box-shadow: 0 0 0 30px $white inset;
 }
 
 .error {
@@ -57,7 +58,7 @@ form.sent {
   .wpcf7-mail-sent-ok {
     border: 0;
     text-align: center;
-    background: $white;
+    background: transparent;
     padding: 10px;
     font-size: 16px;
   }
