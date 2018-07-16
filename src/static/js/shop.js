@@ -34,7 +34,6 @@ var Shop = (function(){
         var marginTop;
         if(modPromotionDouble.length) {
           marginTop = modPromotionDouble.innerHeight() + 90;
-          console.log(1)
           modPromotionDouble.css('top', top)
         } else {
           marginTop = modPromotion.innerHeight() + 90;
@@ -43,7 +42,6 @@ var Shop = (function(){
           .insertAfter(".ec-store__content-wrapper")
           .addClass('position')
           .css('top', top)
-          console.log(2)
         }
         console.log(marginTop)
         
