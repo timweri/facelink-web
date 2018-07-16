@@ -30,6 +30,23 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+        .details-product-purchase__qty-label {
+          @include font($os, 15px, $black, 700);
+          text-transform: uppercase;
+          letter-spacing: 1.1px;
+          margin-right: 14px;
+          vertical-align: middle;
+          text-align: center !important;
+        }
+        .details-product-purchase__qty-field {
+          input {
+            @include font($os, 15px, $black, 700);
+            box-shadow: none !important;
+            border-color: $color-c5 !important;
+            text-align: center !important;
+            width: 46px;
+          }
+        }
         .grid__products {
           margin: 0 -30px;
         }
