@@ -40,6 +40,7 @@ html#ecwid_html {
               min-height: 40px;
               margin: 0;
               box-shadow: none;
+              letter-spacing: 1.1px;
               &::before {
                 @extend .icomoon;
                 content: "\e92b";
