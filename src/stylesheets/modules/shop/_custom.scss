@@ -96,6 +96,7 @@ html#ecwid_html {
           padding: 0 15px;
           min-height: 40px !important;
           letter-spacing: 1.1px;
+          transform: none !important;
           &::before {
             font-family: $icomoon !important;
             font-style: normal;

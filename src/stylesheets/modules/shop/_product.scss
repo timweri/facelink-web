@@ -31,7 +31,10 @@ html#ecwid_html {
     .ec-size {
       .ec-store {
         .product-details-module {
-          margin-bottom: 40px;
+          margin-bottom: 47px !important;
+        }
+        .product-details-module__title {
+          display: none;
         }
         .product-details__product-title {
           @include font(null, 26px, $black !important, $weight: 700);
@@ -384,6 +387,14 @@ html#ecwid_html {
           .ec-store {
             .details-gallery__thumb-img-wrapper {
               padding: 0 24px 8px;
+            }
+          }
+        }
+        &.ec-size--l {
+          .ec-store {
+            .product-details__product-title {
+              @include font(null, 30px, $black !important, $weight: 700);
+              margin-bottom: 10px;
             }
           }
         }
