@@ -7,10 +7,10 @@
             <div class="news-feed-post">
               <a href="{{ post.link }}"></a>
               <div class="news-feed-image">
-                <img data-src="{{ post.image }}" alt="Featured image">
+                <img data-src="{{ post.image }}" alt="{{ post.image }}">
               </div>
               <div class="news-feed-logo">
-                <img data-src="{{ post.logo }}" alt="News logo">
+                <img data-src="{{ post.logo }}" alt="{{ post.logo }}">
               </div>
               <h2>
                 {{ post.title }}
@@ -32,7 +32,7 @@
             <div class="news-feed-post">
               <a href="{{ post.link }}"></a>
               <div class="news-feed-logo">
-                <img src="" data-src="{{ post.logo }}" alt="News logo">
+                <img src="" data-src="{{ post.logo }}" alt="{{ post.logo }}">
               </div>
               <h2>
                 {{ post.title }}
