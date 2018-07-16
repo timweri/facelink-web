@@ -121,7 +121,7 @@
 @include media-breakpoint-up(lg) {
   .shop-product-cap-overlay {
     @include position(absolute, $bottom: 0, $right:0, $index: 1);
-    max-width: 240px;
+    max-width: 210px;
     transform: translateX(40%) translateY(70px) scale(1.1) translateZ(0);
   }
   .shop-product-paorange-overlay {
@@ -240,6 +240,7 @@
 
 @include media-breakpoint-up(xl) {
   .shop-product-cap-overlay {
+    max-width: 240px;
     transform: translateX(38%) translateY(60px) scale(1.2) translateZ(0);
   }
 }
