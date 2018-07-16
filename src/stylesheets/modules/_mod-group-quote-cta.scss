@@ -56,9 +56,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-  .mod-group-quote-cta {
-    overflow: visible;
-  }
   .bg-green-quote,
   .bg-green-cta {
     padding-right: 65%;
