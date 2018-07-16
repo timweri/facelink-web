@@ -17,7 +17,7 @@
     margin-bottom: 30px;
     font-size: rem(26);
   }
-  .btn {
+  .btn-custom {
     margin-top: 12px;
     padding: 0 30px;
   }
@@ -35,7 +35,7 @@
     > .container {
       padding: 60px 0 65px;
       &:hover {
-        .btn {
+        .btn-custom {
           box-shadow: none !important;
           &::before {
             transform: translate3d(0, 0, 0);

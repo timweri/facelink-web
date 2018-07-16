@@ -63,7 +63,7 @@
       }
     }
   }
-  .btn {
+  .btn-custom {
     @include position(absolute, 10px, 10px, null, null);
     padding: 0 20px;
   }
