@@ -32,27 +32,29 @@ const Contact = (($) => {
         if ($('#contactForm .contact-form').parsley().isValid()) {
           func.processFormContact(contactForm)
         } else {
-          // let $groupContact = contactForm.find('.group-contact')
-          // if ($groupContact.length) {
-          //   contactForm.parsley().on('form:error', function () {
-          //     if (!$groupContact.hasClass('parsley-error')) {
-          //       $groupContact.addClass('parsley-error')
-          //     }
-          //     $($groupContact).find('.parsley-errors-list').remove()
-          //   })
-          //   contactForm.parsley().on('form:success', function () {
-          //     $groupContact.removeClass('parsley-error')
-          //   })
+          let $groupContact = contactForm.find('.group-contact')
+          if ($groupContact.length) {
+            contactForm.parsley().on('form:error', function () {
+              if (!contactForm.find('.group-contact ul').hasClass('parsley-error')) {
+                $groupContact.addClass('parsley-error')
+              }
+              // $($groupContact).find('.parsley-errors-list').remove()
+              console.log('error')
+            })
+            contactForm.parsley().on('form:success', function () {
+              // $groupContact.removeClass('parsley-error')
+              console.log('success')
+            })
+          }
+          // if ($('#fullname').val() === '') {
+          //   $('#fullname').addClass('error')
           // }
-          if ($('#fullname').val() === '') {
-            $('#fullname').addClass('error')
-          }
-          if ($('#email').val() === '') {
-            $('#email').addClass('error')
-          }
-          if ($('#message').val() === '') {
-            $('#message').addClass('error')
-          }
+          // if ($('#email').val() === '') {
+          //   $('#email').addClass('error')
+          // }
+          // if ($('#message').val() === '') {
+          //   $('#message').addClass('error')
+          // }
         }
       })
 
