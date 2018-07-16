@@ -1,5 +1,10 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.ecwid-Checkout-ShippingAddress-top {
+      background: transparent;
+      text-align: left;
+      padding: 0;
+    }
     .ec-size {
       .ec-store {
         .form-control--label {
@@ -27,6 +32,13 @@ html#ecwid_html {
           border-radius: 0;
           box-sizing: border-box;
           background: $white;
+          text-transform: uppercase;
+        }
+        input {
+          border-bottom: inset 3px transparent;
+          &:focus {
+            border-color: $color-c6;
+          }
         }
       }
       .ecwid-productBrowser-CheckoutShippingAddressPage,
@@ -105,6 +117,11 @@ html#ecwid_html {
         @include font($font-family-base, 15px, $border-gray, 400, null);
         margin: 0 0 8px !important;
       }
+      &.has-text {
+        label.ecwid-fieldLabel {
+          color: $black;
+        }
+      }
       table.ecwid-fieldEnvelope {
         float: none;
       }
@@ -140,7 +157,7 @@ html#ecwid_html {
       margin-bottom: 17px;
     }
     .ecwid-note {
-      @include font($font-family-base, 12px, $border-gray, 400, null);
+      @include font($font-family-base, 12px, $border-gray, 400, italic);
       text-align: center;
       margin-top: 5px;
       width: 100% !important;

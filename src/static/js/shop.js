@@ -105,6 +105,24 @@ var Shop = (function(){
   function setLocalStorage() {
     localStorage.setItem("ecwid-product", true);
   }
+  function focusInputShop() {
+    $('.gwt-TextBox').blur(function(){
+      var self = $(this)
+      if(self.val().length > 0) {
+        self.parents('.ecwid-fieldWrapper').addClass('has-text')
+      } else {
+        self.parents('.ecwid-fieldWrapper').removeClass('has-text')
+      }
+    })
+  }
+  function checkInputHasVal() {
+    var lengthIput = $('.gwt-TextBox').length
+    for(var i = 0; i< lengthIput; i++) {
+      if($('.gwt-TextBox').eq(i).val().length > 0) {
+        $('.gwt-TextBox').eq(i).parents('.ecwid-fieldWrapper').addClass('has-text')
+      }
+    }
+  }
   if ($("#ecwid_html").length) {
     Ecwid.OnPageLoad.add(function(page) {
       // console.log(page.type)
@@ -195,6 +213,8 @@ var Shop = (function(){
       addModulePromotion();
       setTitle();
       addRemoveClass();
+      focusInputShop();
+      checkInputHasVal();
       // closeLoading()
     });
    
@@ -206,6 +226,7 @@ var Shop = (function(){
       addModulePromotion()
     }, 250);
   })
+  
   return {
     changePage: changePage,
     showLoading: showLoading,
