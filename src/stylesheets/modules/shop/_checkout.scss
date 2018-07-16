@@ -5,6 +5,17 @@ html#ecwid_html {
       text-align: left;
       padding: 0;
     }
+    div.ecwid-Orders-SearchPanel {
+      .gwt-TextBox {
+        height: 32px;
+      }
+    }
+    .ecwid-switched-layer {
+      position: relative;
+    }
+    .ecwid-Checkout-ShippingAddress-top {
+      @include position(absolute, 30px, 0);
+    }
     .ec-size {
       .ec-store {
         .form-control--label {
@@ -465,6 +476,15 @@ html#ecwid_html {
     }
   }
 }
+@media screen and (max-width: 1199px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-Checkout-ShippingAddress-top {
+        top: 20px;
+      }
+    }
+  }
+}
 @include media-breakpoint-down(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -534,6 +554,10 @@ html#ecwid_html {
 @media screen and (max-width: 529px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-Checkout-ShippingAddress-top {
+        position: static;
+        margin-bottom: 20px;
+      }
       .ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book_sign_in {
           margin: 0;
