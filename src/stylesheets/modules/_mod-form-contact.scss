@@ -1,6 +1,10 @@
 .parsley-errors-list{
   display: none;
 }
+.response-success-send,
+.response-fail-send {
+  display: none;
+}
 
 .mod-form-contact {
   position: relative;
@@ -20,7 +24,7 @@
     margin-top: 35px;
     text-align: center;
   }
-  .btn {
+  .btn-custom {
     display: inline-block;
     padding: 0 45px;
     color: $black;

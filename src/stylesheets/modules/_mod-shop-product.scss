@@ -10,7 +10,7 @@
     margin: 0;
     color: $white;
   }
-  .btn {
+  .btn-custom {
     padding: 0 30px;
   }
 }
@@ -59,7 +59,7 @@
       background: $black;
     }
   }
-  .btn {
+  .btn-custom {
     margin-top: 37px;
   }
   h2 {
@@ -97,7 +97,7 @@
       background: $black;
     }
   }
-  .btn {
+  .btn-custom {
     margin-top: 30px;
   }
   h2 {
@@ -151,7 +151,7 @@
     * {
       transition: .3s;
     }
-    .btn {
+    .btn-custom {
       margin-top: 30px;
       transition: .3s;
     }
@@ -162,7 +162,7 @@
         position: relative;
         transform: scale(1.1);
       }
-      .btn {
+      .btn-custom {
         transform: translateY(32px);
         color: map-get(map-get($hover-colors, primary), hover-color);
         box-shadow: none !important;
@@ -186,7 +186,7 @@
   }
   .shop-product-right {
     margin-left: 15px;
-    .btn {
+    .btn-custom {
       padding: 0 19px;
     }
     &:hover {

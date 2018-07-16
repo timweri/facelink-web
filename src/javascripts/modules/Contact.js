@@ -25,9 +25,13 @@ const Contact = (($) => {
     }
 
     validateContact () {
-      $('.contact-form').parsley()
+      var func = this
+      var contactForm = $('#contactForm .contact-form');
+      contactForm.parsley()
       $('#btn-contact').on('click submit', function () {
-        if ($('.contact-form').parsley().isValid() === false) {
+        if ($('#contactForm .contact-form').parsley().isValid()) {
+          func.processFormContact(contactForm)
+        } else {
           if ($('#fullname').val() === '') {
             $('#fullname').addClass('error')
           }
@@ -36,10 +40,6 @@ const Contact = (($) => {
           }
           if ($('#message').val() === '') {
             $('#message').addClass('error')
-          }
-          console.log('1111')
-          if ($('#email_cta').val() === '') {
-            $('#email_cta').addClass('error')
           }
         }
       })
@@ -65,14 +65,50 @@ const Contact = (($) => {
           $(this).addClass('error')
         }
       })
+    }
 
-      $('#email_cta').on('keyup keypress', function (e) {
-        if ($('.contact-form').parsley().isValid() === true) {
-          $(this).removeClass('error')
-        } else {
-          $(this).addClass('error')
-        }
-      })
+    /*
+     * main method contact submit
+     */
+    processFormContact (object) {
+      console.log('object', object)
+      var isClick = $(object).find('.submit').data('isClick') // do not allow spam
+      console.log('isClick', isClick)
+      if (isClick == true) { // eslint-disable-line
+        return false
+      } else {
+        $(object).find('.submit').data('isClick', true)
+        var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
+        console.log('aaaaaa', $(object).attr('action'))
+        console.log('dataString', dataString)
+        $.ajax({
+          type: 'POST',
+          url: $(object).attr('action'),
+          dataType: 'json',
+          data: dataString,
+          beforeSend: function () {
+            $(object).find('button[type=submit]').prop('disabled', true)
+          },
+          success: function (data) {
+            $(object).find('button[type=submit]').prop('disabled', false)
+          },
+          error: function () {
+            $('html, body').animate({
+              scrollTop: $(object).offset().top - 200
+            }, 200)
+            $(object).html('<label class="messenge">' + $('.response-fail-send').html() + '</label>')
+          },
+          complete: function (xhr, data) {
+            $('html, body').animate({
+              scrollTop: $(object).offset().top - 200
+            }, 200)
+            $(object).html('<label class="messenge">' + $('.response-success-send').html() + '</label>')
+          }
+        })
+        return false
+      }
+
+      return false // eslint-disable-line
     }
 
     _getConfig (config) {
