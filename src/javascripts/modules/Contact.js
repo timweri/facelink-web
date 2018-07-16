@@ -26,14 +26,53 @@ const Contact = (($) => {
 
     validateContact () {
       $('.contact-form').parsley()
-      // $('.contact-form').submit(function (e) {
-      //   e.preventDefault()
-      //   if ($(this).parsley().isValid()) {
-      //     console.log('valid')
-      //   } else {
-      //     console.log('not valid')
-      //   }
-      // })
+      $('#btn-contact').on('click submit', function () {
+        if ($('.contact-form').parsley().isValid() === false) {
+          if ($('#fullname').val() === '') {
+            $('#fullname').addClass('error')
+          }
+          if ($('#email').val() === '') {
+            $('#email').addClass('error')
+          }
+          if ($('#message').val() === '') {
+            $('#message').addClass('error')
+          }
+          console.log('1111')
+          if ($('#email_cta').val() === '') {
+            $('#email_cta').addClass('error')
+          }
+        }
+      })
+
+      $('#fullname').on('keyup keypress', function (e) {
+        if ($(this).next().children().length === 0) {
+          $(this).removeClass('error')
+        } else {
+          $(this).addClass('error')
+        }
+      })
+      $('#email').on('keyup keypress', function (e) {
+        if ($(this).next().children().length === 0) {
+          $(this).removeClass('error')
+        } else {
+          $(this).addClass('error')
+        }
+      })
+      $('#message').on('keyup keypress', function (e) {
+        if ($(this).next().children().length === 0) {
+          $(this).removeClass('error')
+        } else {
+          $(this).addClass('error')
+        }
+      })
+
+      $('#email_cta').on('keyup keypress', function (e) {
+        if ($('.contact-form').parsley().isValid() === true) {
+          $(this).removeClass('error')
+        } else {
+          $(this).addClass('error')
+        }
+      })
     }
 
     _getConfig (config) {
