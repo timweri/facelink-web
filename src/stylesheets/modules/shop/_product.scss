@@ -83,12 +83,19 @@ html#ecwid_html {
         .ec-likely__button {
           @include font($font-family-base, 15px,$black-two, 400);
           letter-spacing: .4px;
+          padding-right: 0;
         }
         .ec-likely__widget {
-          background: transparent;
+          background: transparent !important;
+          margin-right: 25px;
+          &:hover {
+            span {
+              color: $color-c6;
+            }
+          }
         }
         .ec-likely__icon {
-          margin-right: 5px;
+          margin-right: 7px;
         }
         .ec-footer {
           a {
