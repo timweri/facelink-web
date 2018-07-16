@@ -1,6 +1,10 @@
 .parsley-errors-list{
   display: none;
 }
+.response-success-send,
+.response-fail-send {
+  display: none;
+}
 
 .mod-form-contact {
   position: relative;
