@@ -78,7 +78,7 @@ const UserAgent = (() => {
   const editButtonBanner = () => {
     var button = $('.btn-custom')
     $.each(button, function(i, o) {
-      if($(o).find('span').length == 0) {
+      if($(o).find('span').length <= 0) {
         var textBtn = $(o).html()
         var dom = '<span>'+ textBtn +'</span>'
             + '<span>'+ textBtn +'</span>'
@@ -92,5 +92,8 @@ const UserAgent = (() => {
   // selectpicker()
   blazyload()
   editButtonBanner()
+  $(window).on('load', function() {
+
+  })
 })()
 export default UserAgent

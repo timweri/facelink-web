@@ -132,7 +132,10 @@ html#ecwid_html {
         }
         .ec-likely__widget {
           background: transparent !important;
-          margin-right: 25px;
+          margin-right: 15px;
+          &:last-child {
+            margin-right: 0;
+          }
           &:hover {
             span {
               color: $color-c6;
