@@ -76,14 +76,15 @@ const UserAgent = (() => {
     })
   }
   const editButtonBanner = () => {
-    var Banner = $('.mod-banner')
-    var button = Banner.find('.btn-custom-primary')
-    if(button.length) {
-      var textBtn = button.html()
-      var dom = '<span>'+ textBtn +'</span>'
-        + '<span>'+ textBtn +'</span>'
-      button.html(dom)
-    }
+    var button = $('.btn-custom')
+    $.each(button, function(i, o) {
+      if($(o).find('span').length == 0) {
+        var textBtn = $(o).html()
+        var dom = '<span>'+ textBtn +'</span>'
+            + '<span>'+ textBtn +'</span>'
+            $(o).html(dom)
+      }
+    })
   }
 
   checkDevice()
