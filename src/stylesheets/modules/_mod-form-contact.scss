@@ -13,14 +13,12 @@
 }
 .wait-loading-app{
   display: none;
-  position: absolute;
+  position: static;
   background: url("../images/ajax-loader.svg") no-repeat 0 0;
   background-size: 100% 100%;
   width: 50px;
   height: 50px;
-  bottom: -95px;
-  left: 45%;
-  top: 92%;
+  margin: 0 auto;
 }
 .mod-form-contact {
   position: relative;

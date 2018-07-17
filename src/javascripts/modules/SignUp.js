@@ -29,9 +29,10 @@ const Signup = (($) => {
       var signupForm = $('.mod-cta .contact-form')
       signupForm.parsley()
       signupForm.append('<div class="wait-loading-app"></div>')
-      $('#btn-signup').on('click', function () {
+      $('#btn-signup').on('click', function (e) {
         if (signupForm.parsley().isValid()) {
-          func.processFormContact(signupForm)
+          func.processFormContact(signupForm, e)
+          return true
         } else {
           let formGroup = signupForm.find('.group-contact')
           if (formGroup.length) {
@@ -50,13 +51,13 @@ const Signup = (($) => {
     /*
      * main method contact submit
      */
-    processFormContact (object) {
+    processFormContact (object, e) {
       var isClick = false
       if (isClick == true) { // eslint-disable-line
         return false
       } else {
         isClick = true
-        console.log('object', object)
+        e.preventDefault()
         $(object).find('.wait-loading-app').hide()
         $(object).find('.wait-loading-app').show()
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
@@ -72,25 +73,25 @@ const Signup = (($) => {
             $(object).find('.wait-loading-app').hide()
             $(object).find('button[type=submit]').prop('disabled', false)
             isClick = false
-            console.log('data success', data)
           },
-          error: function (data) {
-            console.log('error', data)
+          error: function () {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            // $(object).html('<div class="message-form">' + $('.form-cta .response-fail-send').html() + '</div>')
+            $(object).html('<div class="message-form">' + $('.form-cta .response-fail-send').html() + '</div>')
+            isClick = false
           },
           complete: function (xhr, data) {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            console.log('data complete', data)
-            // $(object).html('<div class="message-form">' + $('.form-cta .response-success-send').html() + '</div>')
+            $(object).html('<div class="message-form">' + $('.form-cta .response-success-send').html() + '</div>')
+            isClick = false
           }
         })
         return false
       }
+      return false // eslint-disable-line
     }
 
     _getConfig (config) {
