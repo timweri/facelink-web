@@ -7,7 +7,7 @@
     text-align: center;
     a {
       &:not(.btn) {
-        @include position(absolute, $top:0, $left:0 , $index: 1);
+        @include position(static, $top:0, $left:0 , $index: 1);
         @include sizeEx(100%);
       }
     }
@@ -16,6 +16,11 @@
     text-transform: uppercase;
     margin-bottom: 30px;
     font-size: rem(26);
+    a{
+      &:hover, &:focus{
+        color: $white;
+      }
+    }
   }
   .btn-custom {
     margin-top: 12px;
