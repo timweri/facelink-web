@@ -29,9 +29,10 @@ const Contact = (($) => {
       var contactForm = $('#contactForm .contact-form')
       contactForm.parsley()
       contactForm.append('<div class="wait-loading-app"></div>')
-      $('#btn-contact').on('click', function () {
+      $('#btn-contact').on('click', function (e) {
         if (contactForm.parsley().isValid()) {
-          func.processFormContact(contactForm)
+          func.processFormContact(contactForm, e)
+          return true
         } else {
           let formGroup = contactForm.find('.group-contact')
           if (formGroup.length) {
@@ -50,17 +51,16 @@ const Contact = (($) => {
     /*
      * main method contact submit
      */
-    processFormContact (object) {
+    processFormContact (object, e) {
       var isClick = false
       if (isClick == true) { // eslint-disable-line
         return false
       } else {
         isClick = true
-        console.log('object', object)
+        e.preventDefault()
         $(object).find('.wait-loading-app').hide()
         $(object).find('.wait-loading-app').show()
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
-        console.log('action', $(object).attr('action'))
         $.ajax({
           type: 'POST',
           url: $(object).attr('action'),
@@ -79,16 +79,19 @@ const Contact = (($) => {
               scrollTop: $(object).offset().top - 200
             }, 200)
             $(object).html('<div class="message-form">' + $('#contactForm .response-fail-send').html() + '</div>')
+            isClick = false
           },
           complete: function (xhr, data) {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
             $(object).html('<div class="message-form">' + $('#contactForm .response-success-send').html() + '</div>')
+            isClick = false
           }
         })
         return false
       }
+      return false // eslint-disable-line
     }
 
     _getConfig (config) {

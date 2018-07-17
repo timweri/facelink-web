@@ -21,6 +21,11 @@
   }
   h2 {
     font-size: rem(26px);
+    a {
+      &:hover, &:focus{
+        color: $black;
+      }
+    }
   }
 }
 .news-feed-image {
@@ -43,7 +48,7 @@
 .news-feed-post {
   text-align: center;
   padding: 0 15px;
-  cursor: pointer;
+  // cursor: pointer;
   h2 {
     margin-bottom: 30px;
     text-transform: uppercase;
