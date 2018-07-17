@@ -313,6 +313,27 @@ html#ecwid_html {
         padding: 25px 20px;
       }
     }
+
+
+    // Style Setting Page Shop
+    table.ecwid-categoriesTabBar {
+      table.gwt-TabBarItem {
+        td.tabTopLeft,
+        td.tabTopRight {
+          border: 0;
+        }
+      }
+      div.tabMiddleCenterInner {
+        padding: 0 10px 6px;
+      }
+    }
+    div.ecwid-Account {
+      table.ecwid-categoriesTabBar {
+        table.gwt-TabBarItem a span {
+          @include font($os, 20px, $black, 700);
+        }
+      }
+    }
   }
 }
 
