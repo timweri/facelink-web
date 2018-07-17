@@ -13,7 +13,7 @@ textarea.form-control {
 
 input:-webkit-autofill {
   // box-shadow: 0 0 0 30px #1f86c6 inset;
-  box-shadow: 0 0 0 30px $white inset;
+  box-shadow: 0 0 0 30px $white inset !important;
 }
 
 .error {

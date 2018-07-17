@@ -8,7 +8,20 @@
 .message-form{
   text-align: center;
 }
-
+.parsley-error{
+  border-color: #f15e2d !important;
+}
+.wait-loading-app{
+  display: none;
+  position: absolute;
+  background: url("../images/ajax-loader.svg") no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 50px;
+  height: 50px;
+  bottom: -95px;
+  left: 45%;
+  top: 92%;
+}
 .mod-form-contact {
   position: relative;
   background-color: $orange;

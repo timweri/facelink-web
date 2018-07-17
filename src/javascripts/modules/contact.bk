@@ -30,6 +30,7 @@ const Contact = (($) => {
       contactForm.parsley()
       contactForm.append('<div class="wait-loading-app"></div>')
       $('#btn-contact').on('click', function () {
+        console.log('click contact')
         if (contactForm.parsley().isValid()) {
           func.processFormContact(contactForm)
         } else {
@@ -46,21 +47,43 @@ const Contact = (($) => {
           }
         }
       })
+
+      var signupForm = $('.form-cta .contact-form')
+      signupForm.parsley()
+      signupForm.append('<div class="wait-loading-app"></div>')
+      $('#btn-signup').on('click', function () {
+        console.log('click signup')
+        if (signupForm.parsley().isValid()) {
+          func.processFormContact(signupForm)
+        } else {
+          let formGroup = signupForm.find('.group-signup')
+          if (formGroup.length) {
+            signupForm.parsley().on('form:error', function () {
+              formGroup.each(function (index, item) {
+                if (!$(item).hasClass('parsley-error')) {
+                  $(this).addClass('parsley-error')
+                }
+                $(item).find('.parsley-errors-list').remove()
+              })
+            })
+          }
+        }
+      })
     }
     /*
      * main method contact submit
      */
     processFormContact (object) {
-      var isClick = false
+      var isClick = $(object).find('.submit').data('isClick') // do not allow spam
+      console.log('isClick', isClick)
+      console.log('object', object)
       if (isClick == true) { // eslint-disable-line
         return false
       } else {
-        isClick = true
-        console.log('object', object)
+        $(object).find('.submit').data('isClick', true)
         $(object).find('.wait-loading-app').hide()
         $(object).find('.wait-loading-app').show()
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
-        console.log('action', $(object).attr('action'))
         $.ajax({
           type: 'POST',
           url: $(object).attr('action'),
@@ -72,23 +95,24 @@ const Contact = (($) => {
           success: function (data) {
             $(object).find('.wait-loading-app').hide()
             $(object).find('button[type=submit]').prop('disabled', false)
-            isClick = false
           },
           error: function () {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<div class="message-form">' + $('#contactForm .response-fail-send').html() + '</div>')
+            $(object).html('<div class="message-form">' + $('.response-fail-send').html() + '</div>')
           },
           complete: function (xhr, data) {
             $('html, body').animate({
               scrollTop: $(object).offset().top - 200
             }, 200)
-            $(object).html('<div class="message-form">' + $('#contactForm .response-success-send').html() + '</div>')
+            $(object).html('<div class="message-form">' + $('.response-success-send').html() + '</div>')
           }
         })
         return false
       }
+
+      return false // eslint-disable-line
     }
 
     _getConfig (config) {
