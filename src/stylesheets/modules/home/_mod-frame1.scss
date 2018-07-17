@@ -91,17 +91,25 @@
     max-width: none;
   }
   .image-frame1 {
-    left: -130px;
-    top: 20%;
+    left: -105px;
+    top: 18%;
     max-width: none;
-    width: 55%;
+    width: 67%;
   }
 }
 
 @include media-custom-up(1500) {
+  .frame1-container {
+    padding-top: 176px;
+  }
   .img-production-frame1 {
-    right: 190px;
-    width: 26%;
+    right: 187px;
+    width: 35%;
+  }
+  .image-frame1 {
+    left: -244px;
+    top: 16%;
+    width: 69%;
   }
 }
 @media only screen and (min-width: 992px) and (max-height: 768px) {
@@ -114,5 +122,12 @@
 @media only screen and (min-width: 992px) and (max-height: 639px) {
   .frame1-container {
     padding-bottom: 100px;
+  }
+}
+@media only screen and (min-width: 1500px) and (max-height: 1000px) {
+  .img-production-frame1 {
+    &.show-desktop {
+      //width: 24%;
+    }
   }
 }

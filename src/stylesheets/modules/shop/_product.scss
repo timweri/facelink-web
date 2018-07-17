@@ -30,6 +30,12 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+        div.grid-product__button-hover {
+          .form-control__button--icon-center {
+            height: 35px;
+            padding-bottom: 1px;
+          }
+        }
         .details-product-purchase__add-buttons {
           .form-control--primary {
             .form-control__button {
