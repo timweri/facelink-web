@@ -112,7 +112,8 @@ html#ecwid_html {
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
-        width: calc(100% - 96px);
+        width: calc(100% - 118px);
+        margin-left: 22px;
         button {
           @include position(absolute, $bottom: 28px, $left: 50%);
           transform: translateX(-50%);
@@ -227,8 +228,8 @@ html#ecwid_html {
         padding-right: 100px;
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
-        width: calc(100% - 96px);
-        margin-left: -103px;
+        width: calc(100% - 140px) !important;
+        margin-left: -82px !important;
         button.ecwid-btn--apply,
         button.ecwid-btn--cancel {
           @include position($top: 49px, $left: auto !important, $right: 0, $bottom: auto !important);
@@ -318,7 +319,7 @@ html#ecwid_html {
 @media screen and (min-width: 992px) and (max-width: 1499px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
-
+      //
     }
   }
 }
