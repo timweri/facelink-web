@@ -93,52 +93,34 @@ html#ecwid_html {
       background: $menu-gray;
     }
     div.ecwid-productBrowser-cart-EnterCouponBox {
-      background: $menu-gray;
-      padding: 38px 25px !important;
-      margin: 0 0 30px;
       position: relative;
-      div {
-        vertical-align: middle;
-      }
+      background: $menu-gray;
+      padding: 51px 30px 90px !important;
       table {
-        width: 100% !important;
-      }
-      .ecwid-fieldEnvelope-around {
-        input {
-          height: 40px !important;
-          max-width: 100%;
-        }
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-        display: inline-block;
-        vertical-align: middle;
-        position: absolute;
-        top: 40px;
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
         width: 100%;
-        position: relative;
-        padding-left: 130px;
-        button {
-          @include position(absolute, 0, 0, null, null);
-          width: 140px;
-        }
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
-        margin-right: 0;
-        width: 100%;
-        padding-right: 170px;
         div {
           width: 100%;
         }
       }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls,
-      .ecwid-btn--secondary {
-        vertical-align: middle;
+      .ecwid-fieldEnvelop {
+        width: 100%;
       }
-      .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-        @include font(null, 15px, $black);
-        margin-right: 30px;
+      .ecwid-fieldEnvelope-around {
+        input {
+          height: 36px !important;
+          max-width: 100%;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+        width: calc(100% - 96px);
+        button {
+          @include position(absolute, $bottom: 28px, $left: 50%);
+          transform: translateX(-50%);
+          margin: 0;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+        width: 100%;
       }
     }
   }
@@ -296,9 +278,6 @@ html#ecwid_html {
         }
         div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
           button {
-            bottom: -65px;
-            left: 0;
-            margin: auto;
           }
         }
       }
