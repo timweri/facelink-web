@@ -5,11 +5,6 @@ html#ecwid_html {
       text-align: left;
       padding: 0;
     }
-    div.ecwid-Orders-SearchPanel {
-      .gwt-TextBox {
-        height: 32px;
-      }
-    }
     .ecwid-switched-layer {
       position: relative;
     }
@@ -316,15 +311,116 @@ html#ecwid_html {
 
 
     // Style Setting Page Shop
+    div.ecwid-AccountSettings-NameAndEmail {
+      div.ecwid-form {
+        text-align: left;
+      }
+    }
+    .ecwid-AccountSettings {
+      td[align="left"] {
+        text-align: center;
+      }
+    }
+    td.ecwid-OrdersList-OrderBox-thumbnail {
+      img[width][height] {
+        max-width: 120px !important;
+        max-height: 150px !important;
+        width: 120px !important;
+        height: auto !important;
+      }
+    }
+    div.ecwid-Account-ContinueShoppingButtonContainer {
+      max-width: 1000px;
+      margin: auto;
+    }
+    div.ecwid-AccountSettings {
+      .ecwid-AccountSettings-NameAndEmail {
+        margin: auto;
+      }
+    }
+    div.ecwid-AddressBook-buttonsPanel {
+      width: 100%;
+      padding: 0 19%;
+    }
+    div.ecwid-Account-AddressBook {
+      > table {
+        max-width: 1000px;
+        margin: auto;
+      }
+    }
+    table.ecwid-categoriesTabBar {
+      max-width: 1000px !important;
+      margin: auto;
+    }
+    div.ecwid-Orders-SearchPanel {
+      .gwt-TextBox {
+        height: 32px;
+      }
+      .ecwid-DateRangeBox-range,
+      .gwt-TextBox {
+        font-size: rem(15);
+      }
+      .ecwid-DateRangeBox {
+        height: 40px;
+      }
+    }
+    .ecwid-Orders {
+      margin: auto;
+    }
+    .ecwid-OrdersList {
+      td.ecwid-OrdersList-OrderBox-header-orderdescr {
+        div {
+          vertical-align: middle;
+          font-size: rem(15);
+        }
+      }
+      td.ecwid-OrdersList-OrderBox-footer {
+        td[align="right"] {
+          float: right;
+          tr.ecwid-OrdersList-OrderBox-totals-shippingRow,
+          tr.ecwid-OrdersList-OrderBox-totals-total {
+            display: table-row;
+            td {
+              display: table-cell;
+            }
+          }
+        }
+      }
+    }
     table.ecwid-categoriesTabBar {
       table.gwt-TabBarItem {
         td.tabTopLeft,
         td.tabTopRight {
           border: 0;
+          border-radius: 0;
+        }
+      }
+      table.gwt-TabBarItem-selected {
+        a {
+          span.ecwid-categories-category {
+            color: $orange !important;
+          }
+        }
+        td.tabTopLeft,
+        td.tabTopRight {
+          border-top: solid 1px #ababab;
+        }
+        td.tabTopLeft {
+          border-left: solid 1px #ababab;
+        }
+        td.tabTopRight{
+          border-right: solid 1px #ababab;
         }
       }
       div.tabMiddleCenterInner {
         padding: 0 10px 6px;
+      }
+    }
+
+    div.ecwid-Orders {
+      div.ecwid-results-topPanel div {
+        font-size: rem(15);
+        color: $black;
       }
     }
     div.ecwid-Account {
@@ -332,6 +428,27 @@ html#ecwid_html {
         table.gwt-TabBarItem a span {
           @include font($os, 20px, $black, 700);
         }
+      }
+      td.ecwid-OrdersList-OrderBox-cellOdd {
+        background-color: $menu-gray;
+      }
+      td.ecwid-OrdersList-OrderBox-header,
+      td.ecwid-OrdersList-OrderBox-footer {
+        background-color: $color-c5;
+      }
+      div.ecwid-OrdersList-OrderBox-product a {
+        font-size: rem(17.7);
+        letter-spacing: 1.3px;
+        color: $black-two;
+        font-weight: 700;
+      }
+      div.ecwid-OrdersList-OrderBox-sku {
+        font-size: rem(15);
+        letter-spacing: .4px;
+        color: $black;
+      }
+      td.ecwid-DateRangeBox-range {
+        text-align: left;
       }
     }
   }
@@ -374,6 +491,15 @@ html#ecwid_html {
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      div.ecwid-Orders-SearchPanel {
+        .ecwid-DateRangeBox {
+          margin: 0;
+          width: 200px;
+        }
+        .gwt-TextBox {
+          width: 250px;
+        }
+      }
       .ecwid {
         div.ecwid-productBrowser-head {
           font-size: 30px;
@@ -509,6 +635,30 @@ html#ecwid_html {
 @include media-breakpoint-down(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      div.ecwid-Orders-SearchPanel {
+        .gwt-TextBox {
+          width: calc(100% - 10px);
+        }
+        > table {
+          > tbody {
+            > tr {
+              td:first-child {
+                td:first-child {
+                  position: relative;
+                  min-width: 150px;
+                  width: calc(100% - 148px);
+                }
+              }
+              > td {
+                width: 100%;
+              }
+            }
+          }
+        }
+        button.ecwid-btn--orders.ecwid-btn--secondary {
+          margin-right: 0 !important;
+        }
+      }
       table.ecwid-Checkout-BreadCrumbs {
         position: static;
         display: block;
@@ -572,6 +722,22 @@ html#ecwid_html {
     }
   }
 }
+
+@include media-breakpoint-down(sm) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-OrdersList {
+        td.ecwid-OrdersList-OrderBox-header-orderdescr {
+          div {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 529px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -582,6 +748,29 @@ html#ecwid_html {
       .ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book_sign_in {
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 358px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-Orders-SearchPanel {
+        .ecwid-btn.ecwid-btn--orders {
+          margin-left: 0 !important;
+        }
+        > table {
+          > tbody {
+            >tr {
+              td:first-child {
+                td:first-child {
+                  width: 100%;
+                }
+              }
+            }
+          }
         }
       }
     }
