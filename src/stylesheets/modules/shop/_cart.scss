@@ -215,6 +215,25 @@ html#ecwid_html {
           margin: 0 auto;
         }
       }
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        padding: 51px 30px !important;
+        .ecwid-fieldEnvelope-label,
+        .ecwid-fieldEnvelope-around {
+          width: calc(100% - 83px) !important;
+        }
+      }
+      .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        display: inline-block;
+        padding-right: 100px;
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+        width: calc(100% - 96px);
+        margin-left: -103px;
+        button.ecwid-btn--apply,
+        button.ecwid-btn--cancel {
+          @include position($top: 49px, $left: auto !important, $right: 0, $bottom: auto !important);
+        }
+      }
     }
   }
 }
@@ -276,10 +295,6 @@ html#ecwid_html {
         div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
           padding-right: 0;
         }
-        div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
-          button {
-          }
-        }
       }
     }
   }
@@ -296,6 +311,14 @@ html#ecwid_html {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1499px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+
     }
   }
 }
