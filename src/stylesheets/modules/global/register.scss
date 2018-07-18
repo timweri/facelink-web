@@ -67,15 +67,20 @@
       font-family: $font-family-base;
     }
   }
-
 }
-
-@include media-breakpoint-up(md) {
-  .mod-register {
+@include media-breakpoint-up(md){
+  .mod-register{
     .um-col-alt {
       .um-half {
         width: 48%;
       }
     }
+  }
+}
+@include media-breakpoint-down(md){
+  .mod-register{
+    padding: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
