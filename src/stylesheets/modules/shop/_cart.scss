@@ -217,15 +217,16 @@ html#ecwid_html {
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox {
-        padding: 51px 30px !important;
+        padding: 51px 30px 44px !important;
         .ecwid-fieldEnvelope-label,
         .ecwid-fieldEnvelope-around {
           width: calc(100% - 83px) !important;
         }
       }
       .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-        display: inline-block;
+        display: inline-block !important;
         padding-right: 100px;
+        margin-bottom: -20px;
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
         width: calc(100% - 140px) !important;
