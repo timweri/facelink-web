@@ -58,3 +58,13 @@
   }
 
 }
+
+@include media-breakpoint-up(md) {
+  .mod-login {
+    .um-col-alt {
+      .um-half {
+        width: 48%;
+      }
+    }
+  }
+}
