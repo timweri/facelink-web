@@ -26,10 +26,12 @@ const Signup = (($) => {
 
     validateContact () {
       var func = this
+      console.log('sign up')
       var signupForm = $('.mod-cta .contact-form')
       signupForm.parsley()
       signupForm.append('<div class="wait-loading-app"></div>')
       $('#btn-signup').on('click', function (e) {
+        console.log('sign up click')
         if (signupForm.parsley().isValid()) {
           func.processFormContact(signupForm, e)
           return true
