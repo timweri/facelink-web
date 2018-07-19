@@ -97,6 +97,11 @@ html#ecwid_html {
         text-transform: none;
         padding: 0;
       }
+      .form-control__button {
+        .form-control__button-text {
+          margin-bottom: 2px;
+        }
+      }
       .details-product-purchase__add-more {
         .form-control__button {
           @include font($os, 15px !important, $white, 700);
