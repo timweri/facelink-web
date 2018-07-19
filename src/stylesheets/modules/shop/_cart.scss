@@ -96,6 +96,9 @@ html#ecwid_html {
       position: relative;
       background: $menu-gray;
       padding: 51px 30px 90px !important;
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
       table {
         width: 100%;
         div {
@@ -165,7 +168,7 @@ html#ecwid_html {
       }
       div.ecwid-productBrowser-cart-hint {
         text-align: left;
-        padding-left: 35px;
+        padding-left: 30px;
       }
       table.ecwid-productBrowser-cart-subtotalAmountPanel {
         td {
