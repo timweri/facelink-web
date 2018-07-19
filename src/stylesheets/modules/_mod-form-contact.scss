@@ -20,6 +20,15 @@
   height: 50px;
   margin: 0 auto;
 }
+.wait-loading-app-green{
+  display: none;
+  position: static;
+  background: url("../images/ajax-loader-green.svg") no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
 .mod-form-contact {
   position: relative;
   background-color: $orange;
