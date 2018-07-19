@@ -267,6 +267,32 @@ html#ecwid_html {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-responsive {
+        div.ecwid-productBrowser-cart-non-compact {
+          > div {
+            > table {
+              display: block !important;
+              position: relative !important;
+              > tbody {
+                display: block !important;
+                > tr {
+                  display: block !important;
+
+                  > td {
+                    display: block !important;
+                    &:nth-child(2) {
+                      margin-top: 20px;
+                      margin-bottom: -30px;
+                      text-align: center;
+                      > table {
+                        display: inline-table !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         div.ecwid-productBrowser-cart-compact {
           table.ecwid-productBrowser-cart-rightPanel {
             margin-left: 0;
