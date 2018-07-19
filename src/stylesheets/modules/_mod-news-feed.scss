@@ -6,6 +6,8 @@
   .first-col-right {
     height: 1000px;
     margin-bottom: 55px;
+    padding-top: 20px;
+    background: $menu-gray;
   }
   .first-col-left {
     .news-feed-post {
@@ -139,6 +141,11 @@
     .first-col-right {
       padding-left: 15px;
       height: auto;
+      &.col-lg-6 {
+        flex: 0 0 calc(50% - 10px) !important;
+        max-width: calc(50% - 10px) !important;
+        margin-left: 10px;
+      }
     }
   }
   .news-feed-post {

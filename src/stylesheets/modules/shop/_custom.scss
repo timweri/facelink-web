@@ -2,6 +2,17 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .ecwid-DisappearingMessage{
+      border: solid 3px $orange !important;
+    }
+    .ecwid-fieldEnvelope-error {
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
+      .ecwid-fieldEnvelope-around {
+        box-shadow: 2px 2px 0 $red, -2px -2px 0 $red, 2px -2px 0 $red, -2px 2px 0 $red;
+      }
+    }
     .mod-content-editor {
       position: relative;
       margin-top: 60px;
