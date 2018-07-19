@@ -1,5 +1,3 @@
-$number-per-row-lg: 5;
-
 .mod-promotion {
   background-position: center center;
   background-size: cover;
@@ -42,10 +40,6 @@ $number-per-row-lg: 5;
     > .container {
       padding: 0 45px;
     }
-  }
-  .promo-item {
-    max-width: (100% / $number-per-row-lg);
-    flex: 0 0 (100% / $number-per-row-lg);
   }
   .promo-overlay {
     @include position(absolute, $left: 0, $top:0, $bottom: 0);
