@@ -1,5 +1,8 @@
 .ecwid-productBrowser-FavoritesPage {
   margin-bottom: 150px;
+  button {
+    min-height: 40px !important;
+  }
   .grid__products {
     margin: 0 !important;
     .grid-product__title-inner {
@@ -13,7 +16,6 @@
         @include font($os, 15px !important, $white, 700);
         background: $orange !important;
         text-transform: uppercase;
-        min-height: 40px !important;
         width: 150px !important;
         letter-spacing: 1.1px;
         &::before {
