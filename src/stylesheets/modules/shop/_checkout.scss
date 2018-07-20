@@ -278,7 +278,12 @@ html#ecwid_html {
         text-align: center;
         &.ecwid-Checkout-BreadCrumbs-link-visited {
           border-bottom-color: $black;
+          transition: all .05s;
           color: $black;
+          &:hover {
+            color: $blue;
+            border-bottom: solid 4px $blue;
+          }
         }
         &.ecwid-Checkout-BreadCrumbs-link-current {
           border-bottom: solid 4px $blue;
@@ -570,7 +575,7 @@ html#ecwid_html {
           }
           .ecwid-btn--address_book_sign_in {
             position: absolute;
-            transform: translateY(-8px);
+            transform: translateY(-7px);
           }
         }
       }

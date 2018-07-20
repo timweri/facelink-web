@@ -1,13 +1,13 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     div.ecwid-productBrowser-head {
-      @include font(null, 26px, $black, 700);
+      @include font(null, rem(26), $black, 700);
       text-transform: uppercase;
       text-align: center;
     }
     .ecwid-productBrowser-CartPage {
       &::before {
-        @include font($os , 26px, $black, 700);
+        @include font($os , rem(26), $black, 700);
         display: block;
         text-align: center;
         letter-spacing: 1.5px;
@@ -77,7 +77,7 @@ html#ecwid_html {
       text-transform: uppercase;
     }
     div.ecwid-productBrowser-cart-shippingLabel {
-      font-size: 15px;
+      font-size: rem(15);
       font-family: $font-family-base;
       letter-spacing: .4px;
     }
@@ -243,7 +243,7 @@ html#ecwid_html {
         margin-top: 40px;
         margin-bottom: 130px;
         &::before {
-          font-size: 30px;
+          font-size: rem(30);
           letter-spacing: 2.5px;
           text-align: left;
         }
