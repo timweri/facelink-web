@@ -51,7 +51,8 @@ const HomeAnimation = (() => {
               triggerElement: _element,
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
-            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller).addIndicators({ name: key + 'AnimationStart' + i })
+            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -59,7 +60,8 @@ const HomeAnimation = (() => {
               triggerElement: _element,
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
-            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller).addIndicators({ name: key + 'AnimationStart' + i })
+            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -70,7 +72,8 @@ const HomeAnimation = (() => {
       new ScrollMagic.Scene({
         triggerElement: _element,
         duration: _totalDuration + spaceduration
-      }).setPin(_element).addTo(controller).addIndicators({ name: key + 'AnimationStart' })
+      }).setPin(_element).addTo(controller)
+      // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -232,10 +235,11 @@ const HomeAnimation = (() => {
   }
 
   $(document).ready(function () {
-    $('body, html').animate({
-      scrollTop: 0
-    }, 0)
     if (isPageHome && $(window).width() >= 992) {
+      $('body, html').animate({
+        scrollTop: 0
+      }, 0)
+      jQuery.scrollSpeed(200, 800)
       frame1Timeline()
       frame2Timeline()
       frame3Timeline()
