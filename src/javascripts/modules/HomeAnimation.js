@@ -231,13 +231,18 @@ const HomeAnimation = (() => {
     })
   }
 
-  if (isPageHome && $(window).width() >= 992) {
-    frame1Timeline()
-    frame2Timeline()
-    frame3Timeline()
-    frame4Timeline()
-    // frame5Timeline()
-    runScrollMagicScene()
-  }
+  $(document).ready(function () {
+    $('body, html').animate({
+      scrollTop: 0
+    }, 0)
+    if (isPageHome && $(window).width() >= 992) {
+      frame1Timeline()
+      frame2Timeline()
+      frame3Timeline()
+      frame4Timeline()
+      // frame5Timeline()
+      runScrollMagicScene()
+    }
+  })
 })()
 export default HomeAnimation
