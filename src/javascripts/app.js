@@ -15,8 +15,5 @@ import 'modules/Faq'
 import 'modules/TabBenefits'
 import 'modules/Contact'
 import 'modules/SignUp'
-<<<<<<< HEAD
 import 'modules/Login'
-=======
 import 'modules/HomeAnimation'
->>>>>>> 0781113486c7053e83b594c3bbfe5cf2dc9d1bf6
