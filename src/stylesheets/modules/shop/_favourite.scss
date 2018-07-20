@@ -1,3 +1,12 @@
-.ecwid-productBrowser-FavoritesPage {
-  margin-bottom: 150px;
+html#ecwid_html{
+  body#ecwid_body.page-internal {
+    .ecwid {
+      div.ecwid-productBrowser-FavoritesPage {
+        margin-bottom: 150px;
+        button{
+          min-height: 40px;
+        }
+      }
+    }
+  }
 }

@@ -14,7 +14,7 @@
     if (window.navigator.msPointerEnabled) { return false }
 
     $window.on('mousewheel DOMMouseScroll', function (e) {
-      var deltaY = e.originalEvent.wheelDeltaY,
+      var deltaY = -1 * e.originalEvent.deltaY,
         detail = e.originalEvent.detail
       scrollY = $document.height() > $window.height()
       scrollX = $document.width() > $window.width()

@@ -157,6 +157,7 @@ html#ecwid_html {
       }
       .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
         border: 3px solid $orange;
+        padding-bottom: 2px !important;
         &:focus,
         &:focus:active {
           border: 3px solid $orange;
@@ -176,6 +177,7 @@ html#ecwid_html {
         padding: 70px 0 0;
         margin: 110px 0;
         position: relative;
+        width: calc(100% + 30px) !important;
         // display: none;
         .container {
           position: relative;
@@ -442,3 +444,16 @@ html#ecwid_html {
     }
   }
 }
+
+@media screen and (max-width: 2000px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .mod-promotion {
+          margin-left: -15px !important;
+        }
+      }
+    }
+  }
+}
+

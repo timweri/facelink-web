@@ -2,6 +2,7 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+
         .grid__products {
           .grid-product__title-inner {
             @include font($os, 18px, $black, 700, null);
@@ -89,6 +90,12 @@ html#ecwid_html {
         }
         .ec-store__category-page {
           background: $white;
+        }
+        .ec-page-title {
+          padding: 0;
+        }
+        .grid-product__price-amount {
+          letter-spacing: 1px;
         }
       }
       .grid__sort,
