@@ -108,6 +108,7 @@
     "postcss-reporter": "^5.0.0",
     "postcss-scss": "^1.0.3",
     "require-dir": "^0.3.2",
+    "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "vinyl-contents-tostring": "^1.0.0",
     "vinyl-fs": "^2.4.4",
