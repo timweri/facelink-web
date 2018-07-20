@@ -77,12 +77,12 @@ const UserAgent = (() => {
   }
   const editButtonBanner = () => {
     var button = $('.btn-custom')
-    $.each(button, function(i, o) {
-      if($(o).find('span').length <= 0) {
+    $.each(button, function (i, o) {
+      if ($(o).find('span').length <= 0) {
         var textBtn = $(o).html()
-        var dom = '<span>'+ textBtn +'</span>'
-            + '<span>'+ textBtn +'</span>'
-            $(o).html(dom)
+        var dom = '<span>' + textBtn + '</span>' +
+            '<span>' + textBtn + '</span>'
+        $(o).html(dom)
       }
     })
   }
@@ -92,7 +92,7 @@ const UserAgent = (() => {
   // selectpicker()
   blazyload()
   editButtonBanner()
-  $(window).on('load', function() {
+  $(window).on('load', function () {
 
   })
 })()
