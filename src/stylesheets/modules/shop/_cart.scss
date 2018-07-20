@@ -93,52 +93,38 @@ html#ecwid_html {
       background: $menu-gray;
     }
     div.ecwid-productBrowser-cart-EnterCouponBox {
-      background: $menu-gray;
-      padding: 38px 25px !important;
-      margin: 0 0 30px;
       position: relative;
-      div {
-        vertical-align: middle;
+      background: $menu-gray;
+      padding: 51px 30px 90px !important;
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
       }
       table {
-        width: 100% !important;
-      }
-      .ecwid-fieldEnvelope-around {
-        input {
-          height: 40px !important;
-          max-width: 100%;
-        }
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-        display: inline-block;
-        vertical-align: middle;
-        position: absolute;
-        top: 40px;
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
         width: 100%;
-        position: relative;
-        padding-left: 130px;
-        button {
-          @include position(absolute, 0, 0, null, null);
-          width: 140px;
-        }
-      }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
-        margin-right: 0;
-        width: 100%;
-        padding-right: 170px;
         div {
           width: 100%;
         }
       }
-      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls,
-      .ecwid-btn--secondary {
-        vertical-align: middle;
+      .ecwid-fieldEnvelop {
+        width: 100%;
       }
-      .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
-        @include font(null, 15px, $black);
-        margin-right: 30px;
+      .ecwid-fieldEnvelope-around {
+        input {
+          height: 36px !important;
+          max-width: 100%;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+        width: calc(100% - 118px);
+        margin-left: 22px;
+        button {
+          @include position(absolute, $bottom: 28px, $left: 50%);
+          transform: translateX(-50%);
+          margin: 0;
+        }
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+        width: 100%;
       }
     }
   }
@@ -182,7 +168,7 @@ html#ecwid_html {
       }
       div.ecwid-productBrowser-cart-hint {
         text-align: left;
-        padding-left: 35px;
+        padding-left: 30px;
       }
       table.ecwid-productBrowser-cart-subtotalAmountPanel {
         td {
@@ -233,6 +219,26 @@ html#ecwid_html {
           margin: 0 auto;
         }
       }
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        padding: 51px 30px 44px !important;
+        .ecwid-fieldEnvelope-label,
+        .ecwid-fieldEnvelope-around {
+          width: calc(100% - 83px) !important;
+        }
+      }
+      .ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        display: inline-block !important;
+        padding-right: 100px;
+        margin-bottom: -20px;
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
+        width: calc(100% - 140px) !important;
+        margin-left: -82px !important;
+        button.ecwid-btn--apply,
+        button.ecwid-btn--cancel {
+          @include position($top: 49px, $left: auto !important, $right: 0, $bottom: auto !important);
+        }
+      }
     }
   }
 }
@@ -261,6 +267,32 @@ html#ecwid_html {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-responsive {
+        div.ecwid-productBrowser-cart-non-compact {
+          > div {
+            > table {
+              display: block !important;
+              position: relative !important;
+              > tbody {
+                display: block !important;
+                > tr {
+                  display: block !important;
+
+                  > td {
+                    display: block !important;
+                    &:nth-child(2) {
+                      margin-top: 20px;
+                      margin-bottom: -30px;
+                      text-align: center;
+                      > table {
+                        display: inline-table !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         div.ecwid-productBrowser-cart-compact {
           table.ecwid-productBrowser-cart-rightPanel {
             margin-left: 0;
@@ -294,13 +326,6 @@ html#ecwid_html {
         div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
           padding-right: 0;
         }
-        div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
-          button {
-            bottom: -65px;
-            left: 0;
-            margin: auto;
-          }
-        }
       }
     }
   }
@@ -317,6 +342,14 @@ html#ecwid_html {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1499px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      //
     }
   }
 }

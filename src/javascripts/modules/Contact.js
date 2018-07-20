@@ -28,7 +28,7 @@ const Contact = (($) => {
       var func = this
       var contactForm = $('#contactForm .contact-form')
       contactForm.parsley()
-      contactForm.append('<div class="wait-loading-app"></div>')
+      contactForm.append('<div class="wait-loading-app-green"></div>')
       $('#btn-contact').on('click', function (e) {
         if (contactForm.parsley().isValid()) {
           func.processFormContact(contactForm, e)
@@ -58,8 +58,8 @@ const Contact = (($) => {
       } else {
         isClick = true
         e.preventDefault()
-        $(object).find('.wait-loading-app').hide()
-        $(object).find('.wait-loading-app').show()
+        $(object).find('.wait-loading-app-green').hide()
+        $(object).find('.wait-loading-app-green').show()
         var dataString = jQuery(object).serialize().replace(/\%5B/g, '[').replace(/\%5D/g, ']') // eslint-disable-line
         $.ajax({
           type: 'POST',
@@ -70,7 +70,7 @@ const Contact = (($) => {
             $(object).find('button[type=submit]').prop('disabled', true)
           },
           success: function (data) {
-            $(object).find('.wait-loading-app').hide()
+            $(object).find('.wait-loading-app-green').hide()
             $(object).find('button[type=submit]').prop('disabled', false)
             isClick = false
           },

@@ -30,6 +30,12 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     .ec-size {
       .ec-store {
+        div.grid-product__button-hover {
+          .form-control__button--icon-center {
+            height: 35px;
+            padding-bottom: 1px;
+          }
+        }
         .details-product-purchase__add-buttons {
           .form-control--primary {
             .form-control__button {
@@ -305,7 +311,7 @@ html#ecwid_html {
             margin: 0;
           }
           .details-product-purchase__controls {
-            margin-top: 15px;
+            margin-top: 20px;
             >div {
               display: inline-block;
               vertical-align: top;
@@ -368,6 +374,12 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size {
         .ec-store {
+          .product-details__sidebar {
+            width: 42.5% !important;
+          }
+          .product-details__gallery {
+            width: 57.5% !important;
+          }
           .details-gallery__thumb-img-wrapper-inner {
             box-shadow: inset 0 0 0 2px $gray-bg;
           }

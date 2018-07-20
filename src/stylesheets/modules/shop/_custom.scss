@@ -2,6 +2,17 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .ecwid-DisappearingMessage{
+      border: solid 3px $orange !important;
+    }
+    .ecwid-fieldEnvelope-error {
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
+      .ecwid-fieldEnvelope-around {
+        box-shadow: 2px 2px 0 $red, -2px -2px 0 $red, 2px -2px 0 $red, -2px 2px 0 $red;
+      }
+    }
     .mod-content-editor {
       position: relative;
       margin-top: 60px;
@@ -86,6 +97,11 @@ html#ecwid_html {
         text-transform: none;
         padding: 0;
       }
+      .form-control__button {
+        .form-control__button-text {
+          margin-bottom: 2px;
+        }
+      }
       .details-product-purchase__add-more {
         .form-control__button {
           @include font($os, 15px !important, $white, 700);
@@ -114,6 +130,9 @@ html#ecwid_html {
         &:focus,
         &:focus:active {
           border: 3px solid $orange;
+        }
+        &:hover {
+          background: $orange;
         }
       }
       .mod-promotion {
@@ -358,7 +377,7 @@ html#ecwid_html {
               content: "";
               background: $orange-hover;
               transition: transform .3s cubic-bezier(.75, 0, .125, 1);
-              transform: translate3d(-100%, 0, 0);
+              transform: translate3d(-101%, 0, 0);
             }
             &:hover{
               &::after {
@@ -374,7 +393,7 @@ html#ecwid_html {
             content: "";
             background: $orange-hover;
             transition: transform .3s cubic-bezier(.75, 0, .125, 1);
-            transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-101%, 0, 0);
           }
           &:hover{
             color: $white;

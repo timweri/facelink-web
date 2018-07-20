@@ -43,7 +43,7 @@ html#ecwid_html {
         input {
           border-bottom: inset 3px transparent;
           &:focus {
-            border-color: $color-c6;
+            // border-color: $color-c6;
           }
         }
       }
@@ -593,8 +593,12 @@ html#ecwid_html {
           }
         }
         .ecwid-Checkout-ShippingAddress {
-          .ecwid-btn {
-            margin-top: -10px;
+          .ecwid-btn--address_book {
+            margin-top: -8px;
+          }
+          .ecwid-btn--address_book_sign_in {
+            position: absolute;
+            transform: translateY(-7px);
           }
         }
       }

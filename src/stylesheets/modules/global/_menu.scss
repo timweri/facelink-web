@@ -369,8 +369,11 @@
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1500px) {
   .menu-right {
     margin-left: 0;
+  }
+  .min-wrap-outer {
+    margin-left: 67px;
   }
 }
