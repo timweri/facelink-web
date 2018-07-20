@@ -27,26 +27,6 @@ html#ecwid_html {
       div.ecwid-productBrowser-head {
         font-size: 18px;
       }
-      .ecwid-fieldEnvelope-around {
-        padding: 0;
-        input,
-        select {
-          @include font($os, 18px, $black-two, 700, null);
-          @include sizeEx(100%, 35px);
-          border: 0;
-          padding: 0 20px;
-          border-radius: 0;
-          box-sizing: border-box;
-          background: $white;
-          text-transform: uppercase;
-        }
-        input {
-          border-bottom: inset 3px transparent;
-          &:focus {
-            // border-color: $color-c6;
-          }
-        }
-      }
       .ecwid-productBrowser-CheckoutShippingAddressPage,
       .ecwid-fieldWrapper, {
         table {
@@ -68,6 +48,14 @@ html#ecwid_html {
         }
       }
       div.ecwid-AddressForm {
+        .ecwid-fieldEnvelope-around {
+          input {
+            &:focus {
+              height: 38px !important;
+              border-bottom: solid 3px $color-c6;
+            }
+          }
+        }
         .ecwid-btn--secondary-inverse {
           border: 0 !important;
           padding: 0;
@@ -348,10 +336,6 @@ html#ecwid_html {
         margin: auto;
       }
     }
-    table.ecwid-categoriesTabBar {
-      max-width: 1000px !important;
-      margin: auto;
-    }
     div.ecwid-Orders-SearchPanel {
       .gwt-TextBox {
         height: 32px;
@@ -388,6 +372,8 @@ html#ecwid_html {
       }
     }
     table.ecwid-categoriesTabBar {
+      max-width: 1000px !important;
+      margin: auto;
       table.gwt-TabBarItem {
         td.tabTopLeft,
         td.tabTopRight {
@@ -463,20 +449,6 @@ html#ecwid_html {
         }
       }
       .ecwid-productBrowser-CartPage {
-        div.ecwid-productBrowser-cart-removeItemButton {
-          @include font($icomoon, 17px, null, 400);
-          @include sizeEx(17px,20px);
-          display: block;
-          position: static;
-          font-variant: normal;
-          text-transform: none;
-          line-height: 1;
-          background: none;
-          &::after {
-            content: "\e932";
-            display: block;
-          }
-        }
         .ecwid-productBrowser-cart-itemsTable-cell-removeItem {
           vertical-align: middle !important;
           padding: 0 20px;
@@ -598,7 +570,7 @@ html#ecwid_html {
           }
           .ecwid-btn--address_book_sign_in {
             position: absolute;
-            transform: translateY(-7px);
+            transform: translateY(-8px);
           }
         }
       }

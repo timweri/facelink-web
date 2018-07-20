@@ -1,6 +1,30 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     .ecwid {
+      .ecwid-Invoice-itemsTable {
+        div.ecwid-Invoice-optionsList {
+          padding-top: 0 !important;
+        }
+        td.ecwid-Invoice-itemsTable-cell-thumbnail {
+          img {
+            max-width: 120px !important;
+            width: 120px !important;
+            max-height: none !important;
+            height: auto !important;
+          }
+        }
+        td.ecwid-Invoice-itemsTable-headerCell-removeItem {
+          display: none;
+        }
+        table.ecwid-Invoice-itemsTable {
+          .ecwid-Invoice-optionsList {
+            padding-top: 0 !important;
+          }
+        }
+        td.ecwid-Invoice-itemsTable-cell {
+          vertical-align: middle !important;
+        }
+      }
       .ecwid-Invoice-footer-placeOrder {
         padding-right: 0;
       }
@@ -48,6 +72,9 @@ html#ecwid_html {
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-Invoice-ShippingDetails-items {
+        margin-top: 30px;
+      }
       .ecwid-productBrowser-CheckoutPaymentDetailsPage {
         .ecwid-productBrowser-head-panel ~ div {
           margin: 0 -15px;
