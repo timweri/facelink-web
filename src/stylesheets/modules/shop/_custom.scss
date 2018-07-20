@@ -2,15 +2,44 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
-    .ecwid-DisappearingMessage{
+    .ecwid-DisappearingMessage,
+    .ecwid-MessageBox {
       border: solid 3px $orange !important;
+    }
+    .ecwid-MessageBox {
+      padding: 20px 0 10px;
+    }
+    .ecwid-fieldEnvelope-around {
+      padding: 0;
+      input,
+      select {
+        @include font($os, 18px, $black-two, 700, null);
+        @include sizeEx(100%, 35px !important);
+        border: 0;
+        padding: 0 20px;
+        border-radius: 0;
+        box-sizing: border-box;
+        background: $white;
+        text-transform: uppercase;
+      }
+      input {
+        border-top: inset 3px transparent;
+        border-bottom: solid 3px transparent;
+        &:focus {
+          //border-color: $color-c6;
+        }
+      }
     }
     .ecwid-fieldEnvelope-error {
       .ecwid-fieldEnvelope-label {
         display: none !important;
       }
       .ecwid-fieldEnvelope-around {
-        box-shadow: 2px 2px 0 $red, -2px -2px 0 $red, 2px -2px 0 $red, -2px 2px 0 $red;
+        box-shadow: none;
+        input {
+          height: 38px !important;
+          border-bottom: solid 3px $red !important;
+        }
       }
     }
     .mod-content-editor {
@@ -98,6 +127,7 @@ html#ecwid_html {
         padding: 0;
       }
       .form-control__button {
+        border-radius: 0 !important;
         .form-control__button-text {
           margin-bottom: 2px;
         }
@@ -127,6 +157,7 @@ html#ecwid_html {
       }
       .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
         border: 3px solid $orange;
+        padding-bottom: 2px !important;
         &:focus,
         &:focus:active {
           border: 3px solid $orange;
@@ -146,6 +177,7 @@ html#ecwid_html {
         padding: 70px 0 0;
         margin: 110px 0;
         position: relative;
+        width: calc(100% + 30px) !important;
         // display: none;
         .container {
           position: relative;
@@ -412,3 +444,16 @@ html#ecwid_html {
     }
   }
 }
+
+@media screen and (max-width: 2000px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .mod-promotion {
+          margin-left: -15px !important;
+        }
+      }
+    }
+  }
+}
+

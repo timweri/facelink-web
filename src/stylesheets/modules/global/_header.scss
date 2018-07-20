@@ -25,6 +25,7 @@
   }
 
   #header-logo {
+    @include sizeEx(120px, auto);
     padding: 27px 0;
   }
 }

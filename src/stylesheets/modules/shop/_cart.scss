@@ -1,9 +1,21 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     div.ecwid-productBrowser-head {
-      @include font(null, 26px, $black, 700);
+      @include font(null, rem(26), $black, 700);
       text-transform: uppercase;
       text-align: center;
+    }
+    .ecwid-productBrowser-CartPage {
+      &::before {
+        @include font($os , rem(26), $black, 700);
+        display: block;
+        text-align: center;
+        letter-spacing: 1.5px;
+        content: "YOUR CART";
+      }
+    }
+    td.ecwid-productBrowser-cart-itemsTable-headerCell {
+      border-bottom: 2px solid $black;
     }
     td.ecwid-Invoice-itemsTable-headerCell-thumbnail,
     td.ecwid-productBrowser-cart-itemsTable-headerCell-thumbnail,
@@ -57,7 +69,7 @@ html#ecwid_html {
     }
     div.ecwid-productBrowser-cart-hint {
       @include font($font-family-base, 15px, $border-gray);
-      padding: 70px 0 20px;
+      padding: 40px 0 20px;
       text-align: center;
     }
     .ecwid-productBrowser-cart-totalLabel {
@@ -65,7 +77,7 @@ html#ecwid_html {
       text-transform: uppercase;
     }
     div.ecwid-productBrowser-cart-shippingLabel {
-      font-size: 15px;
+      font-size: rem(15);
       font-family: $font-family-base;
       letter-spacing: .4px;
     }
@@ -111,7 +123,20 @@ html#ecwid_html {
       .ecwid-fieldEnvelope-around {
         input {
           height: 36px !important;
+          width: 100%;
           max-width: 100%;
+          &:focus {
+            height: 39px !important;
+            border-bottom: 3px solid $color-c6;
+          }
+        }
+      }
+      .ecwid-fieldEnvelope-error {
+        .ecwid-fieldEnvelope-around {
+          input {
+            height: 39px !important;
+            border-bottom: solid 3px $red !important;
+          }
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
@@ -162,8 +187,9 @@ html#ecwid_html {
       .ecwid-productBrowser-cart-itemsTable-cell-thumbnail {
         width: 17%;
         img {
-          @include sizeEx(100% !important, auto !important);
+          @include sizeEx(120px !important, auto !important);
           max-height: none !important;
+          max-width: 120px !important;
         }
       }
       div.ecwid-productBrowser-cart-hint {
@@ -178,11 +204,49 @@ html#ecwid_html {
     }
   }
 }
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(md) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-productBrowser-CartPage {
+        div.ecwid-productBrowser-cart-removeItemButton {
+          @include font($icomoon, 17px, null, 400);
+          @include sizeEx(17px,20px);
+          display: block;
+          position: static;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          background: none;
+          &::after {
+            content: "\e932";
+            display: block;
+          }
+          &:hover {
+            &::after {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-productNameLink a {
+        &:hover {
+          color: $orange !important;
+        }
+      }
+      .ecwid-productBrowser-CartPage {
+        margin-top: 40px;
         margin-bottom: 130px;
+        &::before {
+          font-size: rem(30);
+          letter-spacing: 2.5px;
+          text-align: left;
+        }
         div.ecwid-productBrowser-head {
           text-align: left;
         }
