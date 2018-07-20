@@ -1,5 +1,4 @@
 .ecwid-productBrowser-FavoritesPage {
-  margin-bottom: 150px;
   button {
     min-height: 40px !important;
   }
@@ -33,6 +32,7 @@
     .grid-product__image-wrap {
       transition: transform .2s ease 0s !important;
       backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .grid-product__wrap-inner {
       &:hover {
