@@ -369,6 +369,21 @@
   }
 }
 
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .is-login {
+    margin-left: 10px;
+    .btn-user-profile {
+      padding: 8px 5px 8px 28px;
+      padding: 8px 5px 8px 28px;
+      text-overflow: clip;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 200px;
+    }
+  }
+}
+
+
 @media (min-width: 1500px) {
   .menu-right {
     margin-left: 0;
