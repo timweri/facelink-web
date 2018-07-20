@@ -1,3 +1,43 @@
 .ecwid-productBrowser-FavoritesPage {
   margin-bottom: 150px;
+  .grid__products {
+    margin: 0 !important;
+    .grid-product__title-inner {
+      transition: color .1s;
+    }
+    .form-control {
+      text-align: center !important;
+    }
+    .form-control--secondary {
+      .form-control__button {
+        @include font($os, 15px !important, $white, 700);
+        background: $orange !important;
+        text-transform: uppercase;
+        min-height: 40px !important;
+        width: 150px !important;
+        letter-spacing: 1.1px;
+        &::before {
+          content: none !important;
+        }
+        &:hover{
+          background: $orange;
+          border: 0;
+        }
+      }
+    }
+    a.grid-product__image {
+      @include sizeEx(281.5px !important);
+    }
+    .grid-product__image-wrap {
+      transition: transform .2s ease 0s !important;
+      backface-visibility: hidden;
+    }
+    .grid-product__wrap-inner {
+      &:hover {
+        .grid-product__image-wrap {
+          transform: scale(.9) translateZ(0) !important;
+        }
+      }
+    }
+  }
 }
