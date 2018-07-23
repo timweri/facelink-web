@@ -126,8 +126,8 @@ const HomeAnimation = (() => {
       'duration': duration,
       'timeline': new TimelineMax()
         .from(animationFrame2, 10, { left: '100%', ease: Linear.easeNone })
-        .from(contFrame2, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(1) }, 4)
-        .from(subheadFrame2, 6, { top: '70%', opacity: '0', ease: Back.easeOut.config(1) }, 8)
+        .from(contFrame2, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(0.6) }, 4)
+        .from(subheadFrame2, 8, { top: '70%', opacity: '0', ease: Power4.easeOut }, 6)
         .addPause(20)
     })
 
