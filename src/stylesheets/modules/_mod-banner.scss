@@ -1,4 +1,8 @@
 // css mod-cta
+.mod-banner {
+  position: relative;
+  z-index: 20;
+}
 .banner-background {
   @include background-size(cover);
   position: relative;
