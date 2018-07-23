@@ -179,7 +179,7 @@ const HomeAnimation = (() => {
         .to(descriptionIframe3, 2, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 0)
         .to(subheadFrame3, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
         .to(bgOrange, 7, { right: '-100%', delay: '0.3', ease: Linear.easeNone }, 0)
-        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 58%', ease: Linear.easeNone }, 2)
+        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 40px', ease: Linear.easeNone }, 2)
     })
 
     // timelineMaxs[key].push({
