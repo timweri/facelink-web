@@ -52,7 +52,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-              .addIndicators({ name: key + 'AnimationStart' + i })
+              // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -61,7 +61,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-              .addIndicators({ name: key + 'AnimationStart' + i })
+              // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -73,7 +73,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-        .addIndicators({ name: key + 'AnimationStart' })
+        // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -87,15 +87,15 @@ const HomeAnimation = (() => {
 
     // create timeline animation
     new TimelineMax()
-      .from(containerFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) })
-      .from(imgProductionFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) }, 0)
+      .from(containerFrame1, 1, { y: '100%', ease: Back.easeOut.config(1) })
+      .from(imgProductionFrame1, 1, { y: '100%', ease: Back.easeOut.config(1) }, 0)
 
     timelineMaxs[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(containerFrame1, 10, { opacity: '0', bottom: '80%', ease: Linear.easeNone })
-        .to(imgProductionFrame1, 10, { opacity: '0', bottom: '80%', ease: Linear.easeNone }, 0)
+        .to(containerFrame1, 10, { opacity: '0', y: '-80%', ease: Linear.easeNone })
+        .to(imgProductionFrame1, 10, { opacity: '0', y: '-80%', ease: Linear.easeNone }, 0)
         .to(frame, 10, { y: '10px', ease: Linear.easeNone }, 0)
         .to(frame, 0, { position: 'relative' })
     })
