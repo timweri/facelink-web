@@ -250,6 +250,7 @@ const HomeAnimation = (() => {
   }
 
   $(document).ready(function () {
+    $(this).scrollTop(0)
     $('.over-loader').addClass('loader-hidden')
     if (isPageHome && $(window).width() >= 992) {
       jQuery.scrollSpeed(300, 800)
