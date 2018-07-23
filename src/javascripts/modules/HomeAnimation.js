@@ -252,11 +252,6 @@ const HomeAnimation = (() => {
   $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
     if (isPageHome && $(window).width() >= 992) {
-      setTimeout(function () {
-        $('body, html').animate({
-          scrollTop: 0
-        }, 0)
-      }, 100)
       jQuery.scrollSpeed(300, 800)
       frame1Timeline()
       frame2Timeline()
