@@ -162,6 +162,7 @@ const HomeAnimation = (() => {
 
     // custom css
     $(bgImageFrame3).css('background-attachment', 'fixed')
+    $(bgImageFrame3).css('background-position', 'center 0')
 
     // create timeline animation
     timelineMaxs[key].push({
