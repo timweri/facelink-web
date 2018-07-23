@@ -83,20 +83,21 @@ const HomeAnimation = (() => {
     var duration = durationScrollMagics[key]
     var containerFrame1 = frame + ' .container-frame1'
     var imgProductionFrame1 = frame + ' .img-production-frame1'
+    var imageFrame1 = frame + ' .image-frame1'
     // custom css
 
     // create timeline animation
     new TimelineMax()
-      .from(containerFrame1, 1, { y: '100%', ease: Back.easeOut.config(1) })
-      .from(imgProductionFrame1, 1, { y: '100%', ease: Back.easeOut.config(1) }, 0)
+      .from(containerFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) })
+      .from(imgProductionFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) }, 0)
 
     timelineMaxs[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(containerFrame1, 10, { opacity: '0', y: '-80%', ease: Linear.easeNone })
-        .to(imgProductionFrame1, 10, { opacity: '0', y: '-80%', ease: Linear.easeNone }, 0)
-        .to(frame, 10, { y: '10px', ease: Linear.easeNone }, 0)
+        .to(containerFrame1, 10, { opacity: '0', bottom: '100%', ease: Linear.easeNone })
+        .to(imgProductionFrame1, 10, { opacity: '0', bottom: '100%', ease: Linear.easeNone }, 0)
+        .to(imageFrame1, 10, { y: '-100px', ease: Linear.easeNone }, 0)
         .to(frame, 0, { position: 'relative' })
     })
   }
@@ -120,14 +121,15 @@ const HomeAnimation = (() => {
     var animationFrame2 = frame + ' .animation-frame2'
     var contFrame2 = frame + ' .cont-frame2'
     // custom css
+    $(frame).css('background-position', '0 80px')
 
     // create timeline animation
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(animationFrame2, 10, { left: '100%', ease: Linear.easeNone })
-        .from(contFrame2, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(0.6) }, 4)
-        .from(subheadFrame2, 8, { top: '70%', opacity: '0', ease: Power4.easeOut }, 6)
+        .from(animationFrame2, 5, { left: '100%', ease: Linear.easeNone })
+        .from(contFrame2, 10, { left: '45%', opacity: '0', ease: Power4.easeOut }, 2)
+        .from(subheadFrame2, 8, { top: '70%', opacity: '0', ease: Power4.easeOut }, 3)
         .addPause(20)
     })
 
@@ -137,12 +139,14 @@ const HomeAnimation = (() => {
         .to(animationFrame2, 10, { left: '100%', ease: Linear.easeNone })
         .to(contFrame2, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
         .to(subheadFrame2, 5, { top: '-20%', ease: Linear.easeNone }, 1)
+        .to(frame, 10, { backgroundPosition: '0 40px', ease: Linear.easeNone }, 0)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
+        .to(frame, 10, { backgroundPosition: '0 -100px', ease: Linear.easeNone }, 0)
         .to(frame, 10, { top: '80px', ease: Linear.easeNone }, 0)
     })
   }
@@ -165,7 +169,7 @@ const HomeAnimation = (() => {
       'timeline': new TimelineMax()
         .from(bgOrange, 5, { right: '-100%', ease: Linear.easeNone })
         .from(subheadFrame3, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
-        .from(descriptionIframe3, 2, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 6)
+        .from(descriptionIframe3, 4, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 4)
         .addPause(10)
     })
 
@@ -175,7 +179,7 @@ const HomeAnimation = (() => {
         .to(descriptionIframe3, 2, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 0)
         .to(subheadFrame3, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
         .to(bgOrange, 7, { right: '-100%', delay: '0.3', ease: Linear.easeNone }, 0)
-        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 48%', ease: Linear.easeNone })
+        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 58%', ease: Linear.easeNone }, 4)
     })
 
     // timelineMaxs[key].push({
@@ -184,7 +188,7 @@ const HomeAnimation = (() => {
     // })
 
     timelineMaxs[key].push({
-      'spaceduration': -1 * (duration / 2) - 400
+      'spaceduration': -1 * (duration / 2) - 300
     })
   }
 
@@ -201,22 +205,22 @@ const HomeAnimation = (() => {
 
     // create timeline animation
     timelineMaxs[key].push({
-      'offset': -1 * (duration / 2),
+      'offset': -1 * (duration / 1.5),
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 10, { left: '100%', ease: Linear.easeNone })
-        .from(contFrame4, 4, { top: '100%', ease: Linear.easeNone }, 4)
-        .from(imageProductFrame4, 4, { top: '100vh', delay: '2', ease: Linear.easeNone }, 4)
-        .from(fruitFrame4, 4, { top: '100%', ease: Back.easeOut.config(2) }, 6)
+        .from(bgOrange, 7, { left: '100%', ease: Linear.easeNone })
+        .from(contFrame4, 6, { y: '250px', ease: Linear.easeNone }, 2)
+        .from(imageProductFrame4, 6, { top: '100vh', delay: '2', ease: Linear.easeNone }, 2)
+        .from(fruitFrame4, 6, { top: '100%', ease: Back.easeOut.config(2) }, 4)
         .addPause(10)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(fruitFrame4, 10, { top: '-100%', ease: Linear.easeNone })
-        .to(imageProductFrame4, 10, { top: '-100%', delay: '2', ease: Linear.easeNone }, 0)
-        .to(contFrame4, 10, { top: '-100%', ease: Linear.easeNone }, 0)
+        .to(fruitFrame4, 10, { y: '-500px', ease: Linear.easeNone })
+        .to(imageProductFrame4, 10, { top: '-10%', delay: '2', ease: Linear.easeNone }, 0)
+        .to(contFrame4, 10, { top: '-10%', ease: Linear.easeNone }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Linear.easeNone }, 0)
     })
 
