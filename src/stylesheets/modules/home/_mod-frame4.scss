@@ -1,7 +1,10 @@
 
 .section-frame4 {
   color: $white;
-  background: $color-ffc6;
+  background: $orange;
+  .rotate-image {
+    background: $color-ffc6;
+  }
   .bg-orange {
     @include position(absolute, 0, null, 0, 0);
     @include sizeEx(100%, 55%);
