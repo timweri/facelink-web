@@ -220,8 +220,8 @@ const HomeAnimation = (() => {
       'duration': duration,
       'timeline': new TimelineMax()
         .to(fruitFrame4, 10, { y: '-500px', ease: Linear.easeNone })
-        .to(imageProductFrame4, 10, { top: '-10%', delay: '2', ease: Linear.easeNone }, 0)
-        .to(contFrame4, 10, { top: '-10%', ease: Linear.easeNone }, 0)
+        .to(imageProductFrame4, 10, { top: '-100vh', delay: '2', ease: Linear.easeNone }, 0)
+        .to(contFrame4, 10, { top: '-250px', ease: Linear.easeNone }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Linear.easeNone }, 0)
     })
 
