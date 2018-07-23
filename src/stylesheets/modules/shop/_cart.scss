@@ -1,5 +1,12 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    .ecwid-productBrowser-AccountSettingsPage,
+    .ecwid-productBrowser-AddressBookPage,
+    .ecwid-productBrowser-OrdersPage,
+    .ecwid-productBrowser-FavoritesPage {
+      margin-top: 40px;
+      margin-bottom: 130px;
+    }
     div.ecwid-productBrowser-head {
       @include font(null, rem(26), $black, 700);
       text-transform: uppercase;
