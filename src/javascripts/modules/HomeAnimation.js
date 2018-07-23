@@ -52,7 +52,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-              // .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -61,7 +61,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-              // .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -73,7 +73,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-        // .addIndicators({ name: key + 'AnimationStart' })
+      // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -138,7 +138,7 @@ const HomeAnimation = (() => {
       'timeline': new TimelineMax()
         .to(animationFrame2, 10, { left: '100%', ease: Linear.easeNone })
         .to(contFrame2, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
-        .to(subheadFrame2, 5, { top: '-20%', ease: Linear.easeNone }, 1)
+        .to(subheadFrame2, 8, { top: '-20px', ease: Linear.easeNone }, 1)
         .to(frame, 10, { backgroundPosition: '0 40px', ease: Linear.easeNone }, 0)
     })
 
@@ -179,7 +179,7 @@ const HomeAnimation = (() => {
         .to(descriptionIframe3, 2, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 0)
         .to(subheadFrame3, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
         .to(bgOrange, 7, { right: '-100%', delay: '0.3', ease: Linear.easeNone }, 0)
-        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 58%', ease: Linear.easeNone }, 4)
+        .to(bgImageFrame3, 10, { backgroundPosition: 'auto 58%', ease: Linear.easeNone }, 2)
     })
 
     // timelineMaxs[key].push({
