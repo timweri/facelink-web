@@ -8,6 +8,9 @@ html#ecwid_html {
       margin-top: 40px;
       margin-bottom: 130px;
     }
+    .ecwid-Checkout-BreadCrumbs-section {
+      display: none;
+    }
     div.ecwid-productBrowser-head {
       @include font(null, rem(26), $black, 700);
       text-transform: uppercase;
@@ -423,6 +426,16 @@ html#ecwid_html {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       //
+    }
+  }
+}
+
+@media screen and (min-width: 631px) and (max-width: 991.98px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-productBrowser-CartPage {
+        margin-bottom: 40px !important;
+      }
     }
   }
 }

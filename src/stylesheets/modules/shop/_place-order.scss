@@ -1,6 +1,9 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     .ecwid {
+      div.ecwid-Invoice-PaymentDetails {
+        width: auto !important;
+      }
       .ecwid-Invoice-footer-orderConfirmation {
         .ecwid-Invoice-footer-orderConfirmation-text {
           b {

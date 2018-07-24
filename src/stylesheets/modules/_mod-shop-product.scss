@@ -33,13 +33,7 @@
 .shop-product-pa-overlay {
   @include position(absolute, $bottom: 0, $left:0);
   max-width: 290px;
-  transform: translate(-50%, 22.5%) scale(.85) translateZ(0);
-}
-
-.shop-product-orange-overlay {
-  @include position(absolute, $top: 0, $right:0);
-  transform: translate(20%, -30%) translateZ(0);
-  max-width: 40%;
+  transform: translate(-55%, 36.5%) scale(.85) translateZ(0);
 }
 
 .shop-product-paorange-overlay {
