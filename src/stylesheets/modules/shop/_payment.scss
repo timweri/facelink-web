@@ -1,7 +1,27 @@
-.ecwid-amexPaymentForm {
-  .ecwid-AddressFor-secureLockIcon {
-    @include position(absolute, $left: auto, $top: auto, $bottom: 0, $right: 0);
-    margin: 0;
-    overflow: hidden;
+html#ecwid_html {
+  body#ecwid_body.page-internal {
+    .ecwid-amexPaymentForm {
+      .ecwid-AddressForm-secureLockIcon {
+        @include position(absolute !important, $left: auto !important, $top: auto !important, $bottom: 0 !important, $right: 0 !important);
+        margin: 0 !important;
+        overflow: hidden;
+      }
+    }
+    .ecwid-PaymentMethodsBlock-PaymentOption {
+      label {
+        display: inline-block !important;
+      }
+    }
+    .ecwid-amexPaymentForm,
+    .ecwid-ppReview-block {
+      border-top: 0 !important;
+      background-color: $menu-gray !important;
+    }
+    div.ecwid-PaymentMethodsBlock-PaymentOption-htmlBlock {
+      img {
+        margin-bottom: 5px;
+      }
+    }
   }
 }
+

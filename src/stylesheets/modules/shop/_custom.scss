@@ -164,6 +164,7 @@ html#ecwid_html {
         }
         &:hover {
           background: $orange;
+          color: $white;
         }
       }
       /*.ecwid-productBrowser-auth {
@@ -463,3 +464,17 @@ html#ecwid_html {
   }
 }
 
+@include media-breakpoint-down(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        .ec-related-products {
+          margin-left: -15px !important;
+          margin-bottom: 0 !important;
+          max-width: none !important;
+          width: calc(100% + 30px) !important;
+        }
+      }
+    }
+  }
+}
