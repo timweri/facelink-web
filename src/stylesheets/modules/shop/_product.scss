@@ -506,7 +506,25 @@ html#ecwid_html {
   }
 }
 
-@include media-custom-down(1500) {
+@include media-breakpoint-down(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size {
+        .details-gallery__thumb {
+          width: 100% !important;
+        }
+        .details-gallery__thumbs {
+          position: relative !important;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size {
