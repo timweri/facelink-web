@@ -68,12 +68,16 @@
   }
   .banner-content {
     margin: 102px auto 94px 60px;
+    h1 {
+      letter-spacing: 6.8px;
+    }
     .btn-custom {
       margin-top: 40px;
     }
     .small-h1 {
       font-size: rem(50.4);
       line-height: 1.4;
+      letter-spacing: 4.7px;
     }
   }
   .product-box-inner {
