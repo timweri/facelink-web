@@ -60,6 +60,9 @@
 .img-production-frame1 {
   max-width: 272px;
   margin: 130px 0 0 auto;
+  img {
+    width: 100%;
+  }
 }
 @include media-breakpoint-up(sm) {
   .image-frame1 {
@@ -71,6 +74,10 @@
 @include media-breakpoint-up(lg) {
   .section-frame1 {
     padding-top: 93px;
+  }
+  .col-frame1 {
+    flex: 0 0 48%;
+    max-width: 48%;
   }
   .cont-frame1-primary {
     max-width: none;
@@ -105,7 +112,7 @@
   }
 }
 
-@include media-custom-up(1500) {
+@media screen and (min-width: 1500px) {
   .frame1-container {
     padding-top: 176px;
   }
@@ -122,19 +129,12 @@
 @media only screen and (min-width: 992px) and (max-height: 768px) {
   .img-production-frame1 {
     &.show-desktop {
-      width: 24%;
+      width: 34%;
     }
   }
 }
 @media only screen and (min-width: 992px) and (max-height: 639px) {
   .frame1-container {
     padding-bottom: 100px;
-  }
-}
-@media only screen and (min-width: 1500px) and (max-height: 1000px) {
-  .img-production-frame1 {
-    &.show-desktop {
-      //width: 24%;
-    }
   }
 }
