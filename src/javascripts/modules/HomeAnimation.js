@@ -249,10 +249,33 @@ const HomeAnimation = (() => {
     })
   }
 
+  const scrollSpeed = (scrollTime, scrollDistance) => {
+    var $window = $(window)
+
+    $window.on('mousewheel DOMMouseScroll', function (event) {
+      event.preventDefault()
+      var heso = 4,
+        delta
+      if (event.originalEvent.wheelDelta !== undefined) {
+        delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
+      } else {
+        delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
+      }
+      var scrollTop = $window.scrollTop()
+      var finalScroll = scrollTop - parseInt(delta * scrollDistance)
+
+      TweenMax.to($window, scrollTime, {
+        scrollTo: { y: finalScroll, autoKill: true },
+        ease: Power1.easeOut,
+        overwrite: 5
+      })
+    })
+  }
+
   $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
     if (isPageHome && $(window).width() >= 992) {
-      jQuery.scrollSpeed(300, 800)
+      scrollSpeed(1, 350)
       frame1Timeline()
       frame2Timeline()
       frame3Timeline()
