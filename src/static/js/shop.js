@@ -1,154 +1,213 @@
-var Shop = (function(){
+var Shop = (function () {
   var body = $('body')
-  var titleProductDetail = 'Briq Supplements';
-  var titleCategory = 'Briq Gear';
-  function addListImageProduct() {
-    var $modContentEditor = $('.mod-content-editor');
-    $modContentEditor.removeClass('list-category');
-    var pageCategory = $('.ecwid-productBrowser-CategoryPage');
-    if(pageCategory.find('.grid-product').length) {
-      $modContentEditor.addClass('list-category');
-      var listbgProduct = $('.list-bg-product')[0].outerHTML;
-      $modContentEditor.append(listbgProduct);
+  var titleProductDetail = 'Briq Supplements'
+  var titleCategory = 'Briq Gear'
+  function addListImageProduct () {
+    var $modContentEditor = $('.mod-content-editor')
+    $modContentEditor.removeClass('list-category')
+    var pageCategory = $('.ecwid-productBrowser-CategoryPage')
+    if (pageCategory.find('.grid-product').length) {
+      $modContentEditor.addClass('list-category')
+      var listbgProduct = $('.list-bg-product')[0].outerHTML
+      $modContentEditor.append(listbgProduct)
     } else {
       $modContentEditor.find('.list-bg-product').remove()
     }
-    
   }
-  function addModulePromotion() {
-    setTimeout(function() {
-      var modPromotion = $('.mod-promotion');
+  function addModulePromotion () {
+    setTimeout(function () {
+      var modPromotion = $('.mod-promotion')
       var modPromotionDouble = $('.mod-promotion.position')
-      var productDetail = $('.product-details');
+      var productDetail = $('.product-details')
       var relatedProducts = $('.ec-related-products')
-      var valHeight = '';
+      var valHeight = ''
       // $('.ec-store .mod-promotion').remove()
-      if($(window).width() < 991) {
+      if ($(window).width() < 991) {
         valHeight = 40
       } else {
         valHeight = 0
       }
-      if(productDetail.length && modPromotion.length && relatedProducts.length) {
-        var promotion = $('.mod-promotion')[0].outerHTML;
-        var top = relatedProducts.position().top - valHeight;
-        var marginTop;
-        if(modPromotionDouble.length) {
-          marginTop = modPromotionDouble.innerHeight() + 90;
+      if (productDetail.length && modPromotion.length && relatedProducts.length) {
+        var promotion = $('.mod-promotion')[0].outerHTML
+        var top = relatedProducts.position().top - valHeight
+        var marginTop
+        if (modPromotionDouble.length) {
+          marginTop = modPromotionDouble.innerHeight() + 90
           modPromotionDouble.css('top', top)
-          relatedProducts.css('padding-top', marginTop);
+          relatedProducts.css('padding-top', marginTop)
         } else {
-          marginTop = modPromotion.innerHeight() + 90;
-          relatedProducts.css('padding-top', marginTop);
+          marginTop = modPromotion.innerHeight() + 90
+          relatedProducts.css('padding-top', marginTop)
           $(promotion)
-          .insertAfter(".ec-store__content-wrapper")
+          .insertAfter('.ec-store__content-wrapper')
           .addClass('position')
           .css('top', top)
         }
         console.log(marginTop)
-        
       }
-      if(productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
+      if (productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
         modPromotion.addClass('d-block')
       } else {
         modPromotion.removeClass('d-block')
       }
     })
-    
   }
 
-  function setTitle() {
-    var $title = $('.page-title__name');
-    var $titleBanner = $('.ecwid-productBrowser-head');
-    var modShopHeader = $('.mod-shop-header');
-    if($title.length || $titleBanner.length) {
-      modShopHeader.remove();
-      var txt = $title.html();
-      var txtBanner = $titleBanner.html()
-      if ((txt != '') && (txt != undefined)) {
-        var dom = '<section class="module mod-shop-header">'
-        + '<div class="container">'
-        +  '<h1>' + txt +'</h1>'
-        // +  '<p>(2 items)</p>'
-        + '</div>'
-        + '</section>';
-        $(dom).insertBefore("#ecwid_html .mod-content-editor");
+  // function setTitle() {
+  //   var $title = $('.page-title__name')
+  //   var $titleBanner = $('.ecwid-productBrowser-head')
+  //   var modShopHeader = $('.mod-shop-header')
+  //   if ($title.length || $titleBanner.length) {
+  //     modShopHeader.remove()
+  //     var txt = $title.html()
+  //     var txtBanner = $titleBanner.html()
+  //     if ((txt != '') && (txt != undefined)) {
+  //       var dom = '<section class="module mod-shop-header">'
+  //       + '<div class="container">'
+  //       +  '<h1>' + txt +'</h1>'
+  //       // +  '<p>(2 items)</p>'
+  //       + '</div>'
+  //       + '</section>'
+  //       $(dom).insertBefore("#ecwid_html .mod-content-editor")
+  //     }
+  //     if (txtBanner != '' && txtBanner != undefined) {
+  //       var dom = '<section class="module mod-shop-header">'
+  //       + '<div class="container">'
+  //       +  '<h1>' + txtBanner +'</h1>'
+  //       // +  '<p>(2 items)</p>'
+  //       + '</div>'
+  //       + '</section>'
+  //       $(dom).insertBefore("#ecwid_html .mod-content-editor")
+  //     }
+  //   } else {
+  //     modShopHeader.remove()
+  //   }
+  // }
+
+  function setTitle () {
+    var modShopHeader = $('.mod-shop-header')
+    var $titleBanner = $('.ecwid-productBrowser-head')
+    var $title = $('.page-title__name')
+
+    let path = window.location.pathname.trim().split('/')
+    let isShop = path[1] === 'shop' ? true : false
+    let isSuplement = path[2].split('-')[0] === '320Z' ? true : false
+
+    if (isShop && !isSuplement) {
+      modShopHeader.remove()
+      titleProductDetail = 'Briq Gear'
+
+      $('.product-details').removeClass('muti-item')
+      if ($title.length) {
+        var txt = $title.html()
+        if ((txt !== '') && (txt !== undefined)) {
+          var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txt + '</h1>' + '</div>' + '</section>'
+          $(dom).insertBefore('#ecwid_html .mod-content-editor')
+        }
       }
-      if (txtBanner != '' && txtBanner != undefined) {
-        var dom = '<section class="module mod-shop-header">'
-        + '<div class="container">'
-        +  '<h1>' + txtBanner +'</h1>'
-        // +  '<p>(2 items)</p>'
-        + '</div>'
-        + '</section>';
-        $(dom).insertBefore("#ecwid_html .mod-content-editor");
+
+      if ($titleBanner.length) {
+        console.log('titleBanner')
+        var txtBanner = $titleBanner.html()
+        if (txtBanner !== '' && txtBanner !== undefined) {
+          var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txtBanner + '</h1>' + '</div>' + '</section>'
+          $(dom).insertBefore('#ecwid_html .mod-content-editor')
+        }
       }
     } else {
       modShopHeader.remove()
     }
   }
-  function changePage(id, name) {
-    Ecwid.openPage('category', {'id': id, 'name': '"'+ name +'"', 'page': 1});
+
+  function changePage (id, name) {
+    Ecwid.openPage('category', {'id': id, 'name': '"' + name + '"', 'page': 1})
   }
-  function showLoading() {
+  function showLoading () {
     var $overLoader = $('.over-loader')
     $overLoader.removeAttr('style')
-    $('#main-content').css('opacity', 0);
-
+    $('#main-content').css('opacity', 0)
   }
-  function closeLoading() {
-    setTimeout(function() {
+  function closeLoading () {
+    setTimeout(function () {
       var $overLoader = $('.over-loader')
-      $overLoader.fadeOut('300', function() {
-        $('#main-content').css('opacity', 1);
+      $overLoader.fadeOut('300', function () {
+        $('#main-content').css('opacity', 1)
       })
     }, 500)
   }
-  function setLocalStorage() {
-    localStorage.setItem("ecwid-product", true);
+  function setLocalStorage () {
+    localStorage.setItem('ecwid-product', true)
   }
-  function focusInputShop() {
-    $('.gwt-TextBox').blur(function(){
+  function focusInputShop () {
+    $('.gwt-TextBox').blur(function () {
       var self = $(this)
-      if(self.val().length > 0) {
+      if (self.val().length > 0) {
         self.parents('.ecwid-fieldWrapper').addClass('has-text')
       } else {
         self.parents('.ecwid-fieldWrapper').removeClass('has-text')
       }
     })
   }
-  function checkInputHasVal() {
+  function checkInputHasVal () {
     var lengthIput = $('.gwt-TextBox').length
-    for(var i = 0; i< lengthIput; i++) {
-      if($('.gwt-TextBox').eq(i).val().length > 0) {
+    for (var i = 0; i < lengthIput; i++) {
+      if ($('.gwt-TextBox').eq(i).val().length > 0) {
         $('.gwt-TextBox').eq(i).parents('.ecwid-fieldWrapper').addClass('has-text')
       }
     }
   }
-  if ($("#ecwid_html").length) {
-    Ecwid.OnPageLoad.add(function(page) {
-      // console.log(page.type)
-      showLoading();
+  if ($('#ecwid_html').length) {
+    Ecwid.OnPageLoad.add(function (page) {
+      showLoading()
     })
-    Ecwid.OnPageLoaded.add(function(page) {
-      // console.log(page.type)
-      if(page.type == 'PRODUCT') {
-        body.addClass('page-product');
-        if($('.details-gallery--one-image').length <= 0) {
+    Ecwid.OnPageLoaded.add(function (page) {
+      if (page.type === 'CHECKOUT_SHIPPING_ADDRESS' || page.type === 'CHECKOUT_PAYMENT_DETAILS') {
+        $('#select-Country-Box').change(function () {
+          if ($('#select-Country-Box').val() === '') {
+            $('.ecwid-AddressForm-country-line').removeClass('has-text')
+          } else {
+            $('.ecwid-AddressForm-country-line').addClass('has-text')
+          }
+          if ($('#select-State-Box').val() !== '') {
+            $('.ecwid-AddressForm-state-line').addClass('has-text')
+          } else {
+            $('.ecwid-AddressForm-state-line').removeClass('has-text')
+          }
+        })
+
+        $('#select-State-Box').change(function () {
+          if ($('#select-State-Box').val() === '') {
+            $('.ecwid-AddressForm-state-line').removeClass('has-text')
+          } else {
+            $('.ecwid-AddressForm-state-line').addClass('has-text')
+          }
+        })
+        if ($('#select-Country-Box').val() !== '') {
+          $('.ecwid-AddressForm-country-line').addClass('has-text')
+        }
+        if ($('#select-State-Box').val() !== '') {
+          $('.ecwid-AddressForm-state-line').addClass('has-text')
+        }
+      }
+
+      if (page.type === 'PRODUCT') {
+        body.addClass('page-product')
+        if ($('.details-gallery--one-image').length <= 0) {
           $('.product-details').addClass('muti-item')
         }
-        if(localStorage.getItem("ecwid-product") == "true") {
-          location.reload();
-          localStorage.removeItem("ecwid-product");
+        if (localStorage.getItem('ecwid-product') === 'true') {
+          location.reload()
+          localStorage.removeItem('ecwid-product')
         } else {
-          setTimeout(function() {
+          setTimeout(function () {
             var product = $('.grid__products')
             var relatedProduct = $('.ec-related-products__products')
-            if(relatedProduct.length) {
+            if (relatedProduct.length) {
               var html = $('.ec-related-products__products')[0].outerHTML
-              $('.ec-related-products__products').eq(0).addClass('d-none');
+              $('.ec-related-products__products').eq(0).addClass('d-none')
               $('.ec-related-products').append(html)
-              setTimeout(function(){
-                if(product.length) {
+              setTimeout(function () {
+                if (product.length) {
                   $('.ec-related-products__products').eq(1).find('.grid__products').slick({
                     slidesToShow: 3,
                     slidesToScroll: 1,
@@ -172,62 +231,60 @@ var Shop = (function(){
                 }
               })
             }
-            var dom = '<section class="module mod-shop-header">'
-            + '<div class="container">'
-            +  '<h1>' + titleProductDetail +'</h1>'
-            + '</div>'
-            + '</section>';
-            $(dom).insertBefore("#ecwid_html .mod-content-editor");
+            var dom = '<section class="module mod-shop-header">' +
+             '<div class="container">' +
+             '<h1 class="title-detail">' + titleProductDetail + '</h1>' +
+             '</div>' +
+             '</section>'
+            $(dom).insertBefore('#ecwid_html .mod-content-editor')
           }, 1000)
           closeLoading()
         }
       } else {
-        body.removeClass('page-product');
+        body.removeClass('page-product')
         $('.product-details').addClass('muti-item')
         closeLoading()
       }
-      if(page.type == 'CART' || page.type == 'ORDER_CONFIRMATION') {
-        body.addClass('page-cart');
+      if (page.type === 'CART' || page.type === 'ORDER_CONFIRMATION') {
+        body.addClass('page-cart')
       } else {
-        body.removeClass('page-cart');
+        body.removeClass('page-cart')
       }
-      if(page.type == 'CHECKOUT_PAYMENT_DETAILS' || page.type == 'CHECKOUT_PLACE_ORDER') {
-        body.addClass('page-check-detail');
+      if (page.type === 'CHECKOUT_PAYMENT_DETAILS' || page.type === 'CHECKOUT_PLACE_ORDER') {
+        body.addClass('page-check-detail')
       } else {
-        body.removeClass('page-check-detail');
+        body.removeClass('page-check-detail')
       }
-      function addRemoveClass() {
-        var $title = $('.page-title__name');
-        if (page.type == 'CATEGORY' && $title.length == 0 ) {
+      function addRemoveClass () {
+        var $title = $('.page-title__name')
+        if (page.type === 'CATEGORY' && $title.length === 0) {
           body.addClass('page-category')
         } else {
           body.removeClass('page-category')
         }
-        if (page.type == 'CATEGORY' && $title.length) {
+        if (page.type === 'CATEGORY' && $title.length) {
           body.addClass('page-category-list')
         } else {
           body.removeClass('page-category-list')
         }
       }
 
-      addListImageProduct();
-      addModulePromotion();
-      setTitle();
-      addRemoveClass();
-      focusInputShop();
-      checkInputHasVal();
-      // closeLoading()
-    });
-   
-  }
-  var resizeTimer;
-  $(window).on('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
+      addListImageProduct()
       addModulePromotion()
-    }, 250);
+      setTitle()
+      addRemoveClass()
+      focusInputShop()
+      checkInputHasVal()
+      // closeLoading()
+    })
+  }
+  var resizeTimer
+  $(window).on('resize', function () {
+    clearTimeout(resizeTimer)
+    resizeTimer = setTimeout(function () {
+      addModulePromotion()
+    }, 250)
   })
-  
   return {
     changePage: changePage,
     showLoading: showLoading,
@@ -236,10 +293,10 @@ var Shop = (function(){
   }
 })()
 
-Ecwid.OnCartChanged.add(function(cart) {
-    var number = cart.productsQuantity;
-    if(cart.productsQuantity > 99){
-        number = "99+";
-    }
-    $(".cart-badge b").html(number);
-});
+Ecwid.OnCartChanged.add(function (cart) {
+  var number = cart.productsQuantity
+  if (cart.productsQuantity > 99) {
+    number = '99+'
+  }
+  $('.cart-badge b').html(number)
+})

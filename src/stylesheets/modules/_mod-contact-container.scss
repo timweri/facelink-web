@@ -1,4 +1,5 @@
 .mod-contact-container {
+  @include position(relative, $index: 30);
   margin-top: 64px;
   .info-contact {
     margin-bottom: 68px;
