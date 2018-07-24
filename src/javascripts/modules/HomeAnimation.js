@@ -257,7 +257,7 @@ const HomeAnimation = (() => {
       var heso = 4,
         delta
       if (event.originalEvent.wheelDelta !== undefined) {
-        delta = event.originalEvent.wheelDelta / heso * 30 || -event.originalEvent.detail / 3
+        delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
       } else {
         delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
       }
