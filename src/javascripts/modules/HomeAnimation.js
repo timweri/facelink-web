@@ -34,7 +34,7 @@ const HomeAnimation = (() => {
       triggerHook: 'onLeave'
     }
   })
-  var scrollspeed = 50
+
   const runScrollMagicScene = () => {
     for (var key in elementFrames) {
       var _element = elementFrames[key]
@@ -52,7 +52,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -61,7 +61,7 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -73,7 +73,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      // .addIndicators({ name: key + 'AnimationStart' })
+      .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -123,8 +123,8 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(containerFrame1, 10, { opacity: '0', bottom: '100%', ease: Linear.easeNone })
-        .to(imgProductionFrame1, 10, { opacity: '0', bottom: '100%', ease: Linear.easeNone }, 0)
+        .to(containerFrame1, 10, { bottom: '100%', ease: Linear.easeNone })
+        .to(imgProductionFrame1, 10, { bottom: '100%', ease: Linear.easeNone }, 0)
         .to(imageFrame1, 10, { y: '-100px', ease: Linear.easeNone }, 0)
         .to(frame, 0, { position: 'relative' })
     })
@@ -196,10 +196,10 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 10, { right: '-100%', ease: Linear.easeNone })
+        .from(bgOrange, 15, { right: '-100%', ease: Linear.easeNone })
         .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Linear.easeNone }, 10)
         .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 10)
-        .addPause(30)
+        .addPause(24)
     })
 
     timelineMaxs[key].push({
@@ -239,16 +239,16 @@ const HomeAnimation = (() => {
       'timeline': new TimelineMax()
         .from(bgOrange, 7, { left: '100%', ease: Linear.easeNone })
         .from(contFrame4, 6, { y: '250px', ease: Linear.easeNone }, 2)
-        .from(imageProductFrame4, 6, { top: '100vh', delay: '2', ease: Linear.easeNone }, 2)
-        .from(fruitFrame4, 6, { top: '100%', ease: Linear.easeNone }, 4)
-        .addPause(10)
+        .from(imageProductFrame4, 6, { top: '100vh', ease: Linear.easeNone }, 2)
+        .from(fruitFrame4, 4, { top: '100%', ease: Linear.easeNone }, 3)
+        // .addPause(10)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(fruitFrame4, 10, { y: '-500px', ease: Linear.easeNone })
-        .to(imageProductFrame4, 10, { top: '-100vh', delay: '2', ease: Linear.easeNone }, 0)
+        .to(fruitFrame4, 10, { y: '-300px', ease: Linear.easeNone })
+        .to(imageProductFrame4, 10, { y: '-100px', ease: Linear.easeNone }, 0)
         .to(contFrame4, 10, { top: '-250px', ease: Linear.easeNone }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Linear.easeNone }, 0)
     })
@@ -280,7 +280,7 @@ const HomeAnimation = (() => {
   $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
     if (isPageHome && $(window).width() >= 992) {
-      // scrollSpeed(1, scrollspeed)
+      scrollSpeed(0.5, 180)
       frame1Timeline()
       frame2Timeline()
       frame3Timeline()
