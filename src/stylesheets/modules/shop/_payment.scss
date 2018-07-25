@@ -6,9 +6,8 @@ html#ecwid_html {
     .ecwid-AddressForm-fields-disabled {
       .gwt-TextBox,
       .gwt-ListBox {
-        background-color: transparent;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        background-color: $white;
+        color: $border-gray;
       }
     }
     .ecwid-AddressForm-fields-topPanel {
@@ -16,6 +15,7 @@ html#ecwid_html {
         text-align: left !important;
       }
       .ecwid-btn {
+        cursor: pointer !important;
         padding: 0 !important;
       }
       .gwt-HTML {
@@ -32,6 +32,7 @@ html#ecwid_html {
     .ecwid-PaymentMethodsBlock-PaymentOption {
       label {
         display: inline-block !important;
+        cursor: pointer;
       }
     }
     .ecwid-amexPaymentForm,

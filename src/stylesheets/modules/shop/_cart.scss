@@ -131,6 +131,9 @@ html#ecwid_html {
       .ecwid-fieldEnvelop {
         width: 100%;
       }
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
       .ecwid-fieldEnvelope-around {
         input {
           @include sizeEx(100%, 39px !important);
@@ -140,11 +143,6 @@ html#ecwid_html {
           &:focus {
             border-bottom: 3px solid $color-c6;
           }
-        }
-      }
-      .ecwid-fieldEnvelope-error {
-        .ecwid-fieldEnvelope-around {
-          border-bottom: solid 3px $red !important;
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
