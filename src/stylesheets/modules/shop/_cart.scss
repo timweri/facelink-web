@@ -119,6 +119,7 @@ html#ecwid_html {
       position: relative;
       background: $menu-gray;
       padding: 51px 30px 90px !important;
+      margin: 0;
       .ecwid-fieldEnvelope-label {
         display: none !important;
       }
@@ -338,6 +339,9 @@ html#ecwid_html {
 @media screen and (max-width: 991px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-Checkout-blockTitle {
+        margin-bottom: 46px !important;
+      }
       .ecwid-responsive {
         div.ecwid-productBrowser-cart-non-compact {
           > div {
@@ -391,6 +395,18 @@ html#ecwid_html {
     }
   }
 }
+
+@media screen and (max-width: 543px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal.ecwid-customer-loggedOut {
+      .ecwid-btn--address_book_sign_in {
+        display: block !important;
+        margin: 32px 0 0 !important;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
