@@ -1,5 +1,27 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    .ecwid-Checkout-block-title {
+      margin-bottom: 38px !important;
+    }
+    .ecwid-AddressForm-fields-disabled {
+      .gwt-TextBox,
+      .gwt-ListBox {
+        background-color: transparent;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+    .ecwid-AddressForm-fields-topPanel {
+      > table > tbody >tr > td {
+        text-align: left !important;
+      }
+      .ecwid-btn {
+        padding: 0 !important;
+      }
+      .gwt-HTML {
+        @include position(relative, $top: 1px);
+      }
+    }
     .ecwid-amexPaymentForm {
       .ecwid-AddressForm-secureLockIcon {
         @include position(absolute !important, $left: auto !important, $top: auto !important, $bottom: 0 !important, $right: 0 !important);
