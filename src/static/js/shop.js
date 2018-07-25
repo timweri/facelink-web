@@ -192,6 +192,7 @@ var Shop = (function () {
 
       if (page.type === 'PRODUCT') {
         body.addClass('page-product')
+        $('.mod-insta-link').hide()
         if ($('.details-gallery--one-image').length <= 0) {
           $('.product-details').addClass('muti-item')
         }
@@ -259,6 +260,7 @@ var Shop = (function () {
         var $title = $('.page-title__name')
         if (page.type === 'CATEGORY' && $title.length === 0) {
           body.addClass('page-category')
+          $('.mod-insta-link').hide()
         } else {
           body.removeClass('page-category')
         }
