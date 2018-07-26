@@ -119,6 +119,7 @@ html#ecwid_html {
       position: relative;
       background: $menu-gray;
       padding: 51px 30px 90px !important;
+      margin: 0;
       .ecwid-fieldEnvelope-label {
         display: none !important;
       }
@@ -131,22 +132,17 @@ html#ecwid_html {
       .ecwid-fieldEnvelop {
         width: 100%;
       }
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
       .ecwid-fieldEnvelope-around {
         input {
-          height: 36px !important;
-          width: 100%;
+          @include sizeEx(100%, 39px !important);
+          padding: 0 21px 3px !important;
           max-width: 100%;
+          border-bottom: 3px solid $menu-gray;
           &:focus {
-            height: 39px !important;
             border-bottom: 3px solid $color-c6;
-          }
-        }
-      }
-      .ecwid-fieldEnvelope-error {
-        .ecwid-fieldEnvelope-around {
-          input {
-            height: 39px !important;
-            border-bottom: solid 3px $red !important;
           }
         }
       }
@@ -160,6 +156,7 @@ html#ecwid_html {
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeContainer {
+        @include position(relative, $top: -4px);
         width: 100%;
       }
     }
@@ -312,7 +309,7 @@ html#ecwid_html {
         margin-left: -82px !important;
         button.ecwid-btn--apply,
         button.ecwid-btn--cancel {
-          @include position($top: 49px, $left: auto !important, $right: 0, $bottom: auto !important);
+          @include position($top: 46px, $left: auto !important, $right: 0, $bottom: auto !important);
         }
       }
     }
@@ -342,6 +339,9 @@ html#ecwid_html {
 @media screen and (max-width: 991px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-Checkout-blockTitle {
+        margin-bottom: 46px !important;
+      }
       .ecwid-responsive {
         div.ecwid-productBrowser-cart-non-compact {
           > div {
@@ -395,6 +395,18 @@ html#ecwid_html {
     }
   }
 }
+
+@media screen and (max-width: 543px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal.ecwid-customer-loggedOut {
+      .ecwid-btn--address_book_sign_in {
+        display: block !important;
+        margin: 32px 0 0 !important;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {

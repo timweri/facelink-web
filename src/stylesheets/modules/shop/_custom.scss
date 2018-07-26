@@ -2,6 +2,37 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .bootstrap-select {
+      width: 100%;
+      div.inner {
+        background: $white;
+      }
+      ul.dropdown-menu.inner {
+        list-style: none;
+        padding-left: 0;
+        li {
+          a {
+            padding-left: 30px;
+            span {
+              @include font($font-family-base !important, 15px !important, $menu-gray !important, 400);
+            }
+          }
+        }
+        li:not(:last-child):not(:first-child) {
+          border-top: solid 1px $menu-gray;
+          border-bottom: solid 1px $menu-gray;
+        }
+      }
+    }
+    .ecwid-bootstrap-select {
+      width: 100%;
+      .filter-option-inner-inner {
+        @include font($os, 18px, $black-two, 700);
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0 40px;
+      }
+    }
     .ecwid-DisappearingMessage,
     .ecwid-MessageBox {
       border: solid 3px $orange !important;
@@ -10,7 +41,7 @@ html#ecwid_html {
       padding: 20px 0 10px;
     }
     .ecwid-fieldEnvelope-around {
-      padding: 0;
+      padding: 0 !important;
       input,
       select {
         @include font($os, 18px, $black-two, 700, null);
@@ -129,7 +160,7 @@ html#ecwid_html {
       .form-control__button {
         border-radius: 0 !important;
         .form-control__button-text {
-          margin-bottom: 2px;
+          margin-bottom: 1px;
         }
       }
       .details-product-purchase__add-more {

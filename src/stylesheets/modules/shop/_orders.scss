@@ -1,0 +1,19 @@
+.ecwid-productBrowser-OrdersPage {
+  .ecwid-Orders-SearchPanel {
+    input {
+      @include font($os, 18px, $black-two, 700, null);
+      @include sizeEx(100%, 40px !important);
+      border: 0 !important;
+      padding: 0 20px !important;
+      border-radius: 0;
+      box-sizing: border-box !important;
+      background: $menu-gray !important;
+      text-transform: uppercase;
+      border-bottom: solid 3px $white !important;
+  
+      &:focus {
+        border-bottom: solid 3px $color-c6 !important;
+      }
+    }
+  }
+}
