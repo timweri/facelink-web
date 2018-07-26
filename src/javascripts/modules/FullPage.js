@@ -31,6 +31,10 @@ const FullPage = (($) => {
       // this.fullPageHome()
       this.setHeightCTA()
       $(window).resize(this.onResizeWindow.bind(this))
+      let that = this
+      setTimeout(function () {
+        that.stickNavigationHome()
+      }, 300)
     }
     // public api
     static get Default () {
@@ -41,7 +45,47 @@ const FullPage = (($) => {
       // this.fullPageHome()
     }
 
+    stickNavigationHome () {
+      let element = this._element.find(' .section')
+      let navigationHomepage = $('.navigation-homepage')
+      let offset = []
+      element.each(function () {
+        offset.push({
+          'id': $(this).attr('id'),
+          'top': $(this).offset().top
+        })
+      })
+      console.log(offset)
+      $(window).scroll(function () {
+        let top = $(this).scrollTop() + ($(window).height() / 3)
+        let elementActive
+        // console.clear()
+        // console.log('-------')
+        // console.log(top)
+        offset.forEach(element => {
+          if (element.top <= top) {
+            elementActive = element.id
+            return true
+          }
+        })
+        // console.log(elementActive)
+        navigationHomepage.find('ul').removeAttr('class').find('.active').removeClass('active')
+        navigationHomepage.find('[href="#' + elementActive + '"]').parent().addClass('active').parent().addClass(elementActive)
+      })
+    }
+
     fullPageHome () {
+      var frame = '.section.section-frame1'
+      var containerFrame1 = frame + ' .container-frame1'
+      var imgProductionFrame1 = frame + ' .img-production-frame1'
+      var imageFrame1 = frame + ' .image-frame1'
+      var x = new TimelineMax()
+        .to(containerFrame1, 1, { bottom: '100%', ease: Linear.easeNone })
+        .to(imgProductionFrame1, 1, { bottom: '100%', ease: Linear.easeNone }, 0)
+        .to(imageFrame1, 1, { y: '-100px', ease: Linear.easeNone }, 0)
+        .to(frame, 0, { position: 'relative' })
+        .pause()
+
       let $fullPage = this._element
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
@@ -50,7 +94,7 @@ const FullPage = (($) => {
       let that = this
       function initFullPage () {
         $fullPage.fullpage({
-          anchors: ['First', '2nd', '3rd', '4th', '5th', '6th'],
+          anchors: ['1', '2', '3', '4', '5', '6'],
           navigation: true,
           navigationPosition: 'right',
           css3: true,
@@ -86,7 +130,12 @@ const FullPage = (($) => {
             }
           },
           onLeave: function (index, nextIndex, direction) {
-            if (nextIndex === 6) {
+            if (nextIndex === 1) {
+              x.reverse()
+            } else if (index === 1) {
+              x.play()
+              console.log('pla')
+            } if (nextIndex === 6) {
               that.header.addClass('visibility-hide')
             } else {
               that.header.removeClass('visibility-hide')
@@ -149,8 +198,8 @@ const FullPage = (($) => {
         if ($windowHeight < 641 || $windowWidth < 992) {
           this.cta.removeAttr('style')
         } else {
-          this.cta.css('height', $windowHeight * .485)
-          this.footer.css('height', $windowHeight * .515)
+          this.cta.css('height', $windowHeight * 0.485)
+          this.footer.css('height', $windowHeight * 0.515)
         }
       }
     }
