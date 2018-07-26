@@ -225,13 +225,13 @@ const HomeAnimation = (() => {
         .from(bgOrange, 7, { left: '100%', ease: Power1.easeOut })
         .from(contFrame4, 6, { top: '100%', ease: Back.easeOut.config(1) }, 2)
         .from(imageProductFrame4, 6, { top: '100vh', ease: Power1.easeOut }, 2)
-        .from(fruitFrame4, 4, { top: '100%', ease: Back.easeOut.config(1) }, 3)
+        .from(fruitFrame4, 4, { y: '100%', ease: Back.easeOut.config(1) }, 3)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(fruitFrame4, 10, { top: '-10%', ease: Power1.easeOut })
+        .to(fruitFrame4, 10, { y: '-50%', ease: Power1.easeOut })
         .to(imageProductFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(contFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
