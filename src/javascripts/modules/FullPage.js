@@ -31,6 +31,10 @@ const FullPage = (($) => {
       // this.fullPageHome()
       this.setHeightCTA()
       $(window).resize(this.onResizeWindow.bind(this))
+      let that = this
+      setTimeout(function () {
+        that.stickNavigationHome()
+      }, 300)
     }
     // public api
     static get Default () {
@@ -39,6 +43,35 @@ const FullPage = (($) => {
     onResizeWindow () {
       this.setHeightCTA()
       // this.fullPageHome()
+    }
+
+    stickNavigationHome () {
+      let element = this._element.find(' .section')
+      let navigationHomepage = $('.navigation-homepage')
+      let offset = []
+      element.each(function () {
+        offset.push({
+          'id': $(this).attr('id'),
+          'top': $(this).offset().top
+        })
+      })
+      console.log(offset)
+      $(window).scroll(function () {
+        let top = $(this).scrollTop() + ($(window).height() / 3)
+        let elementActive
+        // console.clear()
+        // console.log('-------')
+        // console.log(top)
+        offset.forEach(element => {
+          if (element.top <= top) {
+            elementActive = element.id
+            return true
+          }
+        })
+        // console.log(elementActive)
+        navigationHomepage.find('ul').removeAttr('class').find('.active').removeClass('active')
+        navigationHomepage.find('[href="#' + elementActive + '"]').parent().addClass('active').parent().addClass(elementActive)
+      })
     }
 
     fullPageHome () {

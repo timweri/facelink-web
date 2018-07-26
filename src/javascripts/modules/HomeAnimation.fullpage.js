@@ -145,8 +145,8 @@ const HomeAnimation = (() => {
       'duration': duration,
       'timeline': new TimelineMax()
         .from(animationFrame2, 13, { left: '100%', ease: Power1.easeOut })
-        .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Power1.easeOut }, 0)
-        .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Power1.easeOut }, 3)
+        .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Back.easeOut.config(1) }, 0)
+        .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Back.easeOut.config(1) }, 3)
     })
 
     timelineMaxs[key].push({
@@ -184,8 +184,8 @@ const HomeAnimation = (() => {
       'duration': duration,
       'timeline': new TimelineMax()
         .from(bgOrange, 10, { right: '-100%', ease: Power1.easeOut })
-        .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Power1.easeOut }, 5)
-        .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Power1.easeOut }, 5)
+        .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(1) }, 5)
+        .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Back.easeOut.config(1) }, 5)
     })
 
     timelineMaxs[key].push({
@@ -223,17 +223,17 @@ const HomeAnimation = (() => {
       'duration': duration,
       'timeline': new TimelineMax()
         .from(bgOrange, 7, { left: '100%', ease: Power1.easeOut })
-        .from(contFrame4, 6, { top: '100%', ease: Power1.easeOut }, 2)
+        .from(contFrame4, 6, { top: '100%', ease: Back.easeOut.config(1) }, 2)
         .from(imageProductFrame4, 6, { top: '100vh', ease: Power1.easeOut }, 2)
-        .from(fruitFrame4, 4, { top: '100%', ease: Power1.easeOut }, 3)
+        .from(fruitFrame4, 4, { top: '100%', ease: Back.easeOut.config(1) }, 3)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(fruitFrame4, 10, { top: '-100%', ease: Power1.easeOut })
-        .to(imageProductFrame4, 10, { top: '-100%', ease: Power1.easeOut }, 0)
-        .to(contFrame4, 10, { top: '-100%', ease: Power1.easeOut }, 0)
+        .to(fruitFrame4, 10, { top: '-10%', ease: Power1.easeOut })
+        .to(imageProductFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
+        .to(contFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
     })
 
@@ -265,8 +265,9 @@ const HomeAnimation = (() => {
       if (index === -1) { isScroll = 0; return }
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
+      finalScroll = Math.round(finalScroll)
       if (delta > 0) {
-        if (isEnd && finalScroll !== $(window).scrollTop()) { delta = 0 } else delta = 1
+        if (isEnd && finalScroll !== Math.round($(window).scrollTop())) { delta = 0 } else delta = 1
       } else if (delta < 0) {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
@@ -291,6 +292,26 @@ const HomeAnimation = (() => {
     })
   }
 
+  const navigationHome = () => {
+    $('.navigation-homepage').on('click', 'a', function (e) {
+      var _el = $(e.target)
+      var _elTarget = $(_el.attr('href'))
+      var isAnimation = _elTarget.parents('.scrollmagic-pin-spacer').length !== 0
+      var offsetTop = isAnimation ? _elTarget.parents('.scrollmagic-pin-spacer').offset().top : _elTarget.offset().top
+      var $window = $(window)
+      $(document).scrollTop(offsetTop)
+      if (isAnimation && offsetTop > 0) {
+        TweenMax.to($window, 1, {
+          scrollTo: { y: offsetTop + $window.height(), autoKill: false },
+          ease: Sine.easeInOut,
+          overwrite: 5
+        })
+      }
+      // console.log()
+      e.preventDefault()
+    })
+  }
+
   $(document).ready(function () {
     controller.scrollTo(0)
     $('.over-loader').addClass('loader-hidden')
@@ -301,6 +322,7 @@ const HomeAnimation = (() => {
       frame3Timeline()
       frame4Timeline()
       runScrollMagicScene()
+      navigationHome()
     }
   })
 })()
