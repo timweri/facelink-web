@@ -40,8 +40,8 @@
   @include position(relative, $index: 1);
   &::after {
     content: "";
-    @include position(absolute, $right: 0, $top: -50%, $index: 5);
-    @include sizeEx(50%, 150%);
+    @include position(absolute, $right: 0, $top: -150%, $index: 5);
+    @include sizeEx(50%, 300%);
     background: url("../images/bg-transparent2.png") left no-repeat;
     background-size: cover;
   }
