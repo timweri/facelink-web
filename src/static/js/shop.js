@@ -285,7 +285,7 @@ var Shop = (function () {
       addRemoveClass()
       focusInputShop()
       checkInputHasVal()
-      customiseDropDown()
+      // customiseDropDown()
       // closeLoading()
     })
   }
