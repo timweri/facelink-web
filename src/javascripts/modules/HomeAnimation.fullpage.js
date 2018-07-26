@@ -311,9 +311,10 @@ const HomeAnimation = (() => {
       e.preventDefault()
     })
   }
-
-  $(document).ready(function () {
+  $(window).on('beforeunload', function () {
     controller.scrollTo(0)
+  })
+  $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
     if (isPageHome && isFullpage && $(window).width() >= 992) {
       scrollSpeed(1.5, 250)
