@@ -13,6 +13,13 @@
   }
 }
 
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight,
+.mCSB_scrollTools .mCSB_buttonUp {
+  background: transparent !important;
+}
+
 %icomoon {
   font-family: $icomoon !important;
   speak: none;
@@ -185,7 +192,7 @@ html#ecwid_html body#ecwid_body.page-internal {
   overflow: hidden;
 }
 
-@media only screen and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .touch {
     * {
       cursor: pointer;
