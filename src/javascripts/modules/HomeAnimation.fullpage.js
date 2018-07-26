@@ -265,9 +265,12 @@ const HomeAnimation = (() => {
       if (index === -1) { isScroll = 0; return }
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
+      var windowTop = Math.round($(window).scrollTop())
       finalScroll = Math.round(finalScroll)
+      console.log(finalScroll)
+      console.log(windowTop)
       if (delta > 0) {
-        if (isEnd && finalScroll !== Math.round($(window).scrollTop())) { delta = 0 } else delta = 1
+        if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
       } else if (delta < 0) {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
@@ -275,7 +278,7 @@ const HomeAnimation = (() => {
       var _ease = Sine.easeInOut
       if (nextIndex >= 0 && nextIndex < el.length) {
         finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height()
-        if (finalScroll === 0 && $(window).scrollTop() === 0) { isScroll = 0; return }
+        if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
 
         TweenMax.to($window, scrollTime, {
           scrollTo: { y: finalScroll, autoKill: false },
