@@ -72,6 +72,19 @@
   }
 }
 @include media-breakpoint-up(lg) {
+  .section-frame2 {
+    .bg-rotate-image {
+      &::after {
+        content: "";
+        @include position(absolute, $right: 40%, $top: -10%, $index: 5);
+        @include sizeEx(15%, 100%);
+        background: url("../images/bg-transparent2.png") top left no-repeat;
+        background-size: 100% auto;
+        transform-origin: top;
+        transform: rotate(43.5deg);
+      }
+    }
+  }
   .subhead-frame2 {
     @include position(absolute, 20%, null, null, 0, 2);
     padding-top: 0;
@@ -99,6 +112,7 @@
       width: 40%;
     }
   }
+
   .rotate-image {
     @include position(absolute, 46.5px, 26%, null, null);
     @include sizeEx(60%,100%);
@@ -124,4 +138,3 @@
     }
   }
 }
-
