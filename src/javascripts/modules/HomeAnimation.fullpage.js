@@ -70,7 +70,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-              .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -89,7 +89,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-              .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -101,7 +101,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-        .addIndicators({ name: key + 'AnimationStart' })
+      // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -311,10 +311,21 @@ const HomeAnimation = (() => {
       e.preventDefault()
     })
   }
-
-  $(document).ready(function () {
+  $(window).on('beforeunload', function () {
     controller.scrollTo(0)
+  })
+  $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
+    var flagReload = 0
+    $(window).resize(function () {
+      if (isPageHome && isFullpage) {
+        if ($(window).width() >= 992 && flagReload !== 1) {
+          location.reload()
+        } else if ($(window).width() < 992 && flagReload !== -1) {
+          location.reload()
+        }
+      }
+    })
     if (isPageHome && isFullpage && $(window).width() >= 992) {
       scrollSpeed(1.5, 250)
       frame1Timeline()
@@ -323,6 +334,9 @@ const HomeAnimation = (() => {
       frame4Timeline()
       runScrollMagicScene()
       navigationHome()
+      flagReload = 1
+    } else {
+      flagReload = -1
     }
   })
 })()
