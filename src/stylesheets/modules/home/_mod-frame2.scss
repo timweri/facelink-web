@@ -69,6 +69,23 @@
 @include media-breakpoint-down(lg) {
   .section-frame2 {
     background: $blue !important;
+    .subhead-frame2 {
+      position: relative;
+      z-index: 6;
+    }
+    .animation-frame2 {
+      position: static;
+    }
+    .cont-frame2 {
+      padding: 50px 0 71px;
+    }
+    &::after {
+      content: "";
+      @include position(absolute, $right: 0, $top: 0, $index: 5);
+      @include sizeEx(50%, 100%);
+      background: url("../images/background-white.png") center left no-repeat;
+      background-size: cover;
+    }
   }
 }
 @include media-breakpoint-up(lg) {
@@ -78,7 +95,7 @@
         content: "";
         @include position(absolute, $right: 40%, $top: -10%, $index: 5);
         @include sizeEx(15%, 100%);
-        background: url("../images/bg-transparent2.png") top left no-repeat;
+        background: url("../images/background-white.png") top left no-repeat;
         background-size: 100% auto;
         transform-origin: top;
         transform: rotate(43.5deg);
