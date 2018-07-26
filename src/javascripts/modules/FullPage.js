@@ -42,6 +42,17 @@ const FullPage = (($) => {
     }
 
     fullPageHome () {
+      var frame = '.section.section-frame1'
+      var containerFrame1 = frame + ' .container-frame1'
+      var imgProductionFrame1 = frame + ' .img-production-frame1'
+      var imageFrame1 = frame + ' .image-frame1'
+      var x = new TimelineMax()
+        .to(containerFrame1, 1, { bottom: '100%', ease: Linear.easeNone })
+        .to(imgProductionFrame1, 1, { bottom: '100%', ease: Linear.easeNone }, 0)
+        .to(imageFrame1, 1, { y: '-100px', ease: Linear.easeNone }, 0)
+        .to(frame, 0, { position: 'relative' })
+        .pause()
+
       let $fullPage = this._element
       let scroll = window.innerWidth - document.documentElement.clientWidth
       let winW = document.documentElement.clientWidth
@@ -50,7 +61,7 @@ const FullPage = (($) => {
       let that = this
       function initFullPage () {
         $fullPage.fullpage({
-          anchors: ['First', '2nd', '3rd', '4th', '5th', '6th'],
+          anchors: ['1', '2', '3', '4', '5', '6'],
           navigation: true,
           navigationPosition: 'right',
           css3: true,
@@ -86,7 +97,12 @@ const FullPage = (($) => {
             }
           },
           onLeave: function (index, nextIndex, direction) {
-            if (nextIndex === 6) {
+            if (nextIndex === 1) {
+              x.reverse()
+            } else if (index === 1) {
+              x.play()
+              console.log('pla')
+            } if (nextIndex === 6) {
               that.header.addClass('visibility-hide')
             } else {
               that.header.removeClass('visibility-hide')
@@ -149,8 +165,8 @@ const FullPage = (($) => {
         if ($windowHeight < 641 || $windowWidth < 992) {
           this.cta.removeAttr('style')
         } else {
-          this.cta.css('height', $windowHeight * .485)
-          this.footer.css('height', $windowHeight * .515)
+          this.cta.css('height', $windowHeight * 0.485)
+          this.footer.css('height', $windowHeight * 0.515)
         }
       }
     }

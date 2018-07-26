@@ -53,7 +53,24 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-            .addIndicators({ name: key + 'AnimationStart' + i })
+              .on('enter', function (event) {
+                // var _triggerElement = $(event.target.triggerElement()).parent()
+                // var index = Math.max(0, $('#fullpage > div').index(_triggerElement) - 1)
+                // _triggerElement = $('#fullpage > div').eq(index)
+                // if (!_triggerElement.hasClass('frame-actived')) {
+                //   $('.frame-actived').removeClass('frame-actived').removeClass('last').removeClass('first')
+                //   _triggerElement.addClass('frame-actived first')
+                // }
+                var _triggerElement = $(event.target.triggerElement()).parent()
+                if (!_triggerElement.hasClass('frame-actived')) {
+                  $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
+                  _triggerElement.addClass('frame-actived start')
+                }
+              })
+              .on('leave', function (event) {
+                $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
+              })
+              .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
             // console.log('ok')
@@ -62,7 +79,17 @@ const HomeAnimation = (() => {
               duration: timelineMaxs[key][i]['duration'],
               offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
-            .addIndicators({ name: key + 'AnimationStart' + i })
+              .on('enter', function (event) {
+                var _triggerElement = $(event.target.triggerElement()).parent()
+                if (!_triggerElement.hasClass('frame-actived')) {
+                  $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
+                  _triggerElement.addClass('frame-actived end')
+                }
+              })
+              .on('leave', function (event) {
+                $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
+              })
+              .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           }
         }
@@ -74,36 +101,8 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      .addIndicators({ name: key + 'AnimationStart' })
+        .addIndicators({ name: key + 'AnimationStart' })
     }
-  }
-
-  const scrollSpeed = (scrollTime, scrollDistance) => {
-    var $window = $(window),
-      isScroll = 0
-
-    $window.on('mousewheel DOMMouseScroll', function (event) {
-      event.preventDefault()
-      // if (isScroll === 1) return
-      var heso = 4,
-        delta
-      if (event.originalEvent.wheelDelta !== undefined) {
-        delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
-      } else {
-        delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
-      }
-      var scrollTop = $window.scrollTop()
-      var finalScroll = Math.max(0, scrollTop - parseInt(delta * scrollDistance))
-      isScroll = 1
-      TweenMax.to($window, scrollTime, {
-        scrollTo: { y: finalScroll, autoKill: true },
-        ease: Linear.easeNone,
-        overwrite: 5,
-        onComplete: function () {
-          isScroll = 0
-        }
-      })
-    })
   }
 
   const frame1Timeline = () => {
@@ -124,23 +123,12 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(containerFrame1, 10, { bottom: '100%', ease: Linear.easeNone })
-        .to(imgProductionFrame1, 10, { bottom: '100%', ease: Linear.easeNone }, 0)
-        .to(imageFrame1, 10, { y: '-100px', ease: Linear.easeNone }, 0)
+        .to(containerFrame1, 10, { bottom: '100%', ease: Power1.easeOut })
+        .to(imgProductionFrame1, 10, { bottom: '100%', ease: Power1.easeOut }, 0)
+        .to(imageFrame1, 10, { y: '-100px', ease: Power1.easeOut }, 0)
         .to(frame, 0, { position: 'relative' })
     })
   }
-
-  // const frame2Timeline = () => {
-  //   var key = 'frame2'
-  //   var frame = elementFrames[key]
-  //   var timeline = timelineMaxs[key]
-  //   // custom css
-
-  //   // create timeline animation
-  //   timeline['0']
-  //     .addPause(1)
-  // }
 
   const frame2Timeline = () => {
     var key = 'frame2'
@@ -156,27 +144,25 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(animationFrame2, 13, { left: '100%', ease: Linear.easeNone })
-        .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Linear.easeNone }, 0)
-        .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Linear.easeNone }, 3)
-        .addPause(17)
+        .from(animationFrame2, 13, { left: '100%', ease: Power1.easeOut })
+        .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Power1.easeOut }, 0)
+        .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Power1.easeOut }, 3)
     })
 
     timelineMaxs[key].push({
       'duration': duration / 2,
       'timeline': new TimelineMax()
-        .to(animationFrame2, 10, { left: '100%', ease: Linear.easeNone })
-        .to(contFrame2, 7, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
-        .to(subheadFrame2, 8, { top: '-20px', ease: Linear.easeNone }, 1)
-        .to(frame, 10, { backgroundPosition: '0 40px', ease: Linear.easeNone }, 0)
+        .to(subheadFrame2, 10, { top: '-20px', ease: Power1.easeOut })
+        .to(animationFrame2, 13, { left: '100%', ease: Power1.easeOut }, 3)
+        .to(contFrame2, 13, { x: '500px', opacity: '0', ease: Power1.easeOut }, 3)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(frame, 10, { backgroundPosition: '0 -100px', ease: Linear.easeNone }, 0)
-        .to(frame, 10, { top: '80px', ease: Linear.easeNone }, 0)
+        .to(frame, 10, { backgroundPosition: '0 -100px', ease: Power1.easeOut }, 0)
+        .to(frame, 10, { top: '80px', ease: Power1.easeOut }, 0)
     })
   }
 
@@ -197,25 +183,24 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 15, { right: '-100%', ease: Linear.easeNone })
-        .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Linear.easeNone }, 10)
-        .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 10)
-        .addPause(24)
+        .from(bgOrange, 10, { right: '-100%', ease: Power1.easeOut })
+        .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Power1.easeOut }, 5)
+        .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Power1.easeOut }, 5)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Linear.easeNone }, 0)
-        .to(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Linear.easeNone }, 0)
-        .to(bgOrange, 10, { right: '-100%', delay: '0.3', ease: Linear.easeNone }, 10)
+        .to(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Power1.easeOut }, 0)
+        .to(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Power1.easeOut }, 0)
+        .to(bgOrange, 10, { right: '-100%', ease: Power1.easeOut }, 5)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineMax()
-        .to(bgImageFrame3, 10, { backgroundPosition: 'center -100px', ease: Linear.easeNone }, 0)
+        .to(bgImageFrame3, 10, { backgroundPosition: 'center -100px', ease: Power1.easeOut }, 0)
     })
     // timelineMaxs[key].push({
     //   'spaceduration': -1 * (duration / 2) - 100
@@ -235,58 +220,86 @@ const HomeAnimation = (() => {
 
     // create timeline animation
     timelineMaxs[key].push({
-      'offset': -1 * (duration / 1.5),
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 7, { left: '100%', ease: Linear.easeNone })
-        .from(contFrame4, 6, { y: '250px', ease: Linear.easeNone }, 2)
-        .from(imageProductFrame4, 6, { top: '100vh', ease: Linear.easeNone }, 2)
-        .from(fruitFrame4, 4, { top: '100%', ease: Linear.easeNone }, 3)
-        // .addPause(10)
+        .from(bgOrange, 7, { left: '100%', ease: Power1.easeOut })
+        .from(contFrame4, 6, { top: '100%', ease: Power1.easeOut }, 2)
+        .from(imageProductFrame4, 6, { top: '100vh', ease: Power1.easeOut }, 2)
+        .from(fruitFrame4, 4, { top: '100%', ease: Power1.easeOut }, 3)
     })
 
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .to(fruitFrame4, 10, { y: '-300px', ease: Linear.easeNone })
-        .to(imageProductFrame4, 10, { y: '-100px', ease: Linear.easeNone }, 0)
-        .to(contFrame4, 10, { top: '-250px', ease: Linear.easeNone }, 0)
-        .to(bgOrange, 10, { left: '100%', ease: Linear.easeNone }, 0)
+        .to(fruitFrame4, 10, { top: '-100%', ease: Power1.easeOut })
+        .to(imageProductFrame4, 10, { top: '-100%', ease: Power1.easeOut }, 0)
+        .to(contFrame4, 10, { top: '-100%', ease: Power1.easeOut }, 0)
+        .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
     })
 
     timelineMaxs[key].push({
-      'spaceduration': -1 * (duration / 2)
+      'spaceduration': -1 * (duration)
     })
   }
 
-  const frame5Timeline = () => {
-    var key = 'frame5'
-    var frame = elementFrames[key]
-    var duration = durationScrollMagics[key]
-    // var contFrame4 = frame + ' .cont-frame4'
-    // var imageProductFrame4 = frame + ' .col-image-product-frame4'
-    // var bgOrange = frame + ' .bg-orange'
-    // var fruitFrame4 = frame + ' .fruit-frame4'
+  const scrollSpeed = (scrollTime, scrollDistance) => {
+    var $window = $(window),
+      isScroll = 0,
+      finalScroll = 0
 
-    // // custom css
-    // $(frame + ' .bg-image-frame3').css('background-attachment', 'fixed')
+    $window.on('mousewheel DOMMouseScroll', function (event) {
+      if (isScroll === 1) { event.preventDefault(); return }
+      isScroll = 1
 
-    // create timeline animation
+      var heso = 4,
+        delta
 
-    timelineMaxs[key].push({
-      'spaceduration': -1 * (duration - 300)
+      if (event.originalEvent.wheelDelta !== undefined) {
+        delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
+      } else {
+        delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
+      }
+
+      var el = $('.scrollmagic-pin-spacer')
+      var index = el.index($('.frame-actived'))
+      if (index === -1) { isScroll = 0; return }
+      var isStart = el.hasClass('start')
+      var isEnd = el.hasClass('end')
+      if (delta > 0) {
+        if (isEnd && finalScroll !== $(window).scrollTop()) { delta = 0 } else delta = 1
+      } else if (delta < 0) {
+        if (isStart && index > 0) { delta = 0 } else { delta = -1 }
+      }
+      var nextIndex = Math.max(0, index - delta)
+      var _ease = Sine.easeInOut
+      if (nextIndex >= 0 && nextIndex < el.length) {
+        finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height()
+        if (finalScroll === 0 && $(window).scrollTop() === 0) { isScroll = 0; return }
+
+        TweenMax.to($window, scrollTime, {
+          scrollTo: { y: finalScroll, autoKill: false },
+          ease: _ease,
+          overwrite: 5,
+          onComplete: function () {
+            isScroll = 0
+          }
+        })
+        event.preventDefault()
+      } else {
+        isScroll = 0
+      }
     })
   }
 
   $(document).ready(function () {
+    controller.scrollTo(0)
     $('.over-loader').addClass('loader-hidden')
-    if (isPageHome && !isFullpage && $(window).width() >= 992) {
-      scrollSpeed(0.5, 180)
+    if (isPageHome && isFullpage && $(window).width() >= 992) {
+      scrollSpeed(1.5, 250)
       frame1Timeline()
       frame2Timeline()
       frame3Timeline()
       frame4Timeline()
-      // frame5Timeline()
       runScrollMagicScene()
     }
   })
