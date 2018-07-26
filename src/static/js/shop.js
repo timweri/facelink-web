@@ -149,12 +149,20 @@ var Shop = (function () {
     })
   }
   function checkInputHasVal () {
-    var lengthIput = $('.gwt-TextBox').length
-    for (var i = 0; i < lengthIput; i++) {
+    var lengthInput = $('.gwt-TextBox').length
+    for (var i = 0; i < lengthInput; i++) {
       if ($('.gwt-TextBox').eq(i).val().length > 0) {
         $('.gwt-TextBox').eq(i).parents('.ecwid-fieldWrapper').addClass('has-text')
       }
     }
+  }
+  function customiseDropDown () {
+    var $selectBoxes = $('select.gwt-ListBox')
+    $selectBoxes.selectpicker({
+      style: 'ecwid-bootstrap-select',
+      size: 16,
+      mobile: true
+    })
   }
   if ($('#ecwid_html').length) {
     Ecwid.OnPageLoad.add(function (page) {
@@ -277,6 +285,7 @@ var Shop = (function () {
       addRemoveClass()
       focusInputShop()
       checkInputHasVal()
+      customiseDropDown()
       // closeLoading()
     })
   }

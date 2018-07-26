@@ -202,6 +202,7 @@ html#ecwid_html {
     }
     div.ecwid-AddressForm-secureLockIcon {
       background: none;
+      overflow: hidden;
       &::after {
         @include sizeEx(0);
         @include position(absolute, -7px, -14px, null, null);

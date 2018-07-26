@@ -2,6 +2,9 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .gwt-TextBox {
+      padding: 0 21px !important;
+    }
     .bootstrap-select {
       width: 100%;
       div.inner {
@@ -11,10 +14,17 @@ html#ecwid_html {
         list-style: none;
         padding-left: 0;
         li {
+          padding: 10px 40px;
           a {
-            padding-left: 30px;
             span {
-              @include font($font-family-base !important, 15px !important, $menu-gray !important, 400);
+              @include font($font-family-base !important, 15px !important, $border-gray !important, 400);
+            }
+
+            &:hover {
+              span {
+                color: $black !important;
+                font-weight: 500 !important;
+              }
             }
           }
         }
@@ -26,11 +36,12 @@ html#ecwid_html {
     }
     .ecwid-bootstrap-select {
       width: 100%;
+      background: $white;
       .filter-option-inner-inner {
         @include font($os, 18px, $black-two, 700);
         text-transform: uppercase;
         text-align: left;
-        padding: 0 40px;
+        padding: 0 21px;
       }
     }
     .ecwid-DisappearingMessage,
@@ -380,6 +391,14 @@ html#ecwid_html {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid {
+        .gwt-TextBox {
+          padding: 0 40px !important;
+        }
+        .ecwid-bootstrap-select {
+          .filter-option-inner-inner {
+            padding: 0 40px !important;
+          }
+        }
         .mod-promotion {
           .container {
             max-width: 960px;
