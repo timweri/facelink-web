@@ -1,6 +1,20 @@
 #fullpage {
   padding-top: 63px;
 }
+.page-home {
+  .over-loader {
+    display: block !important;
+    &.loader-hidden {
+      .spinner {
+        transform: scale(10);
+      }
+      transform: scale(10);
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s all;
+    }
+  }
+}
 .section {
   position: relative;
   overflow: hidden;
@@ -178,20 +192,6 @@ body {
   }
 }
 @include media-breakpoint-up(lg) {
-  .page-home {
-    .over-loader {
-      display: block !important;
-      &.loader-hidden {
-        .spinner {
-          transform: scale(10);
-        }
-        transform: scale(10);
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s all;
-      }
-    }
-  }
   #fullpage {
     padding-top: 0;
   }
