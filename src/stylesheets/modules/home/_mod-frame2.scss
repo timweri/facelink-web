@@ -91,10 +91,11 @@
 @include media-breakpoint-up(lg) {
   .section-frame2 {
     .bg-rotate-image {
+      overflow: hidden;
       &::after {
         content: "";
-        @include position(absolute, $right: 40%, $top: -10%, $index: 5);
-        @include sizeEx(15%, 100%);
+        @include position(absolute, $right: 41%, $top: -10%, $index: 5);
+        @include sizeEx(19%, 100%);
         background: url("../images/background-white.png") top left no-repeat;
         background-size: 100% auto;
         transform-origin: top;
