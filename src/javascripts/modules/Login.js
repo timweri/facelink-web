@@ -33,8 +33,8 @@ const Login = (($) => {
 			forgotForm.submit(function (event) {
 				var value = forgotForm.find('input[type="text"]').val();
 				if (value) {
-					inputErr.addClass('um-error');
 				} else {
+					inputErr.addClass('um-error');
 					event.preventDefault();
 				}
 
