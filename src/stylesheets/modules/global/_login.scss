@@ -1,3 +1,20 @@
+.um-button {
+  input[type=submit] {
+    text-transform: uppercase !important;
+    &:focus {
+      background: #f9a13e;
+      color: #fff;
+      font-style: normal;
+      border-radius: 0;
+      letter-spacing: 1.1px;
+      font-family: Oswald,sans-serif;
+      font-size: 15px;
+      min-height: 40px;
+      text-transform: uppercase !important;
+    }
+  }
+}
+
 .mod-login {
   width: 600px;
   background-color: $menu-gray;
@@ -65,36 +82,54 @@
   opacity: 1;
   width: 400px;
   margin: 0 auto;
-  label {
-    color: #171717;
-    line-height: 1.3;
-  }
-  input {
-    background-color: hsla(0,0%,100%,.85);
-    height: 54px;
-    color: #171717;
-    padding-right: 135px;
-    border: 1px solid #c5c5c5;
-    display: block;
-    width: 100%;
-    padding: rem(10) rem(20);
-  }
-  .um-col-alt {
-    .um-button {
-      background: #f9a13e;
-      color: #fff;
+  .um-form-forgot {
+    label {
+      color: #171717;
+      line-height: 1.3;
+    }
+    input {
+      background-color: hsla(0,0%,100%,.85);
+      height: 54px;
+      color: #171717;
+      padding-right: 135px;
+      border: 1px solid #c5c5c5;
+      display: block;
       width: 100%;
-      border: 0;
-      font-weight: 700;
-      font-style: normal;
-      border-radius: 0;
+      padding: rem(10) rem(20);
       text-transform: uppercase;
-      letter-spacing: 1.1px;
-      font-family: Oswald,sans-serif;
-      font-size: 15px;
-      min-height: 40px;
+      font-size: rem(18);
+      font-weight: 700;
+      &:focus {
+        border-bottom: 3px solid #c6da4e;
+      }
+      &.um-error {
+        border-bottom: 3px solid #f15e2d;
+        &:focus {
+          border-color: #f15e2d;
+        }
+      }
+    }
+    .um-field-error {
+      display: none;
+    }
+    .um-col-alt {
+      .um-button {
+        background: #f9a13e;
+        color: #fff;
+        width: 100%;
+        border: 0;
+        font-weight: 700;
+        font-style: normal;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        font-family: Oswald,sans-serif;
+        font-size: 15px;
+        min-height: 40px;
+      }
     }
   }
+  
 }
 
 .mod-reset-pass {

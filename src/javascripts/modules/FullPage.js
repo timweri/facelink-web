@@ -57,7 +57,7 @@ const FullPage = (($) => {
       })
       console.log(offset)
       $(window).scroll(function () {
-        let top = $(this).scrollTop() + ($(window).height() / 3)
+        let top = $(this).scrollTop() + $('#header').outerHeight()
         let elementActive
         // console.clear()
         // console.log('-------')
@@ -69,8 +69,10 @@ const FullPage = (($) => {
           }
         })
         // console.log(elementActive)
-        navigationHomepage.find('ul').removeAttr('class').find('.active').removeClass('active')
-        navigationHomepage.find('[href="#' + elementActive + '"]').parent().addClass('active').parent().addClass(elementActive)
+        if (navigationHomepage.attr('id') !== elementActive) {
+          navigationHomepage.removeAttr('id').find('.active').removeClass('active')
+          navigationHomepage.find('[href="#' + elementActive + '"]').parent().addClass('active').parents('.navigation-homepage').attr('id', elementActive)
+        }
       })
     }
 
