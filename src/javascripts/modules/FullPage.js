@@ -57,17 +57,20 @@ const FullPage = (($) => {
       })
       console.log(offset)
       $(window).scroll(function () {
-        let top = $(this).scrollTop() + $('#header').outerHeight()
+        let top = $(this).scrollTop()
         let elementActive
         // console.clear()
         // console.log('-------')
         // console.log(top)
         offset.forEach(element => {
-          if (element.top <= top) {
+          if (element.top <= top + $('#header').outerHeight()) {
             elementActive = element.id
             return true
           }
         })
+        if (top + $(window).height() >= $('html').outerHeight() - $('#footer').outerHeight()) {
+          elementActive = offset[offset.length - 1].id
+        }
         // console.log(elementActive)
         if (navigationHomepage.attr('id') !== elementActive) {
           navigationHomepage.removeAttr('id').find('.active').removeClass('active')
