@@ -5,24 +5,6 @@
   .mod-cta {
     max-width: 100%;
   }
-  #footer {
-    padding-top: 0;
-    > .container {
-      height: 100%;
-      position: relative;
-    }
-  }
-  .cont-footer {
-    height: 100%;
-    position: relative;
-  }
-  .footer-top {
-    height: calc(100% - 93px);
-    > .row {
-      @include position(relative, $top: 65%);
-      transform: translateY(-50%) translateZ(0);
-    }
-  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -37,17 +19,6 @@
       }
       h2 {
         margin-bottom: 14px;
-      }
-    }
-    .footer-copyright {
-      .text-center {
-        padding-top: 31px;
-      }
-    }
-    .footer-top {
-      height: calc(100% - 109px);
-      > .row {
-        top: 69%;
       }
     }
   }
@@ -66,21 +37,6 @@
       }
       .form-cta {
         max-width: 450px;
-      }
-    }
-    .cont-footer {
-      max-width: 1164px;
-    }
-    .footer-copyright {
-      padding: 0;
-      .text-center {
-        padding-top: 43px;
-      }
-    }
-    .footer-top {
-      height: calc(100% - 129px);
-      > .row {
-        top: 61%;
       }
     }
   }
