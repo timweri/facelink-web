@@ -66,9 +66,12 @@
 }
 @include media-breakpoint-up(lg) {
   .subhead-frame3-title {
-    max-width: 420px;
+    max-width: 425px;
     width: 100%;
     padding: 0;
+    p {
+      margin-bottom: 26px;
+    }
   }
   .description-iframe3 {
     margin-right: calc(50vh - 170px - 200px);
@@ -78,7 +81,7 @@
     height: 100%;
     .bg-orange {
       @include position(absolute, 0, 0, 0, null);
-      width: 55%;
+      width: calc(55% + 20px);
       background: $red;
       padding-top: 93px;
       margin-top: 0;
@@ -114,6 +117,15 @@
       content: "";
       @include position($right: 0, $top: 0);
       @include sizeEx(50%, 100%);
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .section-frame3 {
+    .subhead-frame3-title {
+      max-width: 485px;
+      margin: -50px 0 0 62px;
     }
   }
 }

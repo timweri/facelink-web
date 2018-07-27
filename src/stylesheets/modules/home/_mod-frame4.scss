@@ -182,7 +182,7 @@
   .cont-frame4 {
     padding: 130px 0 65px;
     .image-product {
-      @include position(relative, null, 65px, null, null);
+      @include position(relative, null, 56px, 20px, null);
       margin: 0;
       img {
         margin: 0 0 0 auto;
@@ -190,7 +190,7 @@
     }
   }
   .title-frame4 {
-    padding-left: 65px;
+    padding-left: 53px;
   }
   .list-item-frame4 {
     padding-right: 65px;
