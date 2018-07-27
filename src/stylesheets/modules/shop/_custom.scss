@@ -6,6 +6,7 @@ html#ecwid_html {
     .ecwid-PaymentCommentsBlock-textarea,
     div.ecwid-productBrowser-cart-EnterCouponBox input {
       border-bottom: 3px solid $menu-gray;
+      padding-bottom: 1px !important;
       &:focus {
         border-bottom: 3px solid $color-c6;
       }
@@ -64,19 +65,16 @@ html#ecwid_html {
       input,
       select {
         @include font($os, 18px, $black-two, 700, null);
-        @include sizeEx(100%, 35px !important);
+        @include sizeEx(100%, 38px !important);
         border: 0;
-        padding: 0 20px;
+        padding: 0 20px 1px;
         border-radius: 0;
         box-sizing: border-box;
         background: $white;
         text-transform: uppercase;
-      }
-      input {
-        border-top: inset 3px transparent;
-        border-bottom: solid 3px transparent;
+        border-bottom: 3px solid $menu-gray;
         &:focus {
-          //border-color: $color-c6;
+          border-bottom: 3px solid $color-c6;
         }
       }
     }
@@ -127,7 +125,7 @@ html#ecwid_html {
       color: $black;
       .ecwid-lte-600px {
         div.ecwid-productBrowser {
-          padding: 60px 15px 20px;
+          // padding: 60px 15px 20px;
           background: $white;
         }
         .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
@@ -139,7 +137,7 @@ html#ecwid_html {
         }
       }
       div.ecwid-productBrowser {
-        padding: 60px 15px 20px;
+        // padding: 60px 15px 20px;
         background: $white;
       }
       .ecwid-btn {
@@ -400,7 +398,7 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid {
         .gwt-TextBox {
-          padding: 0 40px !important;
+          padding: 0 40px 1px !important;
         }
         .ecwid-bootstrap-select {
           .filter-option-inner-inner {

@@ -1,9 +1,6 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
     .ecwid {
-      div.ecwid-Invoice-PaymentDetails {
-        width: auto !important;
-      }
       .ecwid-Invoice-footer-orderConfirmation {
         .ecwid-Invoice-footer-orderConfirmation-text {
           b {
@@ -82,6 +79,17 @@ html#ecwid_html {
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-productBrowser-CheckoutPlaceOrderPage {
+        &::before {
+          @include font($os, rem(30), $black-two, 700);
+          @include position(relative);
+          display: block;
+          letter-spacing: 2px;
+          content: "PLACE ORDER";
+          text-transform: uppercase;
+          margin-top: 75px;
+        }
+      }
       .ecwid-Invoice-footer-orderConfirmation {
         .ecwid-Invoice-footer-orderConfirmation-text {
           b {
@@ -113,6 +121,18 @@ html#ecwid_html {
               transform: translate3d(0, 0, 0);
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid {
+        div.ecwid-Invoice-PaymentDetails {
+          width: auto !important;
         }
       }
     }
