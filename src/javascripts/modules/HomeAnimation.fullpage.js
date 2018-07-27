@@ -4,6 +4,8 @@ import $ from 'jquery'
 // import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
 
 const HomeAnimation = (() => {
+  var isPageHome = $('body').hasClass('page-home')
+  var isFullpage = $('body').hasClass('fullpage')
   var elementFrames = {
     'frame1': '.section.section-frame1',
     'frame2': '.section.section-frame2',
@@ -28,8 +30,6 @@ const HomeAnimation = (() => {
     //   { 'duration': '0', 'timeline': new TimelineMax() }
     // ]
   }
-  var isPageHome = $('body').hasClass('page-home')
-  var isFullpage = $('body').hasClass('fullpage')
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onLeave'
@@ -54,13 +54,6 @@ const HomeAnimation = (() => {
               offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
             }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
               .on('enter', function (event) {
-                // var _triggerElement = $(event.target.triggerElement()).parent()
-                // var index = Math.max(0, $('#fullpage > div').index(_triggerElement) - 1)
-                // _triggerElement = $('#fullpage > div').eq(index)
-                // if (!_triggerElement.hasClass('frame-actived')) {
-                //   $('.frame-actived').removeClass('frame-actived').removeClass('last').removeClass('first')
-                //   _triggerElement.addClass('frame-actived first')
-                // }
                 var _triggerElement = $(event.target.triggerElement()).parent()
                 if (!_triggerElement.hasClass('frame-actived')) {
                   $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
@@ -73,7 +66,6 @@ const HomeAnimation = (() => {
             // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += timelineMaxs[key][i]['duration']
           } else {
-            // console.log('ok')
             new ScrollMagic.Scene({
               triggerElement: _element,
               duration: timelineMaxs[key][i]['duration'],
@@ -267,24 +259,22 @@ const HomeAnimation = (() => {
       var isEnd = el.hasClass('end')
       var windowTop = Math.round($(window).scrollTop())
       finalScroll = Math.round(finalScroll)
-      console.log(finalScroll)
-      console.log(windowTop)
       if (delta > 0) {
         if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
       } else if (delta < 0) {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
       var nextIndex = Math.max(0, index - delta)
-      var _ease = Sine.easeInOut
-      if (nextIndex >= 0 && nextIndex < el.length) {
-        finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height()
+      if (nextIndex >= 0 && nextIndex <= el.length) {
+        if (nextIndex == el.length) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
+        else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height() }
         if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
-
         TweenMax.to($window, scrollTime, {
           scrollTo: { y: finalScroll, autoKill: false },
-          ease: _ease,
+          ease: Sine.easeInOut,
           overwrite: 5,
           onComplete: function () {
+            // console.log(finalScroll)
             isScroll = 0
           }
         })
