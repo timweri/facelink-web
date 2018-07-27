@@ -96,7 +96,7 @@
     li {
       @include font($os, 18px,$black, 700);
       text-transform: uppercase;
-      letter-spacing: .5px;
+      letter-spacing: 2px;
       margin: 0;
       margin-bottom: 20px;
       position: relative;

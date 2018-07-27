@@ -104,7 +104,7 @@
     }
   }
   .subhead-frame2 {
-    @include position(absolute, 23%, null, null, 0, 2);
+    @include position(absolute, 35%, null, null, -100px, 2);
     padding-top: 0;
     h2 {
       padding: 16px 34px 16px 0;
@@ -149,6 +149,13 @@
   //   background: $blue;
   // }
 }
+
+@include media-breakpoint-up(xl) {
+  .subhead-frame2 {
+    left: 0;
+  }
+}
+
 @media only screen and (min-width: 992px) and (max-height: 639px) {
   .section-frame3 {
     .description-iframe3 {
