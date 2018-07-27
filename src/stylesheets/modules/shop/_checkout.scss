@@ -122,6 +122,11 @@ html#ecwid_html {
             margin-bottom: 0;
           }
         }
+        div.ecwid-amexParagraph,
+        .ecwid-amexDatePanel {
+          margin: 15px 0 0;
+          padding: 0;
+        }
       }
     }
     table.ecwid-Checkout-blockTitle div.gwt-HTML,
