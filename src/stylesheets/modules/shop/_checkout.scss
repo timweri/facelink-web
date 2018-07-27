@@ -105,6 +105,8 @@ html#ecwid_html {
       text-transform: uppercase;
       display: inline-block;
       vertical-align: middle;
+      letter-spacing: 1px;
+      margin-left: 0;
     }
     div.ecwid-fieldWrapper {
       margin-bottom: 12px;
@@ -498,7 +500,7 @@ html#ecwid_html {
         .ecwid-fieldEnvelope-around {
           input,
           select {
-            padding: 0 40px;
+            padding: 0 40px 1px;
           }
         }
         .ecwid-fieldWrapper {

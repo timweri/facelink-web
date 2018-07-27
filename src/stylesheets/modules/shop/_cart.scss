@@ -1,5 +1,8 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.ecwid-productBrowser-auth {
+      margin-top: 36px;
+    }
     .ecwid-productBrowser-AccountSettingsPage,
     .ecwid-productBrowser-AddressBookPage,
     .ecwid-productBrowser-OrdersPage,
@@ -23,6 +26,7 @@ html#ecwid_html {
         text-align: center;
         letter-spacing: 1.5px;
         content: "YOUR CART";
+        margin-top: 50px;
       }
     }
     td.ecwid-productBrowser-cart-itemsTable-headerCell {
@@ -238,6 +242,16 @@ html#ecwid_html {
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid {
+        div.ecwid-productBrowser {
+          &.ecwid-productBrowser-CartPage,
+          &.ecwid-productBrowser-CheckoutPaymentDetailsPage,
+          &.ecwid-productBrowser-CheckoutPlaceOrderPage,
+          &.ecwid-productBrowser-CheckoutShippingAddressPage {
+            padding: 5px 60px 60px;
+          }
+        }
+      }
       div.ecwid-productBrowser-productNameLink a {
         &:hover {
           color: $orange !important;
@@ -250,6 +264,7 @@ html#ecwid_html {
           font-size: rem(30);
           letter-spacing: 2.5px;
           text-align: left;
+          margin-top: 75px;
         }
         div.ecwid-productBrowser-head {
           text-align: left;
@@ -314,15 +329,6 @@ html#ecwid_html {
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
-      .ecwid {
-        div.ecwid-productBrowser {
-          &.ecwid-productBrowser-CartPage,
-          &.ecwid-productBrowser-CheckoutPaymentDetailsPage,
-          &.ecwid-productBrowser-CheckoutPlaceOrderPage {
-            padding: 60px;
-          }
-        }
-      }
       div.ecwid-productBrowser-cart {
         div.ecwid-productBrowser-backgroundedPanel {
           min-width: 268px;
@@ -332,9 +338,17 @@ html#ecwid_html {
     }
   }
 }
-@media screen and (max-width: 991px) {
+@include media-breakpoint-down(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      div.ecwid-productBrowser {
+        &.ecwid-productBrowser-CartPage,
+        &.ecwid-productBrowser-CheckoutPaymentDetailsPage,
+        &.ecwid-productBrowser-CheckoutPlaceOrderPage,
+        &.ecwid-productBrowser-CheckoutShippingAddressPage {
+          padding: 5px 20px 60px !important;
+        }
+      }
       .ecwid-Checkout-blockTitle {
         margin-bottom: 46px !important;
       }
@@ -387,17 +401,6 @@ html#ecwid_html {
       table.ecwid-productBrowser-cart-estimation {
         width: 100%;
         max-width: 375px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 543px) {
-  html#ecwid_html {
-    body#ecwid_body.page-internal.ecwid-customer-loggedOut {
-      .ecwid-btn--address_book_sign_in {
-        display: block !important;
-        margin: 32px 0 0 !important;
       }
     }
   }
