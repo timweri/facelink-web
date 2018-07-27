@@ -104,12 +104,12 @@
     }
   }
   .subhead-frame2 {
-    @include position(absolute, 35%, null, null, -100px, 2);
+    @include position(absolute, 31%, null, null, -100px, 2);
     padding-top: 0;
     h2 {
       padding: 16px 34px 16px 0;
       &::before {
-        @include position(absolute, 0, 0, null, null);
+        @include position(absolute, 0, 10px, null, null);
         @include sizeEx(2000%, 100%);
         content: "";
         display: block;
@@ -118,7 +118,7 @@
     }
   }
   .subhead-frame2-title {
-    padding-left: 67px;
+    padding-left: 60px;
   }
   .title-frame2 {
     margin: 0;
@@ -154,12 +154,28 @@
   .subhead-frame2 {
     left: 0;
   }
+  .list-item-frame2 {
+    margin: 0 31% 0 auto;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-height: 639px) {
   .section-frame3 {
     .description-iframe3 {
       margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .subhead-frame2-title {
+    padding-left: 118px;
+  }
+  .subhead-frame2 {
+    h2 {
+      &::before {
+        right: -110px;
+      }
     }
   }
 }

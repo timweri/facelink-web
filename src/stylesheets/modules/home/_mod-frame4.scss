@@ -144,6 +144,18 @@
   }
   .section-frame4 {
     height: 100%;
+    .bg-rotate-image {
+      overflow: hidden;
+      &::after {
+        content: "";
+        @include position(absolute, $right: 32%, $top: -10%, $index: 5);
+        @include sizeEx(22%, 100%);
+        background: url("../images/background-white.png") top left no-repeat;
+        background-size: 100% auto;
+        transform-origin: top;
+        transform: rotate(43.5deg);
+      }
+    }
     .bg-orange {
       @include sizeEx(45.4%, 100%);
       padding-top: 93px;
@@ -182,7 +194,7 @@
   .cont-frame4 {
     padding: 130px 0 65px;
     .image-product {
-      @include position(relative, null, 65px, null, null);
+      @include position(relative, null, 56px, 20px, null);
       margin: 0;
       img {
         margin: 0 0 0 auto;
@@ -190,16 +202,39 @@
     }
   }
   .title-frame4 {
-    padding-left: 65px;
+    padding-left: 53px;
   }
   .list-item-frame4 {
     padding-right: 65px;
   }
 }
 
+@media only screen and (min-width: 1500px) {
+   .section-frame4 {
+      .title-frame4 {
+        padding-left: 255px;
+      }
+      .list-item-frame4 {
+        padding-right: 88px;
+      }
+      .cont-frame4 {
+        top: 12.8%;
+        .col-image-product-frame4 {
+          margin-top: 24px;
+        }
+        > .container {
+          max-width: 1600px;
+        }
+      }
+   }
+}
+
 @media only screen and (max-height: 900px) {
   .fruit-frame4 {
     width: 35%;
+    .list-item-frame4 {
+      padding-right: 89px;
+    }
   }
 }
 @media only screen and (max-width: 1920px) and (max-height: 900px) {
