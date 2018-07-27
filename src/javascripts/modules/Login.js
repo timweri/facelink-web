@@ -29,7 +29,7 @@ const Login = (($) => {
 			
 			var func = this;
 			var forgotForm = $('.mod-forgot form');
-			var inputErr = $('.um-form-field.um-error');
+			var inputErr = $('.um-form-field');
 			forgotForm.submit(function (event) {
 				var value = forgotForm.find('input[type="text"]').val();
 				if (value) {
@@ -40,8 +40,10 @@ const Login = (($) => {
 
 			});
 			inputErr.focus(function () {
-				console.log('clear');
-				inputErr.removeClass('um-error');
+				if (inputErr.hasClass('um-error')) {
+					inputErr.removeClass('um-error');
+					console.log('clear');
+				}
 			});
 			console.log('func', func);
 			
