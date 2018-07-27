@@ -97,6 +97,26 @@ html#ecwid_html {
       .ecwid-AddressForm-fields {
         display: block;
       }
+      div.ecwid-productBrowser-auth-mini {
+        padding: 20px;
+        div.ecwid-amexPaymentForm,
+        div.ecwid-ppReview-sidebar-ver {
+          margin-top: 0;
+        }
+        div.ecwid-amexPaymentForm {
+          width: 67%;
+          margin-right: 1%;
+        }
+        div.ecwid-ppReview {
+          margin-top: 0;
+        }
+        div.div.ecwid-ppReview-block {
+          margin: 0 0 3px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
     table.ecwid-Checkout-blockTitle div.gwt-HTML,
     div.ecwid-Checkout-blockTitle {
@@ -454,6 +474,9 @@ html#ecwid_html {
       td.ecwid-DateRangeBox-range {
         text-align: left;
       }
+    }
+    table.ecwid-productBrowser-auth-mini {
+      display: none;
     }
   }
 }
