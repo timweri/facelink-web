@@ -33,7 +33,6 @@ html#ecwid_html {
           width: 100%;
         }
       }
-      
       div.ecwid-Checkout-EmailBlock {
         .ecwid-form {
           width: 100%;
@@ -41,7 +40,7 @@ html#ecwid_html {
       }
       .ecwid-PaymentMethodsBlock-PaymentOption {
         input {
-          @include position(absolute, -9999px, $left: -9999px);
+          @include position(absolute, 0, $left: 0);
         }
         span {
           min-height: 28px;
@@ -97,6 +96,40 @@ html#ecwid_html {
       }
       .ecwid-AddressForm-fields {
         display: block;
+      }
+      div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
+        padding: 20px !important;
+        div.ecwid-amexPaymentForm,
+        div.ecwid-ppReview-sidebar-ver {
+          margin-top: 0;
+        }
+        .ecwid-SpacerImage {
+          display: none !important;
+        }
+        div.ecwid-amexPaymentForm {
+          width: 67%;
+          margin-right: 1.6%;
+        }
+        div.ecwid-ppReview-sidebar-ver {
+          min-width: auto;
+        }
+        div.ecwid-ppReview {
+          margin-top: 0;
+        }
+        div.ecwid-ppReview-block {
+          margin: 0 0 3px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        div.ecwid-amexParagraph,
+        .ecwid-amexDatePanel {
+          margin: 15px 0 0;
+          padding: 0;
+        }
+        .ecwid-amexField-hint {
+          font-size: 15px;
+        }
       }
     }
     table.ecwid-Checkout-blockTitle div.gwt-HTML,
@@ -159,14 +192,17 @@ html#ecwid_html {
       margin-top: 5px;
       width: 100% !important;
     }
+    .ecwid-PaymentMethodsBlock-PaymentOption {
+      padding: 10px 0;
+    }
     .ecwid-shippingOptions-List span.ecwid-shippingOption,
     span.gwt-RadioButton {
       position: relative;
-      margin: 10px 0;
+      margin: 0;
       label {
         @include font($font-family-base, 18px, $border-gray, 700, null);
         margin: 0;
-        padding-left: 60px;
+        padding: 2px 0 0 60px;
         position: relative;
         &::after,
         &::before {
@@ -453,6 +489,9 @@ html#ecwid_html {
         text-align: left;
       }
     }
+    table.ecwid-productBrowser-auth-mini {
+      display: none;
+    }
   }
 }
 
@@ -594,6 +633,16 @@ html#ecwid_html {
             transform: translateY(-7px);
           }
         }
+        .ecwid-PaymentMethodsBlock-PaymentOption {
+          span:hover {
+            label {
+              color: $black;
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -704,6 +753,14 @@ html#ecwid_html {
         > tbody {
           > tr:first-child {
             display: block;
+          }
+        }
+      }
+      .ecwid {
+        div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
+          div.ecwid-amexPaymentForm {
+            width: 100%;
+            margin: 0;
           }
         }
       }
