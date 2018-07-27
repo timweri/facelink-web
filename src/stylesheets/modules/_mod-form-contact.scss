@@ -11,22 +11,20 @@
 .parsley-error{
   border-color: #f15e2d !important;
 }
-.wait-loading-app{
+.wait-loading-app {
+  @include position(absolute, 100%, $left: 50%);
+  @include sizeEx(50px);
   display: none;
-  position: absolute;
   background: url("../images/ajax-loader.svg") no-repeat 0 0;
   background-size: 100% 100%;
-  width: 100%;
-  height: 50px;
-  top: 100%;
+  transform: translate(-50%, 0);
 }
-.wait-loading-app-green{
+.wait-loading-app-green {
+  @include sizeEx(50px);
   display: none;
   position: static;
   background: url("../images/ajax-loader-green.svg") no-repeat 0 0;
   background-size: 100% 100%;
-  width: 50px;
-  height: 50px;
   margin: 0 auto;
 }
 .mod-form-contact {
