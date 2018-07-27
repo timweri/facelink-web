@@ -236,17 +236,31 @@ const HomeAnimation = (() => {
 
   const scrollSpeed = (scrollTime, scrollDistance) => {
     var $window = $(window),
-      isScroll = 0,
-      finalScroll = 0
+      isScroll = 0
 
-    $window.on('mousewheel DOMMouseScroll', function (event) {
+    var ts
+    $(document).bind('touchstart', function (e) {
+      ts = e.originalEvent.touches[0].clientY
+    })
+
+    $(document).bind('touchend', function (e) {
+    })
+
+    $window.on('mousewheel DOMMouseScroll touchend', function (event) {
       if (isScroll === 1) { event.preventDefault(); return }
       isScroll = 1
 
       var heso = 4,
         delta
 
-      if (event.originalEvent.wheelDelta !== undefined) {
+      if (event.originalEvent.changedTouches[0] !== undefined) {
+        var te = event.originalEvent.changedTouches[0].clientY
+        if (ts > te + 5) {
+          delta = -1
+        } else if (ts < te - 5) {
+          delta = 1
+        }
+      } else if (event.originalEvent.wheelDelta !== undefined) {
         delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
       } else {
         delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
@@ -258,7 +272,7 @@ const HomeAnimation = (() => {
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
       var windowTop = Math.round($(window).scrollTop())
-      finalScroll = Math.round(finalScroll)
+      var finalScroll = Math.round(finalScroll)
       if (delta > 0) {
         if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
       } else if (delta < 0) {
@@ -279,6 +293,7 @@ const HomeAnimation = (() => {
           }
         })
         event.preventDefault()
+        return true
       } else {
         isScroll = 0
       }
