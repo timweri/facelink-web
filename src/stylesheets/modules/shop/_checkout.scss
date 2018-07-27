@@ -97,20 +97,26 @@ html#ecwid_html {
       .ecwid-AddressForm-fields {
         display: block;
       }
-      div.ecwid-productBrowser-auth-mini {
-        padding: 20px;
+      div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
+        padding: 20px !important;
         div.ecwid-amexPaymentForm,
         div.ecwid-ppReview-sidebar-ver {
           margin-top: 0;
         }
+        .ecwid-SpacerImage {
+          display: none !important;
+        }
         div.ecwid-amexPaymentForm {
           width: 67%;
-          margin-right: 1%;
+          margin-right: 1.6%;
+        }
+        div.ecwid-ppReview-sidebar-ver {
+          min-width: auto;
         }
         div.ecwid-ppReview {
           margin-top: 0;
         }
-        div.div.ecwid-ppReview-block {
+        div.ecwid-ppReview-block {
           margin: 0 0 3px;
           &:last-child {
             margin-bottom: 0;
@@ -739,6 +745,14 @@ html#ecwid_html {
         > tbody {
           > tr:first-child {
             display: block;
+          }
+        }
+      }
+      .ecwid {
+        div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
+          div.ecwid-amexPaymentForm {
+            width: 100%;
+            margin: 0;
           }
         }
       }
