@@ -2,6 +2,14 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .gwt-TextBox,
+    .ecwid-PaymentCommentsBlock-textarea,
+    div.ecwid-productBrowser-cart-EnterCouponBox input {
+      border-bottom: 3px solid $menu-gray;
+      &:focus {
+        border-bottom: 3px solid $color-c6;
+      }
+    }
     .gwt-TextBox {
       padding: 0 21px !important;
     }

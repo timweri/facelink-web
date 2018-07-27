@@ -15,11 +15,15 @@ html#ecwid_html {
         text-align: left !important;
       }
       .ecwid-btn {
-        cursor: pointer !important;
         padding: 0 !important;
       }
       .gwt-HTML {
         @include position(relative, $top: 1px);
+      }
+      .gwt-HTML,
+      label::after,
+      label::before {
+        cursor: pointer;
       }
     }
     .ecwid-amexPaymentForm {

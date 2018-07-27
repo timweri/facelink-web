@@ -51,7 +51,7 @@ html#ecwid_html {
       input.ecwid-productBrowser-cart-qtyTextField {
         @include font($font-family-base, 18px,$black-two, 700);
         width: 60px;
-        padding: 6px 3px;
+        padding: 6px 3px !important;
         text-align: center !important;
         margin: 14px 0 30px;
         border: 1px solid $color-c5;
@@ -140,10 +140,6 @@ html#ecwid_html {
           @include sizeEx(100%, 39px !important);
           padding: 0 21px 3px !important;
           max-width: 100%;
-          border-bottom: 3px solid $menu-gray;
-          &:focus {
-            border-bottom: 3px solid $color-c6;
-          }
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox-couponPanelControls {
