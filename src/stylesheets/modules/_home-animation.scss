@@ -1,6 +1,11 @@
 .scrollmagic-pin-spacer {
   overflow: hidden;
 }
-.section-frame2 {
-  background-attachment: fixed;
+html:not(.touch) {
+  .bg-image-frame3 {
+    background-attachment: fixed;
+  }
+  .section-frame2 {
+    background-attachment: fixed;
+  }
 }

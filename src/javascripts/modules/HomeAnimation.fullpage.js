@@ -168,7 +168,7 @@ const HomeAnimation = (() => {
     var bgImageFrame3 = frame + ' .bg-image-frame3'
 
     // custom css
-    $(bgImageFrame3).css('background-attachment', 'fixed')
+    // $(bgImageFrame3).css('background-attachment', 'fixed')
     $(bgImageFrame3).css('background-position', 'center 0')
 
     // create timeline animation
@@ -237,16 +237,28 @@ const HomeAnimation = (() => {
   const scrollSpeed = (scrollTime, scrollDistance) => {
     var $window = $(window),
       isScroll = 0,
-      finalScroll = 0
+      finalScroll = 0,
+      ts = 0
 
-    $window.on('mousewheel DOMMouseScroll', function (event) {
+    $(document).bind('touchstart', function (e) {
+      ts = e.originalEvent.touches[0].clientY
+    })
+
+    $window.on('mousewheel DOMMouseScroll touchend', function (event) {
       if (isScroll === 1) { event.preventDefault(); return }
       isScroll = 1
 
       var heso = 4,
         delta
 
-      if (event.originalEvent.wheelDelta !== undefined) {
+      if (event.originalEvent.changedTouches !== undefined) {
+        var te = event.originalEvent.changedTouches[0].clientY
+        if (ts > te + 5) {
+          delta = -1
+        } else if (ts < te - 5) {
+          delta = 1
+        }
+      } else if (event.originalEvent.wheelDelta !== undefined) {
         delta = event.originalEvent.wheelDelta / (heso * 30) || -event.originalEvent.detail / 3
       } else {
         delta = (-1 * event.originalEvent.deltaY) / heso || -event.originalEvent.detail / 3
@@ -279,6 +291,7 @@ const HomeAnimation = (() => {
           }
         })
         event.preventDefault()
+        return true
       } else {
         isScroll = 0
       }
