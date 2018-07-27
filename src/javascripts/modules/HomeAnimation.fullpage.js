@@ -168,7 +168,7 @@ const HomeAnimation = (() => {
     var bgImageFrame3 = frame + ' .bg-image-frame3'
 
     // custom css
-    $(bgImageFrame3).css('background-attachment', 'fixed')
+    // $(bgImageFrame3).css('background-attachment', 'fixed')
     $(bgImageFrame3).css('background-position', 'center 0')
 
     // create timeline animation
