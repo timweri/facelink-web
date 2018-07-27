@@ -138,3 +138,9 @@
     padding-bottom: 100px;
   }
 }
+
+@media only screen and (max-height: 740px) {
+  .img-production-frame1.show-desktop {
+    width: 25%;
+  }
+}
