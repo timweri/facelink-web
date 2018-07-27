@@ -15,11 +15,15 @@ html#ecwid_html {
         text-align: left !important;
       }
       .ecwid-btn {
-        cursor: pointer !important;
         padding: 0 !important;
       }
       .gwt-HTML {
         @include position(relative, $top: 1px);
+      }
+      .gwt-HTML,
+      label::after,
+      label::before {
+        cursor: pointer;
       }
     }
     .ecwid-amexPaymentForm {
@@ -47,3 +51,18 @@ html#ecwid_html {
   }
 }
 
+@include media-breakpoint-up(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-Checkout-EmailBlock {
+        .ecwid-Checkout-blockTitle {
+          span {
+            @include position(relative, $top: -6px);
+            display: inline-block !important;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

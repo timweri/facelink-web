@@ -200,8 +200,7 @@ const FullPage = (($) => {
         if ($windowHeight < 641 || $windowWidth < 992) {
           this.cta.removeAttr('style')
         } else {
-          this.cta.css('height', $windowHeight * 0.485)
-          this.footer.css('height', $windowHeight * 0.515)
+          this.cta.css('height', $windowHeight / 2)
         }
       }
     }
