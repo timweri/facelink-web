@@ -34,14 +34,13 @@ const Login = (($) => {
 				var value = forgotForm.find('input[type="text"]').val();
 				if (value) {
 				} else {
-					inputErr.addClass('um-error');
+					$('.um-form-field').addClass('um-error');
 					event.preventDefault();
 				}
 
 			});
 			inputErr.focus(function () {
 				console.log('clear');
-				
 				inputErr.removeClass('um-error');
 			});
 			console.log('func', func);
