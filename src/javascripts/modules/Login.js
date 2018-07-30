@@ -21,33 +21,48 @@ const Login = (($) => {
 		constructor(element, config) {
 			this._element = $(element)
 			this._config = this._getConfig(config)
-			this.validateLogin()
+			logoutEvent();
+			// this.validateLogin()
 		}
 
-		validateLogin() {
-			console.log('valid');
-			
-			var func = this;
-			var forgotForm = $('.mod-forgot form');
-			var inputErr = $('.um-form-field');
-			forgotForm.submit(function (event) {
-				var value = forgotForm.find('input[type="text"]').val();
-				if (value) {
-				} else {
-					$('.um-form-field').addClass('um-error');
-					event.preventDefault();
-				}
-
-			});
-			inputErr.focus(function () {
-				if (inputErr.hasClass('um-error')) {
-					inputErr.removeClass('um-error');
-					console.log('clear');
+		logoutEvent() {
+			$('btn-signout').click(function(){
+				var localStoragePrefix = 'PSecwid__' + Ecwid.getOwnerId() + 'PS';
+				var isLoggedIn = (localStorage.getItem(localStoragePrefix + 'token') != null);
+				if (isLoggedIn) {
+					var itemsToRemove = ['token', 'customerid', 'profile'];
+					for (var i = 0; i < itemsToRemove.length; i++) {
+						localStorage.removeItem(localStoragePrefix + itemsToRemove[i]);
+					}
+					window.location.reload(true);
 				}
 			});
-			console.log('func', func);
-			
 		}
+
+		// validateLogin() {
+		// 	console.log('valid');
+			
+		// 	var func = this;
+		// 	var forgotForm = $('.mod-forgot form');
+		// 	var inputErr = $('.um-form-field');
+		// 	forgotForm.submit(function (event) {
+		// 		var value = forgotForm.find('input[type="text"]').val();
+		// 		if (value) {
+		// 		} else {
+		// 			$('.um-form-field').addClass('um-error');
+		// 			event.preventDefault();
+		// 		}
+
+		// 	});
+		// 	inputErr.focus(function () {
+		// 		if (inputErr.hasClass('um-error')) {
+		// 			inputErr.removeClass('um-error');
+		// 			console.log('clear');
+		// 		}
+		// 	});
+		// 	console.log('func', func);
+			
+		// }
     
 		_getConfig(config) {
 			config = $.extend({}, Default, config)
