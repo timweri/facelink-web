@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 const Login = (($) => {
-	const NAME = 'forgot'
+	const NAME = 'login'
 	const DATA_KEY = `bs.${NAME}`
 	const EVENT_KEY = `.${DATA_KEY}`
 	const DATA_API_KEY = '.data-api'
@@ -21,12 +21,14 @@ const Login = (($) => {
 		constructor(element, config) {
 			this._element = $(element)
 			this._config = this._getConfig(config)
-			logoutEvent();
+			this.logoutEvent();
 			// this.validateLogin()
 		}
 
 		logoutEvent() {
+			console.log('load event click');
 			$('.btn-signout').click(function(){
+				console.log('event click');
 				var localStoragePrefix = 'PSecwid__' + Ecwid.getOwnerId() + 'PS';
 				var isLoggedIn = (localStorage.getItem(localStoragePrefix + 'token') != null);
 				if (isLoggedIn) {
