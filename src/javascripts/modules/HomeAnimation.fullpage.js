@@ -318,7 +318,9 @@ const HomeAnimation = (() => {
     })
   }
   $(window).on('beforeunload', function () {
-    controller.scrollTo(0)
+    if (isPageHome && isFullpage && $(window).width() >= 992) {
+      controller.scrollTo(0)
+    }
     $('.over-loader').removeClass('loader-hidden')
   })
   $(document).ready(function () {
