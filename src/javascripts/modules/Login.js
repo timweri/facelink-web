@@ -26,7 +26,7 @@ const Login = (($) => {
 		}
 
 		logoutEvent() {
-			$('btn-signout').click(function(){
+			$('.btn-signout').click(function(){
 				var localStoragePrefix = 'PSecwid__' + Ecwid.getOwnerId() + 'PS';
 				var isLoggedIn = (localStorage.getItem(localStoragePrefix + 'token') != null);
 				if (isLoggedIn) {
