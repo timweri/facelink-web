@@ -1,11 +1,14 @@
 .mod-group-quote-cta {
   position: relative;
+
   &.not-quote {
     overflow: hidden;
+    max-width: 100%;
     .bg-green {
       display: none;
     }
     .mod-cta {
+      max-width: 100%;
       &::before,
       &::after {
         content: "";
