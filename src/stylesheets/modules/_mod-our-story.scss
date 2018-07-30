@@ -56,7 +56,8 @@
 
 .os-headline-wrap {
   margin: 0 auto 43px;
-  max-width: 600px;
+  max-width: 640px;
+  padding: 0 20px;
   .line {
     display: block;
     width: 80px;
@@ -85,10 +86,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-  .os-headline {
-    font-size: rem(30);
-    max-width: 370px;
-  }
   .mod-our-story {
     margin: 110px auto 70px;
     .centered-row {
