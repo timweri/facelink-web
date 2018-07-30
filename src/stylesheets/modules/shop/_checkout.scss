@@ -400,6 +400,9 @@ html#ecwid_html {
         height: 40px;
       }
     }
+    td.ecwid-DateRangeBox-icon {
+      width: 40px;
+    }
     .ecwid-Orders {
       margin: auto;
     }
@@ -526,7 +529,7 @@ html#ecwid_html {
       div.ecwid-Orders-SearchPanel {
         .ecwid-DateRangeBox {
           margin: 0;
-          width: 200px;
+          width: 250px;
         }
         .gwt-TextBox {
           width: 250px;

@@ -10,10 +10,19 @@
       background: $menu-gray !important;
       text-transform: uppercase;
       border-bottom: solid 3px $white !important;
-  
       &:focus {
         border-bottom: solid 3px $color-c6 !important;
       }
+    }
+  }
+}
+html#ecwid_html {
+  body#ecwid_body.page-internal {
+    div.ecwid-Orders-EmptyList {
+      background: $menu-gray;
+    }
+    div.ecwid-DateRangePopup {
+      background: $menu-gray;
     }
   }
 }
