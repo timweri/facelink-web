@@ -56,12 +56,13 @@
 
 .os-headline-wrap {
   margin: 0 auto 43px;
-  max-width: 360px;
+  max-width: 600px;
   .line {
-    display: inline-block;
+    display: block;
     width: 80px;
     border-top: solid 5px $color-c6;
     line-height: 0;
+    margin: 20px auto;
   }
 }
 
