@@ -13,7 +13,7 @@ module.exports = [
             image: ''
           },
           {
-            image: 'images/img-insta.jpg'
+            image: ''
           },
           {
             image: 'images/img-insta.jpg'
