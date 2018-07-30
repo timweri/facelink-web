@@ -47,7 +47,7 @@ const HomeAnimation = (() => {
       var i = 0
       for (i in timelineMaxs[key]) {
         if (timelineMaxs[key][i]['timeline'] !== undefined) {
-          if (i == 0) {
+          if (i == 0 && i < _lengthTimelineMaxs - 1) {
             new ScrollMagic.Scene({
               triggerElement: _element,
               duration: timelineMaxs[key][i]['duration'],
@@ -234,6 +234,21 @@ const HomeAnimation = (() => {
     })
   }
 
+  const frame5Timeline = () => {
+    var key = 'frame5'
+    var frame = elementFrames[key]
+    var duration = durationScrollMagics[key]
+
+    // custom css
+
+    // create timeline animation
+    timelineMaxs[key].push({
+      'duration': duration,
+      'spaceduration': -1 * (duration),
+      'timeline': new TimelineMax()
+    })
+  }
+
   const scrollSpeed = (scrollTime, scrollDistance) => {
     var $window = $(window),
       isScroll = 0,
@@ -270,6 +285,7 @@ const HomeAnimation = (() => {
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
       var windowTop = Math.round($(window).scrollTop())
+      // var prevScroll = finalScroll
       finalScroll = Math.round(finalScroll)
       if (delta > 0) {
         if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
@@ -278,23 +294,23 @@ const HomeAnimation = (() => {
       }
       var nextIndex = Math.max(0, index - delta)
       if (nextIndex >= 0 && nextIndex <= el.length) {
-        if (nextIndex == el.length) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
+        if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
         else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height() }
-        if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
-        TweenMax.to($window, scrollTime, {
-          scrollTo: { y: finalScroll, autoKill: false },
-          ease: Sine.easeInOut,
-          overwrite: 5,
-          onComplete: function () {
-            // console.log(finalScroll)
-            isScroll = 0
-          }
-        })
-        event.preventDefault()
-        return true
-      } else {
-        isScroll = 0
       }
+      // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
+      // var durationScroll = [2, 2.5, 3, 1]
+      // console.log(durationScroll)
+      if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
+      TweenMax.to($window, scrollTime, {
+        scrollTo: { y: finalScroll, autoKill: false },
+        ease: Sine.easeInOut,
+        overwrite: 5,
+        onComplete: function () {
+          // console.log(finalScroll)
+          isScroll = 0
+        }
+      })
+      event.preventDefault()
     })
   }
 
@@ -302,7 +318,8 @@ const HomeAnimation = (() => {
     $('.navigation-homepage').on('click', 'a', function (e) {
       var _el = $(e.target)
       var _elTarget = $(_el.attr('href'))
-      var isAnimation = _elTarget.parents('.scrollmagic-pin-spacer').length !== 0
+      // var isAnimation = _elTarget.parents('.scrollmagic-pin-spacer').length !== 0
+      var isAnimation = !(_el.attr('href') === '#frame5' || _el.attr('href') === '#frame6')
       var offsetTop = isAnimation ? _elTarget.parents('.scrollmagic-pin-spacer').offset().top : _elTarget.offset().top
       var $window = $(window)
       $(document).scrollTop(offsetTop)
@@ -341,6 +358,7 @@ const HomeAnimation = (() => {
       frame2Timeline()
       frame3Timeline()
       frame4Timeline()
+      frame5Timeline()
       runScrollMagicScene()
       navigationHome()
       flagReload = 1
