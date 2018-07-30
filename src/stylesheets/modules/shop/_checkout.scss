@@ -471,11 +471,14 @@ html#ecwid_html {
         }
       }
       td.ecwid-OrdersList-OrderBox-cellOdd {
-        background-color: $menu-gray;
+        background-color: $white;
+      }
+      div.ecwid-OrdersList-OrderBox-status span {
+        color: $orange;
       }
       td.ecwid-OrdersList-OrderBox-header,
       td.ecwid-OrdersList-OrderBox-footer {
-        background-color: $color-c5;
+        background-color: $menu-gray;
       }
       div.ecwid-OrdersList-OrderBox-product a {
         font-size: rem(17.7);

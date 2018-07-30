@@ -13,6 +13,9 @@
   .btn-custom {
     padding: 0 30px;
   }
+  .no-link {
+    cursor: auto;
+  }
 }
 .shop-product-left,
 .shop-product-right {
@@ -82,7 +85,7 @@
 .shop-product-right {
   margin-top: 85px;
   .shop-product-title {
-    @include position(absolute, $top: 0, $left: 53%);
+    @include position(absolute, $top: 0, $right: 0);
     transform: translateY(-50%) translateZ(0);
     &::before {
       @include sizeEx(2000px, 100%);
@@ -99,15 +102,10 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 400px) {
   .mod-shop-product {
     h2 {
       font-size: rem(20);
-    }
-  }
-  .shop-product-right {
-    .shop-product-title {
-      left: 40%;
     }
   }
 }
@@ -198,8 +196,7 @@
       @include sizeEx(105%, 100%);
     }
     .shop-product-title {
-      left: 47%;
-      margin-left: -72px;
+      min-width: 365px;
       h2 {
         padding: 28px 0 30px 45px;
       }
