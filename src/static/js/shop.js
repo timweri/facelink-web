@@ -88,34 +88,35 @@ var Shop = (function () {
     var modShopHeader = $('.mod-shop-header')
     var $titleBanner = $('.ecwid-productBrowser-head')
     var $title = $('.page-title__name')
+    let path = window.location.pathname ? window.location.pathname.trim().split('/') : false
+    if( path.length > 0) {
+      let isShop = path[1] === 'shop' ? true : false
+      let isSuplement = path[2].split('-')[0] === '320Z' ? true : false
 
-    let path = window.location.pathname.trim().split('/')
-    let isShop = path[1] === 'shop' ? true : false
-    let isSuplement = path[2].split('-')[0] === '320Z' ? true : false
+      if (isShop && !isSuplement) {
+        modShopHeader.remove()
+        titleProductDetail = 'Briq Gear'
 
-    if (isShop && !isSuplement) {
-      modShopHeader.remove()
-      titleProductDetail = 'Briq Gear'
-
-      $('.product-details').removeClass('muti-item')
-      if ($title.length) {
-        var txt = $title.html()
-        if ((txt !== '') && (txt !== undefined)) {
-          var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txt + '</h1>' + '</div>' + '</section>'
-          $(dom).insertBefore('#ecwid_html .mod-content-editor')
+        $('.product-details').removeClass('muti-item')
+        if ($title.length) {
+          var txt = $title.html()
+          if ((txt !== '') && (txt !== undefined)) {
+            var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txt + '</h1>' + '</div>' + '</section>'
+            $(dom).insertBefore('#ecwid_html .mod-content-editor')
+          }
         }
-      }
 
-      if ($titleBanner.length) {
-        console.log('titleBanner')
-        var txtBanner = $titleBanner.html()
-        if (txtBanner !== '' && txtBanner !== undefined) {
-          var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txtBanner + '</h1>' + '</div>' + '</section>'
-          $(dom).insertBefore('#ecwid_html .mod-content-editor')
+        if ($titleBanner.length) {
+          console.log('titleBanner')
+          var txtBanner = $titleBanner.html()
+          if (txtBanner !== '' && txtBanner !== undefined) {
+            var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txtBanner + '</h1>' + '</div>' + '</section>'
+            $(dom).insertBefore('#ecwid_html .mod-content-editor')
+          }
         }
+      } else {
+        modShopHeader.remove()
       }
-    } else {
-      modShopHeader.remove()
     }
   }
 
