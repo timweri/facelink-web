@@ -323,7 +323,7 @@ html#ecwid_html {
           &:hover {
             color: $blue;
             border-bottom: solid 4px $blue;
-            padding-bottom: 20px;
+            padding-bottom: 20px !important;
           }
         }
         &.ecwid-Checkout-BreadCrumbs-link-current {
