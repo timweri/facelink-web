@@ -4,6 +4,11 @@ html#ecwid_html {
     background: $gray-bg;
     .ecwid-DateRangePopup {
       background-color: $menu-gray !important;
+      padding: 15px !important;
+      .ecwid-DateRangePopup-DateRangeLabel,
+      a.gwt-Anchor {
+        font-size: rem(15);
+      }
     }
     .gwt-TextBox,
     .ecwid-PaymentCommentsBlock-textarea,
@@ -208,7 +213,7 @@ html#ecwid_html {
       }
       .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
         border: 3px solid $orange;
-        padding-bottom: 2px !important;
+        padding-bottom: 1px !important;
         &:focus,
         &:focus:active {
           border: 3px solid $orange;
