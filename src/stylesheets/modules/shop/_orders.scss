@@ -1,8 +1,9 @@
 .ecwid-productBrowser-OrdersPage {
   .ecwid-Orders-SearchPanel {
     input {
+      @include position(relative, 1px);
       @include font($os, 18px, $black-two, 700, null);
-      @include sizeEx(100%, 40px !important);
+      @include sizeEx(100%, 43px !important);
       border: 0 !important;
       padding: 0 20px !important;
       border-radius: 0;
@@ -17,3 +18,23 @@
     }
   }
 }
+
+html#ecwid_html {
+  body#ecwid_body {
+    .ecwid-DateRangeBox {
+      background-color: $menu-gray !important;
+      border: 0 !important;
+    }
+    .ecwid-DateRangeBox-range {
+      padding: 5px 0 3px 30px !important;
+    }
+    .ecwid-DateRangeBox-icon {
+      width: 45px !important;
+      border: 0 !important;
+    }
+    div.ecwid-Orders-EmptyList {
+      background-color: $menu-gray !important;
+    }
+  }
+}
+

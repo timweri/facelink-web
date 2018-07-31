@@ -2,6 +2,9 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .ecwid-DateRangePopup {
+      background-color: $menu-gray !important;
+    }
     .gwt-TextBox,
     .ecwid-PaymentCommentsBlock-textarea,
     div.ecwid-productBrowser-cart-EnterCouponBox input {
@@ -515,6 +518,20 @@ html#ecwid_html {
         .mod-promotion {
           margin-left: -15px !important;
         }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  html#ecwid_html {
+    body#ecwid_body {
+      div.ecwid-AddressForm,
+      div.ecwid-PaymentMethodsBlock,
+      div.ecwid-PaymentCommentsBlock,
+      div.ecwid-Checkout-EmailBlock,
+       {
+        margin-bottom: 40px !important;
       }
     }
   }
