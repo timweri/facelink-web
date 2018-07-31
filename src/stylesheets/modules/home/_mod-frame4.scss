@@ -157,7 +157,7 @@
       overflow: hidden;
       &::after {
         content: "";
-        @include position(absolute, $right: 28%, $top: -10%, $index: 5);
+        @include position(absolute, $right: 27%, $top: -10%, $index: 5);
         @include sizeEx(30%, 100%);
         background: url("../images/background-white.png") top left no-repeat;
         background-size: 45% auto;

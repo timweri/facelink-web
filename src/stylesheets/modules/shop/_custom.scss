@@ -317,6 +317,7 @@ html#ecwid_html {
       &.active {
         border-bottom: solid 4px $blue;
         color: $blue;
+        padding-bottom: 20px;
       }
       &.done-action {
         border-bottom-color: $black;
