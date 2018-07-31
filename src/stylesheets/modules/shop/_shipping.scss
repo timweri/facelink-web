@@ -1,24 +1,34 @@
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
-      body#ecwid_body.page-internal {
-          table.ecwid-Checkout-blockTitle {
-              margin-left: 0;
-          }
-          .ecwid-productBrowser-CheckoutShippingAddressPage .ecwid-productBrowser-head-panel~div {
-              margin: 0 -15px;
-          }
-          .ecwid-productBrowser-CheckoutShippingAddressPage {
-              &::before {
-                  @include font($os, rem(30), $black-two, 700);
-                  @include position(relative);
-                  display: block;
-                  letter-spacing: 2px;
-                  content: "SHIPPING DETAILS";
-                  text-transform: uppercase;
-                  margin-top: 70px;
-              }
-          }
+    body#ecwid_body.page-internal {
+      table.ecwid-Checkout-blockTitle {
+          margin-left: 0;
       }
+      .ecwid-productBrowser-CheckoutShippingAddressPage .ecwid-productBrowser-head-panel~div {
+          margin: 0 -15px;
+      }
+      .ecwid-productBrowser-CheckoutShippingAddressPage {
+        &::before {
+            @include font($os, rem(30), $black-two, 700);
+            @include position(relative);
+            display: block;
+            letter-spacing: 2px;
+            content: "SHIPPING DETAILS";
+            text-transform: uppercase;
+            margin-top: 70px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  html#ecwid_html {
+    div.ecwid-AddressForm {
+      table.ecwid-fieldEnvelope {
+        margin: 0 !important;
+      }
+    }
   }
 }
 
