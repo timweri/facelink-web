@@ -1,9 +1,9 @@
-
 .section-frame4 {
   color: $white;
   background: $orange;
   .rotate-image {
     background: $color-ffc6;
+    top: 24%;
   }
   .bg-orange {
     @include position(absolute, 0, null, 0, 0);
@@ -29,12 +29,14 @@
     }
   }
 }
+
 .bg-image-frame4 {
-  @include position(absolute, 0, null,null, 0);
-  @include sizeEx(100%,auto);
+  @include position(absolute, 0, null, null, 0);
+  @include sizeEx(100%, auto);
   padding-top: 70%;
   background: $color-ff;
 }
+
 .subhead-frame4 {
   width: 100%;
   h2 {
@@ -56,6 +58,7 @@
     margin-bottom: 18px;
   }
 }
+
 .cont-frame4 {
   position: relative;
   padding: 90px 0 50px;
@@ -67,6 +70,7 @@
     }
   }
 }
+
 .subhead-frame4-title {
   .number {
     @include sizeEx(71px);
@@ -84,17 +88,19 @@
     margin-left: 170px;
   }
 }
+
 .cont-text-frame4 {
   max-width: 1000px;
   width: 100%;
   margin: 80px auto 0;
   @include position(relative, $index: 1);
 }
+
 .list-item-frame4 {
   ul {
     list-style: none;
     li {
-      @include font($os, 18px,$black, 700);
+      @include font($os, 18px, $black, 700);
       text-transform: uppercase;
       letter-spacing: 2px;
       margin: 0;
@@ -126,7 +132,7 @@
 }
 
 .fruit-frame4 {
-  @include position(absolute, null, null, -29%, -13%);
+  @include position(absolute, null, null, -21%, -15%);
   width: 50%;
   img {
     width: 100%;
@@ -144,29 +150,42 @@
   }
   .section-frame4 {
     height: 100%;
+    .rotate-image {
+      width: 80%;
+    }
     .bg-rotate-image {
       overflow: hidden;
       &::after {
         content: "";
-        @include position(absolute, $right: 32%, $top: -10%, $index: 5);
-        @include sizeEx(22%, 100%);
+        @include position(absolute, $right: 28%, $top: -10%, $index: 5);
+        @include sizeEx(30%, 100%);
         background: url("../images/background-white.png") top left no-repeat;
-        background-size: 100% auto;
+        background-size: 45% auto;
         transform-origin: top;
         transform: rotate(43.5deg);
       }
     }
     .bg-orange {
-      @include sizeEx(45.4%, 100%);
+      @include sizeEx(45.4%,
+      100%);
       padding-top: 93px;
       margin-top: 0;
       &::before,
       &::after {
-        @include sizeEx(4000px, 50%);
-        @include position(absolute, auto, null, 100%, 100%);
+        @include sizeEx(4000px,
+        50%);
+        @include position(absolute,
+        auto,
+        null,
+        100%,
+        100%);
       }
       &::before {
-        @include position(null, 0, auto, auto, null);
+        @include position(null,
+        0,
+        auto,
+        auto,
+        null);
         height: 75%;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
@@ -179,11 +198,16 @@
     }
   }
   .bg-image-frame4 {
-    @include sizeEx(45%, 100%);
+    @include sizeEx(45%,
+    100%);
     padding-top: 0;
   }
   .subhead-frame4 {
-    @include position(relative, null, null, null, null);
+    @include position(relative,
+    null,
+    null,
+    null,
+    null);
     width: 100%;
     padding-top: 0;
     margin: 0;
@@ -194,7 +218,11 @@
   .cont-frame4 {
     padding: 130px 0 65px;
     .image-product {
-      @include position(relative, null, 56px, 20px, null);
+      @include position(relative,
+      null,
+      56px,
+      20px,
+      null);
       margin: 0;
       img {
         margin: 0 0 0 auto;
@@ -208,27 +236,47 @@
     padding-right: 65px;
   }
 }
-
-@media only screen and (min-width: 1500px) {
-   .section-frame4 {
-      .title-frame4 {
-        padding-left: 255px;
+@media only screen and (min-width: 1501px) and (min-height: 900px) {
+  .section-frame4 {
+    .title-frame4 {
+      padding-left: 255px;
+    }
+    .list-item-frame4 {
+      padding-right: 88px;
+    }
+    .cont-frame4 {
+      top: 12.8%;
+      .col-image-product-frame4 {
+        margin-top: 24px;
       }
-      .list-item-frame4 {
-        padding-right: 88px;
+      >.container {
+        max-width: 1600px;
       }
-      .cont-frame4 {
-        top: 12.8%;
-        .col-image-product-frame4 {
-          margin-top: 24px;
-        }
-        > .container {
-          max-width: 1600px;
-        }
-      }
-   }
+    }
+  }
 }
 
+@media only screen and (max-width: 1920px) and (max-height: 900px) {
+  .fruit-frame4 {
+    bottom: -20%;
+  }
+}
+
+@media only screen and (max-width: 1500px) and (max-height: 900px) {
+  .fruit-frame4 {
+    width: 44%;
+    bottom: -17%;
+    left: -13%;
+  }
+  .section-frame4 {
+    .rotate-image {
+      width: 90%;
+    }
+    .bg-rotate-image::after {
+      right: 35%;
+    }
+  }
+}
 @media only screen and (max-height: 900px) {
   .fruit-frame4 {
     width: 35%;
@@ -237,13 +285,4 @@
     }
   }
 }
-@media only screen and (max-width: 1920px) and (max-height: 900px) {
-  .fruit-frame4 {
-    bottom: -20%;
-  }
-}
-@media only screen and (max-width: 1440px) and (max-height: 900px) {
-  .fruit-frame4 {
-    width: 40%;
-  }
-}
+

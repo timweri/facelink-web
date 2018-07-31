@@ -1,10 +1,5 @@
 import $ from 'jquery'
-import 'fullpage.js'
 
-import {
-  TweenMax,
-  TimelineMax
-} from 'gsap'
 const FullPage = (($) => {
   const NAME = 'fullPage'
   const DATA_KEY = `bs.${NAME}`
@@ -28,7 +23,6 @@ const FullPage = (($) => {
       this.footer = $('#footer')
       this.header = $('#header')
       this.cta = $('.mod-cta')
-      // this.fullPageHome()
       this.setHeightCTA()
       $(window).resize(this.onResizeWindow.bind(this))
       let that = this
@@ -42,7 +36,6 @@ const FullPage = (($) => {
     }
     onResizeWindow () {
       this.setHeightCTA()
-      // this.fullPageHome()
     }
 
     stickNavigationHome () {
@@ -55,7 +48,6 @@ const FullPage = (($) => {
           'top': $(this).offset().top
         })
       })
-      console.log(offset)
       $(window).scroll(function () {
         let top = $(this).scrollTop()
         let elementActive
@@ -78,122 +70,6 @@ const FullPage = (($) => {
         }
       })
     }
-
-    fullPageHome () {
-      var frame = '.section.section-frame1'
-      var containerFrame1 = frame + ' .container-frame1'
-      var imgProductionFrame1 = frame + ' .img-production-frame1'
-      var imageFrame1 = frame + ' .image-frame1'
-      var x = new TimelineMax()
-        .to(containerFrame1, 1, { bottom: '100%', ease: Linear.easeNone })
-        .to(imgProductionFrame1, 1, { bottom: '100%', ease: Linear.easeNone }, 0)
-        .to(imageFrame1, 1, { y: '-100px', ease: Linear.easeNone }, 0)
-        .to(frame, 0, { position: 'relative' })
-        .pause()
-
-      let $fullPage = this._element
-      let scroll = window.innerWidth - document.documentElement.clientWidth
-      let winW = document.documentElement.clientWidth
-      let winH = $(window).height()
-      let itemLength = this._element.find('.section').length
-      let that = this
-      function initFullPage () {
-        $fullPage.fullpage({
-          anchors: ['1', '2', '3', '4', '5', '6'],
-          navigation: true,
-          navigationPosition: 'right',
-          css3: true,
-          scrollingSpeed: 800,
-          responsiveHeight: 100,
-          dragAndMove: true,
-          // lockAnchors: true,
-          afterRender: function () {
-            for (var i = 0; i < itemLength; i++) {
-              $('#fp-nav li').eq(i).find('span').html(i + 1)
-            }
-          },
-          afterLoad: function (anchorLink, index) {
-            let Nav = $('#fp-nav')
-            switch (index) {
-              case 2:
-                Nav.removeAttr('class').addClass('blue')
-                break
-              case 3:
-                Nav.removeAttr('class').addClass('red')
-                break
-              case 4:
-                Nav.removeAttr('class').addClass('orange')
-                break
-              case 5:
-                Nav.removeAttr('class').addClass('gray')
-                break
-              case 6:
-                Nav.removeAttr('class').addClass('green')
-                break
-              default:
-                Nav.removeAttr('class')
-            }
-          },
-          onLeave: function (index, nextIndex, direction) {
-            if (nextIndex === 1) {
-              x.reverse()
-            } else if (index === 1) {
-              x.play()
-              console.log('pla')
-            } if (nextIndex === 6) {
-              that.header.addClass('visibility-hide')
-            } else {
-              that.header.removeClass('visibility-hide')
-            }
-          }
-        })
-      }
-      function destroyFullPage () {
-        $.fn.fullpage.destroy('all')
-      }
-      if (scroll > 0) {
-        if ((winW + scroll) < 992) {
-          if ($fullPage.find('.fp-section').length) {
-            setTimeout(function () {
-              destroyFullPage()
-            }, 300)
-          }
-        } else if ((winW + scroll) >= 992 && winH >= 640) {
-          if ($fullPage.find('.fp-section').length) {
-
-          } else {
-            initFullPage()
-          }
-        } else if ((winW + scroll) >= 992 && winH < 640) {
-          if ($fullPage.find('.fp-section').length) {
-            setTimeout(function () {
-              destroyFullPage()
-            }, 300)
-          }
-        }
-      } else {
-        if (winW < 992) {
-          if ($fullPage.find('.fp-section').length) {
-            setTimeout(function () {
-              destroyFullPage()
-            }, 300)
-          }
-        } else if ((winW + scroll) >= 992 && winH >= 640) {
-          if ($fullPage.find('.fp-section').length) {
-
-          } else {
-            initFullPage()
-          }
-        } else if ((winW + scroll) >= 992 && winH < 640) {
-          if ($fullPage.find('.fp-section').length) {
-            setTimeout(function () {
-              destroyFullPage()
-            }, 300)
-          }
-        }
-      }
-    }
-
     setHeightCTA () {
       if (this._element.length) {
         let $windowWidth = $(window).width()

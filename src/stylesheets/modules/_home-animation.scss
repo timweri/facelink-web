@@ -1,5 +1,8 @@
 .scrollmagic-pin-spacer {
   overflow: hidden;
+  #frame5 {
+    position: relative !important;
+  }
 }
 html:not(.touch) {
   .bg-image-frame3 {

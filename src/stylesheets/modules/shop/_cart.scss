@@ -1,5 +1,8 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    td.ecwid-productBrowser-cart-itemsTable-cell-descr {
+      vertical-align: middle;
+    }
     div.ecwid-productBrowser-auth {
       margin-top: 36px;
     }
@@ -112,7 +115,8 @@ html#ecwid_html {
       }
       div.ecwid-productBrowser-CheckoutPaymentDetailsPage,
       div.ecwid-productBrowser-CheckoutPlaceOrderPage,
-      div.ecwid-productBrowser-CheckoutShippingAddressPage {
+      div.ecwid-productBrowser-CheckoutShippingAddressPage,
+      div.ecwid-productBrowser-CheckoutAddressBookPage {
         margin: 20px 0 85px;
       }
     }
@@ -135,9 +139,6 @@ html#ecwid_html {
       }
       .ecwid-fieldEnvelop {
         width: 100%;
-      }
-      .ecwid-fieldEnvelope-label {
-        display: none !important;
       }
       .ecwid-fieldEnvelope-around {
         input {
@@ -251,6 +252,13 @@ html#ecwid_html {
             padding: 5px 60px 60px;
           }
         }
+        div.ecwid-productBrowser-CheckoutPaymentDetailsPage,
+        div.ecwid-productBrowser-CheckoutPlaceOrderPage,
+        div.ecwid-productBrowser-CheckoutShippingAddressPage,
+        div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage,
+        div.ecwid-productBrowser-CheckoutAddressBookPage {
+          margin: 100px 0 70px;
+        }
       }
       div.ecwid-productBrowser-productNameLink a {
         &:hover {
@@ -268,14 +276,6 @@ html#ecwid_html {
         }
         div.ecwid-productBrowser-head {
           text-align: left;
-        }
-      }
-      .ecwid {
-        div.ecwid-productBrowser-CheckoutPaymentDetailsPage,
-        div.ecwid-productBrowser-CheckoutPlaceOrderPage,
-        div.ecwid-productBrowser-CheckoutShippingAddressPage,
-        div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
-          margin: 100px 0 70px;
         }
       }
       td.ecwid-productBrowser-cart-itemsTable-headerCell {

@@ -37,11 +37,12 @@
       {% endfor %}
     </div>
     <div class="hover-overlay">
-        <a href="{{ insta_link.link }}"></a>
         <div class="d-table">
             <div class="d-table-cell align-middle">
+              <a href="{{ insta_link.link }}">
                 <i class="icomoon icon-instagram" aria-hidden="true"></i>
-                <p>{{ insta_link.text }}</p>
+                <span>{{ insta_link.text }}</span>
+              </a>
             </div>
         </div>
     </div>
