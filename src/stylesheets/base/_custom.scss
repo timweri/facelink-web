@@ -111,6 +111,10 @@ html#ecwid_html body#ecwid_body.page-internal {
   background: $white;
 }
 .mCS-scroller-theme {
+  .mCS_no_scrollbar_y {
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
   .mCSB_container {
     margin-right: 40px;
   }
@@ -119,10 +123,10 @@ html#ecwid_html body#ecwid_body.page-internal {
     width: 7.5px !important;
   }
   .mCSB_dragger_bar {
-    background-color: $menu-gray !important;
+    background-color: $white !important;
   }
   .mCSB_draggerRail {
-    background-color: $white;
+    background-color: $menu-gray;
   }
 }
 
