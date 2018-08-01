@@ -1,5 +1,5 @@
 import $ from 'jquery'
-// import { TimelineMax, Linear } from 'gsap/TweenMax'
+// import { TimelineLite, Linear } from 'gsap/TweenMax'
 // import ScrollMagic from 'scrollmagic'
 // import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
 
@@ -20,14 +20,14 @@ const HomeAnimation = (() => {
     'frame4': $(elementFrames['frame4']).outerHeight(),
     'frame5': $(elementFrames['frame5']).outerHeight()
   }
-  var timelineMaxs = {
+  var TimelineLites = {
     'frame1': [],
     'frame2': [],
     'frame3': [],
     'frame4': [],
     'frame5': []
     // 'key': [
-    //   { 'duration': '0', 'timeline': new TimelineMax() }
+    //   { 'duration': '0', 'timeline': new TimelineLite() }
     // ]
   }
   var controller = new ScrollMagic.Controller({
@@ -39,20 +39,20 @@ const HomeAnimation = (() => {
   const runScrollMagicScene = () => {
     for (var key in elementFrames) {
       var _element = elementFrames[key]
-      var _lengthTimelineMaxs = timelineMaxs[key].length
+      var _lengthTimelineLites = TimelineLites[key].length
       var _totalDuration = 0
 
       // console.log(_duration)
-      if (_lengthTimelineMaxs == 0) return
+      if (_lengthTimelineLites == 0) return
       var i = 0
-      for (i in timelineMaxs[key]) {
-        if (timelineMaxs[key][i]['timeline'] !== undefined) {
-          if (i == 0 && i < _lengthTimelineMaxs - 1) {
+      for (i in TimelineLites[key]) {
+        if (TimelineLites[key][i]['timeline'] !== undefined) {
+          if (i == 0 && i < _lengthTimelineLites - 1) {
             new ScrollMagic.Scene({
               triggerElement: _element,
-              duration: timelineMaxs[key][i]['duration'],
-              offset: timelineMaxs[key][i]['offset'] === undefined ? 0 : timelineMaxs[key][i]['offset']
-            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
+              duration: TimelineLites[key][i]['duration'],
+              offset: TimelineLites[key][i]['offset'] === undefined ? 0 : TimelineLites[key][i]['offset']
+            }).setTween(TimelineLites[key][i]['timeline']).addTo(controller)
               .on('enter', function (event) {
                 var _triggerElement = $(event.target.triggerElement()).parent()
                 if (!_triggerElement.hasClass('frame-actived')) {
@@ -63,14 +63,14 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
-            _totalDuration += timelineMaxs[key][i]['duration']
+              // .addIndicators({ name: key + 'AnimationStart' + i })
+            _totalDuration += TimelineLites[key][i]['duration']
           } else {
             new ScrollMagic.Scene({
               triggerElement: _element,
-              duration: timelineMaxs[key][i]['duration'],
-              offset: timelineMaxs[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + timelineMaxs[key][i]['offset']
-            }).setTween(timelineMaxs[key][i]['timeline']).addTo(controller)
+              duration: TimelineLites[key][i]['duration'],
+              offset: TimelineLites[key][i]['offset'] === undefined ? _totalDuration : _totalDuration + TimelineLites[key][i]['offset']
+            }).setTween(TimelineLites[key][i]['timeline']).addTo(controller)
               .on('enter', function (event) {
                 var _triggerElement = $(event.target.triggerElement()).parent()
                 if (!_triggerElement.hasClass('frame-actived')) {
@@ -81,19 +81,19 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
-            _totalDuration += timelineMaxs[key][i]['duration']
+              // .addIndicators({ name: key + 'AnimationStart' + i })
+            _totalDuration += TimelineLites[key][i]['duration']
           }
         }
       }
 
-      var spaceduration = timelineMaxs[key][i]['spaceduration'] === undefined ? 0 : timelineMaxs[key][i]['spaceduration']
+      var spaceduration = TimelineLites[key][i]['spaceduration'] === undefined ? 0 : TimelineLites[key][i]['spaceduration']
 
       new ScrollMagic.Scene({
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      // .addIndicators({ name: key + 'AnimationStart' })
+        // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -107,14 +107,14 @@ const HomeAnimation = (() => {
     // custom css
 
     // create timeline animation
-    new TimelineMax()
+    new TimelineLite()
       .to(containerFrame1, 1, { bottom: '0%', ease: Back.easeOut.config(1) })
       .to(imgProductionFrame1, 1, { bottom: '0%', ease: Back.easeOut.config(1) }, 0.2)
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(containerFrame1, 10, { bottom: '100%', ease: Power1.easeOut })
         .to(imgProductionFrame1, 10, { bottom: '100%', ease: Power1.easeOut }, 0)
         .to(imageFrame1, 10, { y: '-100px', ease: Power1.easeOut }, 0)
@@ -133,26 +133,26 @@ const HomeAnimation = (() => {
     $(frame).css('background-position', '0 80px')
 
     // create timeline animation
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .from(animationFrame2, 10, { left: '100%', ease: Power1.easeOut })
         .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Back.easeOut.config(1) }, 0)
         .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Back.easeOut.config(1) }, 3)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration / 2,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(subheadFrame2, 10, { top: '-20px', ease: Power1.easeOut })
         .to(animationFrame2, 13, { left: '100%', ease: Power1.easeOut }, 3)
         .to(contFrame2, 13, { x: '500px', opacity: '0', ease: Power1.easeOut }, 3)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(frame, 10, { backgroundPosition: '0 -100px', ease: Power1.easeOut }, 0)
         .to(frame, 10, { top: '80px', ease: Power1.easeOut }, 0)
     })
@@ -172,29 +172,29 @@ const HomeAnimation = (() => {
     $(bgImageFrame3).css('background-position', 'center 0')
 
     // create timeline animation
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .from(bgOrange, 12, { right: '-100%', ease: Power1.easeOut })
         .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(1) }, 5)
         .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Back.easeOut.config(1) }, 5)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Power1.easeOut }, 0)
         .to(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Power1.easeOut }, 0)
         .to(bgOrange, 10, { right: '-100%', ease: Power1.easeOut }, 5)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
       'spaceduration': -1 * duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(bgImageFrame3, 10, { backgroundPosition: 'center -100px', ease: Power1.easeOut }, 0)
     })
-    // timelineMaxs[key].push({
+    // TimelineLites[key].push({
     //   'spaceduration': -1 * (duration / 2) - 100
     // })
   }
@@ -211,25 +211,25 @@ const HomeAnimation = (() => {
     // custom css
 
     // create timeline animation
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .from(bgOrange, 13, { left: '100%', ease: Power1.easeOut })
         .from(contFrame4, 12, { top: '100%', ease: Back.easeOut.config(1) }, 5)
         .from(imageProductFrame4, 12, { top: '100vh', ease: Power1.easeOut }, 5)
         .from(fruitFrame4, 10, { y: '100%', ease: Back.easeOut.config(1) }, 7)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
         .to(fruitFrame4, 10, { y: '-50%', ease: Power1.easeOut })
         .to(imageProductFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(contFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
     })
 
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'spaceduration': -1 * (duration)
     })
   }
@@ -242,10 +242,10 @@ const HomeAnimation = (() => {
     // custom css
 
     // create timeline animation
-    timelineMaxs[key].push({
+    TimelineLites[key].push({
       'duration': duration,
       'spaceduration': -1 * (duration),
-      'timeline': new TimelineMax()
+      'timeline': new TimelineLite()
     })
   }
 
@@ -259,11 +259,11 @@ const HomeAnimation = (() => {
       ts = e.originalEvent.touches[0].clientY
     })
 
-    $(document).bind('touchmove', function (e) {
-      if (isScroll === 1) { e.preventDefault() }
-    })
+    // $(document).bind('touchmove', function (e) {
+    //   if (isScroll === 1) { event.preventDefault()  }
+    // })
 
-    $window.on('mousewheel DOMMouseScroll touchend', function (event) {
+    $window.on('mousewheel DOMMouseScroll touchmove', function (event) {
       if (isScroll === 1) { event.preventDefault(); return }
       isScroll = 1
 
@@ -299,7 +299,7 @@ const HomeAnimation = (() => {
       var nextIndex = Math.max(0, index - delta)
       if (nextIndex >= 0 && nextIndex <= el.length) {
         if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
-        else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height() }
+        else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics['frame2'] }
       }
       // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
       var durationScroll = [
