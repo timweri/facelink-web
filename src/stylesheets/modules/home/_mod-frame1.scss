@@ -177,7 +177,7 @@
   .image-frame1 {
     top: 28%;
   }
-  .cont-frame1 {
+  .style-subhead {
     h3 {
       font-size: rem(15);
     }
@@ -193,5 +193,10 @@
 @media only screen and (max-width: 330px) {
   .image-frame1 {
     top: 35%;
+  }
+  .style-subhead {
+    h3 {
+      font-size: rem(14);
+    }
   }
 }
