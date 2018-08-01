@@ -304,7 +304,7 @@ html#ecwid_html {
         content: "";
         display: block;
         @include sizeEx(36px);
-        @include position(absolute, $top: 1px, $left: 50%, $index: 1);
+        @include position(absolute, $top: -6px, $left: 50%, $index: 1);
         position: absolute;
         background-color: $color-c6;
         transform-origin: center;
@@ -460,7 +460,7 @@ html#ecwid_html {
       .ecwid-productBrowser-ProductPage {
         &::before {
           @include sizeEx(57px);
-          top: -1px;
+          top: -9px;
         }
       }
       .ec-size {
