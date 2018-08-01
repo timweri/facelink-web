@@ -231,8 +231,23 @@
   padding: 16px;
   cursor: pointer;
 }
-
+@include media-breakpoint-up(sm) {
+  #main-menu.is-open-menu {
+    width: 400px;
+  }
+  .menu-style {
+    width: 400px;
+  }
+}
 // min-width 768px
+@include media-breakpoint-up(md) {
+  #main-menu.is-open-menu {
+    width: 600px;
+  }
+  .menu-style {
+    width: 600px;
+  }
+}
 @include media-breakpoint-up(lg) {
   #main-menu {
     @include sizeEx(auto);
