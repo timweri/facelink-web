@@ -33,13 +33,14 @@
     margin-bottom: 0;
     letter-spacing: 2.5px;
   }
-  &+.mod-cta {
-    margin-top: -50px;
-  }
 }
 
 @include media-breakpoint-up(lg) {
   .mod-promotion {
+    margin: 65px auto 100px;
+    &+.mod-product-image {
+      margin-top: -35px;
+    }
     > .container {
       padding: 0 45px;
     }
