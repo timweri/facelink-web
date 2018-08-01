@@ -351,10 +351,15 @@ const HomeAnimation = (() => {
     $(window).resize(function () {
       if (isPageHome && isFullpage) {
         if ($(window).width() >= 992) { // && flagReload !== 1
-          clearTimeout(timeoutresize)
-          timeoutresize = setTimeout(function () {
+          if (!$('html').hasClass('touch')) {
+            clearTimeout(timeoutresize)
+            timeoutresize = setTimeout(function () {
+              location.reload()
+            }, 300)
+          }
+          if (flagReload !== 1) {
             location.reload()
-          }, 300)
+          }
         } else if ($(window).width() < 992 && flagReload !== -1) {
           location.reload()
         }
