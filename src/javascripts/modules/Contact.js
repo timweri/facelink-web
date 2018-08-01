@@ -29,7 +29,6 @@ const Contact = (($) => {
       var contactForm = $('#contactForm .contact-form')
       contactForm.parsley()
       contactForm.append('<div class="wait-loading-app-green"></div>')
-      console.log('contact')
       $('#btn-contact').on('click', function (e) {
         if (contactForm.parsley().isValid()) {
           func.processFormContact(contactForm, e)
