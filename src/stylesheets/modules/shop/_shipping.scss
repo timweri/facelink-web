@@ -9,13 +9,13 @@
       }
       .ecwid-productBrowser-CheckoutShippingAddressPage {
         &::before {
-            @include font($os, rem(30), $black-two, 700);
-            @include position(relative);
-            display: block;
-            letter-spacing: 2px;
-            content: "SHIPPING DETAILS";
-            text-transform: uppercase;
-            margin-top: 70px;
+          @include font($os, rem(30), $black-two, 700);
+          @include position(relative);
+          display: block;
+          letter-spacing: 2px;
+          content: "SHIPPING DETAILS";
+          text-transform: uppercase;
+          margin-top: 70px;
         }
       }
     }
