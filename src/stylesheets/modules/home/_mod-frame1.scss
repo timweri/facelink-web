@@ -177,6 +177,11 @@
   .image-frame1 {
     top: 28%;
   }
+  .style-subhead {
+    h3 {
+      font-size: rem(15) !important;
+    }
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -185,8 +190,13 @@
   }
 }
 
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 334px) {
   .image-frame1 {
     top: 35%;
+  }
+  .style-subhead {
+    h3 {
+      font-size: rem(14) !important;
+    }
   }
 }
