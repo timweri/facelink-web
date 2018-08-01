@@ -143,6 +143,19 @@
   }
 }
 
+@media only screen and (min-width: 670px) and (max-width: 991.999px) {
+  .cont-frame1 {
+    margin-right: 70px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.999px) {
+  .col-frame1.col-md-6 {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+}
+
 @media only screen and (max-height: 740px) {
   .img-production-frame1.show-desktop {
     width: 25%;
