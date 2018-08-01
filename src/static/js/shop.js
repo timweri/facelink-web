@@ -43,7 +43,7 @@ var Shop = (function () {
           .addClass('position')
           .css('top', top)
         }
-        console.log(marginTop)
+        // console.log(marginTop)
       }
       if (productDetail.length && modPromotion.length && relatedProducts.length <= 0) {
         modPromotion.addClass('d-block')
@@ -107,7 +107,7 @@ var Shop = (function () {
         }
 
         if ($titleBanner.length) {
-          console.log('titleBanner')
+          // console.log('titleBanner')
           var txtBanner = $titleBanner.html()
           if (txtBanner !== '' && txtBanner !== undefined) {
             var dom = '<section class="module mod-shop-header">' + '<div class="container">' + '<h1>' + txtBanner + '</h1>' + '</div>' + '</section>'

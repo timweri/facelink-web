@@ -99,6 +99,7 @@
 .list-item-frame4 {
   ul {
     list-style: none;
+    margin: 0;
     li {
       @include font($os, 18px, $black, 700);
       text-transform: uppercase;
@@ -293,5 +294,37 @@
     .number {
       @include sizeEx(65px);
     }
+  }
+  .section-frame4 {
+    .rotate-image {
+      @include position(absolute, 0, $left: 0);
+      @include sizeEx(100%);
+    }
+    .bg-rotate-image {
+      @include position(absolute, 0, null, 0, 0);
+      @include sizeEx(100%, 55%);
+      background: $orange;
+      &::before,
+      &::after {
+        @include sizeEx(50%, 4000px);
+        @include position(absolute, 100%, null, null, null);
+        content: "";
+        display: block;
+        background: $orange;
+      }
+      &::before {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 0;
+      }
+      &::after {
+        right: 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 0;
+      }
+    }
+  }
+  .cont-frame4 {
+    padding-bottom: 0;
   }
 }
