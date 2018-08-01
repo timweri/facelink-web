@@ -179,6 +179,12 @@
   }
 }
 
+@media only screen and (max-width: 350px) {
+  .cont-frame1-primary {
+    max-width: 200px;
+  }
+}
+
 @media only screen and (max-width: 330px) {
   .image-frame1 {
     top: 35%;
