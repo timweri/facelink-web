@@ -1,5 +1,7 @@
 <section class="module mod-banner lazyload-image">
-  <div class="banner-background" style="background-image: url({{ banner.background_image }}); background-position: {{ banner.position_background_image }};">
+  <div class="banner-background">
+    <div class="banner-bg-desktop d-none d-lg-block" style="background-image: url({{ banner.bg_img_desktop }}); background-position: {{ banner.bg_position_desktop }};"></div>
+    <div class="banner-bg-mobile d-lg-none" style="background-image: url({{ banner.bg_img_mobile }}); background-position: {{ banner.bg_position_mobile }};"></div>
     <div class="d-table">
       <div class="d-table-cell">
         <div class="container">
