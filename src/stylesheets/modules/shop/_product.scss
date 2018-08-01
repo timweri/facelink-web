@@ -507,43 +507,6 @@ html#ecwid_html {
   }
 }
 
-@include media-breakpoint-down(md) {
-  html#ecwid_html {
-    body#ecwid_body.page-internal {
-      .ec-size {
-        .ec-store {
-          .grid__products--appearance-frame {
-            .grid-product__wrap {
-              padding: 0;
-            }
-          }
-          .ec-related-products__products {
-            padding: 0 25px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  html#ecwid_html {
-    body#ecwid_body.page-internal {
-      .ec-size {
-        .details-gallery__thumb {
-          width: 100% !important;
-        }
-        .details-gallery__thumbs {
-          position: relative !important;
-          &::-webkit-scrollbar {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 1500px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -565,7 +528,55 @@ html#ecwid_html {
     }
   }
 }
-
+@include media-breakpoint-down(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size {
+        .details-gallery__thumb {
+          width: 100% !important;
+        }
+        .details-gallery__thumbs {
+          position: relative !important;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        .ec-store {
+          .product-details--layout-sidebar-right {
+            .product-details__gallery {
+              float: none !important;
+              width: 100% !important;
+              padding-right: 0 !important;
+              margin: 0 auto;
+            }
+            .product-details__sidebar {
+              width: 100% !important;
+              float: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ec-size {
+        .ec-store {
+          .grid__products--appearance-frame {
+            .grid-product__wrap {
+              padding: 0;
+            }
+          }
+          .ec-related-products__products {
+            padding: 0 25px;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 400px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
