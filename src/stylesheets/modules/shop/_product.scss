@@ -40,7 +40,15 @@ html#ecwid_html {
           .details-gallery__thumb {
             .details-gallery__thumb-img-wrapper-inner {
               transition: all .25s;
-              background: $white;
+            }
+          }
+          &.details-gallery__thumbs--aspect-ratio-auto {
+            @include position(relative, $index: 5);
+            .details-gallery__thumb--aspect-ratio-1 {
+              margin: 0 22px;
+            }
+            .details-gallery__thumb-img {
+              background-size: 140% auto !important;
             }
           }
         }
@@ -174,9 +182,6 @@ html#ecwid_html {
             }
           }
         }
-        .details-gallery__thumb-img-wrapper-inner {
-          padding: 10px 12px;
-        }
         .details-gallery__thumb-img {
           background-size: contain;
           &::after {
@@ -189,15 +194,6 @@ html#ecwid_html {
         .details-gallery__thumb--active {
           .details-gallery__thumb-img::after {
             box-shadow: inset 0 0 0 3px $black;
-          }
-        }
-        .details-gallery__thumbs.details-gallery__thumbs--aspect-ratio-auto {
-          @include position(relative, $index: 5);
-          .details-gallery__thumb-img {
-            background-size: 100% auto !important;
-          }
-          .details-gallery__thumb--aspect-ratio-1 {
-            margin: 0 22px;
           }
         }
         .details-product-purchase--checkout {
@@ -403,6 +399,7 @@ html#ecwid_html {
           }
           .details-gallery__thumb-img-wrapper-inner {
             box-shadow: inset 0 0 0 2px $gray-bg;
+            padding: 10px 12px;
           }
           .details-gallery__thumb--active {
             .details-gallery__thumb-img-wrapper-inner {
@@ -412,6 +409,18 @@ html#ecwid_html {
           .details-gallery__thumbs--preview {
             &.details-gallery__thumbs--aspect-ratio-auto {
               margin-top: 30px;
+            }
+          }
+          .details-gallery__thumbs {
+            .details-gallery__thumb {
+              .details-gallery__thumb-img-wrapper-inner {
+                background: $white;
+              }
+            }
+            &.details-gallery__thumbs--aspect-ratio-auto {
+              .details-gallery__thumb-img {
+                background-size: 100% auto !important;
+              }
             }
           }
         }

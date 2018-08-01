@@ -264,7 +264,6 @@ html#ecwid_html {
       .ecwid-Checkout-blockTitle {
         span {
           display: block;
-          margin-top: 15px;
         }
         .ecwid-btn {
           margin: 0;
@@ -630,15 +629,6 @@ html#ecwid_html {
             }
           }
         }
-        .ecwid-Checkout-ShippingAddress {
-          .ecwid-btn--address_book {
-            margin-top: -8px;
-          }
-          .ecwid-btn--address_book_sign_in {
-            position: absolute;
-            transform: translateY(-7px);
-          }
-        }
         .ecwid-PaymentMethodsBlock-PaymentOption {
           span:hover {
             label {
@@ -664,6 +654,15 @@ html#ecwid_html {
           }
         }
       }
+      .ecwid-Checkout-ShippingAddress {
+        .ecwid-btn--address_book {
+          margin-top: -8px;
+        }
+        .ecwid-btn--address_book_sign_in {
+          position: absolute;
+          transform: translateY(-7px);
+        }
+      }
       div.ecwid-AddressForm,
       div.ecwid-Checkout-EmailBlock {
         div.ecwid-fieldWrapper {
@@ -675,6 +674,19 @@ html#ecwid_html {
     }
   }
 }
+
+@media screen and (min-width: 992px) and (max-width: 1499.999px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-Checkout-ShippingAddress {
+        .ecwid-btn--address_book_sign_in {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1199px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -803,7 +815,7 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-Checkout-ShippingAddress-top {
         position: static;
-        margin-bottom: 20px;
+        margin-bottom: 46px;
       }
       .ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book_sign_in {

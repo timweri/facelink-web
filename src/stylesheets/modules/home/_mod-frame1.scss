@@ -37,7 +37,7 @@
   }
 }
 .cont-frame1-primary {
-  max-width: 280px;
+  max-width: 220px;
   margin-left: auto;
 }
 .col-frame1 {
@@ -65,6 +65,9 @@
   }
 }
 @include media-breakpoint-up(sm) {
+  .cont-frame1-primary {
+    max-width: 280px;
+  }
   .image-frame1 {
     width: 100%;
     max-width: 908px;
