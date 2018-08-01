@@ -303,7 +303,7 @@ const HomeAnimation = (() => {
         [scrollTime, scrollTime, scrollTime, scrollTime, 0.8, 0.8],
         [scrollTime, scrollTime, scrollTime, 0.8, 0.8, 0.8]
       ]
-      console.log(durationScroll[delta + 1][nextIndex])
+      // console.log(durationScroll[delta + 1][nextIndex])
       if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
       TweenMax.to($window, durationScroll[delta + 1][nextIndex], {
         scrollTo: { y: finalScroll, autoKill: false },
