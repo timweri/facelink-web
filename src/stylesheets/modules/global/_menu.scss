@@ -13,7 +13,7 @@
     color: $black;
   }
   .has-login {
-    a {
+    .link-customer-name {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -285,7 +285,7 @@
       }
     }
     .has-login {
-      a {
+      .link-customer-name {
         width: 245px;
       }
     }
