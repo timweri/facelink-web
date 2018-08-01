@@ -12,6 +12,11 @@
   li {
     color: $black;
   }
+  .has-login {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   .icomoon {
     position: relative;
     font-size: rem(25);
@@ -276,6 +281,9 @@
       &::after {
         content: none;
       }
+    }
+    .has-login {
+      width: 245px;
     }
   }
 
