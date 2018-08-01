@@ -34,6 +34,11 @@
   .show {
     display: block;
   }
+  &.menu-has-login {
+    .line {
+      display: none;
+    }
+  }
 }
 
 .navbar {
@@ -262,6 +267,9 @@
         a {
           padding: 8px 15px;
         }
+      }
+      .line {
+        display: block;
       }
     }
     .shadow-top {
