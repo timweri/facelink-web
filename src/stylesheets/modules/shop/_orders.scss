@@ -51,7 +51,8 @@ html#ecwid_html {
         font-size: 14px;
       }
       div.datePickerDayIsValue,
-      div.datePickerDayIsToday {
+      div.datePickerDayIsToday,
+      div.datePickerDayIsHighlighted {
         background-color: $color-c6;
         color: $black;
       }
