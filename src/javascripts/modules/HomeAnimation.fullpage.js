@@ -298,10 +298,14 @@ const HomeAnimation = (() => {
         else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + $(window).height() }
       }
       // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
-      // var durationScroll = [2, 2.5, 3, 1]
-      // console.log(durationScroll)
+      var durationScroll = [
+        [scrollTime, scrollTime, scrollTime, scrollTime, 0.8, 0.8],
+        [scrollTime, scrollTime, scrollTime, scrollTime, 0.8, 0.8],
+        [scrollTime, scrollTime, scrollTime, 0.8, 0.8, 0.8]
+      ]
+      console.log(durationScroll[delta + 1][nextIndex])
       if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
-      TweenMax.to($window, scrollTime, {
+      TweenMax.to($window, durationScroll[delta + 1][nextIndex], {
         scrollTo: { y: finalScroll, autoKill: false },
         ease: Sine.easeInOut,
         overwrite: 5,
