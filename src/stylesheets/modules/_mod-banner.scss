@@ -4,13 +4,18 @@
   z-index: 20;
 }
 .banner-background {
-  @include background-size(cover);
   position: relative;
-  &::before {
-    @include position(absolute, $top:0, $left:0);
+  .banner-bg-desktop,
+  .banner-bg-mobile {
+    @include position(absolute, $top: 0, $left: 0);
+    @include background-size(cover);
     @include sizeEx(100%);
-    content: "";
-    background-color: rgba($black, .6);
+    &::before {
+      @include position(absolute, $top:0, $left:0);
+      @include sizeEx(100%);
+      content: "";
+      background-color: rgba($black, .6);
+    }
   }
   .d-table {
     @include sizeEx(100%, 241px);
