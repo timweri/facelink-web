@@ -40,6 +40,7 @@ html#ecwid_html {
           .details-gallery__thumb {
             .details-gallery__thumb-img-wrapper-inner {
               transition: all .25s;
+              background: $white;
             }
           }
         }
@@ -383,6 +384,9 @@ html#ecwid_html {
     .ec-related-products {
       order: 2;
     }
+  }
+  .mod-promotion {
+    margin: 120px auto;
   }
 }
 
