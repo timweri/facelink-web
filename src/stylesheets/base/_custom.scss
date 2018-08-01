@@ -111,10 +111,6 @@ html#ecwid_html body#ecwid_body.page-internal {
   background: $white;
 }
 .mCS-scroller-theme {
-  .mCS_no_scrollbar_y {
-    top: 50% !important;
-    transform: translateY(-50%);
-  }
   .mCSB_container {
     margin-right: 40px;
   }
@@ -139,6 +135,13 @@ html#ecwid_html body#ecwid_body.page-internal {
 
 @include media-breakpoint-up(lg) {
   /* font heading */
+
+  .mCS-scroller-theme {
+    .mCS_no_scrollbar_y {
+      top: 50% !important;
+      transform: translateY(-50%);
+    }
+  }
 
   h1,
   .h1 {

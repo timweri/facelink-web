@@ -44,7 +44,7 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
   .tab-content {
     @include position(relative, $index: 0);
     display: none;
-    background: $white;
+    background: $gray-bg;
     margin: 0 18px 30px;
     padding: 50px 21px 40px;
     letter-spacing: 1.1px;
