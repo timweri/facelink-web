@@ -351,7 +351,7 @@ const HomeAnimation = (() => {
     $(window).resize(function () {
       if (isPageHome && isFullpage) {
         if ($(window).width() >= 992) { // && flagReload !== 1
-          if (!$('html').hasClass('touch') && $(window).height() > 600) {
+          if (!$('html').hasClass('touch') && $(window).height() > 650) {
             clearTimeout(timeoutresize)
             timeoutresize = setTimeout(function () {
               location.reload()
@@ -366,7 +366,7 @@ const HomeAnimation = (() => {
       }
     })
     if (isPageHome && isFullpage && $(window).width() >= 992) {
-      if ($(window).height() > 600) {
+      if ($(window).height() > 650) {
         scrollSpeed(1.5, 250)
         frame1Timeline()
         frame2Timeline()
