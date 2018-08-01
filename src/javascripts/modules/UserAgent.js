@@ -75,7 +75,7 @@ const UserAgent = (() => {
       }
     })
   }
-  const editButtonBanner = () => {
+  const editButton = () => {
     var button = $('.btn-custom')
     $.each(button, function (i, o) {
       if ($(o).find('span').length <= 0) {
@@ -91,7 +91,7 @@ const UserAgent = (() => {
   browserDetection()
   // selectpicker()
   blazyload()
-  editButtonBanner()
+  editButton()
   $(window).on('load', function () {
 
   })
