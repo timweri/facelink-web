@@ -26,7 +26,7 @@ const Login = (($) => {
 		}
 
 		logoutEvent() {
-			console.log('load event click');
+			// console.log('load event click');
 			$('.btn-signout').click(function(){
 				console.log('event click');
 				var localStoragePrefix = 'PSecwid__' + Ecwid.getOwnerId() + 'PS';
@@ -92,7 +92,7 @@ const Login = (($) => {
    * Data Api implement
    */
 	$(window).on(Event.LOAD_DATA_API, () => {
-		console.log('dddd func');
+		// console.log('dddd func');
 		Login._jQueryInterface.call($(Selector.DATA_MODULE))
 	})
 
