@@ -204,6 +204,7 @@ html#ecwid_html {
         margin: 0;
         padding: 2px 0 0 60px;
         position: relative;
+        max-width: none;
         &::after,
         &::before {
           content: "";

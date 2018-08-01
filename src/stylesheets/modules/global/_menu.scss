@@ -13,9 +13,11 @@
     color: $black;
   }
   .has-login {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    a {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
   .icomoon {
     position: relative;
@@ -283,7 +285,9 @@
       }
     }
     .has-login {
-      width: 245px;
+      a {
+        width: 245px;
+      }
     }
   }
 
