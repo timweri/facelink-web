@@ -2,7 +2,7 @@ $tab-arrow-size: (92 / 2) * 1.42px;
 $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
 
 .mod-tab-benefits {
-  background: $gray-bg;
+  background: $white;
   padding: 50px 0 40px;
   h3 {
     @include position(relative, $index: 1);
@@ -126,7 +126,7 @@ $tab-arrow-transform: translateY(-49%) translateX(50%) rotate(45deg);
         @include position(absolute, $top: 0, $left:0);
         @include sizeEx(4000px, 100%);
         content: "";
-        background: $white;
+        background: $gray-bg;
       }
     }
     .tab-content {
