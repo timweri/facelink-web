@@ -75,23 +75,10 @@ const UserAgent = (() => {
       }
     })
   }
-  const editButton = () => {
-    var button = $('.btn-custom')
-    $.each(button, function (i, o) {
-      if ($(o).find('span').length <= 0) {
-        var textBtn = $(o).html()
-        var dom = '<span>' + textBtn + '</span>' +
-            '<span>' + textBtn + '</span>'
-        $(o).html(dom)
-      }
-    })
-  }
-
   checkDevice()
   browserDetection()
   // selectpicker()
   blazyload()
-  editButton()
   $(window).on('load', function () {
 
   })
