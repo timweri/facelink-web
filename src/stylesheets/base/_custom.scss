@@ -112,7 +112,7 @@ html#ecwid_html body#ecwid_body.page-internal {
 }
 .mCS-scroller-theme {
   .mCS_no_scrollbar_y {
-    @include position(relative, $top: 50%);
+    top: 50% !important;
     transform: translateY(-50%);
   }
   .mCSB_container {
