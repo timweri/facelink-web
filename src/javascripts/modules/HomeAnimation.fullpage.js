@@ -136,7 +136,7 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(animationFrame2, 13, { left: '100%', ease: Power1.easeOut })
+        .from(animationFrame2, 10, { left: '100%', ease: Power1.easeOut })
         .from(contFrame2, 13, { x: '500px', opacity: '0', ease: Back.easeOut.config(1) }, 0)
         .from(subheadFrame2, 10, { top: '70%', opacity: '0', ease: Back.easeOut.config(1) }, 3)
     })
@@ -175,7 +175,7 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 13, { right: '-100%', ease: Power1.easeOut })
+        .from(bgOrange, 12, { right: '-100%', ease: Power1.easeOut })
         .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(1) }, 5)
         .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Back.easeOut.config(1) }, 5)
     })
