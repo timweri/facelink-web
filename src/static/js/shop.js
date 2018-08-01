@@ -143,8 +143,14 @@ var Shop = (function () {
     $('.gwt-TextBox').blur(function () {
       var self = $(this)
       if (self.val().length > 0) {
+        $('.ecwid-fieldEnvelope-error').find('.ecwid-fieldEnvelope-label').css('display', 'none');
+        self.parents('.ecwid-fieldWrapper').removeClass('ecwid-fieldEnvelope-error');
+        self.parents('table.ecwid-fieldEnvelope-error').removeClass('ecwid-fieldEnvelope-error');
+
         self.parents('.ecwid-fieldWrapper').addClass('has-text')
       } else {
+        self.parents('.ecwid-fieldWrapper').addClass('ecwid-fieldEnvelope-error');
+
         self.parents('.ecwid-fieldWrapper').removeClass('has-text')
       }
     })
@@ -165,6 +171,7 @@ var Shop = (function () {
       mobile: true
     })
   }
+
   if ($('#ecwid_html').length) {
     Ecwid.OnPageLoad.add(function (page) {
       showLoading()
@@ -289,6 +296,28 @@ var Shop = (function () {
       // customiseDropDown()
       // closeLoading()
     })
+    Ecwid.OnSetProfile.add(function (customer) {
+      // console.log(typeof customer != 'undefined');
+      if (typeof customer != 'undefined' && customer != null) {
+        // console.log('customer exist');
+        if (typeof customer.billingPerson.name != 'undefined' && customer.billingPerson.name != null) {
+          $('.link-customer-name').text('welcome ' + customer.billingPerson.name);
+        }
+        $('.no-login').removeClass('show');
+        $('.has-login').removeClass('hide')
+
+        $('.no-login').addClass('hide');
+        $('.has-login').addClass('show');
+      } else {
+        // console.log('customer no exist');
+        $('.no-login').removeClass('hide');
+        $('.has-login').removeClass('show')
+
+        $('.no-login').addClass('show');
+        $('.has-login').addClass('hide')
+      }
+    });
+
   }
   var resizeTimer
   $(window).on('resize', function () {
