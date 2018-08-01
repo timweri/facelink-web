@@ -36,4 +36,14 @@ html#ecwid_html {
     }
   }
 }
-
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      table.ecwid-DateRangePopup-PresetsPanel {
+        a:hover {
+          color: $color-c6;
+        }
+      }
+    }
+  }
+}
