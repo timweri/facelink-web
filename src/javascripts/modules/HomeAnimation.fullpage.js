@@ -259,6 +259,10 @@ const HomeAnimation = (() => {
       ts = e.originalEvent.touches[0].clientY
     })
 
+    $(document).bind('touchmove', function (e) {
+      if (isScroll === 1) { e.preventDefault() }
+    })
+
     $window.on('mousewheel DOMMouseScroll touchend', function (event) {
       if (isScroll === 1) { event.preventDefault(); return }
       isScroll = 1
@@ -338,7 +342,7 @@ const HomeAnimation = (() => {
       e.preventDefault()
     })
   }
-  $(window).on('beforeunload', function () {
+  $(window).on('beforeunload pagehide', function () {
     if (isPageHome && isFullpage && $(window).width() >= 992) {
       controller.scrollTo(0)
     }
