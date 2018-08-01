@@ -111,9 +111,9 @@ html#ecwid_html body#ecwid_body.page-internal {
   background: $white;
 }
 .mCS-scroller-theme {
-  display: flex;
   .mCS_no_scrollbar_y {
-    align-self: center;
+    @include position(relative, $top: 50%);
+    transform: translateY(-50%);
   }
   .mCSB_container {
     margin-right: 40px;
