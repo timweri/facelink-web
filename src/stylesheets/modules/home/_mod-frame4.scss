@@ -295,6 +295,11 @@
       @include sizeEx(65px);
     }
   }
+  .subhead-frame4.style-subhead {
+    h2 {
+      padding-left: 90px;
+    }
+  }
   .section-frame4 {
     .rotate-image {
       @include position(absolute, 0, $left: 0);
@@ -326,5 +331,12 @@
   }
   .cont-frame4 {
     padding-bottom: 0;
+  }
+}
+@include media-breakpoint-down(md) {
+  .subhead-frame4.style-subhead {
+    h2 {
+      padding-left: 0px;
+    }
   }
 }
