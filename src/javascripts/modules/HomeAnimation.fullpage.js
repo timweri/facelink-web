@@ -108,8 +108,8 @@ const HomeAnimation = (() => {
 
     // create timeline animation
     new TimelineMax()
-      .from(containerFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) })
-      .from(imgProductionFrame1, 1, { bottom: '-100%', ease: Back.easeOut.config(1) }, 0.2)
+      .to(containerFrame1, 1, { bottom: '0%', ease: Back.easeOut.config(1) })
+      .to(imgProductionFrame1, 1, { bottom: '0%', ease: Back.easeOut.config(1) }, 0.2)
 
     timelineMaxs[key].push({
       'duration': duration,
@@ -175,7 +175,7 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 10, { right: '-100%', ease: Power1.easeOut })
+        .from(bgOrange, 13, { right: '-100%', ease: Power1.easeOut })
         .from(subheadFrame3, 10, { left: '45%', opacity: '0', ease: Back.easeOut.config(1) }, 5)
         .from(descriptionIframe3, 10, { bottom: '0', opacity: '0', ease: Back.easeOut.config(1) }, 5)
     })
@@ -214,10 +214,10 @@ const HomeAnimation = (() => {
     timelineMaxs[key].push({
       'duration': duration,
       'timeline': new TimelineMax()
-        .from(bgOrange, 7, { left: '100%', ease: Power1.easeOut })
-        .from(contFrame4, 6, { top: '100%', ease: Back.easeOut.config(1) }, 2)
-        .from(imageProductFrame4, 6, { top: '100vh', ease: Power1.easeOut }, 2)
-        .from(fruitFrame4, 4, { y: '100%', ease: Back.easeOut.config(1) }, 3)
+        .from(bgOrange, 13, { left: '100%', ease: Power1.easeOut })
+        .from(contFrame4, 12, { top: '100%', ease: Back.easeOut.config(1) }, 5)
+        .from(imageProductFrame4, 12, { top: '100vh', ease: Power1.easeOut }, 5)
+        .from(fruitFrame4, 10, { y: '100%', ease: Back.easeOut.config(1) }, 7)
     })
 
     timelineMaxs[key].push({
@@ -351,7 +351,7 @@ const HomeAnimation = (() => {
     $(window).resize(function () {
       if (isPageHome && isFullpage) {
         if ($(window).width() >= 992) { // && flagReload !== 1
-          if (!$('html').hasClass('touch')) {
+          if (!$('html').hasClass('touch') && $(window).height() > 600) {
             clearTimeout(timeoutresize)
             timeoutresize = setTimeout(function () {
               location.reload()
@@ -366,14 +366,16 @@ const HomeAnimation = (() => {
       }
     })
     if (isPageHome && isFullpage && $(window).width() >= 992) {
-      scrollSpeed(1.5, 250)
-      frame1Timeline()
-      frame2Timeline()
-      frame3Timeline()
-      frame4Timeline()
-      frame5Timeline()
-      runScrollMagicScene()
-      navigationHome()
+      if ($(window).height() > 600) {
+        scrollSpeed(1.5, 250)
+        frame1Timeline()
+        frame2Timeline()
+        frame3Timeline()
+        frame4Timeline()
+        frame5Timeline()
+        runScrollMagicScene()
+        navigationHome()
+      }
       flagReload = 1
     } else {
       flagReload = -1

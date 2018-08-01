@@ -179,3 +179,9 @@
     }
   }
 }
+
+@media only screen and (max-height: 600px) {
+  .cont-frame2 {
+    height: 100%;
+  }
+}

@@ -55,7 +55,7 @@ const FullPage = (($) => {
         // console.log('-------')
         // console.log(top)
         offset.forEach(element => {
-          if (element.top <= top + $('#header').outerHeight()) {
+          if (element.top <= top + ($(window).height() / 3)) {
             elementActive = element.id
             return true
           }
