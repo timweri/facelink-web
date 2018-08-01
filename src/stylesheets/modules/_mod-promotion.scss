@@ -33,9 +33,6 @@
     margin-bottom: 0;
     letter-spacing: 2.5px;
   }
-  &+.mod-cta {
-    margin-top: -50px;
-  }
 }
 
 @include media-breakpoint-up(lg) {
