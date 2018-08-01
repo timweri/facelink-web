@@ -40,7 +40,6 @@ html#ecwid_html {
           .details-gallery__thumb {
             .details-gallery__thumb-img-wrapper-inner {
               transition: all .25s;
-              background: $white;
             }
           }
         }
@@ -412,6 +411,13 @@ html#ecwid_html {
           .details-gallery__thumbs--preview {
             &.details-gallery__thumbs--aspect-ratio-auto {
               margin-top: 30px;
+            }
+          }
+          .details-gallery__thumbs {
+            .details-gallery__thumb {
+              .details-gallery__thumb-img-wrapper-inner {
+                background: $white;
+              }
             }
           }
         }
