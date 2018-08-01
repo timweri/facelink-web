@@ -347,10 +347,19 @@ const HomeAnimation = (() => {
   $(document).ready(function () {
     $('.over-loader').addClass('loader-hidden')
     var flagReload = 0
+    var timeoutresize
     $(window).resize(function () {
       if (isPageHome && isFullpage) {
-        if ($(window).width() >= 992 && flagReload !== 1) {
-          location.reload()
+        if ($(window).width() >= 992) { // && flagReload !== 1
+          if (!$('html').hasClass('touch')) {
+            clearTimeout(timeoutresize)
+            timeoutresize = setTimeout(function () {
+              location.reload()
+            }, 300)
+          }
+          if (flagReload !== 1) {
+            location.reload()
+          }
         } else if ($(window).width() < 992 && flagReload !== -1) {
           location.reload()
         }
