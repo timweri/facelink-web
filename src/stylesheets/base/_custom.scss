@@ -111,6 +111,10 @@ html#ecwid_html body#ecwid_body.page-internal {
   background: $white;
 }
 .mCS-scroller-theme {
+  display: flex;
+  .mCS_no_scrollbar_y {
+    align-self: center;
+  }
   .mCSB_container {
     margin-right: 40px;
   }
