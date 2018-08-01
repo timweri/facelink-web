@@ -32,9 +32,19 @@
   @include position(absolute, 0, null,null, 0);
   @include sizeEx(100%,auto);
   padding-top: 70%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 0;
+  .bg-image-desktop,
+  .bg-image-mobile {
+    @include position(absolute, 0, null, null, 0);
+    @include sizeEx(100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .bg-image-mobile {
+    background-position: center top;
+  }
+  .bg-image-desktop {
+    background-position: 50% 50%;
+  }
 }
 .subhead-frame3 {
   @include position(relative, $index: 1);

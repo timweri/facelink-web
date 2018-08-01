@@ -5,6 +5,35 @@
   img {
     margin: 30px auto;
   }
+
+  .alignleft {
+    float: left;
+  }
+  .alignright {
+    float: right;
+  }
+  .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img.alignleft {
+    margin: 12px 24px 12px 0;
+  }
+  img.alignright {
+    margin: 12px 0 12px 24px;
+  }
+  img.aligncenter {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  img.size-full,
+  img.size-large,
+  img.header-image,
+  img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @include media-breakpoint-up(lg) {
