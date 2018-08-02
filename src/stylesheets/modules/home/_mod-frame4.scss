@@ -147,7 +147,17 @@
     width: 100%;
   }
 }
-
+.orange-frame4 {
+  @include position(absolute, 3%, -70px);
+}
+.pineapple-frame4 {
+  @include position(absolute, $bottom: -3%, $left: -31%, $index: 1);
+  width: 63%;
+  transform: rotate(7deg);
+  img {
+    width: 100%;
+  }
+}
 @include media-breakpoint-up(lg) {
   .cont-text-frame4 {
     max-width: none;
@@ -286,6 +296,15 @@
     }
   }
 }
+@media only screen and (max-width: 1500px) and (min-width: 991px) and (min-height: 1000px) {
+  .cont-frame4 {
+    .image-product {
+      right: 89%;
+      bottom: -50%;
+      width: 150%;
+    }
+  }
+}
 @media only screen and (max-height: 900px) {
   .fruit-frame4 {
     width: 35%;
@@ -299,6 +318,7 @@
   .subhead-frame4-title {
     position: relative;
     display: inline-block;
+    z-index: 1;
     .number {
       @include sizeEx(65px);
     }

@@ -1,7 +1,20 @@
 $number-per-row-lg: 5;
+
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    div.ecwid-popup {
+      button.ecwid-popup-closeButton {
+        &:hover {
+          background-color: $orange;
+        }
+      }
+      div.popupContent {
+        label.ecwid-fieldLabel {
+          @include font($font-family-base, rem(15) !important, $black !important);
+        }
+      }
+    }
     .ecwid-DateRangePopup {
       background-color: $menu-gray !important;
       padding: 15px !important;
@@ -86,15 +99,16 @@ html#ecwid_html {
         }
       }
     }
-    .ecwid-fieldEnvelope-error {
+    table.ecwid-fieldEnvelope-error {
       .ecwid-fieldEnvelope-label {
         display: none !important;
       }
-      .ecwid-fieldEnvelope-around {
+      div.ecwid-fieldEnvelope-around {
         box-shadow: none;
-        input {
+        select.gwt-ListBox,
+        input.gwt-TextBox {
           height: 38px !important;
-          border-bottom: solid 3px $red !important;
+          border-bottom: solid 3px $red;
         }
       }
     }

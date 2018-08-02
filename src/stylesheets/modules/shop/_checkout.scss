@@ -322,8 +322,8 @@ html#ecwid_html {
           color: $black;
           &:hover {
             color: $blue;
-            border-bottom: solid 4px $blue;
-            padding-bottom: 20px !important;
+            //border-bottom: solid 4px $blue;
+            //padding-bottom: 20px !important;
           }
         }
         &.ecwid-Checkout-BreadCrumbs-link-current {
@@ -657,7 +657,7 @@ html#ecwid_html {
       }
       .ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book {
-          margin-top: -8px;
+          margin-top: 8px;
         }
         .ecwid-btn--address_book_sign_in {
           position: absolute;
@@ -796,21 +796,6 @@ html#ecwid_html {
   }
 }
 
-@include media-breakpoint-down(sm) {
-  html#ecwid_html {
-    body#ecwid_body.page-internal {
-      .ecwid-OrdersList {
-        td.ecwid-OrdersList-OrderBox-header-orderdescr {
-          div {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-
 @media screen and (max-width: 529px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -821,6 +806,20 @@ html#ecwid_html {
       .ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book_sign_in {
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .ecwid-OrdersList {
+        td.ecwid-OrdersList-OrderBox-header-orderdescr {
+          div {
+            width: 100%;
+          }
         }
       }
     }

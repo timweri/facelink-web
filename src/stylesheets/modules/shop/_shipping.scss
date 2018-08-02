@@ -32,12 +32,18 @@
   }
 }
 
-@media screen and (max-width: 543px) {
+@media screen and (max-width: 580px) {
   html#ecwid_html {
-    body#ecwid_body.page-internal.ecwid-customer-loggedOut {
-      .ecwid-btn--address_book_sign_in {
-        display: block !important;
-        margin: 23px 0 0 !important;
+    body#ecwid_body.page-internal {
+      &.ecwid-customer-loggedOut {
+        .ecwid-btn--address_book_sign_in {
+          display: block !important;
+          margin: 23px 0 0 !important;
+        }
+      }
+      div.ecwid-Checkout-blockTitle,
+      table.ecwid-Checkout-blockTitle {
+        margin-left: 0;
       }
     }
   }

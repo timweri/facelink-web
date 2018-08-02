@@ -64,7 +64,6 @@ const Menu = (($) => {
         }
       })
     }
-
     _getConfig (config) {
       config = $.extend({}, Default, config)
       return config
