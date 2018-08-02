@@ -49,6 +49,19 @@ html#ecwid_html {
       div.datePickerDay,
       div.ecwid-TodayLabel {
         font-size: 14px;
+        padding: 6px 7px;
+      }
+      div.ecwid-MonthSelector {
+        background-color: transparent;
+        padding: 11px 2px;
+        span.gwt-InlineHTML {
+          font-size: 15px;
+        }
+      }
+      td.datePickerWeekdayLabel,
+      td.datePickerWeekendLabel {
+        padding: 1px 7px;
+        font-size: 15px;
       }
       div.datePickerDayIsValue,
       div.datePickerDayIsToday,

@@ -15,9 +15,15 @@ html#ecwid_html {
         }
       }
     }
+    .ecwid-DateRangeBox {
+      cursor: pointer;
+    }
     .ecwid-DateRangePopup {
       background-color: $menu-gray !important;
       padding: 15px !important;
+      button.ecwid-DateRangePopup-calendarIcon {
+        cursor: pointer;
+      }
       .ecwid-DateRangePopup-DateRangeLabel,
       a.gwt-Anchor {
         font-size: rem(15);
