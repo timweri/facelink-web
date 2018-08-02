@@ -93,7 +93,7 @@
   @include position(relative, $index: 1);
   max-width: 1000px;
   width: 100%;
-  margin: 80px auto 0;
+  margin: 72px auto 0;
 }
 
 .list-item-frame4 {
@@ -334,9 +334,19 @@
   }
 }
 @include media-breakpoint-down(md) {
+  .list-item-frame4 {
+    ul {
+      padding-left: 37px;
+    }
+  }
   .subhead-frame4.style-subhead {
     h2 {
       padding-left: 0;
     }
+  }
+  .col-image-product-frame4 {
+    margin-top: -8px;
+    padding-right: 25px;
+    padding-left: 25px;
   }
 }

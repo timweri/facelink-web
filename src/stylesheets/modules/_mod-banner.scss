@@ -10,6 +10,7 @@
     @include position(absolute, $top: 0, $left: 0);
     @include background-size(cover);
     @include sizeEx(100%);
+    background-position: center center;
     &::before {
       @include position(absolute, $top:0, $left:0);
       @include sizeEx(100%);
