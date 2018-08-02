@@ -38,7 +38,7 @@
   max-width: 600px;
   h1 {
     letter-spacing: 2.5px;
-    line-height: 1.1;
+    line-height: 1.4;
     margin: 0;
   }
   *:last-child {
@@ -65,7 +65,13 @@
 .product-box-outer {
   position: relative;
 }
-
+@include media-breakpoint-up(md) {
+  .banner-content {
+    h1 {
+      line-height: 1.1;
+    }
+  }
+}
 @include media-breakpoint-up(lg) {
   .banner-background {
     .d-table {
