@@ -68,9 +68,6 @@
       transform: translateY(-52%) translateX(-25%);
       content: "\e931";
     }
-    &:hover {
-      color: $orange;
-    }
   }
 }
 .faq-opened {
@@ -198,7 +195,15 @@
     }
   }
 }
-
+@include media-breakpoint-up(xl) {
+  .faq-closed {
+    h4 {
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
 @include media-breakpoint-down(lg) {
   .mod-faq {
     .container {
