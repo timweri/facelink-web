@@ -58,7 +58,10 @@
 }
 
 .subhead-frame3-title {
-  padding: 35px 15px 65px;
+  padding: 35px 15px 38px;
+  p {
+    margin-bottom: 27px;
+  }
 }
 .description-iframe3 {
   @include position(absolute, null, 100%, 80px, null, 1);

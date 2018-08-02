@@ -69,28 +69,6 @@
 .subhead-frame2-title {
   text-align: center;
 }
-@include media-breakpoint-down(lg) {
-  .section-frame2 {
-    background: $blue !important;
-    .subhead-frame2 {
-      position: relative;
-      z-index: 6;
-    }
-    .animation-frame2 {
-      position: static;
-    }
-    .cont-frame2 {
-      padding: 50px 0 71px;
-    }
-    &::after {
-      content: "";
-      @include position(absolute, $right: 0, $top: 0, $index: 5);
-      @include sizeEx(50%, 100%);
-      background: url("../images/background-white.png") center left no-repeat;
-      background-size: cover;
-    }
-  }
-}
 @include media-breakpoint-up(lg) {
   .section-frame2 {
     .bg-rotate-image {
@@ -180,6 +158,37 @@
       &::before {
         right: -110px;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .section-frame2 {
+    background: $blue !important;
+    .subhead-frame2 {
+      position: relative;
+      z-index: 6;
+    }
+    .animation-frame2 {
+      position: static;
+    }
+    .cont-frame2 {
+      padding: 50px 0 71px;
+    }
+    &::after {
+      content: "";
+      @include position(absolute, $right: 0, $top: 0, $index: 5);
+      @include sizeEx(50%, 100%);
+      background: url("../images/background-white.png") center left no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .section-frame2 {
+    .cont-frame2 {
+      padding: 22px 0 58px;
     }
   }
 }

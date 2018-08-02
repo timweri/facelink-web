@@ -184,13 +184,21 @@
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
+  .img-production-frame1 {
+    max-width: 334px;
+    margin: 119px -11px -11px auto;
+  }
+  .image-frame1 {
+    @include position($top: 20%, $left: -63%);
+    width: 172%;
+  }
   .cont-frame1-primary {
-    max-width: 200px;
+    max-width: 195px;
   }
 }
 
-@media only screen and (max-width: 334px) {
+@media only screen and (max-width: 335px) {
   .image-frame1 {
     top: 35%;
   }
