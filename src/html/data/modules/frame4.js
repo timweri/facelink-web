@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Build a better you in',
+  title: 'Build a better you<span class="d-none d-lg-inline"> in</span>',
   block_list: [1, 2, 3],
   bullet_list: `<ul>
     <li>

@@ -1,6 +1,6 @@
 module.exports = {
   subhead: 'The first all-natural daily supplement for...',
-  title: 'Performance, Recovery & Results',
+  title: '<p>Performance, <br class="d-sm-none"/>Recovery & Results</p>',
   image: 'images/bg-frame2.jpg',
   list_icon: [
     {
