@@ -13,9 +13,11 @@
     color: $black;
   }
   .has-login {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    .link-customer-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
   .icomoon {
     position: relative;
@@ -283,7 +285,9 @@
       }
     }
     .has-login {
-      width: 245px;
+      .link-customer-name {
+        width: 245px;
+      }
     }
   }
 

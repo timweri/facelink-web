@@ -63,7 +63,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-              // .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           } else {
             new ScrollMagic.Scene({
@@ -81,7 +81,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-              // .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           }
         }
@@ -93,7 +93,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-        // .addIndicators({ name: key + 'AnimationStart' })
+      // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -115,9 +115,9 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * duration,
       'timeline': new TimelineLite()
-        .to(containerFrame1, 10, { bottom: '100%', ease: Power1.easeOut })
-        .to(imgProductionFrame1, 10, { bottom: '100%', ease: Power1.easeOut }, 0)
-        .to(imageFrame1, 10, { y: '-100px', ease: Power1.easeOut }, 0)
+        .to(containerFrame1, 10, { bottom: '100%', opacity: 0, ease: Back.easeIn.config(0.5) })
+        .to(imgProductionFrame1, 10, { bottom: '100%', opacity: 0, ease: Back.easeIn.config(0.5) }, 0)
+        .to(imageFrame1, 10, { y: '-100px', ease: Back.easeIn.config(0.5) }, 0)
         .to(frame, 0, { position: 'relative' })
     })
   }
@@ -214,7 +214,7 @@ const HomeAnimation = (() => {
     TimelineLites[key].push({
       'duration': duration,
       'timeline': new TimelineLite()
-        .from(bgOrange, 13, { left: '100%', ease: Power1.easeOut })
+        .from(bgOrange, 13, { left: '100%', ease: Power0.easeNone })
         .from(contFrame4, 12, { top: '100%', ease: Back.easeOut.config(1) }, 5)
         .from(imageProductFrame4, 12, { top: '100vh', ease: Power1.easeOut }, 5)
         .from(fruitFrame4, 10, { y: '100%', ease: Back.easeOut.config(1) }, 7)
@@ -226,7 +226,7 @@ const HomeAnimation = (() => {
         .to(fruitFrame4, 10, { y: '-50%', ease: Power1.easeOut })
         .to(imageProductFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(contFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
-        .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
+        .to(bgOrange, 10, { left: '100%', ease: Power0.easeNone }, 0)
     })
 
     TimelineLites[key].push({
@@ -330,16 +330,43 @@ const HomeAnimation = (() => {
       var isAnimation = !(_el.attr('href') === '#frame5' || _el.attr('href') === '#frame6')
       var offsetTop = isAnimation ? _elTarget.parents('.scrollmagic-pin-spacer').offset().top : _elTarget.offset().top
       var $window = $(window)
-      $(document).scrollTop(offsetTop)
+      console.log($(window).scrollTop())
+      console.log(offsetTop + durationScrollMagics['frame2'])
       if (isAnimation && offsetTop > 0) {
+        if ($(window).scrollTop() === offsetTop + durationScrollMagics['frame2']) {
+          e.preventDefault()
+          return
+        }
+        $(document).scrollTop(offsetTop)
         TweenMax.to($window, 1, {
-          scrollTo: { y: offsetTop + $window.height(), autoKill: false },
+          scrollTo: { y: offsetTop + durationScrollMagics['frame2'], autoKill: false },
           ease: Sine.easeInOut,
           overwrite: 5
         })
+        e.preventDefault()
+      }
+      if (offsetTop === 0) {
+        if ($(window).scrollTop() === offsetTop) {
+          e.preventDefault()
+          return
+        }
+        var key = 'frame1'
+        var frame = elementFrames[key]
+        var duration = durationScrollMagics[key]
+        var containerFrame1 = frame + ' .container-frame1'
+        var imgProductionFrame1 = frame + ' .img-production-frame1'
+        var imageFrame1 = frame + ' .image-frame1'
+        $(containerFrame1).css('bottom', '-100%')
+        $(imgProductionFrame1).css('bottom', '-100%')
+
+        $(document).scrollTop(offsetTop)
+        new TimelineLite()
+          .to(containerFrame1, 1, { bottom: '0%', opacity: 1, ease: Back.easeOut.config(1) })
+          .to(imgProductionFrame1, 1, { bottom: '0%', opacity: 1, ease: Back.easeOut.config(1), delat: 0.2 }, 0)
+
+        e.preventDefault()
       }
       // console.log()
-      e.preventDefault()
     })
   }
   $(window).on('beforeunload pagehide', function () {

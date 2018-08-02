@@ -19,7 +19,7 @@
 }
 
 html#ecwid_html {
-  body#ecwid_body {
+  body#ecwid_body.page-internal {
     .ecwid-DateRangeBox {
       background-color: $menu-gray !important;
       border: 0 !important;
@@ -34,6 +34,39 @@ html#ecwid_html {
     div.ecwid-Orders-EmptyList {
       background-color: $menu-gray !important;
     }
+    div.ecwid-DateRangePopup {
+      input.gwt-DateBox {
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+    button.ecwid-DateRangePopup-calendarIcon {
+      width: 23px;
+      height: 20px;
+      background-size: cover;
+    }
+    div.dateBoxPopup {
+      div.datePickerDay,
+      div.ecwid-TodayLabel {
+        font-size: 14px;
+      }
+      div.datePickerDayIsValue,
+      div.datePickerDayIsToday,
+      div.datePickerDayIsHighlighted {
+        background-color: $color-c6;
+        color: $black;
+      }
+    }
   }
 }
-
+@include media-breakpoint-up(lg) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      table.ecwid-DateRangePopup-PresetsPanel {
+        a:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}
