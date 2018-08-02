@@ -302,6 +302,11 @@ var Shop = (function () {
         // console.log('customer exist');
         if (typeof customer.billingPerson.name != 'undefined' && customer.billingPerson.name != null) {
           $('.link-customer-name').text('welcome ' + customer.billingPerson.name);
+          var nameLogin = $('.link-customer-name')
+          var length = nameLogin.html().length
+          if(length >= 20) {
+            nameLogin.addClass('text-long')
+          }
         }
         $('.no-login').removeClass('show');
         $('.has-login').removeClass('hide')
