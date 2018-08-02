@@ -3,6 +3,11 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    input {   
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
     div.ecwid-popup {
       button.ecwid-popup-closeButton {
         &:hover {
@@ -15,9 +20,15 @@ html#ecwid_html {
         }
       }
     }
+    .ecwid-DateRangeBox {
+      cursor: pointer;
+    }
     .ecwid-DateRangePopup {
       background-color: $menu-gray !important;
       padding: 15px !important;
+      button.ecwid-DateRangePopup-calendarIcon {
+        cursor: pointer;
+      }
       .ecwid-DateRangePopup-DateRangeLabel,
       a.gwt-Anchor {
         font-size: rem(15);

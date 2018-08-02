@@ -2,10 +2,10 @@
   html#ecwid_html {
     body#ecwid_body.page-internal {
       table.ecwid-Checkout-blockTitle {
-          margin-left: 0;
+        margin-left: 0;
       }
       .ecwid-productBrowser-CheckoutShippingAddressPage .ecwid-productBrowser-head-panel~div {
-          margin: 0 -15px;
+        margin: 0 -15px;
       }
       .ecwid-productBrowser-CheckoutShippingAddressPage {
         &::before {
@@ -43,7 +43,7 @@
       }
       div.ecwid-Checkout-blockTitle,
       table.ecwid-Checkout-blockTitle {
-        margin-left: 0;
+        margin-left: 0 !important;
       }
     }
   }
