@@ -26,6 +26,7 @@ const Menu = (($) => {
       this.openMainMenu()
       this.closeWhenClickOutside()
       this.scrollShadow()
+      this.lengthTextLogin ()
     }
     // public api
     static get Default () {
@@ -64,7 +65,15 @@ const Menu = (($) => {
         }
       })
     }
-
+    lengthTextLogin () {
+      var nameLogin = $('.link-customer-name')
+      if( nameLogin.length ) {
+        var length = nameLogin.html().length
+        if(length >= 20) {
+          nameLogin.addClass('text-long')
+        }
+      }
+    }
     _getConfig (config) {
       config = $.extend({}, Default, config)
       return config
