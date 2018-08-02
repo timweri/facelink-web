@@ -94,8 +94,8 @@
     margin: 0;
   }
   .image-frame1 {
-    max-width: 908px;
-    left: -30%;
+    max-width: 1030px;
+    left: -24%;
     top: 24%;
   }
   .cont-frame1 {
@@ -106,7 +106,7 @@
   }
   .img-production-frame1 {
     @include position(absolute, $right: 110px, $bottom: 0);
-    max-width: 410px;
+    max-width: 510px;
     margin: 20px 0 0 auto;
     margin: 0;
   }
