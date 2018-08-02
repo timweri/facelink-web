@@ -214,7 +214,7 @@ const HomeAnimation = (() => {
     TimelineLites[key].push({
       'duration': duration,
       'timeline': new TimelineLite()
-        .from(bgOrange, 13, { left: '100%', ease: Power1.easeOut })
+        .from(bgOrange, 13, { left: '100%', ease: Power0.easeNone })
         .from(contFrame4, 12, { top: '100%', ease: Back.easeOut.config(1) }, 5)
         .from(imageProductFrame4, 12, { top: '100vh', ease: Power1.easeOut }, 5)
         .from(fruitFrame4, 10, { y: '100%', ease: Back.easeOut.config(1) }, 7)
@@ -226,7 +226,7 @@ const HomeAnimation = (() => {
         .to(fruitFrame4, 10, { y: '-50%', ease: Power1.easeOut })
         .to(imageProductFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
         .to(contFrame4, 10, { top: '-10%', ease: Power1.easeOut }, 0)
-        .to(bgOrange, 10, { left: '100%', ease: Power1.easeOut }, 0)
+        .to(bgOrange, 10, { left: '100%', ease: Power0.easeNone }, 0)
     })
 
     TimelineLites[key].push({
