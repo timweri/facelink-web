@@ -7,7 +7,7 @@
 
 .over-loader {
   @include position(fixed, 0, 0, 0, 0, 99999);
-  background: $orange;
+  background: $color-c6;
 }
 
 // demo loader
@@ -17,8 +17,7 @@
 
 // end demo
 .loader-item {
-  width: 50px;
-  height: 40px;
+  @include sizeEx(50px, 40px);
   margin: 100px auto;
   font-size: 10px;
   text-align: center;
@@ -26,28 +25,20 @@
 
 .spinner {
   position: relative;
-  width: 40px;
-  height: 40px;
+  @include sizeEx(90px);
   margin: 100px auto;
 }
 
-.double-bounce1,
-.double-bounce2 {
+.loader-logo {
   @include position(absolute, 0, 0, 0, 0, null);
-  background-color: $white;
-  border-radius: 50%;
-  opacity: .6;
-  animation: sk-bounce 2s infinite ease-in-out;
+  @include sizeEx(100%);
+  animation: logo-pulse 2s infinite ease-in-out;
 }
 
-.double-bounce2 {
-  animation-delay: -1s;
-}
-
-@keyframes sk-bounce {
+@keyframes logo-pulse {
   0%,
   100% {
-    transform: scale(0);
+    transform: scale(0.7);
   }
   50% {
     transform: scale(1);
