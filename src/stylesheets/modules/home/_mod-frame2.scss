@@ -11,8 +11,8 @@
     display: inline-block;
     position: relative;
     &::before {
-      @include position(absolute, 0, 0, null, null);
-      @include sizeEx(100%, 100%);
+      @include position(absolute, 0, -100%, null, null);
+      @include sizeEx(1000%, 100%);
       content: "";
       display: block;
       background: $black;
@@ -72,6 +72,11 @@
 .subhead-frame2-title {
   text-align: center;
 }
+@include media-breakpoint-up(md) {
+  .list-item-frame2 {
+    max-width: 500px;
+  }
+}
 @include media-breakpoint-up(lg) {
   .section-frame2 {
     .bg-rotate-image {
@@ -125,6 +130,9 @@
       @include position(absolute, 0, -100vw, -100vw, 0);
       background-color: inherit;
     }
+  }
+  .list-item-frame2 {
+    max-width: 280px;
   }
   // .bg-blue {
   //   @include sizeEx(20%, 100%);
