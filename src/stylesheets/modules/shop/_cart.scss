@@ -225,18 +225,7 @@ html#ecwid_html {
           border-radius: 0;
           background: url("../images/trash.svg") no-repeat center center;
           background-size: 100%;
-          /*font-variant: normal;
-          text-transform: none;
-          line-height: 1;
-          background: none;
-          &::after {
-            content: "\e932";
-            display: block;
-          }*/
           &:hover {
-            /*&::after {
-              color: $orange;
-            }*/
             background: url("../images/trash-hover.svg") no-repeat center center;
           }
         }
