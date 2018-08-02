@@ -238,7 +238,7 @@ const HomeAnimation = (() => {
     var key = 'frame5'
     var frame = elementFrames[key]
     var duration = durationScrollMagics[key]
-
+    var listInsta = frame + ' .list-insta'
     // custom css
 
     // create timeline animation
@@ -246,6 +246,7 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * (duration),
       'timeline': new TimelineLite()
+        .fromTo(listInsta, 1, { backgroundAttachment: 'fixed' }, { backgroundAttachment: 'inherit' })
     })
   }
 
