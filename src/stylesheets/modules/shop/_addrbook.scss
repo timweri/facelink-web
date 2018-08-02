@@ -11,6 +11,7 @@ html#ecwid_html {
     }
     div.ecwid-AddressBook {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       div.ecwid-Person {
         overflow-wrap: break-word;

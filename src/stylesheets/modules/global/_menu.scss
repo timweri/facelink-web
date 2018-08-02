@@ -343,7 +343,7 @@
 
       > a.cart-btn {
         &::before {
-          width: calc(100% - 10px);
+          width: calc(100% + 7px);
           left: 4px;
         }
       }
