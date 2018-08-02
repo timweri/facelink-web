@@ -246,7 +246,7 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * (duration),
       'timeline': new TimelineLite()
-        .fromTo(listInsta, 1, { backgroundAttachment: 'fixed' }, { backgroundAttachment: 'inherit' })
+        // .fromTo(listInsta, 1, { backgroundAttachment: 'fixed' }, { backgroundAttachment: 'inherit' })
     })
   }
 
