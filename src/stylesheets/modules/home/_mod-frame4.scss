@@ -30,6 +30,14 @@
   }
 }
 
+.title-frame4 {
+  h2 {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .bg-image-frame4 {
   @include position(absolute, 0, null, null, 0);
   @include sizeEx(100%, auto);
