@@ -420,9 +420,22 @@ html#ecwid_html {
               }
             }
             &.details-gallery__thumbs--aspect-ratio-auto {
+              margin-top: 40px;
               .details-gallery__thumb-img {
                 background-size: 100% auto !important;
               }
+            }
+          }
+          .details-gallery__wrap {
+            height: auto !important;
+          }
+          .details-gallery__thumb-img {
+            height: auto !important;
+            padding-bottom: 80% !important;
+          }
+          .product-details--layout-sidebar-right {
+            .product-details__sidebar {
+              margin-top: 30px;
             }
           }
         }
