@@ -3,6 +3,11 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    input {   
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
     div.ecwid-popup {
       button.ecwid-popup-closeButton {
         &:hover {

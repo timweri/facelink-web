@@ -246,7 +246,7 @@ const HomeAnimation = (() => {
       'duration': duration,
       'spaceduration': -1 * (duration),
       'timeline': new TimelineLite()
-        // .fromTo(listInsta, 1, { backgroundAttachment: 'fixed' }, { backgroundAttachment: 'inherit' })
+      // .fromTo(listInsta, 1, { backgroundAttachment: 'fixed' }, { backgroundAttachment: 'inherit' })
     })
   }
 
@@ -265,7 +265,13 @@ const HomeAnimation = (() => {
     // })
 
     $window.on('mousewheel DOMMouseScroll touchmove', function (event) {
-      if (isScroll === 1) { event.preventDefault(); return }
+      var windowTop = Math.round($(window).scrollTop())
+      if (finalScroll == windowTop) {
+        isScroll = 0
+      } else if (isScroll === 1) {
+        event.preventDefault()
+        return
+      }
       isScroll = 1
 
       var heso = 4,
@@ -289,7 +295,6 @@ const HomeAnimation = (() => {
       if (index === -1) { isScroll = 0; return }
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
-      var windowTop = Math.round($(window).scrollTop())
       // var prevScroll = finalScroll
       finalScroll = Math.round(finalScroll)
       if (delta > 0) {
@@ -309,7 +314,7 @@ const HomeAnimation = (() => {
         [scrollTime, scrollTime, scrollTime, 0.8, 0.8, 0.8]
       ]
       // console.log(durationScroll[delta + 1][nextIndex])
-      if (finalScroll === 0 && windowTop === 0) { isScroll = 0; return }
+      if ((finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)) { isScroll = 0; return }
       TweenMax.to($window, durationScroll[delta + 1][nextIndex], {
         scrollTo: { y: finalScroll, autoKill: false },
         ease: Sine.easeInOut,
