@@ -1,12 +1,38 @@
 html#ecwid_html {
-    body#ecwid_body.page-internal {
-        .ecwid-AddressBook-block {
-            background-color: $menu-gray;
+  body#ecwid_body.page-internal {
+    div.ecwid-AddressForm {
+      .ecwid-fieldWrapper {
+        .ecwid-fieldLabel {
+          &~table {
+            width: 100%;
+          }
         }
-        .ecwid-AddressBook-addButton {
-            div {
-                text-transform: uppercase;
-            }
-        }
+      }
     }
+    div.ecwid-AddressBook {
+      display: flex;
+      justify-content: center;
+      div.ecwid-Person {
+        overflow-wrap: break-word;
+      }
+      div.ecwid-btn.ecwid-btn--secondary.ecwid-btn--secondary-inverse {
+        padding-top: 5px !important;
+      }
+    }
+    div.ecwid-AddressBook-shipToButton {
+      text-align: center;
+    }
+    .ecwid-AddressBook-block {
+      background-color: $menu-gray;
+      height: 100%;
+    }
+    .ecwid-AddressBook-addButton {
+      height: 100%;
+      div {
+        top: 50%;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+      }
+    }
+  }
 }
