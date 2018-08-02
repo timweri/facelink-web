@@ -1,10 +1,7 @@
-.ablosute-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.absolute-container {
+  @include position(absolute, 0, 0, 0, 0);
 }
+
 .section-frame1 {
   background-position: center;
   background-repeat: no-repeat;
@@ -68,10 +65,15 @@
   .cont-frame1-primary {
     max-width: 210px;
   }
+  .img-production-frame1 {
+    width: 80%;
+    max-width: none;
+    margin-top: 30%;
+  }
   .image-frame1 {
-    width: 100%;
-    max-width: 908px;
+    width: 120%;
     left: -30%;
+    top: 12%;
   }
 }
 @include media-breakpoint-up(md) {
@@ -90,6 +92,11 @@
   .cont-frame1-primary {
     max-width: none;
     margin: 0;
+  }
+  .image-frame1 {
+    max-width: 908px;
+    left: -30%;
+    top: 24%;
   }
   .cont-frame1 {
     margin: 0;
