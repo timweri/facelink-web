@@ -404,8 +404,8 @@
         padding: 8px 30px;
         margin: 14px auto;
         &::before {
-          width: calc(100% - 30px);
-          left: 14px;
+          width: calc(100% - 12px);
+          left: 6px;
         }
       }
     }
@@ -417,8 +417,14 @@
         padding: 8px 28px;
         margin: 14px auto;
         &::before {
-          width: calc(100% - 26px);
-          left: 12px;
+          width: calc(100% - 12px);
+          left: 6px;
+        }
+      }
+      > a.cart-btn {
+        &::before {
+          width: calc(100% + 4px);
+          left: 4px;
         }
       }
     }
