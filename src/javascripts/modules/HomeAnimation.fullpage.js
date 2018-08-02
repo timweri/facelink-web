@@ -346,11 +346,13 @@ const HomeAnimation = (() => {
         })
         e.preventDefault()
       }
+      if ($(window).scrollTop() === offsetTop) {
+        e.preventDefault()
+        return
+      }
+      $(document).scrollTop(offsetTop)
+      e.preventDefault()
       if (offsetTop === 0) {
-        if ($(window).scrollTop() === offsetTop) {
-          e.preventDefault()
-          return
-        }
         var key = 'frame1'
         var frame = elementFrames[key]
         var duration = durationScrollMagics[key]
@@ -360,12 +362,9 @@ const HomeAnimation = (() => {
         $(containerFrame1).css('bottom', '-100%')
         $(imgProductionFrame1).css('bottom', '-100%')
 
-        $(document).scrollTop(offsetTop)
         new TimelineLite()
           .to(containerFrame1, 1, { bottom: '0%', opacity: 1, ease: Back.easeOut.config(1) })
           .to(imgProductionFrame1, 1, { bottom: '0%', opacity: 1, ease: Back.easeOut.config(1), delat: 0.2 }, 0)
-
-        e.preventDefault()
       }
       // console.log()
     })
