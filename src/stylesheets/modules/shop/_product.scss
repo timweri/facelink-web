@@ -603,9 +603,17 @@ html#ecwid_html {
           .ec-likely__widget {
             margin-left: 0;
             margin-right: 7px;
+            &:last-child {
+              .ec-likely__button {
+                margin-right: 0;
+              }
+            }
+          }
+          .ec-likely__icon {
+            margin-right: 5px;
           }
           .ec-likely__button {
-            margin-right: 5px;
+            margin-right: 9px;
           }
         }
       }
