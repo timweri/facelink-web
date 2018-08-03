@@ -23,7 +23,7 @@
   }
   .hover-overlay {
     @include position(absolute, $top: 0, $left: 0);
-    @include sizeEx(100%);
+    @include sizeEx(100%, 101%);
     background-color: rgba($black, .7);
     opacity: 1;
   }

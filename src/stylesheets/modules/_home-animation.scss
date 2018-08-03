@@ -2,6 +2,9 @@
 .ie {
   .scrollmagic-pin-spacer.frame-actived {
     overflow: visible;
+    .section {
+      overflow: visible;
+    }
   }
 }
 
@@ -9,6 +12,11 @@
   overflow: hidden;
   #frame5 {
     position: relative !important;
+  }
+  &.frame-actived {
+    .section {
+      overflow: visible;
+    }
   }
 }
 

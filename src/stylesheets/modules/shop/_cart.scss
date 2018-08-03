@@ -119,6 +119,12 @@ html#ecwid_html {
       div.ecwid-productBrowser-CheckoutAddressBookPage {
         margin: 20px 0 85px;
       }
+      div.ecwid-productBrowser-CheckoutAddressBookPage {
+        padding: 60px;
+        .ecwid-Checkout-blockTitle {
+          margin-top: 15px !important;
+        }
+      }
     }
     div.ecwid-productBrowser-backgroundedPanel {
       background: $menu-gray;
@@ -338,7 +344,8 @@ html#ecwid_html {
         &.ecwid-productBrowser-CartPage,
         &.ecwid-productBrowser-CheckoutPaymentDetailsPage,
         &.ecwid-productBrowser-CheckoutPlaceOrderPage,
-        &.ecwid-productBrowser-CheckoutShippingAddressPage {
+        &.ecwid-productBrowser-CheckoutShippingAddressPage,
+        &.ecwid-productBrowser-CheckoutAddressBookPage {
           padding: 5px 20px 60px !important;
         }
       }
