@@ -312,6 +312,7 @@ html#ecwid_html {
     }
     table.ecwid-Checkout-BreadCrumbs {
       @include position(absolute, -150px, 0, null, 0);
+      display: block;
       width: 100%;
       max-width: 740px;
       .ecwid-Checkout-BreadCrumbs-point {
@@ -398,6 +399,9 @@ html#ecwid_html {
       }
     }
     div.ecwid-Orders-SearchPanel {
+      .ecwid-btn--orders {
+        margin-bottom: 5px !important;
+      }
       .gwt-TextBox {
         height: 32px;
       }
@@ -443,6 +447,13 @@ html#ecwid_html {
         td.tabTopRight {
           border: 0;
           border-radius: 0;
+        }
+      }
+      table.gwt-TabBarItem:hover {
+        a {
+          span.ecwid-categories-category {
+            color: $orange !important;
+          }
         }
       }
       table.gwt-TabBarItem-selected {
@@ -548,7 +559,7 @@ html#ecwid_html {
           margin: 0;
         }
         .gwt-TextBox {
-          width: 250px;
+          width: 300px;
         }
       }
       .ecwid {
