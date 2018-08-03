@@ -413,6 +413,12 @@ html#ecwid_html {
         width: 100%;
         max-width: 375px;
       }
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        padding-top: 40px !important;
+        .ecwid-btn--cancel {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 }
