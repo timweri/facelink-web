@@ -399,6 +399,9 @@ html#ecwid_html {
       }
     }
     div.ecwid-Orders-SearchPanel {
+      .ecwid-btn--orders {
+        margin-bottom: 5px !important;
+      }
       .gwt-TextBox {
         height: 32px;
       }
