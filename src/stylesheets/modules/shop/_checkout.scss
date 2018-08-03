@@ -446,7 +446,15 @@ html#ecwid_html {
           border-radius: 0;
         }
       }
-      table.gwt-TabBarItem-selected {
+      table.gwt-TabBarItem:hover {
+        a {
+          span.ecwid-categories-category {
+            color: $orange !important;
+          }
+        }
+      }
+      table.gwt-TabBarItem-selected,
+      table.gwt-TabBarItem:hover {
         a {
           span.ecwid-categories-category {
             color: $orange !important;
@@ -549,7 +557,7 @@ html#ecwid_html {
           margin: 0;
         }
         .gwt-TextBox {
-          width: 250px;
+          width: 300px;
         }
       }
       .ecwid {
