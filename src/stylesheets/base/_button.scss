@@ -80,6 +80,12 @@ $hover-colors: hover-color-add("white4", $white, $orange, $orange, $white);
   }
 }
 
+html.firefox {
+  .btn-custom {
+    padding-top: 0 !important;
+  }
+}
+
 @each $hover-color-name, $hover-color-settings in $hover-colors {
   .btn-custom-#{$hover-color-name} {
     background: map-get($hover-color-settings, norm-bg);
