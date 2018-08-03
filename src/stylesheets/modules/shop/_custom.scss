@@ -491,8 +491,8 @@ html#ecwid_html.touch.safari {
           &:hover,
           &:active,
           &:focus {
-            background: transparent;
-            border-width: 0;
+            background: transparent !important;
+            border-width: 0 !important;
             color: $blue;
           }
         }
