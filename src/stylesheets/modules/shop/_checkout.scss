@@ -312,6 +312,7 @@ html#ecwid_html {
     }
     table.ecwid-Checkout-BreadCrumbs {
       @include position(absolute, -150px, 0, null, 0);
+      display: block;
       width: 100%;
       max-width: 740px;
       .ecwid-Checkout-BreadCrumbs-point {
