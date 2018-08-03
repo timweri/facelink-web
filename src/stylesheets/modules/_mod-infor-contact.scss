@@ -55,6 +55,7 @@
       @include sizeEx(100%);
       content: "";
       transition: .25s;
+      border-color: $orange;
     }
   }
   .list-social {
