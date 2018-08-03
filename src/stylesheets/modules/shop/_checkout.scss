@@ -55,6 +55,14 @@ html#ecwid_html {
               border-bottom: solid 3px $color-c6;
             }
           }
+          select {
+            background-image: url("../images/arrow.png");
+            background-position: center right;
+            background-repeat: no-repeat;
+            &::-ms-expand {
+              display: none;
+            }
+          }
         }
         .ecwid-btn--secondary-inverse {
           border: 0 !important;
