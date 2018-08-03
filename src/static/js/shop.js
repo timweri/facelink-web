@@ -177,12 +177,9 @@ var Shop = (function () {
       showLoading()
     })
     Ecwid.OnPageLoaded.add(function (page) {
-      console.log(page.type)
       if (page.type === 'SIGN_IN') {
         $signinBox = $('.signin__email')
         $signinField = $signinBox.find('.form-control__text')
-        console.log($signinBox)
-        console.log($signinField)
         $signinField.change(function () {
             if ($signinField.val() === '') {
               $signinBox.removeClass('has-text')
