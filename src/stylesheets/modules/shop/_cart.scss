@@ -4,18 +4,26 @@ html#ecwid_html {
       div.ecwid-form {
         > table {
           > tbody {
-            > tr {
+            > tr:not(:last-child) {
               > td {
                 > div {
                   margin-bottom: 12px;
                 }
               }
+              table,
+              div,
+              select,
+              input {
+                width: 100%;
+              }
             }
           }
         }
-      }
-      span.ecwid-shippingOption {
-        //
+        select {
+          background-image: url(../images/arrow.png);
+          background-position: 100%;
+          background-repeat: no-repeat;
+        }
       }
       span.ecwid-shippingOption-rate {
         color: $black;
