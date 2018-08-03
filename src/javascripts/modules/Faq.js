@@ -27,21 +27,19 @@ const Faq = (($) => {
     clickEvent () {
       let $mod = this._element
       this._element.on('click', '.faq-item h4', (e) => {
-        let $targetH4 = $(e.target)
-        let $targetItem = $targetH4.parent()
-        let $targetContent = $targetH4.siblings('.faq-answer')
-        let $otherOpenItem = $mod.find('.faq-item.faq-opened')
-
-        if ($targetItem.hasClass('faq-opened')) {
-          $targetContent.slideUp(() => {
-            $targetItem.removeClass('faq-opened').addClass('faq-closed')
-          })
+        let self = $(e.currentTarget)
+        let itemSelf = self.parents('.faq-item')
+        let faqAnswerSelf = itemSelf.find('.faq-answer')
+        let faqItem = $mod.find('.faq-item')
+        let faqAnswer = $mod.find('.faq-answer')
+        if(itemSelf.hasClass('faq-opened')) {
+          itemSelf.removeClass('faq-opened')
+          faqAnswerSelf.slideUp()
         } else {
-          $otherOpenItem.children('.faq-answer').slideUp(() => {
-            $otherOpenItem.removeClass('faq-opened').addClass('faq-closed')
-          })
-          $targetItem.removeClass('faq-closed').addClass('faq-opened')
-          $targetContent.slideDown()
+          faqItem.removeClass('faq-opened')
+          faqAnswer.slideUp()
+          itemSelf.addClass('faq-opened')
+          faqAnswerSelf.slideDown()
         }
       })
     }
