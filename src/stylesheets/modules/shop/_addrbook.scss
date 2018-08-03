@@ -29,3 +29,12 @@ html#ecwid_html {
     }
   }
 }
+html#ecwid_html.touch.safari {
+  body#ecwid_body {
+    div.ecwid-EditPersonPopup {
+      button.ecwid-popup-closeButton {
+        position: relative;
+      }
+    }
+  }
+}
