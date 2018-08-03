@@ -13,6 +13,7 @@
   }
   .ec-likely__icon--twitter {
     @extend .icon-twitter;
+    top: -2px;
   }
   .ec-likely__icon--gplus {
     @extend .icon-google;
