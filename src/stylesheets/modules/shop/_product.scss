@@ -401,7 +401,7 @@ html#ecwid_html {
           }
           .details-gallery__thumb-img-wrapper-inner {
             box-shadow: inset 0 0 0 2px $gray-bg;
-            padding: 0;
+            padding: 8px;
           }
           .details-gallery__thumb--active {
             .details-gallery__thumb-img-wrapper-inner {
@@ -487,7 +487,6 @@ html#ecwid_html {
           }
           .details-gallery__thumb-img-wrapper-inner {
             box-shadow: inset 0 0 0 2px $gray-bg;
-            padding: 0;
           }
         }
         &.ec-size--s {
