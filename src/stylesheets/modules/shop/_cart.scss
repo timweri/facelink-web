@@ -123,6 +123,9 @@ html#ecwid_html {
         padding: 60px;
         .ecwid-Checkout-blockTitle {
           margin-top: 15px !important;
+          width: 100%;
+          max-width: none;
+          text-align: center;
         }
       }
     }
