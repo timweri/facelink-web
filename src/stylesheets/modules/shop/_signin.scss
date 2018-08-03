@@ -35,7 +35,7 @@ html#ecwid_html {
             @include font($os, 18px, $black-two, 700, null);
             @include sizeEx(100%, 38px !important);
             border: 0;
-            padding: 0 20px 3px !important;
+            padding: 0 20px 1px !important;
             border-radius: 0;
             box-sizing: border-box;
             background: $menu-gray !important;
