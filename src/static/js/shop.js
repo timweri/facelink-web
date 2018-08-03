@@ -184,7 +184,8 @@ var Shop = (function () {
           } else {
             $('.ecwid-AddressForm-country-line').addClass('has-text')
           }
-          if ($('#select-State-Box').val() !== '') {
+          
+          if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() !== '') {
             $('.ecwid-AddressForm-state-line').addClass('has-text')
           } else {
             $('.ecwid-AddressForm-state-line').removeClass('has-text')
@@ -192,7 +193,7 @@ var Shop = (function () {
         })
 
         $('#select-State-Box').change(function () {
-          if ($('#select-State-Box').val() === '') {
+          if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() === '') {
             $('.ecwid-AddressForm-state-line').removeClass('has-text')
           } else {
             $('.ecwid-AddressForm-state-line').addClass('has-text')
@@ -201,7 +202,7 @@ var Shop = (function () {
         if ($('#select-Country-Box').val() !== '') {
           $('.ecwid-AddressForm-country-line').addClass('has-text')
         }
-        if ($('#select-State-Box').val() !== '') {
+        if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() !== '') {
           $('.ecwid-AddressForm-state-line').addClass('has-text')
         }
       }
