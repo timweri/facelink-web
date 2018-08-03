@@ -1,5 +1,40 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.popupContent {
+      div.ecwid-form {
+        > table {
+          > tbody {
+            > tr {
+              > td {
+                > div {
+                  margin-bottom: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      span.ecwid-shippingOption {
+        input {
+          @include position(relative, $top: -3px);
+        }
+      }
+      span.ecwid-shippingOption-rate {
+        color: $black;
+      }
+      div.ecwid-productBrowser-cart-chooseLocationPopup-deliveryMethodLabel {
+        font-size: 17px;
+        color: $black;
+      }
+      button.ecwid-btn--applyLocation {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      label.ecwid-fieldLabel {
+        margin-bottom: 8px;
+      }
+    }
     td.ecwid-productBrowser-cart-itemsTable-cell-descr {
       vertical-align: middle;
     }
