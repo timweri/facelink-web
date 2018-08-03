@@ -15,9 +15,7 @@ html#ecwid_html {
         }
       }
       span.ecwid-shippingOption {
-        input {
-          @include position(relative, $top: -3px);
-        }
+        //
       }
       span.ecwid-shippingOption-rate {
         color: $black;
