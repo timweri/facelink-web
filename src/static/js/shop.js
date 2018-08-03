@@ -177,6 +177,22 @@ var Shop = (function () {
       showLoading()
     })
     Ecwid.OnPageLoaded.add(function (page) {
+      if (page.type === 'SIGN_IN') {
+        $signinBox = $('.signin__email')
+        $signinField = $signinBox.find('.form-control__text')
+        $signinField.change(function () {
+            if ($signinField.val() === '') {
+              $signinBox.removeClass('has-text')
+
+            } else {
+              $signinBox.addClass('has-text')
+            }
+        })
+        if ($signinField.val() !== '') {
+          $signinBox.addClass('has-text')
+        }
+      }
+
       if (page.type === 'CHECKOUT_SHIPPING_ADDRESS' || page.type === 'CHECKOUT_PAYMENT_DETAILS') {
         $('#select-Country-Box').change(function () {
           if ($('#select-Country-Box').val() === '') {
@@ -184,7 +200,6 @@ var Shop = (function () {
           } else {
             $('.ecwid-AddressForm-country-line').addClass('has-text')
           }
-          
           if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() !== '') {
             $('.ecwid-AddressForm-state-line').addClass('has-text')
           } else {
