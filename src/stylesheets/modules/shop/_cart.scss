@@ -175,6 +175,9 @@ html#ecwid_html {
       .ecwid-fieldEnvelope-label {
         display: none !important;
       }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        color: #909090;
+      }
       table {
         width: 100%;
         div {
@@ -447,6 +450,12 @@ html#ecwid_html {
       table.ecwid-productBrowser-cart-estimation {
         width: 100%;
         max-width: 375px;
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        padding-top: 40px !important;
+        .ecwid-btn--cancel {
+          margin-bottom: 20px !important;
+        }
       }
     }
   }

@@ -43,7 +43,8 @@
 .bg-green-quote {
   mix-blend-mode: multiply;
 }
-.ie {
+.ie,
+.edge {
   .bg-green-quote {
     opacity: .8;
   }
