@@ -428,7 +428,7 @@ html#ecwid_html {
     }
   }
 }
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size.ec-size--xs:not(.ec-size--s) {
@@ -443,9 +443,11 @@ html#ecwid_html {
       div.ecwid-productBrowser-cart-estimationNote {
         text-align: center;
       }
-      .ecwid-btn--changeAddress {
-        margin: 0 auto;
-        display: block;
+      .ecwid {
+        .ecwid-btn--changeAddress {
+          margin: 0 auto;
+          display: block;
+        }
       }
     }
   }
