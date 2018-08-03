@@ -384,13 +384,24 @@ const HomeAnimation = (() => {
     $('.over-loader').addClass('loader-hidden')
     var flagReload = 0
     var timeoutresize
+    var windowWidth = 0,
+      windowHeight = 0,
+      flag = 0
     $(window).resize(function () {
+      if (flag === 0) {
+        windowWidth = $(window).width()
+        windowHeight = $(window).height()
+        flag = 1
+      }
       if (isPageHome && isFullpage) {
         if ($(window).width() >= 992) { // && flagReload !== 1
           if (!$('html').hasClass('touch') && $(window).height() > 650) {
             clearTimeout(timeoutresize)
             timeoutresize = setTimeout(function () {
-              location.reload()
+              flag = 0
+              if (windowWidth !== $(window).width() || windowHeight !== $(window).height()) {
+                location.reload()
+              }
             }, 300)
           }
           if (flagReload !== 1) {
