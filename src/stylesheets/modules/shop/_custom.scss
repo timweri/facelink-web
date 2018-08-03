@@ -387,7 +387,15 @@ html#ecwid_html {
     display: none;
   }
 }
-
+html#ecwid_html.touch.safari {
+  body#ecwid_body.page-internal {
+    .ecwid {
+      .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+}
 // .mod-banner,
 // .mod-shop-product {
 //   &~.mod-content-editor {
