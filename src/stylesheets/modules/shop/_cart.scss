@@ -157,9 +157,11 @@ html#ecwid_html {
       div.ecwid-productBrowser-CheckoutPaymentDetailsPage,
       div.ecwid-productBrowser-CheckoutPlaceOrderPage,
       div.ecwid-productBrowser-CheckoutShippingAddressPage,
-      div.ecwid-productBrowser-CheckoutAddressBookPage,
-      div.ecwid-productBrowser-SignInPage {
+      div.ecwid-productBrowser-CheckoutAddressBookPage {
         margin: 20px 0 85px;
+      }
+      div.ecwid-productBrowser-SignInPage {
+        margin-bottom: 85px;
       }
       div.ecwid-productBrowser.ecwid-productBrowser-CheckoutAddressBookPage {
         padding: 60px;
@@ -311,9 +313,11 @@ html#ecwid_html {
         div.ecwid-productBrowser-CheckoutPlaceOrderPage,
         div.ecwid-productBrowser-CheckoutShippingAddressPage,
         div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage,
-        div.ecwid-productBrowser-CheckoutAddressBookPage,
-        div.ecwid-productBrowser-SignInPage {
+        div.ecwid-productBrowser-CheckoutAddressBookPage {
           margin: 100px 0;
+        }
+        div.ecwid-productBrowser-SignInPage {
+          margin-bottom: 100px;
         }
       }
       div.ecwid-productBrowser-productNameLink a {
