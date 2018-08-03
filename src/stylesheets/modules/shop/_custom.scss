@@ -1,5 +1,8 @@
 $number-per-row-lg: 5;
-
+.ecwid-EditPersonPopup,
+.ecwid-overlay {
+  position: fixed !important;
+}
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
