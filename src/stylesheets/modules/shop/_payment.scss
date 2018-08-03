@@ -1,5 +1,23 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.ecwid-ppReview-sidebar-ver {
+      div.ecwid-Invoice-Summary-label {
+        @include font($os, 18px, $black, 700);
+        text-transform: uppercase;
+      }
+      div.ecwid-Invoice-Summary-value {
+        @include font($os, 24px, $orange, 500);
+      }
+      div.ecwid-Invoice-Summary-label,
+      div.ecwid-Invoice-Summary-value {
+        * {
+          font-size: 15px;
+          color: #212529;
+          height: 20px;
+          line-height: 17px;
+        }
+      }
+    }
     .ecwid-Checkout-EmailBlock {
       .ecwid-Checkout-blockTitle {
         span {
