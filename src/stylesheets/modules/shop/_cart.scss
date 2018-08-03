@@ -180,9 +180,6 @@ html#ecwid_html {
         display: none;
       }
       div.ecwid-productBrowser-cart {
-        input.ecwid-productBrowser-cart-qtyTextField {
-          margin: 0;
-        }
         td.ecwid-productBrowser-cart-itemsTable-cell-qty {
           padding-top: 15px;
         }
@@ -217,6 +214,17 @@ html#ecwid_html {
       table.ecwid-productBrowser-cart-subtotalAmountPanel {
         td {
           padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 590px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart {
+        input.ecwid-productBrowser-cart-qtyTextField {
+          margin: 0;
         }
       }
     }
@@ -420,7 +428,7 @@ html#ecwid_html {
     }
   }
 }
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size.ec-size--xs:not(.ec-size--s) {
@@ -430,6 +438,15 @@ html#ecwid_html {
               width: 100%;
             }
           }
+        }
+      }
+      div.ecwid-productBrowser-cart-estimationNote {
+        text-align: center;
+      }
+      .ecwid {
+        .ecwid-btn--changeAddress {
+          margin: 0 auto;
+          display: block;
         }
       }
     }

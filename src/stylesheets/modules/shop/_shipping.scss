@@ -29,6 +29,12 @@
         margin: 0 !important;
       }
     }
+    body#ecwid_body.page-internal {
+      div.ecwid-Checkout-blockTitle,
+      table.ecwid-Checkout-blockTitle {
+        margin-left: 0 !important;
+      }
+    }
   }
 }
 
@@ -40,10 +46,6 @@
           display: block !important;
           margin: 23px 0 0 !important;
         }
-      }
-      div.ecwid-Checkout-blockTitle,
-      table.ecwid-Checkout-blockTitle {
-        margin-left: 0 !important;
       }
     }
   }
