@@ -43,6 +43,11 @@
 .bg-green-quote {
   mix-blend-mode: multiply;
 }
+.ie {
+  .bg-green-quote {
+    opacity: .8;
+  }
+}
 
 @include media-breakpoint-up(sm) {
   .bg-green-quote,
