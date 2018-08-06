@@ -177,6 +177,21 @@ var Shop = (function () {
       showLoading()
     })
     Ecwid.OnPageLoaded.add(function (page) {
+      if (page.type === 'SIGN_IN') {
+        $signinBox = $('.signin__email')
+        $signinField = $signinBox.find('.form-control__text')
+        $signinField.change(function () {
+            if ($signinField.val() === '') {
+              $signinBox.removeClass('has-text')
+
+            } else {
+              $signinBox.addClass('has-text')
+            }
+        })
+        if ($signinField.val() !== '') {
+          $signinBox.addClass('has-text')
+        }
+      }
       if (page.type === 'CHECKOUT_SHIPPING_ADDRESS' || page.type === 'CHECKOUT_PAYMENT_DETAILS') {
         $('#select-Country-Box').change(function () {
           if ($('#select-Country-Box').val() === '') {
@@ -184,7 +199,7 @@ var Shop = (function () {
           } else {
             $('.ecwid-AddressForm-country-line').addClass('has-text')
           }
-          if ($('#select-State-Box').val() !== '') {
+          if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() !== '') {
             $('.ecwid-AddressForm-state-line').addClass('has-text')
           } else {
             $('.ecwid-AddressForm-state-line').removeClass('has-text')
@@ -192,7 +207,7 @@ var Shop = (function () {
         })
 
         $('#select-State-Box').change(function () {
-          if ($('#select-State-Box').val() === '') {
+          if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() === '') {
             $('.ecwid-AddressForm-state-line').removeClass('has-text')
           } else {
             $('.ecwid-AddressForm-state-line').addClass('has-text')
@@ -201,7 +216,7 @@ var Shop = (function () {
         if ($('#select-Country-Box').val() !== '') {
           $('.ecwid-AddressForm-country-line').addClass('has-text')
         }
-        if ($('#select-State-Box').val() !== '') {
+        if ($('.ecwid-AddressForm-state-line input, .ecwid-AddressForm-state-line select').val() !== '') {
           $('.ecwid-AddressForm-state-line').addClass('has-text')
         }
       }
@@ -261,6 +276,9 @@ var Shop = (function () {
         body.removeClass('page-product')
         $('.product-details').addClass('muti-item')
         closeLoading()
+      }
+      if (['CART', 'CHECKOUT_SHIPPING_ADDRESS', 'CHECKOUT_PAYMENT_DETAILS', 'CHECKOUT_PLACE_ORDER', 'ORDER_CONFIRMATION'].includes(page.type)) {
+        window.scrollTo(0, 0);
       }
       if (page.type === 'CART' || page.type === 'ORDER_CONFIRMATION') {
         body.addClass('page-cart')

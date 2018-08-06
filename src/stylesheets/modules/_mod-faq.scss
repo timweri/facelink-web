@@ -43,54 +43,53 @@
   margin: 0 !important;
 }
 .faq-item {
-  padding: 0 16px;
+  padding: 0 15px;
+  transition: .4s all ease-in-out;
   position: relative;
-  transition: .25s, margin-bottom .1s, padding-bottom .1s, padding-right 0s;
-  h4 {
-    transition: padding 0s, color .25s, margin 0s;
-    cursor: pointer;
-    &::after {
-      font-family: $icomoon;
-      font-size: 35px;
-      color: $black !important;
-    }
+  &::before {
+    @include sizeEx(100%, 2px);
+    content: "";
+    display: block;
+    background: $border-gray;
+    transition: .2s all ease-in-out;
+    transform: scaleY(0);
   }
-}
-.faq-closed {
-  border-top: none;
-  margin-top: 0;
   h4 {
-    border-bottom: solid 2px $border-gray;
-    padding: 23px 70px 24px 0;
+    cursor: pointer;
     margin: 0;
+    position: relative;
+    padding-right: 70px;
     &::after {
-      @include position(absolute, $right: 0, $top: 50%);
-      transform: translateY(-52%) translateX(-25%);
+      @include position(absolute, $top: 50%, $right: 0);
+      @include font($icomoon, 35px, $black);
+      transform: translateY(-50%);
       content: "\e931";
     }
   }
 }
+.faq-content {
+  padding: 25px 0;
+  position: relative;
+  border-bottom: solid 2px $border-gray;
+  border-left-color: $orange;
+  transition: .4s all ease-in-out;
+}
 .faq-opened {
-  padding: 0 15px 0 40px;
-  background-color: $menu-gray;
+  padding: 0;
   margin-top: -2px;
-  border-left: solid 5px $orange;
   &::before {
-    @include sizeEx(calc(100% + 5px), 0);
-    @include position(absolute, $top: 0, $left: -5px);
-    border-bottom: solid 2px $border-gray;
-    content: "";
+    transform: scaleY(1);
+  }
+  .faq-content {
+    background-color: $menu-gray;
+    border-left: solid 5px $orange;
+    padding-left: 40px;
+    padding-right: 15px;
+    border-bottom: 0;
   }
   h4 {
-    position: relative;
-    border-bottom: solid 2px transparent;
     color: $orange;
-    padding-top: 34px;
-    padding-left: 4px;
-    padding-right: 50px;
     &::after {
-      @include position(absolute, $right: 0, $top: 45px);
-      transform: translateX(20%) translateY(-50%);
       content: "\e930";
     }
   }
@@ -98,9 +97,9 @@
 .faq-answer {
   line-height: 1.87;
   letter-spacing: .4px;
-  padding-bottom: 36px;
-  padding-right: 50px;
   display: none;
+  padding-right: 70px;
+  margin-top: 20px;
   p {
     &:last-child {
       margin-bottom: 0;
@@ -130,73 +129,46 @@
       padding: 0 0 0 105px;
     }
   }
-  .faq-item {
-    &:first-child {
-      transition: .25s, margin-bottom .1s, padding-bottom .1s, padding-right 0s;
-      h4 {
-        transition: padding 0s, color .25s, margin 0s, padding-top .1s !important;
-      }
-    }
-  }
   .faq-cat {
     margin-bottom: 75px !important;
     &:last-child {
       margin-bottom: 0 !important;
     }
   }
-  .faq-closed {
-    padding: 0;
-    border-top: solid 2px $border-gray;
-    margin-bottom: -2px;
-    &:first-child {
-      border-top: 0;
-      h4 {
-        padding: 0 70px 25px 4px;
-        &::after {
-          @include position(absolute, $right: 0, $top: 25%);
-          transform: translateY(-46%) translateX(-45%);
-        }
-      }
-    }
-    h4 {
-      padding: 28px 70px 29px 4px;
-      &::after {
-        right: 7px;
-      }
-    }
+  .faq-content {
+    padding: 30px 20px 25px 0;
   }
-  .faq-answer {
-    padding-right: 60px;
-    padding-bottom: 28px;
+  .faq-item {
+    padding: 0;
+    &:first-child {
+      .faq-content {
+        padding-top: 0;
+      }
+    }
   }
   .faq-opened {
-    border-top: 0;
-    margin-top: 2px;
-    padding-left: 37px;
+    border-bottom: 0;
+    margin-top: 0;
     padding-bottom: 0;
     &::before {
       content: none;
     }
     &:first-child {
-      margin-top: 0;
-      h4 {
-        transition: padding 0s, color .25s, margin 0s, padding-top 0 !important;
+      .faq-content {
+        padding-top: 30px;
       }
     }
+    .faq-content {
+      border-bottom: solid 2px $border-gray;
+      padding-right: 20px;
+    }
     h4 {
-      padding-left: 3px;
-      padding-top: 32px;
       margin-bottom: 20px;
-      &::after {
-        top: 42px;
-        right: 0;
-        transform: translateY(-50%);
-      }
     }
   }
 }
 @include media-breakpoint-up(xl) {
-  .faq-closed {
+  .faq-item {
     h4 {
       &:hover {
         color: $orange;

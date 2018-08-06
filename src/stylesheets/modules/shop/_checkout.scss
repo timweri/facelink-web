@@ -55,6 +55,14 @@ html#ecwid_html {
               border-bottom: solid 3px $color-c6;
             }
           }
+          select {
+            background-image: url("../images/arrow.png");
+            background-position: center right;
+            background-repeat: no-repeat;
+            &::-ms-expand {
+              display: none;
+            }
+          }
         }
         .ecwid-btn--secondary-inverse {
           border: 0 !important;
@@ -117,7 +125,7 @@ html#ecwid_html {
           margin-top: 0;
         }
         div.ecwid-ppReview-block {
-          margin: 0 0 3px;
+          margin: 0 0 20px;
           &:last-child {
             margin-bottom: 0;
           }
@@ -304,6 +312,7 @@ html#ecwid_html {
     }
     table.ecwid-Checkout-BreadCrumbs {
       @include position(absolute, -150px, 0, null, 0);
+      display: block;
       width: 100%;
       max-width: 740px;
       .ecwid-Checkout-BreadCrumbs-point {
@@ -390,6 +399,9 @@ html#ecwid_html {
       }
     }
     div.ecwid-Orders-SearchPanel {
+      .ecwid-btn--orders {
+        margin-bottom: 5px !important;
+      }
       .gwt-TextBox {
         height: 32px;
       }
@@ -435,6 +447,13 @@ html#ecwid_html {
         td.tabTopRight {
           border: 0;
           border-radius: 0;
+        }
+      }
+      table.gwt-TabBarItem:hover {
+        a {
+          span.ecwid-categories-category {
+            color: $orange !important;
+          }
         }
       }
       table.gwt-TabBarItem-selected {
@@ -540,7 +559,7 @@ html#ecwid_html {
           margin: 0;
         }
         .gwt-TextBox {
-          width: 250px;
+          width: 300px;
         }
       }
       .ecwid {
@@ -636,7 +655,7 @@ html#ecwid_html {
         .ecwid-fieldWrapper {
           .ecwid-fieldLabel {
             &~table {
-              width: 65%;
+              width: 64%;
             }
           }
         }

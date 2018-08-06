@@ -1,5 +1,46 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.popupContent {
+      div.ecwid-form {
+        > table {
+          > tbody {
+            > tr:not(:last-child) {
+              > td {
+                > div {
+                  margin-bottom: 12px;
+                }
+              }
+              table,
+              div,
+              select,
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+        select {
+          background-image: url(../images/arrow.png);
+          background-position: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+      span.ecwid-shippingOption-rate {
+        color: $black;
+      }
+      div.ecwid-productBrowser-cart-chooseLocationPopup-deliveryMethodLabel {
+        font-size: 17px;
+        color: $black;
+      }
+      button.ecwid-btn--applyLocation {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      label.ecwid-fieldLabel {
+        margin-bottom: 8px;
+      }
+    }
     td.ecwid-productBrowser-cart-itemsTable-cell-descr {
       vertical-align: middle;
     }
@@ -119,6 +160,9 @@ html#ecwid_html {
       div.ecwid-productBrowser-CheckoutAddressBookPage {
         margin: 20px 0 85px;
       }
+      div.ecwid-productBrowser-SignInPage {
+        margin-bottom: 85px;
+      }
       div.ecwid-productBrowser.ecwid-productBrowser-CheckoutAddressBookPage {
         padding: 60px;
         .ecwid-Checkout-blockTitle {
@@ -139,6 +183,9 @@ html#ecwid_html {
       margin: 0;
       .ecwid-fieldEnvelope-label {
         display: none !important;
+      }
+      div.ecwid-productBrowser-cart-EnterCouponBox-couponCodeLabel {
+        color: #909090;
       }
       table {
         width: 100%;
@@ -180,9 +227,6 @@ html#ecwid_html {
         display: none;
       }
       div.ecwid-productBrowser-cart {
-        input.ecwid-productBrowser-cart-qtyTextField {
-          margin: 0;
-        }
         td.ecwid-productBrowser-cart-itemsTable-cell-qty {
           padding-top: 15px;
         }
@@ -217,6 +261,17 @@ html#ecwid_html {
       table.ecwid-productBrowser-cart-subtotalAmountPanel {
         td {
           padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 590px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart {
+        input.ecwid-productBrowser-cart-qtyTextField {
+          margin: 0;
         }
       }
     }
@@ -260,6 +315,9 @@ html#ecwid_html {
         div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage,
         div.ecwid-productBrowser-CheckoutAddressBookPage {
           margin: 100px 0;
+        }
+        div.ecwid-productBrowser-SignInPage {
+          margin-bottom: 100px;
         }
       }
       div.ecwid-productBrowser-productNameLink a {
@@ -405,6 +463,12 @@ html#ecwid_html {
         width: 100%;
         max-width: 375px;
       }
+      div.ecwid-productBrowser-cart-EnterCouponBox {
+        padding-top: 40px !important;
+        .ecwid-btn--cancel {
+          margin-bottom: 20px !important;
+        }
+      }
     }
   }
 }
@@ -420,7 +484,7 @@ html#ecwid_html {
     }
   }
 }
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
       .ec-size.ec-size--xs:not(.ec-size--s) {
@@ -431,6 +495,9 @@ html#ecwid_html {
             }
           }
         }
+      }
+      div.ecwid-productBrowser-cart-estimationNote {
+        text-align: center;
       }
     }
   }

@@ -13,6 +13,7 @@
   }
   .ec-likely__icon--twitter {
     @extend .icon-twitter;
+    top: -2px;
   }
   .ec-likely__icon--gplus {
     @extend .icon-google;
@@ -600,17 +601,21 @@ html#ecwid_html {
           .details-gallery__thumbs {
             padding-bottom: 10px !important;
           }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 400px) {
-  html#ecwid_html {
-    body#ecwid_body.page-internal {
-      .ec-likely {
-        .ec-likely__widget {
-          margin-right: 7px !important;
+          .ec-likely__widget {
+            margin-left: 0;
+            margin-right: 7px;
+            &:last-child {
+              .ec-likely__button {
+                margin-right: 0;
+              }
+            }
+          }
+          .ec-likely__icon {
+            margin-right: 5px;
+          }
+          .ec-likely__button {
+            margin-right: 9px;
+          }
         }
       }
     }

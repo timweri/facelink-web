@@ -9,10 +9,12 @@
         </div>
         <div class="col-right col-12 col-lg-8">
           {% for item in category.items %}
-            <div class="faq-item faq-closed">
-              <h4>{{ item.question }}</h4>
-              <div class="faq-answer">
-                {{ item.answer }}
+            <div class="faq-item">
+              <div class="faq-content">
+                <h4>{{ item.question }}</h4>
+                <div class="faq-answer">
+                  {{ item.answer }}
+                </div>
               </div>
             </div>
           {% endfor %}
