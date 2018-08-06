@@ -88,10 +88,11 @@ var Shop = (function () {
     var modShopHeader = $('.mod-shop-header')
     var $titleBanner = $('.ecwid-productBrowser-head')
     var $title = $('.page-title__name')
-    let path = window.location.pathname ? window.location.pathname.trim().split('/') : false
+    var path = window.location.pathname ? window.location.pathname.trim().split('/') : false
+    
     if( path.length > 0) {
-      let isShop = path[1] === 'shop' ? true : false
-      let isSuplement = path[2].split('-')[0] === '320Z' ? true : false
+      var isShop = path[1] === 'shop' ? true : false
+      var isSuplement = path[2].split('-')[0] === '320Z' ? true : false
 
       if (isShop && !isSuplement) {
         modShopHeader.remove()
@@ -193,7 +194,11 @@ var Shop = (function () {
         }
       }
 
-      if (['CART', 'CHECKOUT_SHIPPING_ADDRESS', 'CHECKOUT_PAYMENT_DETAILS', 'CHECKOUT_PLACE_ORDER', 'ORDER_CONFIRMATION'].includes(page.type)) {
+      if (page.type === 'CART' ||
+          page.type === 'CHECKOUT_SHIPPING_ADDRESS' ||
+          page.type === 'CHECKOUT_PAYMENT_DETAILS' ||
+          page.type === 'CHECKOUT_PLACE_ORDER' ||
+          page.type === 'ORDER_CONFIRMATION') {
         window.scrollTo(0, 0);
       }
 
@@ -284,8 +289,8 @@ var Shop = (function () {
       }
       if (page.type === 'CART') {
         $(document).on('change', '.ecwid-productBrowser-cart-chooseLocationPopup select.gwt-ListBox, .ecwid-productBrowser-cart-chooseLocationPopup input.gwt-TextBox', function () {
-          let $this = $(this)
-          let $label = $this.parents('table').siblings('label.ecwid-fieldLabel')
+          var $this = $(this)
+          var $label = $this.parents('table').siblings('label.ecwid-fieldLabel')
           if ($this.val() === '') {
             $label.removeClass('has-text')
           } else {
@@ -294,8 +299,8 @@ var Shop = (function () {
         })
         $(document).on('DOMNodeInserted', '.ecwid-productBrowser-cart-chooseLocationPopup', function () {
           $(this).find('input.gwt-TextBox, select.gwt-ListBox').each(function (index, ele) {
-            let $ele = $(ele)
-            let $label = $ele.parents('table').siblings('label.ecwid-fieldLabel')
+            var $ele = $(ele)
+            var $label = $ele.parents('table').siblings('label.ecwid-fieldLabel')
             if ($ele.val() !== '') {
               $label.addClass('has-text')
             }
