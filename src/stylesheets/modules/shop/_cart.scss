@@ -202,7 +202,7 @@ html#ecwid_html {
       .ecwid-fieldEnvelope-around {
         input {
           @include sizeEx(100%, 39px !important);
-          padding: 0 21px 3px !important;
+          padding: 0 21px 1px !important;
           max-width: 100%;
         }
       }
