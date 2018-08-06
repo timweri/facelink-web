@@ -93,7 +93,6 @@ var Shop = (function () {
     if( path.length > 0) {
       var isShop = path[1] === 'shop' ? true : false
       var isSuplement = path[2].split('-')[0] === '320Z' ? true : false
-
       if (isShop && !isSuplement) {
         modShopHeader.remove()
         titleProductDetail = 'Briq Gear'
@@ -116,6 +115,7 @@ var Shop = (function () {
           }
         }
       } else {
+        $('.product-details').addClass('muti-item')
         modShopHeader.remove()
       }
     }
@@ -227,9 +227,6 @@ var Shop = (function () {
       if (page.type === 'PRODUCT') {
         body.addClass('page-product')
         $('.mod-insta-link').hide()
-        if ($('.details-gallery--one-image').length <= 0) {
-          $('.product-details').addClass('muti-item')
-        }
         if (localStorage.getItem('ecwid-product') === 'true') {
           location.reload()
           localStorage.removeItem('ecwid-product')
@@ -277,7 +274,6 @@ var Shop = (function () {
         }
       } else {
         body.removeClass('page-product')
-        $('.product-details').addClass('muti-item')
         closeLoading()
       }
       if (page.type === 'CART') {
