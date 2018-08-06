@@ -8,6 +8,162 @@ html#ecwid_html {
     background: $gray-bg;
     .ecwid {
       min-height: auto !important;
+      color: $black;
+      .ecwid-lte-600px {
+        div.ecwid-productBrowser {
+          // padding: 60px 15px 20px;
+          background: $white;
+        }
+        .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
+          padding: 0;
+          background: transparent;
+          .product-details {
+            padding: 0 15px 30px;
+          }
+        }
+      }
+      div.ecwid-productBrowser {
+        // padding: 60px 15px 20px;
+        background: $white;
+      }
+      .ecwid-btn {
+        @include font($os, 15px, $orange, 700);
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        box-shadow: none !important;
+        padding: 0 10px !important;
+        min-height: 40px;
+        overflow: hidden;
+      }
+      .ecwid-btn--changeOptions {
+        border: 3px solid $orange;
+        background: transparent;
+        min-height: 36px !important;
+      }
+      .ecwid-btn--primary {
+        color: $white;
+        border: 0 !important;
+        padding-bottom: 1px !important;
+      }
+      .ecwid-btn--checkout {
+        width: 180px;
+        &::before {
+          @extend .icomoon;
+          content: "\e92b";
+          margin-right: 15px;
+        }
+      }
+      .ecwid-btn--changeAddress {
+        @include font($font-family-base, 15px, $blue, 400);
+        border: 0;
+        text-decoration: underline;
+        text-transform: none;
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+      }
+      .form-control__button {
+        border-radius: 0 !important;
+        .form-control__button-text {
+          margin-bottom: 1px;
+        }
+      }
+      .details-product-purchase__add-more {
+        .form-control__button {
+          @include font($os, 15px !important, $white, 700);
+          background: $orange;
+          border: 0;
+          text-transform: uppercase;
+          width: auto;
+          padding: 0 17px;
+          min-height: 40px !important;
+          letter-spacing: 1.1px;
+          transform: none !important;
+          &::before {
+            font-family: $icomoon !important;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            content: "\e92b";
+            margin-right: 15px;
+          }
+        }
+      }
+      .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+        border: 3px solid $orange;
+        padding-bottom: 1px !important;
+        &:focus,
+        &:focus:active {
+          border: 3px solid $orange;
+        }
+        &:hover {
+          background: $orange;
+          color: $white;
+        }
+      }
+      .mod-promotion {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: $white;
+        letter-spacing: .4px;
+        line-height: 1.22;
+        font-family: $os;
+        padding: 70px 0 0;
+        margin: 110px 0;
+        position: relative;
+        width: calc(100% + 30px) !important;
+        // display: none;
+        .container {
+          position: relative;
+          z-index: 1;
+          margin: 0 auto;
+          padding: 0 15px;
+        }
+        .icon-wrap {
+          @include sizeEx(26px);
+          display: inline-flex;
+          margin-bottom: 25px;
+          justify-content: center;
+          img {
+            @include sizeEx(auto, 27px);
+            align-self: center;
+          }
+        }
+        .promo-overlay {
+          @extend .d-none, .d-lg-block;
+        }
+        .promo-item {
+          text-align: center;
+          margin-top: 20px;
+          margin-bottom: 80px;
+          padding: 0;
+        }
+        p {
+          text-transform: uppercase;
+          margin-bottom: 0;
+          letter-spacing: 2px;
+        }
+        &.position {
+          @include position(absolute, $left: 0, $right: 0);
+          width: 100%;
+          max-width: 2000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .ec-related-products {
+        &~.mod-promotion {
+          margin-bottom: 0;
+        }
+      }
+      .promo-overlay {
+        position: absolute;
+        opacity: .05;
+      }
     }
     input {
       appearance: none;
@@ -115,9 +271,14 @@ html#ecwid_html {
         background: $white;
         text-transform: uppercase;
         border-bottom: 3px solid $menu-gray;
+      }
+      input {
         &:focus {
           border-bottom: 3px solid $color-c6;
         }
+      }
+      select.gwt-TextBox {
+        padding-right: 30px;
       }
     }
     table.ecwid-fieldEnvelope-error {
@@ -164,170 +325,7 @@ html#ecwid_html {
         text-decoration: underline;
       }
     }
-    .ecwid {
-      color: $black;
-      .ecwid-lte-600px {
-        div.ecwid-productBrowser {
-          // padding: 60px 15px 20px;
-          background: $white;
-        }
-        .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
-          padding: 0;
-          background: transparent;
-          .product-details {
-            padding: 0 15px 30px;
-          }
-        }
-      }
-      div.ecwid-productBrowser {
-        // padding: 60px 15px 20px;
-        background: $white;
-      }
-      .ecwid-btn {
-        @include font($os, 15px, $orange, 700);
-        border-radius: 0;
-        text-transform: uppercase;
-        letter-spacing: 1.1px;
-        box-shadow: none !important;
-        padding: 0 10px !important;
-        min-height: 40px;
-        overflow: hidden;
-      }
-      .ecwid-btn--changeOptions {
-        border: 3px solid $orange;
-        background: transparent;
-        min-height: 36px !important;
-      }
-      .ecwid-btn--primary {
-        color: $white;
-        border: 0 !important;
-        padding-bottom: 1px !important;
-      }
-      .ecwid-btn--checkout {
-        width: 180px;
-        &::before {
-          @extend .icomoon;
-          content: "\e92b";
-          margin-right: 15px;
-        }
-      }
-      .ecwid-btn--changeAddress {
-        @include font($font-family-base, 15px, $blue, 400);
-        border: 0;
-        text-decoration: underline;
-        text-transform: none;
-        padding: 0;
-        margin: 0 auto;
-        display: block;
-      }
-      .form-control__button {
-        border-radius: 0 !important;
-        .form-control__button-text {
-          margin-bottom: 1px;
-        }
-      }
-      .details-product-purchase__add-more {
-        .form-control__button {
-          @include font($os, 15px !important, $white, 700);
-          background: $orange;
-          border: 0;
-          text-transform: uppercase;
-          width: auto;
-          padding: 0 17px;
-          min-height: 40px !important;
-          letter-spacing: 1.1px;
-          transform: none !important;
-          &::before {
-            font-family: $icomoon !important;
-            font-style: normal;
-            font-weight: 400;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            content: "\e92b";
-            margin-right: 15px;
-          }
-        }
-      }
-      .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
-        border: 3px solid $orange;
-        padding-bottom: 1px !important;
-        &:focus,
-        &:focus:active {
-          border: 3px solid $orange;
-        }
-        &:hover {
-          background: $orange;
-          color: $white;
-        }
-      }
-      /*.ecwid-productBrowser-auth {
-        font-size: rem(15);
-        a {
-          font-size: rem(15);
-        }
-      }*/
-      .mod-promotion {
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: $white;
-        letter-spacing: .4px;
-        line-height: 1.22;
-        font-family: $os;
-        padding: 70px 0 0;
-        margin: 110px 0;
-        position: relative;
-        width: calc(100% + 30px) !important;
-        // display: none;
-        .container {
-          position: relative;
-          z-index: 1;
-          margin: 0 auto;
-          padding: 0 15px;
-        }
-        .icon-wrap {
-          @include sizeEx(26px);
-          display: inline-flex;
-          margin-bottom: 25px;
-          justify-content: center;
-          img {
-            @include sizeEx(auto, 27px);
-            align-self: center;
-          }
-        }
-        .promo-overlay {
-          @extend .d-none, .d-lg-block;
-        }
-        .promo-item {
-          text-align: center;
-          margin-top: 20px;
-          margin-bottom: 80px;
-          padding: 0;
-        }
-        p {
-          text-transform: uppercase;
-          margin-bottom: 0;
-          letter-spacing: 2px;
-        }
-        &.position {
-          @include position(absolute, $left: 0, $right: 0);
-          width: 100%;
-          max-width: 2000px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-      .ec-related-products {
-        &~.mod-promotion {
-          margin-bottom: 0;
-        }
-      }
-      .promo-overlay {
-        position: absolute;
-        opacity: .05;
-      }
-    }
+   
     .ec-size {
       &.ec-size--l {
         .ec-store {
@@ -454,6 +452,9 @@ html#ecwid_html.touch.safari {
       .ecwid {
         .gwt-TextBox {
           padding: 0 40px 1px !important;
+        }
+        select.gwt-TextBox {
+          padding-right: 50px;
         }
         .ecwid-bootstrap-select {
           .filter-option-inner-inner {
