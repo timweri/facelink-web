@@ -2,6 +2,9 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     div.popupContent {
       div.ecwid-form {
+        label.has-text {
+          color: $black !important;
+        }
         > table {
           > tbody {
             > tr:not(:last-child) {

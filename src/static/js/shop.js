@@ -282,6 +282,26 @@ var Shop = (function () {
         $('.product-details').addClass('muti-item')
         closeLoading()
       }
+      if (page.type === 'CART') {
+        $(document).on('change', '.ecwid-productBrowser-cart-chooseLocationPopup select.gwt-ListBox, .ecwid-productBrowser-cart-chooseLocationPopup input.gwt-TextBox', function () {
+          let $this = $(this)
+          let $label = $this.parents('table').siblings('label.ecwid-fieldLabel')
+          if ($this.val() === '') {
+            $label.removeClass('has-text')
+          } else {
+            $label.addClass('has-text')
+          }
+        })
+        $(document).on('DOMNodeInserted', '.ecwid-productBrowser-cart-chooseLocationPopup', function () {
+          $(this).find('input.gwt-TextBox, select.gwt-ListBox').each(function (index, ele) {
+            let $ele = $(ele)
+            let $label = $ele.parents('table').siblings('label.ecwid-fieldLabel')
+            if ($ele.val() !== '') {
+              $label.addClass('has-text')
+            }
+          })
+        })
+      }
       if (page.type === 'CART' || page.type === 'ORDER_CONFIRMATION') {
         body.addClass('page-cart')
       } else {
