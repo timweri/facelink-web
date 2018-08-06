@@ -598,6 +598,9 @@ html#ecwid_html {
           select {
             padding: 0 40px 1px;
           }
+          select {
+            padding-right: 50px;
+          }
         }
         .ecwid-fieldWrapper {
           &::after {
