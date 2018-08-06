@@ -193,7 +193,11 @@ var Shop = (function () {
         }
       }
 
-      if (['CART', 'CHECKOUT_SHIPPING_ADDRESS', 'CHECKOUT_PAYMENT_DETAILS', 'CHECKOUT_PLACE_ORDER', 'ORDER_CONFIRMATION'].includes(page.type)) {
+      if (page.type === 'CART' ||
+          page.type === 'CHECKOUT_SHIPPING_ADDRESS' ||
+          page.type === 'CHECKOUT_PAYMENT_DETAILS' ||
+          page.type === 'CHECKOUT_PLACE_ORDER' ||
+          page.type === 'ORDER_CONFIRMATION') {
         window.scrollTo(0, 0);
       }
 
