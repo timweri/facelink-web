@@ -1,5 +1,13 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.ecwid-AccountSettings-NameAndEmail {
+      label.ecwid-fieldLabel {
+        padding-left: 6px;
+      }
+      table.ecwid-fieldEnvelope {
+        width: 100% !important;
+      }
+    }
     div.ecwid-Checkout-ShippingAddress-top {
       background: transparent;
       text-align: left;
@@ -524,6 +532,16 @@ html#ecwid_html {
 @include media-breakpoint-up(md) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      div.ecwid-AccountSettings-NameAndEmail {
+        label.ecwid-fieldLabel {
+          width: 25% !important;
+          padding-left: 6px;
+          margin-top: 8px !important;
+        }
+        table.ecwid-fieldEnvelope {
+          width: 75% !important;
+        }
+      }
       div.ecwid-Checkout {
         div.ecwid-floatLeftPanel {
           width: 100%;

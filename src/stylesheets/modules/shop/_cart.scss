@@ -484,6 +484,7 @@ html#ecwid_html {
     }
   }
 }
+
 @media screen and (max-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -516,6 +517,28 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-productBrowser-CartPage {
         margin-bottom: 40px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 357px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart-compact {
+        tr {
+          tr:last-child {
+            tr {
+              td {
+                display: block;
+                text-align: center;
+              }
+              td[align=left] {
+                margin-bottom: 15px;
+              }
+            }
+          }
+        }
       }
     }
   }
