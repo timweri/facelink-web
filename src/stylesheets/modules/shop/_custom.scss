@@ -277,8 +277,8 @@ html#ecwid_html {
           border-bottom: 3px solid $color-c6;
         }
       }
-      select.gwt-TextBox {
-        padding-right: 30px;
+      select {
+        padding-right: 50px;
       }
     }
     table.ecwid-fieldEnvelope-error {
@@ -325,7 +325,6 @@ html#ecwid_html {
         text-decoration: underline;
       }
     }
-   
     .ec-size {
       &.ec-size--l {
         .ec-store {
@@ -407,14 +406,6 @@ html#ecwid_html.touch.safari {
     }
   }
 }
-// .mod-banner,
-// .mod-shop-product {
-//   &~.mod-content-editor {
-//     .ecwid {
-//       display: none;
-//     }
-//   }
-// }
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -452,9 +443,6 @@ html#ecwid_html.touch.safari {
       .ecwid {
         .gwt-TextBox {
           padding: 0 40px 1px !important;
-        }
-        select.gwt-TextBox {
-          padding-right: 50px;
         }
         .ecwid-bootstrap-select {
           .filter-option-inner-inner {
