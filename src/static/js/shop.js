@@ -89,6 +89,7 @@ var Shop = (function () {
     var $titleBanner = $('.ecwid-productBrowser-head')
     var $title = $('.page-title__name')
     var path = window.location.pathname ? window.location.pathname.trim().split('/') : false
+    
     if( path.length > 0) {
       var isShop = path[1] === 'shop' ? true : false
       var isSuplement = path[2].split('-')[0] === '320Z' ? true : false
