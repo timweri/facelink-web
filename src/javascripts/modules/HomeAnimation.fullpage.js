@@ -63,7 +63,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           } else {
             new ScrollMagic.Scene({
@@ -81,7 +81,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           }
         }
@@ -93,7 +93,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      // .addIndicators({ name: key + 'AnimationStart' })
+      .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -269,7 +269,6 @@ const HomeAnimation = (() => {
       if (finalScroll == windowTop) {
         isScroll = 0
         console.log('finalScroll == windowTop')
-        console.log(finalScroll)
       } else if (isScroll === 1) {
         console.log('isScroll === 1')
         event.preventDefault()
@@ -310,9 +309,10 @@ const HomeAnimation = (() => {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
       var nextIndex = Math.max(0, index - delta)
+      console.log(durationScrollMagics[el.eq(nextIndex).find('section').attr('id')])
       if (nextIndex >= 0 && nextIndex <= el.length) {
         if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
-        else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics['frame2'] }
+        else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics[el.eq(nextIndex).find('section').attr('id')] }
       }
       // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
       var durationScroll = [
