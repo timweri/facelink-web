@@ -268,7 +268,10 @@ const HomeAnimation = (() => {
       var windowTop = Math.round($(window).scrollTop())
       if (finalScroll == windowTop) {
         isScroll = 0
+        console.log('finalScroll == windowTop')
+        console.log(finalScroll)
       } else if (isScroll === 1) {
+        console.log('isScroll === 1')
         event.preventDefault()
         return
       }
@@ -292,7 +295,11 @@ const HomeAnimation = (() => {
 
       var el = $('.scrollmagic-pin-spacer')
       var index = el.index($('.frame-actived'))
-      if (index === -1) { isScroll = 0; return }
+      if (index === -1) {
+        isScroll = 0
+        console.log('index === -1')
+        return
+      }
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
       // var prevScroll = finalScroll
@@ -314,7 +321,12 @@ const HomeAnimation = (() => {
         [scrollTime, scrollTime, scrollTime, 0.8, 0.8, 0.8]
       ]
       // console.log(durationScroll[delta + 1][nextIndex])
-      if ((finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)) { isScroll = 0; return }
+      if ((finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)) {
+        isScroll = 0
+        console.log('(finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)')
+        console.log(windowTop)
+        return
+      }
       TweenMax.to($window, durationScroll[delta + 1][nextIndex], {
         scrollTo: { y: finalScroll, autoKill: false },
         ease: Sine.easeInOut,
@@ -419,7 +431,7 @@ const HomeAnimation = (() => {
         frame2Timeline()
         frame3Timeline()
         frame4Timeline()
-        frame5Timeline()
+        // frame5Timeline()
         runScrollMagicScene()
         navigationHome()
       }
