@@ -14,11 +14,11 @@ const HomeAnimation = (() => {
     'frame5': '.section.section-frame5'
   }
   var durationScrollMagics = {
-    'frame1': Math.ceil($(elementFrames['frame1']).outerHeight()),
-    'frame2': Math.ceil($(elementFrames['frame2']).outerHeight()),
-    'frame3': Math.ceil($(elementFrames['frame3']).outerHeight()),
-    'frame4': Math.ceil($(elementFrames['frame4']).outerHeight()),
-    'frame5': Math.ceil($(elementFrames['frame5']).outerHeight())
+    'frame1': Math.round($(elementFrames['frame1']).outerHeight()),
+    'frame2': Math.round($(elementFrames['frame2']).outerHeight()),
+    'frame3': Math.round($(elementFrames['frame3']).outerHeight()),
+    'frame4': Math.round($(elementFrames['frame4']).outerHeight()),
+    'frame5': Math.round($(elementFrames['frame5']).outerHeight())
   }
   var TimelineLites = {
     'frame1': [],
@@ -63,7 +63,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           } else {
             new ScrollMagic.Scene({
@@ -81,7 +81,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            // .addIndicators({ name: key + 'AnimationStart' + i })
+            .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           }
         }
@@ -93,7 +93,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      // .addIndicators({ name: key + 'AnimationStart' })
+      .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -265,7 +265,7 @@ const HomeAnimation = (() => {
     // })
 
     $window.on('mousewheel DOMMouseScroll touchmove', function (event) {
-      var windowTop = Math.ceil($(window).scrollTop())
+      var windowTop = Math.round($(window).scrollTop())
       if (finalScroll == windowTop) {
         isScroll = 0
         // console.log('finalScroll == windowTop')
@@ -302,18 +302,18 @@ const HomeAnimation = (() => {
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
       // var prevScroll = finalScroll
-      finalScroll = Math.ceil(finalScroll)
+      finalScroll = Math.round(finalScroll)
       if (delta > 0) {
         if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
       } else if (delta < 0) {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
       var nextIndex = Math.max(0, index - delta)
-      console.log(durationScrollMagics[el.eq(nextIndex).find('section').attr('id')])
       if (nextIndex >= 0 && nextIndex <= el.length) {
         if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
         else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics[el.eq(nextIndex).find('section').attr('id')] }
       }
+      finalScroll = Math.ceil(finalScroll + 1)
       // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
       var durationScroll = [
         [scrollTime, scrollTime, scrollTime, scrollTime, 0.8, 0.8],
