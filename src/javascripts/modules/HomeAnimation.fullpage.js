@@ -265,7 +265,7 @@ const HomeAnimation = (() => {
     // })
 
     $window.on('mousewheel DOMMouseScroll touchmove', function (event) {
-      var windowTop = Math.round($(window).scrollTop())
+      var windowTop = Math.ceil($(window).scrollTop())
       if (finalScroll == windowTop) {
         isScroll = 0
         // console.log('finalScroll == windowTop')
@@ -302,7 +302,7 @@ const HomeAnimation = (() => {
       var isStart = el.hasClass('start')
       var isEnd = el.hasClass('end')
       // var prevScroll = finalScroll
-      finalScroll = Math.round(finalScroll)
+      finalScroll = Math.ceil(finalScroll)
       if (delta > 0) {
         if (isEnd && finalScroll !== windowTop) { delta = 0 } else delta = 1
       } else if (delta < 0) {
