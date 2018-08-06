@@ -309,7 +309,6 @@ h6 {
 .mod-banner {
   .product-box-outer {
     max-width: 300px !important;
-    margin: 20px auto;
     img {
       max-width: 400px !important;
     }
@@ -330,6 +329,11 @@ h6 {
   }
   .shop-product-right,
   .shop-product-left {
+    float: left;
+    width: 50% !important;
+    div {
+      padding: 0 15px !important;
+    }
     img {
       max-width: 420px !important;
     }
@@ -452,3 +456,5 @@ h6 {
     }
   }
 }
+
+
