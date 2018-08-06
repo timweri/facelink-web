@@ -118,6 +118,33 @@ html#ecwid_html {
   }
 }
 
+@media screen and (max-width: 991.99px) and (min-width:600px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-CheckoutPlaceOrderExternalFormPage {
+        div.ecwid-ppReview-sidebar-ver {
+          width: 100% !important;
+          > div {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            div.ecwid-ppReview-block {
+              flex: 0 0 calc(50% - 5px);
+              margin: 12px 0 0 !important;
+              &:nth-child(odd) {
+                margin-right: 5px !important;
+              }
+              &:nth-child(even) {
+                margin-left: 5px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 419px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {

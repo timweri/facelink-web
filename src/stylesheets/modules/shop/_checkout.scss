@@ -1,6 +1,15 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    .ecwid {
+      .ecwid-Account-content {
+        .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+          padding-bottom: 2px !important;
+        }
+      }
+    }
     div.ecwid-AccountSettings-NameAndEmail {
+      max-width: 600px !important;
+
       label.ecwid-fieldLabel {
         padding-left: 6px;
       }
