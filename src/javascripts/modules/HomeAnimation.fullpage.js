@@ -14,11 +14,11 @@ const HomeAnimation = (() => {
     'frame5': '.section.section-frame5'
   }
   var durationScrollMagics = {
-    'frame1': Math.round($(elementFrames['frame1']).outerHeight()),
-    'frame2': Math.round($(elementFrames['frame2']).outerHeight()),
-    'frame3': Math.round($(elementFrames['frame3']).outerHeight()),
-    'frame4': Math.round($(elementFrames['frame4']).outerHeight()),
-    'frame5': Math.round($(elementFrames['frame5']).outerHeight())
+    'frame1': Math.ceil($(elementFrames['frame1']).outerHeight()),
+    'frame2': Math.ceil($(elementFrames['frame2']).outerHeight()),
+    'frame3': Math.ceil($(elementFrames['frame3']).outerHeight()),
+    'frame4': Math.ceil($(elementFrames['frame4']).outerHeight()),
+    'frame5': Math.ceil($(elementFrames['frame5']).outerHeight())
   }
   var TimelineLites = {
     'frame1': [],
