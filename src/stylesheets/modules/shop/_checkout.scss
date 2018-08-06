@@ -677,6 +677,15 @@ html#ecwid_html {
             }
           }
         }
+        .ecwid-popup-content {
+          .ecwid-fieldWrapper {
+            .ecwid-fieldLabel {
+              &~table {
+                width: 61%;
+              }
+            }
+          }
+        }
         .ecwid-PaymentMethodsBlock-PaymentOption {
           span:hover {
             label {
