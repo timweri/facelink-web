@@ -89,7 +89,7 @@ var Shop = (function () {
     var $titleBanner = $('.ecwid-productBrowser-head')
     var $title = $('.page-title__name')
     var path = window.location.pathname ? window.location.pathname.trim().split('/') : false
-    
+
     if( path.length > 0) {
       var isShop = path[1] === 'shop' ? true : false
       var isSuplement = path[2].split('-')[0] === '320Z' ? true : false
@@ -130,6 +130,7 @@ var Shop = (function () {
     $('#main-content').css('opacity', 0)
   }
   function closeLoading () {
+    window.scrollTo(0, 0);
     setTimeout(function () {
       var $overLoader = $('.over-loader')
       $overLoader.fadeOut('300', function () {
@@ -192,14 +193,6 @@ var Shop = (function () {
         if ($signinField.val() !== '') {
           $signinBox.addClass('has-text')
         }
-      }
-
-      if (page.type === 'CART' ||
-          page.type === 'CHECKOUT_SHIPPING_ADDRESS' ||
-          page.type === 'CHECKOUT_PAYMENT_DETAILS' ||
-          page.type === 'CHECKOUT_PLACE_ORDER' ||
-          page.type === 'ORDER_CONFIRMATION') {
-        window.scrollTo(0, 0);
       }
 
       if (page.type === 'CHECKOUT_SHIPPING_ADDRESS' || page.type === 'CHECKOUT_PAYMENT_DETAILS') {

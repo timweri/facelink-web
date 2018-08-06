@@ -3,6 +3,11 @@
   width: 100%;
 }
 
+select::-ms-value {
+  background: transparent;
+  color: $black-two;
+}
+
 .grayscale {
   filter: grayscale(100%);
 }
