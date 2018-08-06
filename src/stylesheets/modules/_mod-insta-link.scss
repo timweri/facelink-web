@@ -1,6 +1,6 @@
 // module 'Mod Insta Link'
 .mod-insta-link {
-  @include font($os, rem(30), $white, 700);
+  @include font($os, rem(24), $white, 700);
   line-height: 40px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -133,7 +133,11 @@
     @extend .d-lg-none;
   }
 }
-
+@include media-custom-up(374) {
+  .mod-insta-link {
+    font-size: rem(30);
+  }
+}
 @include media-breakpoint-up(lg) {
   .mod-insta-link {
     line-height: 75px;

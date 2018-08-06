@@ -103,7 +103,7 @@
 }
 
 // only use breakpoint here
-$media-custom: (320: 321px, 375: 376px, 414: 415px, 580: 581px, 1280: 1281px, 1365: 1366px, 1500: 1501px, 1700: 1701px);
+$media-custom: (320: 321px, 374: 375px, 414: 415px, 580: 581px, 1280: 1281px, 1365: 1366px, 1500: 1501px, 1700: 1701px);
 @function breakpoint-next($name, $breakpoints: $media-custom, $breakpoint-names: map-keys($breakpoints)) {
   $n: index($breakpoint-names, $name);
   @return if($n < length($breakpoint-names), nth($breakpoint-names, $n), null);
