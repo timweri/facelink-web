@@ -140,7 +140,7 @@ var Shop = (function () {
     localStorage.setItem('ecwid-product', true)
   }
   function focusInputShop () {
-    $('.gwt-TextBox').blur(function () {
+    $('body').on('blur','.gwt-TextBox', function (e) {
       var self = $(this)
       if (self.val().length > 0) {
         $('.ecwid-fieldEnvelope-error').find('.ecwid-fieldEnvelope-label').css('display', 'none');

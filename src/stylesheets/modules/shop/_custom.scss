@@ -23,6 +23,11 @@ html#ecwid_html {
           @include font($font-family-base, rem(15) !important, $border-gray);
           width: 140px;
         }
+        .has-text {
+          label.ecwid-fieldLabel {
+            color: $black;
+          }
+        }
       }
     }
     .ecwid-DateRangeBox {
