@@ -2,6 +2,9 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     div.popupContent {
       div.ecwid-form {
+        label.has-text {
+          color: $black !important;
+        }
         > table {
           > tbody {
             > tr:not(:last-child) {
@@ -199,7 +202,7 @@ html#ecwid_html {
       .ecwid-fieldEnvelope-around {
         input {
           @include sizeEx(100%, 39px !important);
-          padding: 0 21px 3px !important;
+          padding: 0 21px 1px !important;
           max-width: 100%;
         }
       }
@@ -484,6 +487,7 @@ html#ecwid_html {
     }
   }
 }
+
 @media screen and (max-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -516,6 +520,28 @@ html#ecwid_html {
     body#ecwid_body.page-internal {
       .ecwid-productBrowser-CartPage {
         margin-bottom: 40px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 357px) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      div.ecwid-productBrowser-cart-compact {
+        tr {
+          tr:last-child {
+            tr {
+              td {
+                display: block;
+                text-align: center;
+              }
+              td[align=left] {
+                margin-bottom: 15px;
+              }
+            }
+          }
+        }
       }
     }
   }

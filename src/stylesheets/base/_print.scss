@@ -13,6 +13,7 @@ a {
 }
 
 body {
+  // font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: visible;
@@ -120,6 +121,7 @@ li,
 h1,
 .h1 {
   font-size: 50px !important;
+  text-transform: uppercase;
 }
 
 h2,
@@ -327,6 +329,11 @@ h6 {
   }
   .shop-product-right,
   .shop-product-left {
+    float: left;
+    width: 50% !important;
+    div {
+      padding: 0 15px !important;
+    }
     img {
       max-width: 420px !important;
     }
@@ -404,3 +411,50 @@ h6 {
     margin-bottom: 50px;
   }
 }
+
+#sidebar,
+.list-social,
+.extra,
+.wpcf7-response-output,
+.response-success-send,
+.response-fail-send,
+.mod-news-feed .first-col-right,
+.pineapple-frame4,
+.orange-frame4,
+.fruit-frame4,
+.image-frame1,
+.img-production-frame1,
+.bg-image-frame3,
+.rotate-image,
+.bg-blue,
+.navigation-homepage {
+  display: none !important;
+}
+.image-frame1,
+.container-frame1,
+.img-production-frame1,
+.cont-frame2,
+.style-subhead,
+.description-iframe3 {
+  transform: none !important;
+  position: static !important;
+}
+.bg-orange,
+#fullpage {
+  div,
+  section {
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+    position: static !important;
+    padding: 0 !important;
+  }
+  .scrollmagic-pin-spacer {
+    margin-bottom: 50px !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+

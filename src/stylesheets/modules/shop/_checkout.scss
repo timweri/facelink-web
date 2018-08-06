@@ -1,5 +1,22 @@
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    .ecwid {
+      .ecwid-Account-content {
+        .ecwid-btn--secondary:not(.ecwid-btn--changeAddress) {
+          padding-bottom: 2px !important;
+        }
+      }
+    }
+    div.ecwid-AccountSettings-NameAndEmail {
+      max-width: 600px !important;
+
+      label.ecwid-fieldLabel {
+        padding-left: 6px;
+      }
+      table.ecwid-fieldEnvelope {
+        width: 100% !important;
+      }
+    }
     div.ecwid-Checkout-ShippingAddress-top {
       background: transparent;
       text-align: left;
@@ -204,9 +221,10 @@ html#ecwid_html {
       padding: 10px 0;
     }
     .ecwid-shippingOptions-List span.ecwid-shippingOption,
+    .ecwid-productBrowser-cart-chooseLocationPopup-deliveryMethods-List span.ecwid-shippingOption,
     span.gwt-RadioButton {
       position: relative;
-      margin: 0;
+      margin: 10px 0;
       label {
         @include font($font-family-base, 18px, $border-gray, 700, null);
         margin: 0;
@@ -524,6 +542,16 @@ html#ecwid_html {
 @include media-breakpoint-up(md) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      div.ecwid-AccountSettings-NameAndEmail {
+        label.ecwid-fieldLabel {
+          width: 25% !important;
+          padding-left: 6px;
+          margin-top: 8px !important;
+        }
+        table.ecwid-fieldEnvelope {
+          width: 75% !important;
+        }
+      }
       div.ecwid-Checkout {
         div.ecwid-floatLeftPanel {
           width: 100%;
@@ -544,6 +572,12 @@ html#ecwid_html {
 @include media-breakpoint-up(lg) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
+      .ecwid-shippingOptions-List span.ecwid-shippingOption,
+      .ecwid-productBrowser-cart-chooseLocationPopup-deliveryMethods-List span.ecwid-shippingOption,
+      span.gwt-RadioButton {
+          position: relative;
+          margin: 15px 0;
+      }
       div.ecwid-Checkout-ShippingAddress {
         .ecwid-btn--address_book {
           margin-top: 18px;
@@ -571,6 +605,9 @@ html#ecwid_html {
           select {
             padding: 0 40px 1px;
           }
+          select {
+            padding-right: 50px;
+          }
         }
         .ecwid-fieldWrapper {
           &::after {
@@ -593,6 +630,15 @@ html#ecwid_html {
         }
         .ecwid-btn {
           margin-top: 0;
+        }
+        .ecwid-popup-content {
+          .ecwid-fieldWrapper {
+            .ecwid-fieldLabel {
+              &~table {
+                width: 70%;
+              }
+            }
+          }
         }
       }
       div.ecwid-AddressForm {
@@ -643,6 +689,7 @@ html#ecwid_html {
     }
   }
 }
+
 @include media-breakpoint-up(xl) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
@@ -659,6 +706,15 @@ html#ecwid_html {
             }
           }
         }
+        // .ecwid-popup-content {
+        //   .ecwid-fieldWrapper {
+        //     .ecwid-fieldLabel {
+        //       &~table {
+        //         width: 70%;
+        //       }
+        //     }
+        //   }
+        // }
         .ecwid-PaymentMethodsBlock-PaymentOption {
           span:hover {
             label {

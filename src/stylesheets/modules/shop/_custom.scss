@@ -8,157 +8,6 @@ html#ecwid_html {
     background: $gray-bg;
     .ecwid {
       min-height: auto !important;
-    }
-    input {
-      appearance: none;
-    }
-    div.ecwid-popup {
-      button.ecwid-popup-closeButton {
-        &:hover {
-          background-color: $orange;
-        }
-      }
-      div.popupContent {
-        label.ecwid-fieldLabel {
-          @include font($font-family-base, rem(15) !important, $black !important);
-        }
-      }
-    }
-    .ecwid-DateRangeBox {
-      cursor: pointer;
-    }
-    .ecwid-DateRangePopup {
-      background-color: $menu-gray !important;
-      padding: 15px !important;
-      button.ecwid-DateRangePopup-calendarIcon {
-        cursor: pointer;
-      }
-      .ecwid-DateRangePopup-DateRangeLabel,
-      a.gwt-Anchor {
-        font-size: rem(15);
-      }
-    }
-    .gwt-TextBox,
-    .ecwid-PaymentCommentsBlock-textarea,
-    div.ecwid-productBrowser-cart-EnterCouponBox input {
-      border-bottom: 3px solid $menu-gray;
-      padding-bottom: 1px !important;
-      &:focus {
-        border-bottom: 3px solid $color-c6;
-      }
-    }
-    .gwt-TextBox {
-      padding: 0 21px !important;
-    }
-    .bootstrap-select {
-      width: 100%;
-      div.inner {
-        background: $white;
-      }
-      ul.dropdown-menu.inner {
-        list-style: none;
-        padding-left: 0;
-        li {
-          padding: 10px 40px;
-          a {
-            span {
-              @include font($font-family-base !important, 15px !important, $border-gray !important, 400);
-            }
-
-            &:hover {
-              span {
-                color: $black !important;
-                font-weight: 500 !important;
-              }
-            }
-          }
-        }
-        li:not(:last-child):not(:first-child) {
-          border-top: solid 1px $menu-gray;
-          border-bottom: solid 1px $menu-gray;
-        }
-      }
-    }
-    .ecwid-bootstrap-select {
-      width: 100%;
-      background: $white;
-      .filter-option-inner-inner {
-        @include font($os, 18px, $black-two, 700);
-        text-transform: uppercase;
-        text-align: left;
-        padding: 0 21px;
-      }
-    }
-    .ecwid-DisappearingMessage,
-    .ecwid-MessageBox {
-      border: solid 3px $orange !important;
-    }
-    .ecwid-MessageBox {
-      padding: 20px 0 10px;
-    }
-    .ecwid-fieldEnvelope-around {
-      padding: 0 !important;
-      input,
-      select {
-        @include font($os, 18px, $black-two, 700, null);
-        @include sizeEx(100%, 38px !important);
-        border: 0;
-        padding: 0 20px 1px;
-        border-radius: 0;
-        box-sizing: border-box;
-        background: $white;
-        text-transform: uppercase;
-        border-bottom: 3px solid $menu-gray;
-        &:focus {
-          border-bottom: 3px solid $color-c6;
-        }
-      }
-    }
-    table.ecwid-fieldEnvelope-error {
-      .ecwid-fieldEnvelope-label {
-        display: none !important;
-      }
-      div.ecwid-fieldEnvelope-around {
-        box-shadow: none;
-        select.gwt-ListBox,
-        input.gwt-TextBox {
-          height: 38px !important;
-          border-bottom: solid 3px $red;
-        }
-      }
-    }
-    .mod-content-editor {
-      position: relative;
-      margin-top: 60px;
-      // >.container {
-      //   max-width: none;
-      // }
-    }
-    .mod-shop-header {
-      &~.mod-content-editor {
-        margin-top: 0;
-      }
-    }
-    .page-check-detail {
-      .mod-content-editor {
-        margin-top: 140px;
-      }
-    }
-    select {
-      appearance: none;
-    }
-    .ec-footer {
-      display: none;
-    }
-    div.ecwid-ProductBrowser-auth-anonim {
-      margin-right: 0;
-      display: none;
-      a {
-        font-size: 18px;
-        text-decoration: underline;
-      }
-    }
-    .ecwid {
       color: $black;
       .ecwid-lte-600px {
         div.ecwid-productBrowser {
@@ -255,12 +104,6 @@ html#ecwid_html {
           color: $white;
         }
       }
-      /*.ecwid-productBrowser-auth {
-        font-size: rem(15);
-        a {
-          font-size: rem(15);
-        }
-      }*/
       .mod-promotion {
         background-position: center center;
         background-size: cover;
@@ -320,6 +163,166 @@ html#ecwid_html {
       .promo-overlay {
         position: absolute;
         opacity: .05;
+      }
+    }
+    input {
+      appearance: none;
+    }
+    div.ecwid-popup {
+      button.ecwid-popup-closeButton {
+        &:hover {
+          background-color: $orange;
+        }
+      }
+      div.popupContent {
+        label.ecwid-fieldLabel {
+          @include font($font-family-base, rem(15) !important, $border-gray);
+          width: 140px;
+        }
+        .has-text {
+          label.ecwid-fieldLabel {
+            color: $black !important;
+          }
+        }
+      }
+    }
+    .ecwid-DateRangeBox {
+      cursor: pointer;
+    }
+    .ecwid-DateRangePopup {
+      background-color: $menu-gray !important;
+      padding: 15px !important;
+      button.ecwid-DateRangePopup-calendarIcon {
+        cursor: pointer;
+      }
+      .ecwid-DateRangePopup-DateRangeLabel,
+      a.gwt-Anchor {
+        font-size: rem(15);
+      }
+    }
+    .gwt-TextBox,
+    .ecwid-PaymentCommentsBlock-textarea,
+    div.ecwid-productBrowser-cart-EnterCouponBox input {
+      border-bottom: 3px solid $menu-gray;
+      padding-bottom: 1px !important;
+      &:focus {
+        border-bottom: 3px solid $color-c6;
+      }
+    }
+    .gwt-TextBox {
+      padding: 0 21px !important;
+    }
+    .bootstrap-select {
+      width: 100%;
+      div.inner {
+        background: $white;
+      }
+      ul.dropdown-menu.inner {
+        list-style: none;
+        padding-left: 0;
+        li {
+          padding: 10px 40px;
+          a {
+            span {
+              @include font($font-family-base !important, 15px !important, $border-gray !important, 400);
+            }
+
+            &:hover {
+              span {
+                color: $black !important;
+                font-weight: 500 !important;
+              }
+            }
+          }
+        }
+        li:not(:last-child):not(:first-child) {
+          border-top: solid 1px $menu-gray;
+          border-bottom: solid 1px $menu-gray;
+        }
+      }
+    }
+    .ecwid-bootstrap-select {
+      width: 100%;
+      background: $white;
+      .filter-option-inner-inner {
+        @include font($os, 18px, $black-two, 700);
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0 21px;
+      }
+    }
+    .ecwid-DisappearingMessage,
+    .ecwid-MessageBox {
+      border: solid 3px $orange !important;
+    }
+    .ecwid-MessageBox {
+      padding: 20px 0 10px;
+    }
+    .ecwid-fieldEnvelope-around {
+      padding: 0 !important;
+      input,
+      select {
+        @include font($os, 18px, $black-two, 700, null);
+        @include sizeEx(100%, 38px !important);
+        border: 0;
+        padding: 0 20px 1px;
+        border-radius: 0;
+        box-sizing: border-box;
+        background: $white;
+        text-transform: uppercase;
+        border-bottom: 3px solid $menu-gray;
+      }
+      input {
+        &:focus {
+          border-bottom: 3px solid $color-c6;
+        }
+      }
+      select {
+        padding-right: 50px;
+      }
+    }
+    table.ecwid-fieldEnvelope-error {
+      .ecwid-fieldEnvelope-label {
+        display: none !important;
+      }
+      div.ecwid-fieldEnvelope-around {
+        box-shadow: none;
+        select.gwt-ListBox,
+        input.gwt-TextBox {
+          height: 38px !important;
+          border-bottom: solid 3px $red;
+        }
+      }
+    }
+    .mod-content-editor {
+      position: relative;
+      margin-top: 60px;
+      // >.container {
+      //   max-width: none;
+      // }
+    }
+    .mod-shop-header {
+      &~.mod-content-editor {
+        margin-top: 0;
+      }
+    }
+    .page-check-detail {
+      .mod-content-editor {
+        margin-top: 140px;
+      }
+    }
+    select {
+      appearance: none;
+    }
+    .ec-footer {
+      display: none;
+    }
+    div.ecwid-ProductBrowser-auth-anonim {
+      margin-right: 0;
+      display: none;
+      a {
+        font-size: 18px;
+        text-decoration: underline;
       }
     }
     .ec-size {
@@ -403,14 +406,6 @@ html#ecwid_html.touch.safari {
     }
   }
 }
-// .mod-banner,
-// .mod-shop-product {
-//   &~.mod-content-editor {
-//     .ecwid {
-//       display: none;
-//     }
-//   }
-// }
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {

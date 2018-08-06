@@ -88,11 +88,11 @@ var Shop = (function () {
     var modShopHeader = $('.mod-shop-header')
     var $titleBanner = $('.ecwid-productBrowser-head')
     var $title = $('.page-title__name')
-    let path = window.location.pathname ? window.location.pathname.trim().split('/') : false
-    if( path.length > 0) {
-      let isShop = path[1] === 'shop' ? true : false
-      let isSuplement = path[2].split('-')[0] === '320Z' ? true : false
+    var path = window.location.pathname ? window.location.pathname.trim().split('/') : false
 
+    if( path.length > 0) {
+      var isShop = path[1] === 'shop' ? true : false
+      var isSuplement = path[2].split('-')[0] === '320Z' ? true : false
       if (isShop && !isSuplement) {
         modShopHeader.remove()
         titleProductDetail = 'Briq Gear'
@@ -115,6 +115,7 @@ var Shop = (function () {
           }
         }
       } else {
+        $('.product-details').addClass('muti-item')
         modShopHeader.remove()
       }
     }
@@ -129,6 +130,7 @@ var Shop = (function () {
     $('#main-content').css('opacity', 0)
   }
   function closeLoading () {
+    window.scrollTo(0, 0);
     setTimeout(function () {
       var $overLoader = $('.over-loader')
       $overLoader.fadeOut('300', function () {
@@ -140,7 +142,7 @@ var Shop = (function () {
     localStorage.setItem('ecwid-product', true)
   }
   function focusInputShop () {
-    $('.gwt-TextBox').blur(function () {
+    $('body').on('blur','.gwt-TextBox', function (e) {
       var self = $(this)
       if (self.val().length > 0) {
         $('.ecwid-fieldEnvelope-error').find('.ecwid-fieldEnvelope-label').css('display', 'none');
@@ -192,6 +194,7 @@ var Shop = (function () {
           $signinBox.addClass('has-text')
         }
       }
+
       if (page.type === 'CHECKOUT_SHIPPING_ADDRESS' || page.type === 'CHECKOUT_PAYMENT_DETAILS') {
         $('#select-Country-Box').change(function () {
           if ($('#select-Country-Box').val() === '') {
@@ -224,9 +227,6 @@ var Shop = (function () {
       if (page.type === 'PRODUCT') {
         body.addClass('page-product')
         $('.mod-insta-link').hide()
-        if ($('.details-gallery--one-image').length <= 0) {
-          $('.product-details').addClass('muti-item')
-        }
         if (localStorage.getItem('ecwid-product') === 'true') {
           location.reload()
           localStorage.removeItem('ecwid-product')
@@ -274,11 +274,27 @@ var Shop = (function () {
         }
       } else {
         body.removeClass('page-product')
-        $('.product-details').addClass('muti-item')
         closeLoading()
       }
-      if (['CART', 'CHECKOUT_SHIPPING_ADDRESS', 'CHECKOUT_PAYMENT_DETAILS', 'CHECKOUT_PLACE_ORDER', 'ORDER_CONFIRMATION'].includes(page.type)) {
-        window.scrollTo(0, 0);
+      if (page.type === 'CART') {
+        $(document).on('change', '.ecwid-productBrowser-cart-chooseLocationPopup select.gwt-ListBox, .ecwid-productBrowser-cart-chooseLocationPopup input.gwt-TextBox', function () {
+          var $this = $(this)
+          var $label = $this.parents('table').siblings('label.ecwid-fieldLabel')
+          if ($this.val() === '') {
+            $label.removeClass('has-text')
+          } else {
+            $label.addClass('has-text')
+          }
+        })
+        $(document).on('DOMNodeInserted', '.ecwid-productBrowser-cart-chooseLocationPopup', function () {
+          $(this).find('input.gwt-TextBox, select.gwt-ListBox').each(function (index, ele) {
+            var $ele = $(ele)
+            var $label = $ele.parents('table').siblings('label.ecwid-fieldLabel')
+            if ($ele.val() !== '') {
+              $label.addClass('has-text')
+            }
+          })
+        })
       }
       if (page.type === 'CART' || page.type === 'ORDER_CONFIRMATION') {
         body.addClass('page-cart')
