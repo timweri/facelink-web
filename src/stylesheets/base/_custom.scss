@@ -8,6 +8,18 @@ select::-ms-value {
   color: $black-two;
 }
 
+@media all and (-ms-high-contrast:none), all and (-ms-high-contrast:active) {
+  html#ecwid_html {
+    body#ecwid_body.page-internal {
+      .form-control--primary {
+        button.form-control__button {
+          height: 40px !important;
+        }
+      }
+    }
+  }
+}
+
 .grayscale {
   filter: grayscale(100%);
 }
