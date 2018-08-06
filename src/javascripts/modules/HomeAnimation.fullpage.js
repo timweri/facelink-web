@@ -63,7 +63,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           } else {
             new ScrollMagic.Scene({
@@ -81,7 +81,7 @@ const HomeAnimation = (() => {
               .on('leave', function (event) {
                 $('.frame-actived').removeClass('frame-actived').removeClass('end').removeClass('start')
               })
-            .addIndicators({ name: key + 'AnimationStart' + i })
+            // .addIndicators({ name: key + 'AnimationStart' + i })
             _totalDuration += TimelineLites[key][i]['duration']
           }
         }
@@ -93,7 +93,7 @@ const HomeAnimation = (() => {
         triggerElement: _element,
         duration: _totalDuration + spaceduration
       }).setPin(_element).addTo(controller)
-      .addIndicators({ name: key + 'AnimationStart' })
+      // .addIndicators({ name: key + 'AnimationStart' })
     }
   }
 
@@ -268,9 +268,9 @@ const HomeAnimation = (() => {
       var windowTop = Math.round($(window).scrollTop())
       if (finalScroll == windowTop) {
         isScroll = 0
-        console.log('finalScroll == windowTop')
+        // console.log('finalScroll == windowTop')
       } else if (isScroll === 1) {
-        console.log('isScroll === 1')
+        // console.log('isScroll === 1')
         event.preventDefault()
         return
       }
@@ -296,7 +296,7 @@ const HomeAnimation = (() => {
       var index = el.index($('.frame-actived'))
       if (index === -1) {
         isScroll = 0
-        console.log('index === -1')
+        // console.log('index === -1')
         return
       }
       var isStart = el.hasClass('start')
@@ -309,7 +309,7 @@ const HomeAnimation = (() => {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
       var nextIndex = Math.max(0, index - delta)
-      console.log(durationScrollMagics[el.eq(nextIndex).find('section').attr('id')])
+      // console.log(durationScrollMagics[el.eq(nextIndex).find('section').attr('id')])
       if (nextIndex >= 0 && nextIndex <= el.length) {
         if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
         else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics[el.eq(nextIndex).find('section').attr('id')] }
@@ -323,8 +323,8 @@ const HomeAnimation = (() => {
       // console.log(durationScroll[delta + 1][nextIndex])
       if ((finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)) {
         isScroll = 0
-        console.log('(finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)')
-        console.log(windowTop)
+        // console.log('(finalScroll === 0 && windowTop === 0) || (finalScroll == windowTop)')
+        // console.log(windowTop)
         return
       }
       TweenMax.to($window, durationScroll[delta + 1][nextIndex], {
@@ -348,8 +348,8 @@ const HomeAnimation = (() => {
       var isAnimation = !(_el.attr('href') === '#frame5' || _el.attr('href') === '#frame6')
       var offsetTop = isAnimation ? _elTarget.parents('.scrollmagic-pin-spacer').offset().top : _elTarget.offset().top
       var $window = $(window)
-      console.log($(window).scrollTop())
-      console.log(offsetTop + durationScrollMagics['frame2'])
+      // console.log($(window).scrollTop())
+      // console.log(offsetTop + durationScrollMagics['frame2'])
       if (isAnimation && offsetTop > 0) {
         if ($(window).scrollTop() === offsetTop + durationScrollMagics['frame2']) {
           e.preventDefault()
