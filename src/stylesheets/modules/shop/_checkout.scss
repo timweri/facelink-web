@@ -612,6 +612,15 @@ html#ecwid_html {
         .ecwid-btn {
           margin-top: 0;
         }
+        .ecwid-popup-content {
+          .ecwid-fieldWrapper {
+            .ecwid-fieldLabel {
+              &~table {
+                width: 70%;
+              }
+            }
+          }
+        }
       }
       div.ecwid-AddressForm {
         div.ecwid-fieldWrapper {
@@ -677,15 +686,15 @@ html#ecwid_html {
             }
           }
         }
-        .ecwid-popup-content {
-          .ecwid-fieldWrapper {
-            .ecwid-fieldLabel {
-              &~table {
-                width: 61%;
-              }
-            }
-          }
-        }
+        // .ecwid-popup-content {
+        //   .ecwid-fieldWrapper {
+        //     .ecwid-fieldLabel {
+        //       &~table {
+        //         width: 70%;
+        //       }
+        //     }
+        //   }
+        // }
         .ecwid-PaymentMethodsBlock-PaymentOption {
           span:hover {
             label {

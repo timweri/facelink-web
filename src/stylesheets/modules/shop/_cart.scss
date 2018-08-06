@@ -137,7 +137,6 @@ html#ecwid_html {
     .ecwid-productBrowser-cart-totalLabel {
       @include font($os, 18px, $black, 700);
       text-transform: uppercase;
-      width: 140px;
     }
     div.ecwid-productBrowser-cart-shippingLabel {
       font-size: rem(15);

@@ -21,6 +21,7 @@ html#ecwid_html {
       div.popupContent {
         label.ecwid-fieldLabel {
           @include font($font-family-base, rem(15) !important, $border-gray);
+          width: 140px;
         }
       }
     }
