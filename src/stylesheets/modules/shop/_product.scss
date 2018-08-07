@@ -389,6 +389,18 @@ html#ecwid_html {
   }
 }
 
+html#ecwid_html.touch.chrome {
+  body#ecwid_body.page-internal {
+    .ecwid {
+      .form-control__button {
+        span.form-control__button-text {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 510px) {
   html#ecwid_html {
     body#ecwid_body.page-internal {
