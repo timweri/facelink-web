@@ -165,6 +165,15 @@ var Shop = (function () {
       }
     }
   }
+  function checkInputThenShowPop() {
+    $('body').on('click','.ecwid-AddressBook-addButton, .ecwid-btn--change', function (e) {
+      setTimeout(function() {
+        if ($('.ecwid-popup-content').length) {
+          checkInputHasVal()
+        }
+      })
+    })
+  }
   function customiseDropDown () {
     var $selectBoxes = $('select.gwt-ListBox')
     $selectBoxes.selectpicker({
@@ -327,6 +336,7 @@ var Shop = (function () {
       addRemoveClass()
       focusInputShop()
       checkInputHasVal()
+      checkInputThenShowPop()
       // customiseDropDown()
       // closeLoading()
     })
