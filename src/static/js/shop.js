@@ -159,11 +159,30 @@ var Shop = (function () {
   }
   function checkInputHasVal () {
     var lengthInput = $('.gwt-TextBox').length
+    var select = $('.gwt-ListBox')
     for (var i = 0; i < lengthInput; i++) {
       if ($('.gwt-TextBox').eq(i).val().length > 0) {
         $('.gwt-TextBox').eq(i).parents('.ecwid-fieldWrapper').addClass('has-text')
+      } else {
+        $('.gwt-TextBox').eq(i).parents('.ecwid-fieldWrapper').removeClass('has-text')
       }
     }
+    select.find("option:selected" ).each(function() {
+      if($(this).index() > 0) {
+        $(this).parents('.ecwid-fieldWrapper').addClass('has-text')
+      } else {
+        $(this).parents('.ecwid-fieldWrapper').removeClass('has-text')
+      }
+    });
+  }
+  function checkInputThenShowPop() {
+    $('body').on('click','.ecwid-AddressBook-addButton, .ecwid-btn--change', function (e) {
+      setTimeout(function() {
+        if ($('.ecwid-popup-content').length) {
+          checkInputHasVal()
+        }
+      })
+    })
   }
   function customiseDropDown () {
     var $selectBoxes = $('select.gwt-ListBox')
@@ -327,6 +346,7 @@ var Shop = (function () {
       addRemoveClass()
       focusInputShop()
       checkInputHasVal()
+      checkInputThenShowPop()
       // customiseDropDown()
       // closeLoading()
     })
