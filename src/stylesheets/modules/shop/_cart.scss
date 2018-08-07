@@ -367,6 +367,7 @@ html#ecwid_html {
         }
       }
       div.ecwid-productBrowser-cart-EnterCouponBox {
+        min-height: 134px;
         padding: 51px 30px 44px !important;
         .ecwid-fieldEnvelope-label,
         .ecwid-fieldEnvelope-around {
@@ -469,7 +470,7 @@ html#ecwid_html {
       div.ecwid-productBrowser-cart-EnterCouponBox {
         padding-top: 40px !important;
         .ecwid-btn--cancel {
-          margin-bottom: 20px !important;
+          margin-bottom: 0 !important;
         }
       }
     }
