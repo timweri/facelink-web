@@ -309,11 +309,11 @@ const HomeAnimation = (() => {
         if (isStart && index > 0) { delta = 0 } else { delta = -1 }
       }
       var nextIndex = Math.max(0, index - delta)
-      console.log(durationScrollMagics[el.eq(nextIndex).find('section').attr('id')])
       if (nextIndex >= 0 && nextIndex <= el.length) {
         if (nextIndex >= 4) finalScroll = el.eq(nextIndex - 1).offset().top + el.eq(nextIndex - 1).outerHeight()
         else { finalScroll = el.eq(nextIndex).offset().top === 0 ? 0 : el.eq(nextIndex).offset().top + durationScrollMagics[el.eq(nextIndex).find('section').attr('id')] }
       }
+      finalScroll = Math.ceil(finalScroll + 1)
       // var durationScroll = Math.abs(finalScroll - prevScroll) / $window.height()
       var durationScroll = [
         [scrollTime, scrollTime, scrollTime, scrollTime, 0.8, 0.8],
