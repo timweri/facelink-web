@@ -152,7 +152,7 @@
 }
 
 .fruit-frame4 {
-  @include position(absolute, null, null, -9%, -15%);
+  @include position(absolute, null, null, -21%, -15%);
   width: 50%;
   img {
     width: 100%;
@@ -341,7 +341,6 @@
     bottom: -20%;
   }
 }
-
 @media only screen and (max-width: 1500px) and (max-height: 900px) {
   .fruit-frame4 {
     width: 44%;
