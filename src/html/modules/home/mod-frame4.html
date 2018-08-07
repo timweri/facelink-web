@@ -7,7 +7,9 @@
       <div class="subhead-frame4 style-subhead">
         <div class="subhead-frame4-title">
           <div class="title-frame4 text-lg-left">
-            <h2><span>{{ frame4.title }}</span></h2>
+            <h2>
+              <span>{{ frame4.title }}</span>
+            </h2>
           </div>
           {% for i in frame4.block_list %}
           <div class="number number{{loop.index}} d-none d-md-flex align-items-center justify-content-center">
@@ -27,6 +29,14 @@
             <div class="image-product">
               <img src="{{ frame4.image_product }}" alt="{{ frame4.image_product }}">
             </div>
+            <div class="mda-notice">
+              <div>
+                <div class="mda-logo-wrapper">
+                  <img src="images/logo-mda.png" alt="images/mda-logo.jpg">
+                </div>
+              </div>
+              <div>A dollar from each purchase goes towards muscular dystrophy research.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -42,5 +52,3 @@
     <img src="images/pineapple.png" alt="pineapple">
   </div>
 </section>
-
-
