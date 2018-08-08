@@ -11,17 +11,39 @@ html#ecwid_html {
         position: relative;
         margin: 10px 0;
         label {
+          @include font($font-family-base, 18px, $border-gray, 700, null);
+          margin: 0;
+          padding: 2px 0 0 60px;
           position: relative;
+          max-width: none;
+          &::after,
+          &::before {
+            content: "";
+            display: block;
+          }
           &::before {
             @include sizeEx(28px);
             @include position(absolute, $top: 0, $left: 0);
-            background: $white;
+            background: $menu-gray;
           }
           &::after {
             @include sizeEx(16px);
             @include position(absolute, $top: 6px, $left: 6px);
             background: $color-c6;
             opacity: 0;
+          }
+        }
+        input {
+          display: none !important;
+          &:checked {
+            ~div.form-control__inline-label {
+              label {
+                color: $black;
+                &::after {
+                  opacity: 1;
+                }
+              }
+            }
           }
         }
       }
