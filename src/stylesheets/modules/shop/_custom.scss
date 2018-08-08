@@ -8,6 +8,7 @@ html#ecwid_html {
     background: $gray-bg;
     .product-details-module__content {
       .form-control--radio {
+        cursor: pointer;
         position: relative;
         margin: 10px 0;
         label {

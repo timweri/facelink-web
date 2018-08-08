@@ -220,11 +220,17 @@ html#ecwid_html {
     .ecwid-PaymentMethodsBlock-PaymentOption {
       padding: 10px 0;
     }
+    span.gwt-RadioButton {
+      input {
+        display: none !important;
+      }
+    }
     .ecwid-shippingOptions-List span.ecwid-shippingOption,
     .ecwid-productBrowser-cart-chooseLocationPopup-deliveryMethods-List span.ecwid-shippingOption,
     span.gwt-RadioButton {
       position: relative;
       margin: 10px 0;
+      cursor: pointer;
       label {
         @include font($font-family-base, 18px, $border-gray, 700, null);
         margin: 0;
