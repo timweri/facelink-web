@@ -20,8 +20,11 @@
     color: $border-gray;
   }
   .email {
+    p {
+      word-wrap: break-word;
+    }
     a {
-      @include font($os, rem(30), null, 700);
+      @include font($os, rem(24), null, 700);
       text-transform: uppercase;
       line-height: 20px;
       letter-spacing: 1.6px;

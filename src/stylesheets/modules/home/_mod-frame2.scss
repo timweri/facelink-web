@@ -72,6 +72,17 @@
 .subhead-frame2-title {
   text-align: center;
 }
+
+@include media-breakpoint-up(sm) {
+  .title-frame2 {
+    p {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-up(md) {
   .list-item-frame2 {
     max-width: 500px;

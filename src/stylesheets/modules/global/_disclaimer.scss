@@ -23,8 +23,26 @@
     }
     &:hover {
       span.icon-close2 {
-        color: $border-gray;
+        color: $orange;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .disclaimer-msg {
+    z-index: -1;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .disclaimer-msg {
+    p {
+      text-align: center;
+    }
+    .disclaimer-btn-wrap {
+      @include position($right: 15px, $top: 10px);
+      transform: none;
     }
   }
 }

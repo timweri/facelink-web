@@ -6,8 +6,25 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
-    .form-control--radio {
-      
+    .product-details-module__content {
+      .form-control--radio {
+        position: relative;
+        margin: 10px 0;
+        label {
+          position: relative;
+          &::before {
+            @include sizeEx(28px);
+            @include position(absolute, $top: 0, $left: 0);
+            background: $white;
+          }
+          &::after {
+            @include sizeEx(16px);
+            @include position(absolute, $top: 6px, $left: 6px);
+            background: $color-c6;
+            opacity: 0;
+          }
+        }
+      }
     }
     .ecwid {
       min-height: auto !important;
