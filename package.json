@@ -95,6 +95,7 @@
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.2",
     "jquery-mousewheel": "^3.1.13",
+    "js-cookie": "^2.2.0",
     "lodash": "^4.17.5",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
     "map-stream": "^0.0.7",
