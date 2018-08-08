@@ -34,10 +34,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  div:nth-child(2) {
-    @include font($font-family-base, rem(15), $black);
-    font-style: italic;
+  .mda-content {
     text-align: center;
+    p {
+      margin: 0;
+      @include font($font-family-base, rem(15), $black);
+    }
+    br {
+      display: none;
+    }
   }
 }
 
@@ -179,15 +184,18 @@
     max-width: 555px;
     margin-left: auto;
     margin-top: -50px;
-    > div:nth-child(1) {
+    .mda-logo {
       width: 30%;
       padding-right: 10px;
       border-right: solid 2px $black;
     }
-    > div:nth-child(2) {
+    .mda-content {
       width: 70%;
       text-align: left;
       padding-left: 10px;
+      br {
+        display: inline;
+      }
     }
     .mda-logo-wrapper {
       @include position(relative, $top: 50%);
@@ -308,7 +316,7 @@
   .mda-notice {
     flex-direction: row;
     margin-top: -50px;
-    > div:nth-child(1) {
+    .mda-logo {
       width: 24%;
       padding-right: 10px;
       border-right: solid 2px $black;
@@ -320,7 +328,7 @@
       transform: none;
       width: 100%;
     }
-    > div:nth-child(2) {
+    .mda-content {
       width: 60%;
       text-align: left;
       padding-left: 10px;
