@@ -8,7 +8,8 @@ html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
     .ecwid-overlay-compact {
-      display: none !important;
+      background: $black;
+      opacity: .6;
     }
     div.ecwid-popup.ecwid-compact-popup {
       height: auto;
