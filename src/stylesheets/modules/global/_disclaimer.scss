@@ -1,32 +1,25 @@
-body:not(.disclaimer-show) {
-  .disclaimer-msg {
-    display: none !important;
+.disclaimer-msg {
+  @include position(absolute, 100%);
+  width: 100%;
+  background: $black;
+  padding: 20px 40px;
+  display: none;
+  p {
+    @include font(null, rem(15), $white);
+    margin: 0;
   }
-}
-
-body.disclaimer-show {
-  .disclaimer-msg {
-    @include position(absolute, 100%);
-    width: 100%;
-    background: $black;
-    padding: 20px 40px;
-    p {
-      @include font(null, rem(15), $white);
-      margin: 0;
-    }
-    a:not([href]) {
-      color: $orange;
-    }
-    .disclaimer-btn-wrap {
-      @include position(absolute, $right: 20px, $top: 50%);
-      @include sizeEx(20px);
-      cursor: pointer;
-      transform: translateY(-50%);
-      span.icon-close2 {
-        @include sizeEx(15px);
-        display: block;
-        color: $white;
-      }
+  a:not([href]) {
+    color: $orange;
+  }
+  .disclaimer-btn-wrap {
+    @include position(absolute, $right: 20px, $top: 50%);
+    @include sizeEx(20px);
+    cursor: pointer;
+    transform: translateY(-50%);
+    span.icon-close2 {
+      @include sizeEx(15px);
+      display: block;
+      color: $white;
     }
   }
 }

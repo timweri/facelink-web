@@ -1,5 +1,5 @@
 import $ from 'jquery'
-
+import Cookies from 'js-cookie'
 const Disclaimer = (($) => {
   const NAME = 'disclaimer'
   const DATA_KEY = `bs.${NAME}`
@@ -23,19 +23,22 @@ const Disclaimer = (($) => {
       this._config = this._getConfig(config)
       this.closeButton = this._element.find('.disclaimer-btn-wrap')
       this._addEventListener()
-      if (!this.cookie) {
+      console.log(Cookies.get('code'))
+      if (Cookies.get('code') != 'true') {
         this.showDisclaimer()
-        this.closeDisclaimer()
       } 
+      this.closeDisclaimer()
     }
 
     showDisclaimer () {
-      $('body').addClass('disclaimer-show')
+      this._element.addClass('d-flex').removeClass('d-none')
     }
 
     closeDisclaimer () {
       this._element.on('click', '.disclaimer-btn-wrap', function (e) {
-        $('body').removeClass('disclaimer-show')
+
+        $(e.currentTarget).parents(".disclaimer-msg").removeClass('d-flex').addClass('d-none')
+        Cookies.set('code', true , { expires: 60/1440 });
       })
     }
 
