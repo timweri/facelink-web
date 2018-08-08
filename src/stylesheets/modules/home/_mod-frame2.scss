@@ -186,6 +186,9 @@
     .cont-frame2 {
       padding: 50px 0 71px;
     }
+    .title-frame2 {
+      overflow: hidden;
+    }
     &::after {
       content: "";
       @include position(absolute, $right: 0, $top: 0, $index: 5);

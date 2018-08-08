@@ -6,6 +6,9 @@ $number-per-row-lg: 5;
 html#ecwid_html {
   body#ecwid_body.page-internal {
     background: $gray-bg;
+    .form-control--radio {
+      
+    }
     .ecwid {
       min-height: auto !important;
       color: $black;

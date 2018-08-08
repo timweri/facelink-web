@@ -34,6 +34,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  .mda-logo {
+    img {
+      max-height: 60px;
+      min-height: 30px;
+    }
+  }
   .mda-content {
     text-align: center;
     p {
@@ -399,7 +405,20 @@
     }
   }
 }
-@media only screen and (max-width: 1440px) and (max-height: 900px) {
+@media only screen and (max-width: 1500px) and (min-width: 1200px) and (max-height: 1000px) {
+  .cont-frame4 {
+    .image-product {
+      right: 61%;
+      bottom: -38%;
+      width: 100%;
+    }
+  }
+  .mda-notice {
+    @include position($right: 41%, $bottom: -26%);
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1440px) and (max-height: 900px) {
   .cont-frame4 {
     padding: 75px 0 65px;
     .image-product {
