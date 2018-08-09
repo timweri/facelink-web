@@ -29,8 +29,39 @@
 }
 html#ecwid_html {
   body#ecwid_body.page-internal {
+    div.product-details-module.details-product-purchase--add-more.details-product-purchase--checkout {
+      div.details-product-purchase__controls {
+        max-width: none !important;
+      }
+      div.form-control.details-product-purchase__add-more {
+        button.form-control__button {
+          border: 3px solid $orange;
+          background: transparent;
+          span,
+          & {
+            color: $orange;
+          }
+          &::after {
+            content: none;
+          }
+          &:hover {
+            background: $orange;
+            span,
+            & {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
     .ec-size {
       .ec-store {
+        .product-details__product-subheading {
+          @include font($font-family-base, rem(16), $black, 500);
+          display: inline-block;
+          margin-bottom: 20px;
+          text-transform: capitalize;
+        }
         .product-details__description {
           display: none !important;
         }

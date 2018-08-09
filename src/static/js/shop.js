@@ -14,6 +14,19 @@ var Shop = (function () {
       $modContentEditor.find('.list-bg-product').remove()
     }
   }
+  function moveProductSubheadingUp () {
+    setTimeout(function () {
+      var $subheading = $('span.details-product-attribute__title')
+      if ($subheading) {
+        if ($subheading.text() === 'Subheading: ') {
+          var content = $('span.details-product-attribute__value').text()
+          var $producttitle = $('h1.product-details__product-title').append(' -')
+          $subheading.parent().remove()
+          $(`<span class="product-details__product-subheading">${content}</span>`).insertAfter($producttitle)
+        }
+      }
+    })
+  }
   function addModulePromotion () {
     setTimeout(function () {
       var modPromotion = $('.mod-promotion')
@@ -342,6 +355,7 @@ var Shop = (function () {
 
       addListImageProduct()
       addModulePromotion()
+      moveProductSubheadingUp()
       setTitle()
       addRemoveClass()
       focusInputShop()
