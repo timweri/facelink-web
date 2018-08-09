@@ -433,6 +433,16 @@
     bottom: 0;
   }
 }
+
+@media only screen and (min-width: 992px) and (max-height: 899.99px) and (min-height: 700px) {
+  .cont-frame4 {
+    .image-product {
+      @include position($right: 54px, $bottom: -3px);
+      width: 534px;
+    }
+  }
+}
+
 @media only screen and (min-width: 1400px) and (max-height: 900px) {
   .fruit-frame4 {
     width: 35%;
