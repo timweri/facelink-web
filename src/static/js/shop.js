@@ -20,7 +20,7 @@ var Shop = (function () {
       if ($subheading) {
         if ($subheading.text() === 'Subheading: ') {
           var content = $('span.details-product-attribute__value').text()
-          var $producttitle = $('h1.product-details__product-title').append(' -')
+          var $producttitle = $('h1.product-details__product-title')
           $subheading.parent().hide()
           $(`<br><span class="product-details__product-subheading">${content}</span>`).appendTo($producttitle)
         }
