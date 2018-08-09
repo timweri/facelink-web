@@ -433,7 +433,7 @@
     bottom: 0;
   }
 }
-@media only screen and (max-height: 900px) {
+@media only screen and (min-width: 1400px) and (max-height: 900px) {
   .fruit-frame4 {
     width: 35%;
     .list-item-frame4 {
