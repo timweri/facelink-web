@@ -628,12 +628,20 @@ html#ecwid_html.touch.chrome {
     body#ecwid_body.page-internal {
       .ec-size {
         .ec-store {
+          .details-gallery__thumbs.details-gallery__thumbs--aspect-ratio-auto {
+            .details-gallery__thumb--aspect-ratio-1 {
+              margin: 0;
+              .details-gallery__thumb-img {
+                background-size: 100% auto !important;
+              }
+            }
+          }
           .details-gallery__wrap {
             height: auto !important;
           }
           .details-gallery__thumb-img {
             height: auto !important;
-            padding-bottom: 80%;
+            padding-bottom: 100%;
           }
           .product-details--layout-sidebar-right {
             .product-details__gallery,
