@@ -530,6 +530,9 @@ html#ecwid_html.no-touch.chrome {
         .ecwid-productBrowser.ecwid-productBrowser-ProductPage {
           .product-details {
             padding-bottom: 22px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
           }
         }
       }
