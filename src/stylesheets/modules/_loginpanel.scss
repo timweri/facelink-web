@@ -4,8 +4,8 @@
 [ FONT ]*/
 
 @font-face {
-    font-family: Ubuntu-Regular;
-    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+    font-family: 'Muli', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Muli'); 
   }
   
   @font-face {
@@ -168,12 +168,13 @@
   }
   
   .login100-form-title {
-    font-family: Ubuntu-Bold;
-    font-size: 30px;
+    font-family: 'Muli', sans-serif;
+    font-size: 50px;
     color: #403866;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
+    padding-bottom: 46px;
   
     width: 100%;
     display: block;
@@ -195,7 +196,7 @@
   
   /*---------------------------------------------*/
   .input100 {
-    font-family: Ubuntu-Bold;
+    font-family: 'Titillium Web', sans-serif;
     color: #403866;
     line-height: 1.2;
     font-size: 18px;
@@ -308,8 +309,68 @@
   .input-checkbox100:checked + .label-checkbox100::before {
     color: #827ffe;
   }
+
+  /*------------------------------------------------------------------
+  [ Radio Button ]*/
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    
   
-  
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+   
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+   
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}
   /*------------------------------------------------------------------
   [ Button ]*/
   .container-login100-form-btn {
@@ -323,7 +384,7 @@
   }
   
   .login100-form-btn {
-    font-family: Ubuntu-Bold;
+    font-family: Muli;
     font-size: 16px;
     color: #fff;
     line-height: 1.2;
@@ -377,7 +438,7 @@
     right: 12px;
     pointer-events: none;
   
-    font-family: Ubuntu-Regular;
+    font-family: Muli;
     color: #c80000;
     font-size: 14px;
     line-height: 1.4;
