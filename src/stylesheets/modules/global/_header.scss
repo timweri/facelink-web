@@ -1,5 +1,5 @@
 #header {
-  @include position(fixed, 0, 0, null, 0, 9999);
+  @include position(static, 0, 0, null, 0, 9999);
   @extend %add-tr;
   background-color: $black;
   &.pin-header {
