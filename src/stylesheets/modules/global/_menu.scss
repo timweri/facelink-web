@@ -12,13 +12,6 @@
   li {
     color: $black;
   }
-  .has-login {
-    .link-customer-name {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  }
   .icomoon {
     position: relative;
     font-size: rem(25);
@@ -54,42 +47,6 @@
 
 #header-logo {
   @include sizeEx(110px, auto);
-}
-
-.cart-badge {
-  @include position(absolute, $top: -20px, $right: -12px, $index: -1);
-  @include sizeEx(18px);
-  display: flex;
-  justify-content: center;
-  background-color: $color-c6;
-  transform: rotate(45deg);
-  b {
-    @include font($os, rem(12), $black, 700);
-    align-self: center;
-    transform: rotate(-45deg) translateZ(0);
-  }
-}
-.cart-btn {
-  display: flex !important;
-  align-items: center;
-  > i {
-    padding: 0 0 0 28px;
-  }
-  .cart-badge {
-    letter-spacing: normal;
-  }
-}
-
-.navbar-social {
-  padding: 53px 0;
-  > li {
-    float: left;
-    padding: 0 15px;
-    border-top: none;
-    a {
-      color: $black;
-    }
-  }
 }
 
 .menu-wrap-outer {
