@@ -18,8 +18,9 @@
   
   * {
       margin: 0px; 
-      padding: 0px; 
+      padding: 10px; 
       box-sizing: border-box;
+      background-color:#ffffff;
   }
   
   body, html {
@@ -102,7 +103,7 @@
   button {
       outline: none !important;
       border: none;
-      background: transparent;
+      background: black;
   }
   
   button:hover {
@@ -165,10 +166,11 @@
   
   .login100-form {
     width: 100%;
+    
   }
   
   .login100-form-title {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 50px;
     color: #403866;
     line-height: 1.2;
@@ -246,7 +248,10 @@
     -o-transform: scale(1);
     transform: scale(1);
   }
-  
+  .txt1 {
+    font-family: 'Titillium Web', sans-serif;
+  }
+  }
   .eff-focus-selection {
     visibility: visible;
     opacity: 1;
@@ -266,8 +271,12 @@
     display: none;
   }
   
+  .padding{
+    padding-top:30px
+
+}
   .label-checkbox100 {
-    font-family: Ubuntu-Regular;
+    font-family: 'Titillium Web', sans-serif; 
     font-size: 16px;
     color: #999999;
     line-height: 1.2;
@@ -283,6 +292,7 @@
     font-family: FontAwesome;
     font-size: 13px;
     color: transparent;
+
   
     display: -webkit-box;
     display: -webkit-flex;
@@ -485,4 +495,4 @@
   /*//////////////////////////////////////////////////////////////////
   [ Responsive ]*/
   
-}
+
