@@ -5,15 +5,8 @@
 	var settings = { baseurl: '/', jsPath: 'javascripts/' };
 
 	$script([
-		'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js',
-		'//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js',
-		'//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js',
-		'//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js',
 	], 'vendor', function () {
 		$script([
-			'js/shop.js',
-			'//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js',
-			'//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js',
 		], 'common', function () {
 			$script(['javascripts/app.js'], 'myScript', function () {
 				$(window).trigger('load')

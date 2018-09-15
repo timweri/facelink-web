@@ -12,4 +12,17 @@
     {% include "modules/global/menu.html" %}
   </nav>
   {% include "modules/global/disclaimer.html" %}
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB2vugIYEU481Kz7_d8Y0D0LBiZhF4XiLk",
+      authDomain: "facelink-70d35.firebaseapp.com",
+      databaseURL: "https://facelink-70d35.firebaseio.com",
+      projectId: "facelink-70d35",
+      storageBucket: "facelink-70d35.appspot.com",
+      messagingSenderId: "995182779969"
+    };
+    firebase.initializeApp(config);
+  </script>
 </header>

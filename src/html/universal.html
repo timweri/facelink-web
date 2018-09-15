@@ -4,33 +4,6 @@
 {% block bodyClass %}class="page-internal"{% endblock %}
 {% block content %}
   <main id="main-content" role="main">
-    {% include 'modules/mod-banner.html'%}
-    {% include 'modules/mod-contact-container.html' %}
-    {% include 'modules/mod-promotion.html' %}
-    {% include 'modules/mod-product-image.html' %}
-    {% include 'modules/mod-faq.html' %}
-    {% set quote_data = quote %}
-    {% include 'modules/mod-quote.html' %}
-    {% include 'modules/mod-our-story.html' %}
-    {% include 'modules/mod-content-benefits.html' %}
-    {% include 'modules/mod-tab-benefits.html' %}
-    {% include 'modules/mod-featured-news-post.html' %}
-    {% include 'modules/mod-news-feed.html' %}
-    {% include 'modules/mod-shop-product.html' %}
-    {% include 'modules/mod-shop-header.html' %}
-    {% include 'modules/global/pagination.html' %}
-
-    <nav class="navigation-homepage">
-      <ul>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-      </ul>
-    </nav>
-
     <div class="container">
       <h1>{{ author }}
         {{ ourTeam }}</h1>
@@ -123,8 +96,5 @@
       </div>
       <div class="space-50"></div>
     </div>
-    {% set list_instagram = instagram %}
-    {% include 'modules/mod-insta-link.html' %}
-    {% include 'modules/mod-cta.html' %}
   </main>
 {% endblock %}

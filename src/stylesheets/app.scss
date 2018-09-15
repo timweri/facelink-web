@@ -26,16 +26,13 @@
 //@import "bootstrap/scss/pagination";
 @import "bootstrap/scss/utilities";
 
-@import "fullpage.js/dist/jquery.fullpage";
-
-@import "malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar";
 
 /* import libs */
 
-@import "slick-carousel/slick/slick.scss";
+// @import "slick-carousel/slick/slick.scss";
 // @import "lib/bootstrap-select";
 @import "lib/font-iconmoon";
-@import "lib/slick-theme";
+// @import "lib/slick-theme";
 
 /* base */
 @import "base/mixins";
@@ -47,5 +44,4 @@
 
 /* modules */
 @import "modules/global/*.scss";
-@import "modules/home/*.scss";
 @import "modules/*.scss";
