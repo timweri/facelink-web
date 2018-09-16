@@ -7,3 +7,6 @@ import 'parsleyjs/dist/parsley'
 import 'modules/UserAgent'
 import 'modules/Menu'
 import 'modules/EventAuth'
+import 'modules/LoginPanel'
+import 'modules/StudentProfile'
+
