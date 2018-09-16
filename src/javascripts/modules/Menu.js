@@ -26,6 +26,7 @@ const Menu = (($) => {
       this.openMainMenu()
       this.closeWhenClickOutside()
       this.scrollShadow()
+      console.log('test')
     }
     // public api
     static get Default () {
