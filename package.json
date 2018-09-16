@@ -62,6 +62,7 @@
     "execa": "^0.8.0",
     "exports-loader": "^0.6.4",
     "fg-loadcss": "^2.0.1",
+    "firebase": "^5.3.0",
     "fullpage.js": "^2.9.7",
     "glob-watcher": "^4.0.0",
     "glob2base": "0.0.12",

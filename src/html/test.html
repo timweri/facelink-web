@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
   </head>
 
   <body onload="init();">
@@ -38,7 +43,7 @@
                             <p>
                                 <video onclick="snapshot(this);" width=300 height=300 id="video" controls autoplay></video>
                                 <br>
-                                <canvas  id="myCanvas" width="300" height="220"></canvas>
+                    <canvas id="myCanvas" width="300" height="220"></canvas>
                             </p>
                     </div>
                     <audio id="myAudio">
@@ -52,7 +57,7 @@
     //--------------------
     // GET USER MEDIA CODE
     //--------------------
-        navigator.getUserMedia = ( navigator.getUserMedia ||
+    navigator.getUserMedia = (navigator.getUserMedia ||
                            navigator.webkitGetUserMedia ||
                            navigator.mozGetUserMedia ||
                            navigator.msGetUserMedia);
@@ -62,7 +67,7 @@
 
     function startWebcam() {
       if (navigator.getUserMedia) {
-         navigator.getUserMedia (
+            navigator.getUserMedia(
 
             // constraints
             {
@@ -71,14 +76,14 @@
             },
 
             // successCallback
-            function(localMediaStream) {
+                function (localMediaStream) {
                 video = document.querySelector('video');
                video.src = window.URL.createObjectURL(localMediaStream);
                webcamStream = localMediaStream;
             },
 
             // errorCallback
-            function(err) {
+                function (err) {
                console.log("The following error occured: " + err);
             }
          );
@@ -87,6 +92,13 @@
       }  
     }
 
+    var firebase = firebase.initializeApp({
+        apiKey: "AIzaSyARIBQaXXo8fCAAr7etR1mbK0_k7qIvM4I",
+        authDomain: "facelink-123.firebaseapp.com",
+        databaseURL: "https://facelink-123.firebaseio.com/",
+        projectId: "facelink-123"
+    });
+    var database = firebase.database();
 
     //---------------------
     // TAKE A SNAPSHOT CODE
@@ -101,7 +113,7 @@
     }
 
     function snapshot() {
-        ctx.drawImage(video, 0,0, canvas.width, canvas.height);
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         var img1 = new Image();
         img1.src = canvas.toDataURL();
         var ip = document.getElementById('ip').value;
@@ -123,16 +135,33 @@
             "data": datad
         }
         $.ajax(settings).done(function (response) {
-            var m = response;
-            console.log(JSON.stringify(m).indexOf("success"));
-            if(JSON.stringify(m).indexOf("success") > -1) {
-                Materialize.toast('User Identfied. Name : ' +JSON.stringify(m.images[0].candidates[0].subject_id), 6000);
-                console.log(m.images[0].candidates[0].subject_id);
+            console.log(JSON.stringify(response));
+            if (JSON.stringify(response).indexOf("success") > -1) {
+                var id = response.images[0].candidates[0].subject_id;
+                console.log(id);
+                database.ref('users/' + id).once("value").then(function (snapshot) {
+                    console.log(JSON.stringify(snapshot.val())); 
+                    var name = snapshot.val().name;
+                    var age = snapshot.val().age;
+                    var lvlstdy = snapshot.val()["level of study"];
+                    var fos = snapshot.val()["field of study"];
+                    var locstdy = snapshot.val().locstdy;
+                    var extrac = snapshot.val().extracurriculars;
+
+                    Materialize.toast('User Identfied. Name : ' + name, 6000);
+                    Materialize.toast('Age : ' + age, 6000);
+                    Materialize.toast('Level of Study : ' + lvlstdy, 6000);
+                    Materialize.toast('Field of Study : ' + fos, 6000);
+                    Materialize.toast('Location of Study : ' + locstdy, 6000);
+                    Materialize.toast('Extracurriculars : ' + extrac, 6000);
+
+                });
             }
-            else{
+            else {
                 Materialize.toast('User Not identified');
             }
         });
     }
 </script>
+
 </html>

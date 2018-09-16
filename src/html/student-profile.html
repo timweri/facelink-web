@@ -1,135 +1,171 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../stylesheets/materialize.min.css"  media="screen,projection"/>
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-  <body onload="init();">
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../javascripts/materialize.min.js"></script>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Facial Recognition</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a href="#">Train</a></li>
-            <li><a href="test.html">Test</a></li>
-          </ul>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+</head>
+
+<body onload="init();">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Facial Recognition</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a href="#">Train</a></li>
+        <li><a href="test.html">Test</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card center">
+
+      <div class="card-content">
+        <div class="card-action">
+          <a class="btn-floating btn-large waves-effect waves-light red" onclick="startWebcam();"><i class="material-icons">camera</i></a>
+          <a class="btn-floating btn-large waves-effect waves-light red" onclick="snapshot();"><i class="material-icons">verified_user</i></a>
         </div>
-      </nav>
-      
-      <div class="container">
-            <div class="card center">
- 
-                    <div class="card-content">
-                            <div class="card-action">
-                                <a class="btn-floating btn-large waves-effect waves-light red" onclick="startWebcam();"><i class="material-icons">camera</i></a>
-                                <a class="btn-floating btn-large waves-effect waves-light red" onclick="snapshot();"><i class="material-icons">verified_user</i></a>
-                            </div>
-                            <div class="input-field col s6">
-                                    <input placeholder="Enter Name" type="text" class="validate" id="ip">
-                            </div>
-                            <p>
-                                <video onclick="snapshot(this);" width=300 height=300 id="video" controls autoplay></video>
-                                <br>
-                                <canvas  id="myCanvas" width="300" height="220"></canvas>
-                            </p>
-                    </div>
-
-                  </div>
+        <div class="input-field col s6">
+          <input placeholder="Enter Name" type="text" class="validate" id="ip">
+          <input placeholder="Age" type="text" class="validate" id="age">
+          <input placeholder="Level of Study" type="text" class="validate" id="lvlstdy">
+          <input placeholder="Field of Study" type="text" class="validate" id="fos">
+          <input placeholder="Location of Study" type="text" class="validate" id="locstdy">
+          <input placeholder="Extracurriculars" type="text" class="validate" id="extrac">
+        </div>
+        <p>
+          <video onclick="snapshot(this);" width=300 height=300 id="video" controls autoplay></video>
+          <br>
+          <canvas id="myCanvas" width="300" height="220"></canvas>
+        </p>
       </div>
-  </body>
-  <script type="text/javascript">
-    //--------------------
-    // GET USER MEDIA CODE
-    //--------------------
-        navigator.getUserMedia = ( navigator.getUserMedia ||
-                           navigator.webkitGetUserMedia ||
-                           navigator.mozGetUserMedia ||
-                           navigator.msGetUserMedia);
 
-    var video;
-    var webcamStream;
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  //--------------------
+  // GET USER MEDIA CODE
+  //--------------------
+  navigator.getUserMedia = (navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia);
 
-    function startWebcam() {
-      if (navigator.getUserMedia) {
-         navigator.getUserMedia (
+  var video;
+  var webcamStream;
 
-            // constraints
-            {
-               video: true,
-               audio: false
-            },
+  function startWebcam() {
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia(
 
-            // successCallback
-            function(localMediaStream) {
-                video = document.querySelector('video');
-               video.src = window.URL.createObjectURL(localMediaStream);
-               webcamStream = localMediaStream;
-            },
+        // constraints
+        {
+          video: true,
+          audio: false
+        },
 
-            // errorCallback
-            function(err) {
-               console.log("The following error occured: " + err);
-            }
-         );
-      } else {
-         console.log("getUserMedia not supported");
-      }  
+        // successCallback
+        function (localMediaStream) {
+          video = document.querySelector('video');
+          video.src = window.URL.createObjectURL(localMediaStream);
+          webcamStream = localMediaStream;
+        },
+
+        // errorCallback
+        function (err) {
+          console.log("The following error occured: " + err);
+        }
+      );
+    } else {
+      console.log("getUserMedia not supported");
+    }
+  }
+
+  var firebase = firebase.initializeApp({
+    apiKey: "AIzaSyARIBQaXXo8fCAAr7etR1mbK0_k7qIvM4I",
+    authDomain: "facelink-123.firebaseapp.com",
+    databaseURL: "https://facelink-123.firebaseio.com/",
+    projectId: "facelink-123"
+  });
+  var database = firebase.database();
+
+  //---------------------
+  // TAKE A SNAPSHOT CODE
+  //---------------------
+  var canvas, ctx;
+
+  function init() {
+    // Get the canvas and obtain a context for
+    // drawing in it
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext('2d');
+  }
+
+  function snapshot() {
+
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    var img1 = new Image();
+    img1.src = canvas.toDataURL();
+    var ip = document.getElementById('ip').value;
+    var age = document.getElementById('age').value;
+    var lvlstdy = document.getElementById('lvlstdy').value;
+    var fos = document.getElementById('fos').value;
+    var locstdy = document.getElementById('locstdy').value;
+    var extrac = document.getElementById('extrac').value;
+
+    var id = database.ref().push().key;
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.kairos.com/enroll",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "app_id": "9a9338e2",
+        "app_key": "87dccea595a1f11022e9fbd6fd474424",
+        "cache-control": "no-cache"
+      },
+      "processData": false,
+      "data": JSON.stringify({
+        "image": img1.src,
+        "gallery_name": "Arti",
+        "subject_id": id
+      })
     }
 
+    $.ajax(settings).done(function (response) {
+      console.log(JSON.stringify(response));
+    });
 
-    //---------------------
-    // TAKE A SNAPSHOT CODE
-    //---------------------
-    var canvas, ctx;
-
-    function init() {
-      // Get the canvas and obtain a context for
-      // drawing in it
-      canvas = document.getElementById("myCanvas");
-      ctx = canvas.getContext('2d');
+    var data = {
+      "name": ip,
+      "age": age,
+      "levelofstudy": lvlstdy,
+      "fieldofstudy": fos,
+      "locstudy": locstdy,
+      "extracurriculars": extrac
     }
-
-    function snapshot() {
-      
-      ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-      var img1 = new Image();
-      img1.src = canvas.toDataURL();
-      var ip = document.getElementById('ip').value;
-      datad = "{\r\n    \"image\":\"" + img1.src+ "\",\r\n    \"subject_id\":\"" + ip + "\",\r\n    \"gallery_name\":\"Arti\"\r\n}";
-      var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "https://api.kairos.com/enroll",
-          "method": "POST",
-          "headers": {
-              "content-type": "application/json",
-              "app_id": "9a9338e2",
-              "app_key": "87dccea595a1f11022e9fbd6fd474424",
-              "cache-control": "no-cache"
-          },
-          "processData": false,
-          "data": datad
-      }
-
-      $.ajax(settings).done(function (response) {
-        //
-        if((response.images[0].transaction.status) == "success"){
-            Materialize.toast("Image Trained succesfully by name " +response.images[0].transaction.subject_id+ " in gallery name " +response.images[0].transaction.gallery_name, 4000);
-        }
-        else{
-            Materialize.toast("Unable to Train Image", 4000);
-        }
+    database.ref('users/' + id).set(data)
+      .then(function () {
+        console.log('Synchronization succeeded');
+      })
+      .catch(function (error) {
+        console.log('Synchronization failed');
       });
-      //console.log(img1.src);
-    }
+  }
 
 </script>
+
 </html>
