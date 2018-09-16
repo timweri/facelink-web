@@ -1,0 +1,112 @@
+<!-- module 'Facial Recognition' -->
+<section class="facial-recog">
+    <div class="profile-sidebar">
+        <script type="text/javascript">
+            //--------------------
+            // GET USER MEDIA CODE
+            //--------------------
+            navigator.getUserMedia = (navigator.getUserMedia ||
+              navigator.webkitGetUserMedia ||
+              navigator.mozGetUserMedia ||
+              navigator.msGetUserMedia);
+          
+            var video;
+            var webcamStream;
+          
+            function startWebcam() {
+              if (navigator.getUserMedia) {
+                navigator.getUserMedia(
+          
+                  // constraints
+                  {
+                    video: true,
+                    audio: false
+                  },
+          
+                  // successCallback
+                  function (localMediaStream) {
+                    video = document.querySelector('video');
+                    video.src = window.URL.createObjectURL(localMediaStream);
+                    webcamStream = localMediaStream;
+                  },
+          
+                  // errorCallback
+                  function (err) {
+                    console.log("The following error occured: " + err);
+                  }
+                );
+              } else {
+                console.log("getUserMedia not supported");
+              }
+            }
+          
+            var database = firebase.database();
+          
+            //---------------------
+            // TAKE A SNAPSHOT CODE
+            //---------------------
+            var canvas, ctx;
+          
+            function init() {
+              // Get the canvas and obtain a context for
+              // drawing in it
+              canvas = document.getElementById("myCanvas");
+              ctx = canvas.getContext('2d');
+            }
+          
+            function snapshot() {
+          
+              ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+              var img1 = new Image();
+              img1.src = canvas.toDataURL();
+              var ip = document.getElementById('ip').value;
+              var age = document.getElementById('age').value;
+              var lvlstdy = document.getElementById('lvlstdy').value;
+              var fos = document.getElementById('fos').value;
+              var locstdy = document.getElementById('locstdy').value;
+              var extrac = document.getElementById('extrac').value;
+          
+              var id = database.ref().push().key;
+              var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.kairos.com/enroll",
+                "method": "POST",
+                "headers": {
+                  "content-type": "application/json",
+                  "app_id": "9a9338e2",
+                  "app_key": "87dccea595a1f11022e9fbd6fd474424",
+                  "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": JSON.stringify({
+                  "image": img1.src,
+                  "gallery_name": "Arti",
+                  "subject_id": id
+                })
+              }
+          
+              $.ajax(settings).done(function (response) {
+                console.log(JSON.stringify(response));
+              });
+          
+              var data = {
+                "name": ip,
+                "age": age,
+                "levelofstudy": lvlstdy,
+                "fieldofstudy": fos,
+                "locstudy": locstdy,
+                "extracurriculars": extrac
+              }
+              database.ref('users/' + id).set(data)
+                .then(function () {
+                  console.log('Synchronization succeeded');
+                })
+                .catch(function (error) {
+                  console.log('Synchronization failed');
+                });
+            }
+          
+          </script>
+    </div>
+</section>

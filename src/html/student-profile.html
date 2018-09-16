@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+{% extends 'layouts/application.html' %}{% block bodyClass %}class="internal student-main"{% endblock %}
+{% block content %}
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<section class="mod-facial-rec" onload="init();">
 
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
-</head>
-
-<body onload="init();">
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Facial Recognition</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li class="active"><a href="#">Train</a></li>
-        <li><a href="test.html">Test</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="facial-rec">
+    {% include "modules/facial-recog.html" %}
+  </div>
 
   <div class="container">
     <div class="card center">
@@ -37,7 +17,7 @@
           <a class="btn-floating btn-large waves-effect waves-light red" onclick="snapshot();"><i class="material-icons">verified_user</i></a>
         </div>
         <div class="input-field col s6">
-          <input placeholder="Enter Name" type="text" class="validate" id="ip">
+          <input placeholder="Name" type="text" class="validate" id="ip">
           <input placeholder="Age" type="text" class="validate" id="age">
           <input placeholder="Level of Study" type="text" class="validate" id="lvlstdy">
           <input placeholder="Field of Study" type="text" class="validate" id="fos">
@@ -53,119 +33,119 @@
 
     </div>
   </div>
-</body>
-<script type="text/javascript">
-  //--------------------
-  // GET USER MEDIA CODE
-  //--------------------
-  navigator.getUserMedia = (navigator.getUserMedia ||
-    navigator.webkitGetUserMedia ||
-    navigator.mozGetUserMedia ||
-    navigator.msGetUserMedia);
 
-  var video;
-  var webcamStream;
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 
-  function startWebcam() {
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia(
+  <script type="text/javascript">
+    //--------------------
+    // GET USER MEDIA CODE
+    //--------------------
+    navigator.getUserMedia = (navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia);
 
-        // constraints
-        {
-          video: true,
-          audio: false
+    var video;
+    var webcamStream;
+
+    function startWebcam() {
+      if (navigator.getUserMedia) {
+        navigator.getUserMedia(
+
+          // constraints
+          {
+            video: true,
+            audio: false
+          },
+
+          // successCallback
+          function (localMediaStream) {
+            video = document.querySelector('video');
+            video.src = window.URL.createObjectURL(localMediaStream);
+            webcamStream = localMediaStream;
+          },
+
+          // errorCallback
+          function (err) {
+            console.log("The following error occured: " + err);
+          }
+        );
+      } else {
+        console.log("getUserMedia not supported");
+      }
+    }
+
+    var database = firebase.database();
+
+    //---------------------
+    // TAKE A SNAPSHOT CODE
+    //---------------------
+    var canvas, ctx;
+
+    function init() {
+      // Get the canvas and obtain a context for
+      // drawing in it
+      canvas = document.getElementById("myCanvas");
+      ctx = canvas.getContext('2d');
+    }
+
+    function snapshot() {
+
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      var img1 = new Image();
+      img1.src = canvas.toDataURL();
+      var ip = document.getElementById('ip').value;
+      var age = document.getElementById('age').value;
+      var lvlstdy = document.getElementById('lvlstdy').value;
+      var fos = document.getElementById('fos').value;
+      var locstdy = document.getElementById('locstdy').value;
+      var extrac = document.getElementById('extrac').value;
+
+      var id = database.ref().push().key;
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.kairos.com/enroll",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "app_id": "9a9338e2",
+          "app_key": "87dccea595a1f11022e9fbd6fd474424",
+          "cache-control": "no-cache"
         },
+        "processData": false,
+        "data": JSON.stringify({
+          "image": img1.src,
+          "gallery_name": "Arti",
+          "subject_id": id
+        })
+      }
 
-        // successCallback
-        function (localMediaStream) {
-          video = document.querySelector('video');
-          video.src = window.URL.createObjectURL(localMediaStream);
-          webcamStream = localMediaStream;
-        },
-
-        // errorCallback
-        function (err) {
-          console.log("The following error occured: " + err);
-        }
-      );
-    } else {
-      console.log("getUserMedia not supported");
-    }
-  }
-
-  var firebase = firebase.initializeApp({
-    apiKey: "AIzaSyARIBQaXXo8fCAAr7etR1mbK0_k7qIvM4I",
-    authDomain: "facelink-123.firebaseapp.com",
-    databaseURL: "https://facelink-123.firebaseio.com/",
-    projectId: "facelink-123"
-  });
-  var database = firebase.database();
-
-  //---------------------
-  // TAKE A SNAPSHOT CODE
-  //---------------------
-  var canvas, ctx;
-
-  function init() {
-    // Get the canvas and obtain a context for
-    // drawing in it
-    canvas = document.getElementById("myCanvas");
-    ctx = canvas.getContext('2d');
-  }
-
-  function snapshot() {
-
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-    var img1 = new Image();
-    img1.src = canvas.toDataURL();
-    var ip = document.getElementById('ip').value;
-    var age = document.getElementById('age').value;
-    var lvlstdy = document.getElementById('lvlstdy').value;
-    var fos = document.getElementById('fos').value;
-    var locstdy = document.getElementById('locstdy').value;
-    var extrac = document.getElementById('extrac').value;
-
-    var id = database.ref().push().key;
-    var settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://api.kairos.com/enroll",
-      "method": "POST",
-      "headers": {
-        "content-type": "application/json",
-        "app_id": "9a9338e2",
-        "app_key": "87dccea595a1f11022e9fbd6fd474424",
-        "cache-control": "no-cache"
-      },
-      "processData": false,
-      "data": JSON.stringify({
-        "image": img1.src,
-        "gallery_name": "Arti",
-        "subject_id": id
-      })
-    }
-
-    $.ajax(settings).done(function (response) {
-      console.log(JSON.stringify(response));
-    });
-
-    var data = {
-      "name": ip,
-      "age": age,
-      "levelofstudy": lvlstdy,
-      "fieldofstudy": fos,
-      "locstudy": locstdy,
-      "extracurriculars": extrac
-    }
-    database.ref('users/' + id).set(data)
-      .then(function () {
-        console.log('Synchronization succeeded');
-      })
-      .catch(function (error) {
-        console.log('Synchronization failed');
+      $.ajax(settings).done(function (response) {
+        console.log(JSON.stringify(response));
       });
-  }
 
-</script>
+      var data = {
+        "name": ip,
+        "age": age,
+        "levelofstudy": lvlstdy,
+        "fieldofstudy": fos,
+        "locstudy": locstdy,
+        "extracurriculars": extrac
+      }
+      database.ref('users/' + id).set(data)
+        .then(function () {
+          console.log('Synchronization succeeded');
+        })
+        .catch(function (error) {
+          console.log('Synchronization failed');
+        });
+    }
 
-</html>
+  </script>
+
+</section>
+
+{% endblock %}
