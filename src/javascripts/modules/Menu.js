@@ -22,48 +22,63 @@ const Menu = (($) => {
       this._element = $(element)
       this._config = this._getConfig(config)
       this.header = $('#header, #main-menu-mobile')
+      this.$menu = $('ul.menu-style')
       this.html = $('html')
-      this.openMainMenu()
-      this.closeWhenClickOutside()
-      this.scrollShadow()
+      this.database = firebase.database()
+      this.loadMenu()
+      this.attachSignout()
     }
     // public api
     static get Default () {
       return Default
     }
 
-    scrollShadow () {
-      $('.menu-wrap-inner').scroll((e) => {
-        let $ele = $(e.currentTarget)
-        if ($ele.scrollTop() > 20) $ele.addClass('shadow-top')
-        else $ele.removeClass('shadow-top')
+    attachSignout() {
+      this.$menu.on('click', '#logout-btn', (e) => {
+        firebase.auth().signOut().then(function() {
+          window.location.assign('/')
+          alert('Sign-out successful')
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage)
+        });        
       })
     }
 
-    closeWhenClickOutside () {
-      let $container = $('#main-menu')
-      let $closeButton = $container.siblings('.hamburger-menu')
-      this.html.mouseup((e) => {
-        // if the target of the click isn't the container nor a descendant of the container
-        if (!$closeButton.is(e.target) && $closeButton.has(e.target).length === 0 && !$container.is(e.target) && $container.has(e.target).length === 0) {
-          if ($container.hasClass('is-open-menu')) {
-            $(this._config.elementItem).removeClass('is-open-menu')
-          }
-        }
-      })
-    }
-
-    openMainMenu () {
-      this.header.on('click', '.hamburger-menu', (e) => {
-        e.stopPropagation()
-        const ele = e.currentTarget
-        if ($(ele).hasClass('is-open-menu')) {
-          $(this._config.elementItem).removeClass('is-open-menu')
+    loadMenu () {
+      var $menu = this.$menu
+      var currole
+      var database = this.database
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var uid = user.uid
+          database.ref(`users/${uid}`).once('value').then((snapshot) => {
+            currole = snapshot.child('role').val()
+            database.ref(`menus/${currole}`).orderByKey().once('value').then((snapshot) => {
+              snapshot.forEach((childSnapshot) => {
+                var text = childSnapshot.val().text
+                var link = childSnapshot.val().link
+                var id = childSnapshot.val().id ? childSnapshot.val().id : ""
+                var $new_item = $(`<li><a id="${id}" href="${link}">${text}</a></li>`)
+                $menu.append($new_item)
+              })
+            })
+          })
         } else {
-          $(this._config.elementItem).addClass('is-open-menu')
+          database.ref(`menus/unauth`).orderByKey().once('value').then((snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+              var text = childSnapshot.val().text
+              var link = childSnapshot.val().link
+              var id = childSnapshot.val().id ? childSnapshot.val().id : ""
+              var $new_item = $(`<li><a id="${id}" href="${link}">${text}</a></li>`)
+              $menu.append($new_item)
+            })
+          })
         }
       })
     }
+
     _getConfig (config) {
       config = $.extend({}, Default, config)
       return config

@@ -1,101 +1,33 @@
 // module 'Loginpanel'
 .loginpanel {
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
+  .container-login100-form-btn {
+    justify-content: center;
+  }
 
-@font-face {
-    font-family: Ubuntu-Regular;
-    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+  #login-btn {
+    margin-top: 20px;
+    margin-bottom: 5px;
   }
-  
-  @font-face {
-    font-family: Ubuntu-Bold;
-    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+
+  #login-btn,
+  #signup-btn {
+
+    width: 200px;
+    height: 40px;
   }
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-  
-  * {
-      margin: 0px; 
-      padding: 0px; 
-      box-sizing: border-box;
+
+  .selection-container {
+    label.container {
+      font-size: rem(18);
+    }
+    .checkmark {
+      top: 2px;
+    }
   }
-  
-  body, html {
-      height: 100%;
-      font-family: Ubuntu-Regular, sans-serif;
-  }
-  
-  /*---------------------------------------------*/
-  a {
-      font-family: Ubuntu-Regular;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #666666;
-      margin: 0px;
-      transition: all 0.4s;
-      -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-  }
-  
-  a:focus {
-      outline: none !important;
-  }
-  
-  a:hover {
-      text-decoration: none;
-    color: #403866;
-  }
-  
-  /*---------------------------------------------*/
-  h1,h2,h3,h4,h5,h6 {
-      margin: 0px;
-  }
-  
-  p {
-      font-family: Ubuntu-Regular;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #666666;
-      margin: 0px;
-  }
-  
-  ul, li {
-      margin: 0px;
-      list-style-type: none;
-  }
-  
-  
   /*---------------------------------------------*/
   input {
       outline: none;
       border: none;
-  }
-  
-  textarea {
-    outline: none;
-    border: none;
-  }
-  
-  textarea:focus, input:focus {
-    border-color: transparent !important;
-  }
-  
-  input::-webkit-input-placeholder { color: #8f8fa1;}
-  input:-moz-placeholder { color: #8f8fa1;}
-  input::-moz-placeholder { color: #8f8fa1;}
-  input:-ms-input-placeholder { color: #8f8fa1;}
-  
-  textarea::-webkit-input-placeholder { color: #8f8fa1;}
-  textarea:-moz-placeholder { color: #8f8fa1;}
-  textarea::-moz-placeholder { color: #8f8fa1;}
-  textarea:-ms-input-placeholder { color: #8f8fa1;}
-  
-  label {
-    display: block;
-    margin: 0;
   }
   
   /*---------------------------------------------*/
@@ -107,30 +39,6 @@
   
   button:hover {
       cursor: pointer;
-  }
-  
-  iframe {
-      border: none !important;
-  }
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Utility ]*/
-  .txt1 {
-    font-family: Ubuntu-Regular;
-    font-size: 16px;
-    color: #827ffe;
-    line-height: 1.4;
-  }
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ login ]*/
-  
-  .limiter {
-    width: 100%;
-    margin: 0 auto;
   }
   
   .container-login100 {
@@ -168,12 +76,13 @@
   }
   
   .login100-form-title {
-    font-family: Ubuntu-Bold;
-    font-size: 30px;
+    font-family: 'Muli', sans-serif;
+    font-size: 50px;
     color: #403866;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
+    padding-bottom: 46px;
   
     width: 100%;
     display: block;
@@ -184,18 +93,23 @@
   /*------------------------------------------------------------------
   [ Input ]*/
   
+  .wrap-input100-username {
+    margin-top: 30px;
+  }
+
   .wrap-input100 {
     width: 100%;
     position: relative;
     background-color: #e6e6e6;
     border: 1px solid transparent;
     border-radius: 3px;
+    margin-bottom: 15px;
   }
   
   
   /*---------------------------------------------*/
   .input100 {
-    font-family: Ubuntu-Bold;
+    font-family: 'Titillium Web', sans-serif;
     color: #403866;
     line-height: 1.2;
     font-size: 18px;
@@ -308,8 +222,57 @@
   .input-checkbox100:checked + .label-checkbox100::before {
     color: #827ffe;
   }
+
+  /*------------------------------------------------------------------
+  [ Radio Button ]*/
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    
   
-  
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+   
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.container .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}
   /*------------------------------------------------------------------
   [ Button ]*/
   .container-login100-form-btn {
@@ -323,7 +286,7 @@
   }
   
   .login100-form-btn {
-    font-family: Ubuntu-Bold;
+    font-family: Muli;
     font-size: 16px;
     color: #fff;
     line-height: 1.2;
@@ -377,7 +340,7 @@
     right: 12px;
     pointer-events: none;
   
-    font-family: Ubuntu-Regular;
+    font-family: Muli;
     color: #c80000;
     font-size: 14px;
     line-height: 1.4;
