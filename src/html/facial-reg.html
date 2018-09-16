@@ -1,0 +1,169 @@
+{% extends 'layouts/application.html' %}{% block bodyClass %}class="internal facial-reg"{% endblock %}
+{% block content %}
+<main id="main-content">
+    {% include "modules/scan-face.html" %}
+</main>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript">
+    //--------------------
+    // GET USER MEDIA CODE
+    //--------------------
+    navigator.getUserMedia = (navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia);
+    var video;
+    var webcamStream;
+    function startWebcam() {
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia(
+                // constraints
+                {
+                    video: true,
+                    audio: false
+                },
+                // successCallback
+                function (localMediaStream) {
+                    video = document.querySelector('video');
+                    video.src = window.URL.createObjectURL(localMediaStream);
+                    webcamStream = localMediaStream;
+                },
+                // errorCallback
+                function (err) {
+                    console.log("The following error occured: " + err);
+                }
+            );
+        } else {
+            console.log("getUserMedia not supported");
+        }
+    }
+    //---------------------
+    // TAKE A SNAPSHOT CODE
+    //---------------------
+    var canvas, ctx
+    var database
+    var capturebtn
+    var uid
+    var eventid
+
+    function parseURLParams(url) {
+      var queryStart = url.indexOf("?") + 1,
+        queryEnd = url.indexOf("#") + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, " ").split("&"),
+        parms = {}, i, n, v, nv;
+
+      if (query === url || query === "") return;
+
+      for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split("=", 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+      }
+      return parms;
+    }
+    $(window).ready(() => {
+        // Get the canvas and obtain a context for
+        // drawing in it
+        startWebcam()
+        database = firebase.database()
+        capturebtn = $('#capture-btn')
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                uid = user.uid
+                database.ref(`users/${uid}`).once('value').then((snapshot) => {
+                    currole = snapshot.child('role').val()
+                    if (currole == 'student') {
+                        capturebtn[0].innerHTML = "Enroll"
+                        capturebtn.attr('onclick', 'enroll();')
+                    }
+                    else if (currole == 'recruiter') {
+                        eventid = parseURLParams(window.location.href).eventid[0];
+                        if (!eventid) {
+                            window.location.assign("/")
+                        }
+                        else {
+                            database = database.ref(`users/${uid}/events/${eventid}/visitors`)
+                            capturebtn[0].innerHTML = "Recognize"
+                            capturebtn.attr('onclick', 'recognize();')
+                        }
+                    }
+                })
+            } else {
+                window.location.assign("/")
+            }
+        })
+        canvas = document.getElementById("myCanvas");
+        ctx = canvas.getContext('2d');
+    })
+    function recognize() {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        var img1 = new Image();
+        img1.src = canvas.toDataURL();
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.kairos.com/recognize",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "app_id": "fd1ab48e",
+                "app_key": "faa19701e6037e318ea71227ea3fc1fa",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify({
+                "image": img1.src,
+                "gallery_name": "FaceLink",
+            })
+        }
+        $.ajax(settings).done(function (response) {
+            console.log(response)
+            if (response.Errors) alert('No match found')
+            else {
+                var subject_id = response.images[0].candidates[0].subject_id
+                var json = {}
+                json[subject_id] = true
+                database.update(json)
+                alert('Successful capture')
+            }
+        })
+    }
+    function enroll() {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        var img1 = new Image();
+        img1.src = canvas.toDataURL();
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.kairos.com/enroll",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "app_id": "fd1ab48e",
+                "app_key": "faa19701e6037e318ea71227ea3fc1fa",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify({
+                "image": img1.src,
+                "gallery_name": "FaceLink",
+                "subject_id": uid
+            })
+        }
+        $.ajax(settings).done(function (response) {
+            // console.log(response)
+            if (response.face_id) alert("Enroll successful")
+            else alert("Try again")
+        })
+    }
+</script>
+{% endblock %}

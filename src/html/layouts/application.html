@@ -31,10 +31,10 @@
   <meta name="twitter:title" content="Content Title">
   <meta name="twitter:description" content="Content description less than 200 characters">
   <meta name="twitter:image" content="https://example.com/image.jpg">
-  <link href='//fonts.googleapis.com' rel='dns-prefetch' crossorigin/>
-  <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' crossorigin/>
-  <link href='//fonts.googleapis.com' rel='preconnect' crossorigin/>
-  <link href='//cdnjs.cloudflare.com' rel='preconnect' crossorigin/>
+  <link href='//fonts.googleapis.com' rel='dns-prefetch' crossorigin />
+  <link href='//cdnjs.cloudflare.com' rel='dns-prefetch' crossorigin />
+  <link href='//fonts.googleapis.com' rel='preconnect' crossorigin />
+  <link href='//cdnjs.cloudflare.com' rel='preconnect' crossorigin />
   {% include "layouts/loadcss.html" %}
   {% block head %}{% endblock %}
 </head>
@@ -46,14 +46,13 @@
     {% endblock %}
     {% block content %}
     {% endblock %}
-    {% block
-    footer %}
+    {% block footer %}
     {% if footer != true %}
-      {% include "modules/global/footer.html" %}
+    {% include "modules/global/footer.html" %}
     {% endif %}
     {% include "modules/global/no-script.html" %}
-     {% endblock %} {%
-    block javascript %}
+    {% endblock %}
+    {% block javascript %}
     {% include "modules/global/javascript.html" %}
     {% endblock %}
   </div>
@@ -82,6 +81,5 @@
     });
   </script>
 </body>
-
 </html>
 <!-- end footer -->

@@ -1,6 +1,9 @@
-{% extends 'layouts/application.html' %}{% block bodyClass %}class="internal recruiter-main"{% endblock %}
+{% extends 'layouts/application.html' %}{% block bodyClass %}class="internal student-main"{% endblock %}
 {% block content %}
 <main id="main-content">
-    <h1>Recruiter Main</h1>
+    <div class="recruiter-wrapper" data-module="recruiter-profile">
+        {% include "modules/recruiter-side.html" %}
+        {% include "modules/events-card.html" %}
+    </div>
 </main>
 {% endblock %}

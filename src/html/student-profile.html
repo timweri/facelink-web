@@ -1,0 +1,9 @@
+{% extends 'layouts/application.html' %}{% block bodyClass %}class="internal student-profile"{% endblock %}
+{% block content %}
+<main id="main-content">
+    <div class="student-wrapper">
+        {% include "modules/student-side.html" %}
+        {% include "modules/student-info.html" %}
+    </div>
+</main>
+{% endblock %}

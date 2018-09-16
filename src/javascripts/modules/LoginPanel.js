@@ -71,7 +71,7 @@ const LoginPanel = (($) => {
               role: currole
             })
             alert('Sign-up successful')
-            if (currole == 'student') window.location.assign("/student-main.html")
+            if (currole == 'student') window.location.assign("/facial-reg.html")
             else if (currole == 'recruiter') window.location.assign("/recruiter-main.html")
           }
         })
