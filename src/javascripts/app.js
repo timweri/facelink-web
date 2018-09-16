@@ -10,4 +10,5 @@ import 'modules/EventAuth'
 import 'modules/LoginPanel'
 import 'modules/StudentProfile'
 import 'modules/EventDetails'
+import 'modules/StudentForm'
 
