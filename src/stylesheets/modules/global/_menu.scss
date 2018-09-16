@@ -27,10 +27,7 @@
 
 .navbar {
   padding: .6rem 1rem;
-}
-
-#header-logo {
-  @include sizeEx(110px, auto);
+  height: 50px;
 }
 
 .menu-wrap-inner {

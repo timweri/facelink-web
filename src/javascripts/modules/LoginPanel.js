@@ -47,9 +47,6 @@ const LoginPanel = (($) => {
             if (currole == 'student') window.location.assign("/student-main.html")
             else if (currole == 'recruiter') window.location.assign("/recruiter-main.html")
           })
-          console.log('logged in')
-        } else {
-          console.log('not logged in')
         }
       })
       this.$loginbtn.click((e) => {

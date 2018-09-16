@@ -1,6 +1,11 @@
 // module 'Events Card'
 .events-card {
     /*PEN STYLES*/
+    width: 85%;
+    margin: 0 auto;
+    > .container {
+        max-width: 700px;
+    }
 
 * {
     box-sizing: border-box;
